@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.12)  16 OCT 2026 19:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.12)  16 OCT 2026 21:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -802,18 +802,18 @@ L3 programming layer <2026-09-09>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `further_maths_main.out' has not changed.
-(rerunfilecheck)             Checksum: 62814D92CC64C678868AE621A730A8F6;17408.
+(rerunfilecheck)             Checksum: 4346560958A286171CBFE44FF8F27327;17456.
  ) 
 Here is how much of TeX's memory you used:
  31130 strings out of 467050
  618194 string characters out of 5410549
- 1234844 words of memory out of 5000000
+ 1234889 words of memory out of 5000000
  59651 multiletter control sequences out of 15000+600000
  639050 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  198i,15n,292p,2590b,967s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on further_maths_main.pdf (77 pages, 348337 bytes).
+Output written on further_maths_main.pdf (77 pages, 348447 bytes).
 PDF statistics:
  1543 PDF objects out of 1728 (max. 8388607)
  1411 compressed objects within 15 object streams

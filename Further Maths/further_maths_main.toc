@@ -101,7 +101,7 @@
 \contentsline {subsubsection}{Poisson $\poisson (\lambda )$}{62}{section*.9}%
 \contentsline {subsubsection}{Sampling Distributions}{62}{section*.10}%
 \contentsline {subsection}{\numberline {A.3.4}Distribution-Free (Non-Parametric) Tests}{63}{subsection.A.3.4}%
-\contentsline {chapter}{\numberline {B}Non-Formula Sheet}{65}{appendix.B}%
+\contentsline {chapter}{\numberline {B}Apendix: Non-Formula Sheet}{65}{appendix.B}%
 \contentsline {section}{\numberline {B.1}Pure Mathematics}{65}{appendix.B.1}%
 \contentsline {subsection}{\numberline {B.1.1}Vieta's Formulae}{65}{subsection.B.1.1}%
 \contentsline {subsection}{\numberline {B.1.2}Integration}{66}{subsection.B.1.2}%

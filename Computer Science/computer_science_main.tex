@@ -1,0 +1,82 @@
+\documentclass{book}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+\usepackage[toc]{glossaries}
+\usepackage[toc,page]{appendix}
+\usepackage{subfiles}
+
+\frontmatter
+
+\newcommand{\comment}[1]{} % Allows multiline comments
+
+\title{Computer Science Revision Notes}
+\author{C. Irving}
+\date{}
+
+\makenoidxglossaries
+\loadglsentries{glossary.tex}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Programming} \label{ch:programming}
+    \subfile{chapters/programming.tex}
+
+\chapter{Data Structures} \label{ch:data_structures}
+    \subfile{chapters/data_structures.tex}
+
+\chapter{Algorithms} \label{ch:algorithms}
+    \subfile{chapters/algorithms.tex}
+
+\chapter{Computation} \label{ch:computation}
+    \subfile{chapters/computation.tex}
+
+\chapter{Data Representation} \label{ch:data_representation}
+    \subfile{chapters/data_representation.tex}
+
+\chapter{Computer Systems} \label{ch:computer_systems}
+    \subfile{chapters/computer_systems.tex}
+
+\chapter{Organisation and Architecture} \label{ch:organisation_and_architecture}
+    \subfile{chapters/organisation_and_architecture.tex}
+
+\chapter{Consequences of Use} \label{ch:consequences_of_use}
+    \subfile{chapters/consequences_of_use.tex}
+
+\chapter{Communication and Networking} \label{ch:communication_and_networking}
+    \subfile{chapters/communication_and_networking.tex}
+
+\chapter{Databases} \label{ch:databases}
+    \subfile{chapters/databases.tex}
+
+\chapter{Big Data} \label{ch:big_data}
+    \subfile{chapters/big_data.tex}
+
+\chapter{Functional Programming} \label{ch:functional_programming}
+    \subfile{chapters/functional_programming.tex}
+
+\chapter{Problem Solving} \label{ch:problem_solving}
+    \subfile{chapters/problem_solving.tex}
+
+\printnoidxglossaries
+
+\end{document}

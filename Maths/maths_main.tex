@@ -1,0 +1,78 @@
+\documentclass{book}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+\usepackage[toc]{glossaries}
+\usepackage[toc,page]{appendix}
+\usepackage{subfiles}
+
+\frontmatter
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\normal}{N}
+\DeclareMathOperator{\binomial}{B}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+
+\newcommand{\comment}[1]{} % Allows multiline comments
+
+\title{Maths Revision Notes}
+\author{C. Irving}
+\date{}
+
+\makenoidxglossaries
+\loadglsentries{glossary.tex}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+ 
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Pure Year I} \label{ch:pure_i}
+    \subfile{chapters/pure_i.tex}
+
+\chapter{Pure Year II} \label{ch:pure_ii}
+    \subfile{chapters/pure_ii.tex}
+
+\chapter{Mechanics} \label{ch:mechanics}
+    \subfile{chapters/mechanics.tex}
+
+\chapter{Statistics} \label{ch:statistics}
+    \subfile{chapters/statistics.tex}
+
+\appendix
+\chapter{Appendix: Formula Sheet} \label{ch:formula_sheet}
+    \subfile{appendices/formula_sheet.tex}
+
+\chapter{Appendix: Non-Formula Sheet} \label{ch:non_formula_sheet}
+    \subfile{appendices/non_formula_sheet.tex}
+
+\printnoidxglossaries
+
+\end{document}

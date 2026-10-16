@@ -1,0 +1,87 @@
+\documentclass{book}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+\usepackage[toc]{glossaries}
+\usepackage[toc,page]{appendix}
+\usepackage{subfiles}
+
+\frontmatter
+
+\newcommand{\comment}[1]{} % Allows multiline comments
+
+\title{Physics Revision Notes}
+\author{C. Irving}
+\date{}
+
+\makenoidxglossaries
+\loadglsentries{glossary.tex}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Particles and Radiation} \label{ch:particles_and_radiation}
+    \subfile{chapters/particles_and_radiation.tex}
+
+\chapter{Waves and Optics} \label{ch:waves_and_optics}
+    \subfile{chapters/waves_and_optics.tex}
+
+\chapter{Mechanics and Materials} \label{ch:mechanics_and_materials}
+    \subfile{chapters/mechanics_and_materials.tex}
+
+\chapter{Electricity} \label{ch:electricity}
+    \subfile{chapters/electricity.tex}
+
+\chapter{Skills in Physics Year I} \label{ch:skills_in_physics_i}
+    \subfile{chapters/skills_in_physics_i.tex}
+
+\chapter{Further Mechanics and Thermal Physics} \label{ch:further_mechanics_and_thermal_physics}
+    \subfile{chapters/further_mechanics_and_thermal_physics.tex}
+
+\chapter{Fields} \label{ch:fields}
+    \subfile{chapters/fields.tex}
+
+\chapter{Nuclear Physics} \label{ch:nuclear_physics}
+    \subfile{chapters/nuclear_physics.tex}
+
+\comment{ % Excluded for now
+\chapter{Astrophysics} \label{ch:astrophysics}
+    \subfile{chapters/astrophysics.tex}
+
+\chapter{Medical Physics} \label{ch:medical_physics}
+    \subfile{chapters/medical_physics.tex}
+
+\chapter{Engineering Physics} \label{ch:engineering_physics}
+    \subfile{chapters/engineering_physics.tex}
+}
+
+\chapter{Turning Points in Physics} \label{ch:turning_points_in_physics}
+    \subfile{chapters/turning_points_in_physics.tex}
+
+\comment{ % Excluded for now
+\chapter{Electronics} \label{ch:electronics}
+    \subfile{chapters/electronics.tex}
+}
+
+\chapter{Skills in Physics Year II} \label{ch:skills_in_physics_ii}
+    \subfile{chapters/skills_in_physics_ii.tex}
+
+\printnoidxglossaries
+
+\end{document}

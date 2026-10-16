@@ -1,0 +1,27 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Programming}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Basics}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Selection}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Iteration}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Arrays}{4}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Data Structures}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Algorithms}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Computation}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Data Representation}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Number Systems}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Binary Arithmetic}{12}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Binary Numbers}{13}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Sound}{14}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Images}{15}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Compression}{16}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Encryption}{17}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Computer Systems}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Hardware and Software}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Operating Systems}{20}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Organisation and Architecture}{21}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Consequences of Use}{23}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Communication and Networking}{25}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Databases}{27}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Big Data}{29}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Functional Programming}{31}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Problem Solving}{33}{chapter.13}%

@@ -1,0 +1,1212 @@
+\documentclass{book}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+\usepackage[toc]{glossaries}
+\usepackage[toc,page]{appendix}
+
+\frontmatter
+
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\poisson}{Po}
+\DeclareMathOperator{\normal}{N}
+\DeclareMathOperator{\binomial}{B}
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imag}{Im}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\bigO}{\mathcal{O}}
+
+\title{Further Maths Revision Notes}
+\author{C. Irving}
+\date{}
+
+%\begin{glossary_entries}
+\makenoidxglossaries
+\newglossaryentry{imaginary_constant}{
+    name=imaginary constant,
+    description={The square root of -1, written $i$},
+    plural={imaginary constants}
+}
+\newglossaryentry{real_number}{
+    name=real number,
+    description={A number on the real number line; a number in the interval $(-\infty, \infty)$.
+    The set of real numbers is written $\R$},
+    plural={real numbers}
+}
+\newglossaryentry{complex_number}{
+    name=complex number,
+    description={A number in the form $a+bi$, where $a,b\in\R$.
+    The set of complex numbers is written $\C$},
+    plural={complex numbers}
+}
+\newglossaryentry{polynomial}{
+    name=polynomial,
+    description={An expression in the form $a_0+a_1x^1+a_2x^2+\cdots+a_nx^n$},
+    plural={polynomials}
+}
+\newglossaryentry{complex_conjugate}{
+    name=complex conjugate,
+    description={A complex number with a flipped sign before its imaginary part.
+    The complex conjugate of a complex number $z$ is written $z^*$},
+    plural={}
+}
+\newglossaryentry{root}{
+    name=root,
+    description={A value that satisfies an equation, for example 1 and -1 are the roots of the equation $x^2-1=0$, since for $x=1$ and $x=-1$, the equation holds},
+    plural={roots}
+}
+\newglossaryentry{complex_root}{
+    name=complex root,
+    description={A root $x$ of an equation where $x\in\C$.
+    It is often also used to mean that $x\notin\R$},
+    plural={complex roots}
+}
+\newglossaryentry{cartesian_graph}{
+    name=Cartesian graph,
+    description={A graph in the $x$-$y$ plane},
+    plural={Cartesian graphs}
+}
+\newglossaryentry{realising_the_denominator}{
+    name=realising the denominator,
+    description={The process of multiplying a complex fraction in the form $\frac{w}{z}$ by $\frac{z^*}{z^*}$ (where $w,z\in\C$) to make the denominator a real value without changing the value of the fraction.},
+}
+\newglossaryentry{quadratic}{
+    name=quadratic,
+    description={A second degree \gls{polynomial}, i.e. an equation in the form $ax^2+bx+c=0$, where $a\neq0$.
+    When plotted on a \gls{cartesian_graph}, it forms a parabola.
+    Its \glspl{root} are given by the quadratic formula, $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$},
+    plural={quadratics}
+}
+\newglossaryentry{conjugate_pair}{
+    name=conjugate pair,
+    description={A pair of \glspl{complex_number}, where one is the \gls{complex_conjugate} of the other},
+    plural={conjugate pairs}
+}
+\newglossaryentry{cubic}{
+    name=cubic,
+    description={A 3rd degree \gls{polynomial}, i.e. an equation in the form $x^3+bx^2+cx+d=0$, where $a\neq0$},
+    plural={conjugate pairs}
+}
+\newglossaryentry{argand_diagram}{
+    name=Argand diagram,
+    description={A 2D graph of the complex plane},
+    plural={Argand diagrams}
+}
+\newglossaryentry{real_part}{
+    name=real part,
+    description={The real term of a \gls{complex_number}, i.e. where $z=a+bi,\ a,b\in\Relbar$, the real part of $z$ is $a$
+    The real part of a \gls{complex_number} $z$ is written as $real(z)$ or $\Re(z)$},
+    plural={}
+}
+\newglossaryentry{imaginary_part}{
+    name=imaginary part,
+    description={The coefficient of the imaginary term of a complex number, i.e. where $z=a+bi,\ a,b\in\R$, the imaginary part of $z$ is $b$.
+    The imaginary part of a \gls{complex_number} $z$ is written as $imag(z)$ or $\Im(z)$},
+    plural={}
+}
+\newglossaryentry{modulus_argument_form}{
+    name=modulus-arguemnt form,
+    description={The form $r(\cos\theta+i\sin\theta)\equiv\cis\theta$},
+    plural={}
+}
+\newglossaryentry{radian}{
+    name=radian,
+    description={An angle unit, equal to the angle required to make the arc length of a unit circle equal 1.
+    A whole circle is $2\pi$ radians; half a circle is $\pi$ radians.
+    The symbol for radians is either $^\text{c}$ or $\text{rad}$, as in $\pi^\text{c}$ or $\pi\ \text{rad}$, or is often omitted},
+    plural={radians}
+}
+\newglossaryentry{modulus}{
+    name=modulus,
+    description={The magnitude of a number, where $|x|$ is the modulus of $x$.
+    For positive \glspl{real_number}, the modulus is itself, for negative \glspl{real_number}, the modulus is the positive version of itself ($|x|=-x,\ x\in\R^-$).
+    For a \gls{complex_number} $z$, $|z|=\sqrt{\real^2(z)+\imag^2(z)}$}, % TODO: come back
+    plural={}
+}
+\newglossaryentry{quadrant}{
+    name=quadrant,
+    description={A quarter of a graph; the 1st quadrant is the top right, the second is the top left, the third is the bottom left, and the fourth is the bottom right.},
+    plural={quadrants}
+}
+\newglossaryentry{argument}{
+    name=argument,
+    description={The angle that a \gls{complex_number} makes with the positive real number line.
+    It is written as $\arg(z)$.
+    The argument is in the real interval $(-\pi,\pi]$},
+    plural={arguments}
+}
+\newglossaryentry{}{
+    name=,
+    description={},
+    plural={}
+}
+%\end{glossary_entries}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+ 
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Core Pure Year I} \label{ch:core_pure_i}
+    \section{Complex Numbers I} \label{complex_numbers_i}
+        \subsection{The Imaginary Constant}
+            Using only the \glspl{real_number}, there is no number $x$ that satisfies the equation $x^2+1=0$.
+            To satisfy this \gls{polynomial}, you must first define a square root of -1.
+            This constant is called the \gls{imaginary_constant} $i$, defined such that $i^2=-1$.
+            
+            Using the \gls{imaginary_constant}, \glspl{complex_number} can be defined as $a+bi$, where $a,b\in\R$.
+            The set of all numbers in the form $a+bi$ is called the set of \glspl{complex_number}, written $\C$.
+
+            The functions $\real(z)$ and $\imag(z)$ (sometimes written as $\Re(z)$ and $\Im(z)$) take the \gls{real_part} and \gls{imaginary_part} of a \gls{complex_number} respectively.
+            For example,
+            \begin{equation} \label{eq:real_part}
+                \text{Re}(a+bi)\equiv\Re(z):=a,\ a,b\in\R
+            \end{equation}
+            \begin{equation} \label{eq:imaginary_part}
+                \text{Im}(a+bi)\equiv\Im(z):=bi,\ a,b\in\R
+            \end{equation}
+
+        \subsection{Complex Arithmetic}
+            \Glspl{complex_number} can be added and multiplied similarly to how binomials would be.
+            Given two \glspl{complex_number} $w:=a+bi$ and $z:=c+di$, where $a,b,c,d\in\R$, the following rules define complex addition and multiplication:
+            \begin{equation} \label{eqn:complex_addition}
+                w+z=(a+bi)+(c+di)=(a+c)+(b+d)i
+            \end{equation}
+            \begin{equation} \label{eqn:complex_multiplication}
+                w\times z=(a+bi)(c+di)=(ac-bd)+(ad+bc)i
+            \end{equation}
+
+        \subsection{Complex Conjugates}
+            The \gls{complex_conjugate} of a \gls{complex_number} of $z$, written as $z^*$ is $z$ with a flipped sign before the imaginary part.
+            \begin{equation}
+                (a+bi)^*:=a-bi,\ a,b\in\R
+            \end{equation}
+            From this definition, we can see that the sum and product of a \gls{complex_number} and its conjugate are both real.
+            Let $z:=a+bi$, where $a,b\in\R$.
+            \begin{equation} \label{eqn:sum_of_conjugate}
+                z+z^*=2a\in\R
+            \end{equation}
+            \begin{equation} \label{eqn:product_of_conjugate}
+                zz^*=a^2+b^2\in\R
+            \end{equation}
+            Using the multiplication rule in equation \ref{eqn:product_of_conjugate}, a fraction of \glspl{complex_number} can be `realised' by multiplying by the \gls{complex_conjugate} of the denominator over itself.
+            \Gls{realising_the_denominator} means rewriting a fraction of \glspl{complex_number} as a fraction with a real denominator.
+            \begin{equation} \label{eqn:realise_denominator}
+            \begin{split}
+                \frac{a+bi}{c+di}&=\frac{a+bi}{c+di}\times\frac{c-di}{c-di}\\
+                &=\frac{(a+bi)(c+di)}{c^2+d^2}\\
+                &=\frac{(ac-bd)+(ad+bc)i}{c^2+d^2}
+            \end{split}
+            \end{equation}
+        \subsection{Complex Roots of Polynomials}
+            All $n$th degree \glspl{polynomial} (\glspl{polynomial} with a power of $x$ up to $x^n$) have exactly $n$ \glspl{root}, counting \glspl{complex_root} and algebraic multiplicities.
+            Therefore, if an equation does not cross $y=0$ on a \gls{cartesian_graph}, it must have other, complex \glspl{root}.
+            The simplest example of this is the \gls{quadratic} $x^2+1=0$.
+            \[x^2=-1\]
+            \[x=\pm i\]
+            For \glspl{quadratic}, whenever the discriminant ($\Delta:=b^2-4ac$ for a \gls{quadratic} $ax^2+bx+c$) is less than $0$, the \gls{quadratic} has \glspl{complex_root}, since the quadratic formula (\ref{eq:quadratic_formula}) can be rewritten as
+            \[x=\frac{-b\pm\sqrt{\Delta}}{2a}\]
+            which would give a \gls{complex_number} whenever $\Delta<0$, since $\sqrt{x}$ is complex iff $x<0$ ($x\in\R$).
+            
+            If a \gls{polynomial} has a \gls{complex_root} $\alpha$, it must also have the \gls{complex_conjugate} \gls{root} $\alpha^*$.
+            For example, if a \gls{quadratic} has a \gls{root} $\alpha=2+3i$, then the other \gls{root} must be $\alpha^*=2-3i$.
+            For a \gls{cubic}, there can only be one pair of \glspl{root}, thus the third \gls{root} cannot be a \gls{complex_root}, since it would have to have a fourth \gls{root} to form a \gls{conjugate_pair}.
+            Thus, the third \gls{root} of a \gls{cubic} must a \gls{real_number}.
+        \newpage
+
+    \section{Argand Diagrams} \label{argand_diagrams}
+        \subsection{Complex Numbers on Argand Diagrams}
+            An \gls{argand_diagram} can be thought of similarly to a \gls{cartesian_graph}; \glspl{complex_number} in the form $x+iy$ can be plotted like $(x, y)$ can on a \gls{cartesian_graph}.
+            Instead of an $x$ axis and a $y$ axis, there are instead a real axis and an imaginary axis, used to plot the \gls{real_part} and \gls{imaginary_part} of \glspl{complex_number}.
+            An \gls{argand_diagram} looks like this:
+
+            \begin{center}
+            \begin{tikzpicture}[scale=1.5, >=stealth] % From Gemini
+                % Draw axes
+                \draw[->] (-0.5, 0) -- (4, 0) node[right] {$\real(z)$};
+                \draw[->] (0, -0.5) -- (0, 3) node[above] {$\imag(z)$};
+                
+                % Define coordinates for complex number z = a + bi (e.g., z = 3 + 2i)
+                \coordinate (O) at (0,0);
+                \coordinate (Z) at (3,2);
+                \coordinate (X) at (3,0);
+                
+                % Draw vector from origin to z
+                %\draw[thick, red] (O) -- (Z) node[midway, above left] {$z = a+bi$};
+                \draw[thick, red] (O) -- (Z);
+                \draw[red] (Z) node[above] {$z=a+bi$};
+                % Projection lines to axes
+                \draw[dashed, gray] (Z) -- (X) node[below] {$a$};
+                \draw[dashed, gray] (Z) -- (0,2) node[left] {$b$};
+                
+                % Plot point at z
+                \filldraw[red] (Z) circle (1.5pt);
+                
+                % Draw angle theta
+                %\draw (0.5,0) arc[start angle=0, end angle=33.7, radius=0.5];
+                %\node at (0.7, 0.25) {$\theta$};
+            \end{tikzpicture}
+            \end{center}
+
+            Where the point $z=a+bi$ is drawn where the point $(a, b)$ would be drawn on a \gls{cartesian_graph}.
+            
+        \subsection{Modulus-Argument Form}
+            The \gls{modulus_argument_form} of a \gls{complex_number} is similar to the polar form of a point on a \gls{cartesian_graph}.
+            It defines the point using its distance from the origin, and the angle it makes with the positive half of the real axis, in \glspl{radian}.
+            The \gls{modulus} of $z$ is written as $|z|$, which is calculated using Pythagoras' Theorem:
+            \begin{equation}
+                |z|=\sqrt{\real^2(z)+\imag^2(z)}
+            \end{equation}
+            where $\real^2(z)$ and $\imag^2(z)$ mean $(\real(z))^2$ and $(\imag(z))^2$ respectively.
+            The angle that $z$ makes with the positive real number line is called the \gls{argument}, and is positive, going anti-clockwise if $\imag(z)\ge0$, and negative, going clockwise if $\imag(z)<0$.
+            The \gls{argument} of $z$ is written as $\arg(z)$.
+
+            An \gls{argand_diagram} is split into four \glspl{quadrant}, called \gls{quadrant} 1, 2, 3 and 4:
+
+            \begin{center}
+            \begin{tikzpicture}[scale=1.5, >=stealth]
+                \draw[->] (-2, 0) -- (2, 0) node[right] {$\real(z)$};
+                \draw[->] (0, -2) -- (0, 2) node[above] {$\imag(z)$};
+                
+                \coordinate (Q1) at (1,1);
+                \coordinate (Q2) at (-1,1);
+                \coordinate (Q3) at (-1,-1);
+                \coordinate (Q4) at (1,-1);
+                
+                \draw (Q1) node {Quadrant 1};
+                \draw (Q2) node {Quadrant 2};
+                \draw (Q3) node {Quadrant 3};
+                \draw (Q4) node {Quadrant 4};
+            \end{tikzpicture}
+            \end{center}
+
+
+            For values of $z$ in the first and fourth \glspl{quadrant} ($\real(z)>0$):
+            \begin{equation}
+                \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)
+            \end{equation}
+            For values of $z$ in the second \gls{quadrant}:
+            \begin{equation}
+                \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)+\pi
+            \end{equation}
+            For values of $z$ in the third \gls{quadrant}:
+            \begin{equation}
+                \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)-\pi
+            \end{equation}
+
+            On an \gls{argand_diagram}, the \gls{complex_conjugate} of a number is itself mirror in the line $\imag(z)=0$ (see subsection \ref{ssec:loci_and_regions_in_argand_diagrams}):
+
+            \begin{center}
+            \begin{tikzpicture}[scale=1.5, >=stealth]
+                \draw[->] (-4, 0) -- (4, 0) node[right] {$\real(z)$};
+                \draw[->] (0, -3) -- (0, 3) node[above] {$\imag(z)$};
+                
+                \coordinate (O) at (0,0);
+                \coordinate (Z) at (3,2);
+                \coordinate (conj_Z) at (3,-2);
+                \coordinate (neg_Z) at (-3,-2);
+                \coordinate (neg_conj_Z) at (-3,2);
+                
+                \draw[thick, red] (O) -- (Z);
+                \draw[thick, red] (O) -- (conj_Z);
+                \draw[thick, red] (O) -- (neg_Z);
+                \draw[thick, red] (O) -- (neg_conj_Z);
+
+                \draw[red] (Z) node[above] {$z=a+bi$};
+                \draw[red] (conj_Z) node[below] {$z^*=a-bi$};
+                \draw[red] (neg_Z) node[below] {$-z=-a-bi$};
+                \draw[red] (neg_conj_Z) node[above] {$-z^*=-a+bi$};
+
+                \filldraw[red] (Z) circle (1.5pt);
+                \filldraw[red] (conj_Z) circle (1.5pt);
+                \filldraw[red] (neg_Z) circle (1.5pt);
+                \filldraw[red] (neg_conj_Z) circle (1.5pt);
+            \end{tikzpicture}
+            \end{center}
+
+        \subsection{Loci and Regions in Argand Diagrams} \label{ssec:loci_and_regions_in_argand_diagrams}
+
+        \newpage
+
+    \section{Series I} \label{series_i}
+
+    \section{Roots of Polynomials} \label{roots_of_polynomials}
+        \subsection{Sums of Roots}
+            The \glspl{root} of \glspl{polynomial} can be related using Vieta's formulae (see ).
+            The \glspl{root} of a general \gls{polynomial} are written as $\alpha$, $\beta$, $\gamma$, $\delta$, etc., and the coefficients are written as $a$, $b$, $c$, $d$, $e$, etc., where $a$ is the coefficient of the greatest power of the \gls{polynomial}, $b$ is the coefficient of the next greatest power, etc.
+            The sum of all \glspl{root} is then written as $\sum\alpha\equiv\alpha+\beta+\cdots$.
+            Multiple \glspl{root} can be multiplied together and then summed, for example the sum of all pairs of \glspl{root} ($\alpha\beta+\alpha\gamma+\cdots$) would be written as $\sum\alpha\beta$.
+            This would be the sum of \textit{all} possible pairs of \glspl{root}.
+
+        \subsection{Linear Transformations of Roots}
+
+    \newpage
+    \newpage
+    \section{Volumes of Revolution} \label{volumes_of_revolution}
+    \newpage
+    \section{Matrices} \label{matricies}
+    \newpage
+    \section{Linear Transformations} \label{linear_transformations}
+    \newpage
+    \section{Proof by Induction} \label{proof_by_induction}
+    \newpage
+    \section{Vectors} \label{vectors}
+    \newpage
+
+\chapter{Core Pure Year II} \label{ch:core_pure_ii}
+    \section{Complex Numbers II} \label{complex_numbers_ii}
+    \newpage
+    \section{Series II} \label{series_ii}
+    \newpage
+    \section{Methods in Calculus} \label{methods_in_calculus}
+    \newpage
+    \section{Polar Coordinates} \label{polar_coordinates}
+    \newpage
+    \section{Hyperbolic Function} \label{hyperbolic_functions}
+    \newpage
+    \section{Methods in Differential Equations} \label{methods_in_differential_equations}
+    \newpage
+    \section{Modelling with Differential Equations} \label{nodelling_with_differential_equations}
+    \newpage
+
+\chapter{Further Mechanics Year I} \label{ch:mechanics_i}
+    \section{Momentum and Impulse} \label{momentum_and_impulse}
+    \newpage
+    \section{Work, Energy and Power} \label{work_energy_and_power}
+    \newpage
+    \section{Elastic Strings and Springs} \label{elastic_strings_and_springs}
+    \newpage
+    \section{Elastic Collisions in One Dimension} \label{elastic_collisions_in_one_dimension}
+    \newpage
+    \section{Elastic Collisions in Two Dimensions} \label{elastic_collisions_in_two_dimensions}
+    \newpage
+
+\chapter{Further Mechanics Year II} \label{ch:mechanics_ii}
+    \section{Circular Motion} \label{circular_motions}
+    \newpage
+    \section{Centre of Mass of Plane Figures} \label{centre_of_mass_of_plane_figures}
+    \newpage
+    \section{Further Centres of Mass} \label{further_centres_of_mass}
+    \newpage
+    \section{Kinematics} \label{kinematics}
+    \newpage
+    \section{Dynamics} \label{dynamics}
+    \newpage
+
+\chapter{Further Statistics Year I} \label{ch:statistics_i}
+    \section{Discrete Random Variables} \label{}
+    \newpage
+    \section{Poisson Distributions} \label{}
+    \newpage
+    \section{Geometric and Negative Binomial Distributions} \label{}
+    \newpage
+    \section{Hypothesis Testing} \label{}
+    \newpage
+    \section{Central Limit Theorem} \label{}
+    \newpage
+    \section{$\chi^2$ Tests} \label{}
+    \newpage
+    \section{Probability Generating Functions} \label{}
+    \newpage
+    \section{Quality of Tests} \label{}
+    \newpage
+
+\chapter{Further Statistics Year II} \label{ch:statistics_ii}
+    \section{Linear Regression} \label{}
+    \newpage
+    \section{Correlation} \label{}
+    \newpage
+    \section{Continuous Distribution} \label{}
+    \newpage
+    \section{Combinations of Random Variables} \label{}
+    \newpage
+    \section{Estimation, Confidence Intervals and Tests Using a Normal Distribution} \label{}
+    \newpage
+    \section{Further Hypothesis Tests} \label{}
+    \newpage
+    \section{Confidence Intervals and Tests Using the $t$-Distribution} \label{}
+    \newpage
+
+\chapter{Decision Year I} \label{ch:decision_i}
+    \section{Algorithms} \label{algorithms}
+        \section{Basic Algorithms}
+
+        \newpage
+
+        \section{Bubble Sort}
+            \subsection{Description}
+                Bubble sort is an algorithm that sorts an unsorted list of data.
+                It passes through the list, checking each pair of items to see if they need to be swapped to be in order.
+                For example, if it were sorting a list of numbers into numerical order and it found the pair 2, 1, it would swap them.
+                This is an example of a single bubble sort pass, with each comparison marked:
+                \begin{verbatim}
+                    [3   5]  8   2   5   6   3
+                    3  [5   8]  2   5   6   3
+                    3   5  [8   2]  5   6   3
+                    3   5   2  [8   5]  6   3
+                    3   5   2   5  [8   6]  3
+                    3   5   2   5   6  [8   3]
+                    3   5   2   5   6   3   8
+                \end{verbatim}
+                Now, the 8 is in the right place, and the bubble sort will do another pass, ignoring the 8, since it must be in the right place after 1 pass, since it is the largest number.
+                In general, after $n$ passes, the last $n$ items are sorted.
+                Bubble sort gets its name from this property of the largets elements `bubbling' to the top (end) of the list.
+                If the algorithm does a pass without swapping any items, it must have already finished sorting the list, so it will return early.
+
+                Example of bubble sort: \\
+                \begin{center}
+                \begin{tabular}{c c c c c c c c}
+                    Pass 1: &3 &5 &8 &2 &5 &6 &3 \\
+                    Pass 2: &3 &5 &2 &5 &6 &3 &\textbf{8} \\
+                    Pass 3: &3 &2 &5 &5 &3 &\textbf{6} &\textbf{8} \\
+                    Pass 4: &2 &3 &5 &3 &\textbf{5} &\textbf{6} &\textbf{8} \\
+                    Pass 6: &2 &3 &3 &\textbf{5} &\textbf{5} &\textbf{6} &\textbf{8} \\
+                    Pass 7: &2 &3 &\textbf{3} &\textbf{5} &\textbf{5} &\textbf{6} &\textbf{8} \\
+                    \multicolumn{8}{l}{\textbf{No more swaps; sort complete.}}
+                \end{tabular}
+                \end{center}
+                Notice that pass 6 is the same as pass 7, as only on pass 7 has the algorithm not performed any swaps.
+
+            \subsection{Order}
+                \begin{theorem}
+                    Bubble sort has an order of $\bigO(n)$
+                \end{theorem}
+                \begin{proof}
+                    Let $n$ be the number of elements in the list to be sorted.
+                    This means that (in the worst-case scenario) the bubble sort will have to do $i-1$ pass to guarantee that every item has been sorted (since after the $i$th pass, $i$ items have been sorted, $n-i$ items will be left to sort, the $i$th item must also be sorted).
+                    In the $i$th pass, $i-1$ items will have been sorted, so the total number of comparisons will be:
+                    $$\sum_{i=1}^n(n-i)=\frac{n(n-1)}{2}=\frac{1}{2}n^2+\frac{1}{2}n$$
+                    Taking the fastest-growing term of $\frac{1}{2}n^2+\frac{1}{2}n$ (the $\frac{1}{2}n^2$ term) and discarding the constant coefficient ($\frac{1}{2}$), this gives $n^2$, thus the order of the bubble sort algorithm is $\bigO(n^2)$.
+                \end{proof}
+            
+            \subsection{Implementation}
+                In pseudocode, this is an example implementation of a bubble sort algorithm:
+                \begin{verbatim}
+// Sorts a list using bubble sort; returns sorted list
+// Example:
+//     Input:  [3, 2, 7, 3, 5]
+//     Output: [2, 3, 3, 5, 7]
+//     Explanation: The unsorted input is sorted so the the numbers are returned in order
+FUNC bubble_sort(list):            // Takes an unsorted list as input
+    VAR n = list.UPPER_BOUND
+
+    FOR (i = 0 TO n):                     // Goes through each pass
+        VAR hasSwapped = FALSE
+        FOR (j = 0 TO n - i):             // Goes through each value in the list
+            IF (list[i] > list[j + 1]):   // Checks if items need swapping
+                hasSwapped = TRUE
+                VAR temp = list[j + 1]    // Swaps items
+                list[j + 1] = list[i]
+                list[i] = temp
+            END IF
+        END FOR
+
+        IF (NOT hasSwapped):   // If it doesn't find any items to swap, the list must be sorted
+            OUTPUT("No more swaps; sort complete.")
+            RETURN list        // Return the sorted list early, since there are no more swaps
+        END IF
+    END FOR
+
+    RETURN list                // Returns sorted list
+END FUNC
+                \end{verbatim}
+        \newpage
+
+        \section{Quick Sort}
+            \subsection{Description}
+
+            \subsection{Order}
+
+            \subsection{Implementation}
+
+        \newpage
+
+        \section{Bin-Packing Algorithms}
+
+        \newpage
+        
+        \section{Order of Algorithms}
+
+        \newpage
+
+    \newpage
+    \section{Graphs} \label{graphs}
+    \newpage
+    \section{Algorithms on Graphs} \label{algorithms_on_graphs}
+    \newpage
+    \section{Route Inspection} \label{route_inspection}
+    \newpage
+    \section{The Travelling Salesman Problem} \label{the_travelling_salesman_problem}
+    \newpage
+    \section{Linear Programming} \label{linea_programming}
+    \newpage
+    \section{The Simplex Algorithm} \label{the_simplex_algorithm}
+    \newpage
+    \section{Critical Path Analysis} \label{critical_path_analysis}
+    \newpage
+
+\chapter{Decision Year II} \label{ch:decision_ii}
+    \section{Transportation Problems} \label{transportation_problems}
+    \newpage
+    \section{Allocation Problems} \label{allocation_problems}
+    \newpage
+    \section{Flows in Networks I} \label{flows_in_networks_i}
+    \newpage
+    \section{Flows in Networks II} \label{flows_in_networks_ii}
+    \newpage
+    \section{Dynamic Programming} \label{dynamic_programming}
+    \newpage
+    \section{Game Theory} \label{game_theory}
+    \newpage
+    \section{Recurrence Relations} \label{recurrence_relations}
+    \newpage
+    \section{Decision Analysis} \label{decision_analysis}
+    \newpage
+
+
+\chapter{Further Pure Mathematics Year I} \label{ch:pure_i}
+    \section{Vectors} \label{}
+    \newpage
+    \section{Conic Sections I} \label{}
+    \newpage
+    \section{Conic Sections II} \label{}
+    \newpage
+    \section{Inequalities} \label{}
+    \newpage
+    \section{The $t$-Formulae} \label{}
+    \newpage
+    \section{Taylor Series} \label{}
+    \newpage
+    \section{Methods in Calculus} \label{}
+    \newpage
+    \section{Numerical Methods} \label{}
+    \newpage
+    \section{Reducible Differential Equations} \label{}
+    \newpage
+
+\chapter{Further Pure Mathematics Year II} \label{ch:pure_ii}
+    \section{Number Theory} \label{}
+    \newpage
+    \section{Groups} \label{}
+    \newpage
+    \section{Complex Numbers} \label{}
+    \newpage
+    \section{Recurrence Relations} \label{}
+    \newpage
+    \section{Matrix Algebra} \label{}
+    \newpage
+    \section{Integration Techniques} \label{}
+    \newpage
+
+\appendix
+\chapter{Appendix: Formulae} \label{ch:formulae}
+    \section{Formula Sheet} \label{formula_sheet}
+        \subsection{Pure Mathematics}
+            \subsubsection{Summations}
+            \begin{equation}
+                \sum_{r=1}^nr^2=\frac{1}{6}n(n+1)(2n+1)
+            \end{equation}
+            \begin{equation}
+                \sum_{r=1}^nr^3=\frac{1}{6}n^2(n+1)^2
+            \end{equation}
+
+            \subsubsection{Matrix Transformations}
+            Anticlockwise rotation through $\theta$ about $O$:
+            \begin{equation}
+                \begin{bmatrix}
+                    \cos\theta & -\sin\theta \\
+                    \sin\theta & \cos\theta
+                \end{bmatrix}
+            \end{equation}
+            Reflection in the line $y=(\tan\theta)x$:
+            \begin{equation}
+                \begin{bmatrix}
+                    \cos2\theta & \sin2\theta \\
+                    \sin2\theta & -\cos2\theta
+                \end{bmatrix}
+            \end{equation}
+
+
+
+            The matrices for rotations (in three dimensions) though an angle $\theta$ about one of the axes are:
+            \begin{equation}
+                \begin{bmatrix}
+                    1 & 0 & 0 \\
+                    0 & \cos\theta & -\sin\theta \\
+                    0 & \sin\theta & \cos\theta
+                \end{bmatrix}
+                \quad\text{for the}\ x\text{-axis}
+            \end{equation}
+            \begin{equation}
+                \begin{bmatrix}
+                    \cos\theta & 0 & \sin\theta \\
+                    0 & 1 & 0 \\
+                    -\sin\theta & 0 & \cos\theta
+                \end{bmatrix}
+                \quad\text{for the}\ y\text{-axis}
+            \end{equation}
+            \begin{equation}
+                \begin{bmatrix}
+                    \cos\theta & -\sin\theta & 0 \\
+                    \sin\theta & \cos\theta & 0 \\
+                    0 & 0 & 1
+                \end{bmatrix}
+                \quad\text{for the}\ z\text{-axis}
+            \end{equation}
+
+
+
+            \subsubsection{Area of a Sector}
+            \begin{equation}
+                A=\frac{1}{2}\int r^2d\theta\quad\text{(polar coordinates)}
+            \end{equation}
+
+            \subsubsection{Complex Numbers}
+            \begin{equation}
+                [r\cos\theta+i\sin\theta]^n=r^n(\cos n\theta+i\sin n\theta)
+            \end{equation}
+            The \glspl{root} of $z^n=1$ are given by
+            \begin{equation}
+                z=e^{\frac{2\pi ki}{n}},\ \text{for}\ k=0,1,2,\dots,n-1
+            \end{equation}
+
+            \subsubsection{Maclaurin's and Taylor's Series}
+            \begin{equation}
+                f(x)=f(0)+xf'(0)+\frac{x^2}{2!}f''(0)+\cdots+\frac{x^r}{r!}f^{(r)}(0)+\cdots
+            \end{equation}
+            \begin{equation}
+                e^x=\exp(x)=1+x+\frac{x^2}{2!}+\cdots+\frac{x^r}{r!}+\cdots\quad\text{for all}\ x
+            \end{equation}
+            \begin{equation}
+                \ln(n+1)=x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots+(-1)^r\frac{x^r}{r}+\cdots\quad(-1<x\le1)
+            \end{equation}
+            \begin{equation}
+                \cos x=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots+(-1)^{r+1}\frac{x^{2r+1}}{(2r+1)!}+\cdots\quad\text{for all}\ x
+            \end{equation}
+            \begin{equation}
+                \cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots+(-1)^r\frac{x^{2r}}{(2r)!}\quad\text{for all}\ x
+            \end{equation}
+            \begin{equation}
+                \arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots+(-1)^r\frac{x^{2r+1}}{2r+1}+\cdots\quad(-1\le x\le1)
+            \end{equation}
+
+            \subsubsection{Vectors}
+            The resolved part of $\textbf{a}$ in the direction of $\textbf{b}$ is
+            \begin{equation}
+                \frac{\textbf{a}\cdot\textbf{b}}{\textbf{b}}
+            \end{equation}
+            Vector Product
+            \begin{equation}
+                \textbf{a}\times\textbf{b}=|\textbf{a}||\textbf{b}|\sin\theta\hat{\textbf{n}}=\left|
+                    \begin{matrix}
+                        \textbf{i} & \textbf{j} & \textbf{k} \\
+                        a_1 & a_2 & a_3 \\
+                        b_1 & b_2 & b_3 \\
+                    \end{matrix}
+                \right|=
+                \begin{bmatrix}
+                    a_2b_3-a_3b_2 \\
+                    a_3b_1-a_1b_3 \\
+                    a_1b_2-a_2b_1
+                \end{bmatrix}
+            \end{equation}
+            \begin{equation}
+                \textbf{a}\cdot(\textbf{b}b\times\textbf{c})=\left|
+                    \begin{matrix}
+                        a_1 & a_2 & a_3 \\
+                        b_1 & b_2 & b_3 \\
+                        c_1 & c_2 & c_3
+                    \end{matrix}
+                \right|=\textbf{b}(\textbf{c}\times\textbf{a})=\textbf{c}=(\textbf{a}\times\textbf{b})
+            \end{equation}
+            If $A$ is the point with position vector $\textbf{a}=a_1\textbf{i}+a_2\textbf{j}+a_3\textbf{k}$ and the direction vector $\textbf{b}$ is given by $\textbf{b}=b_1\textbf{i}+b_2\textbf{j}+b_3\textbf{k}$, then the straight line through $A$ with direction vector $\textbf{b}$ has Cartesian equation:
+            \begin{equation}
+                \frac{x-a_1}{b_1}=\frac{y-a_2}{b_2}=\frac{z-a_3}{b_3}=\lambda
+            \end{equation}
+            The plane through $A$ with normal vector $\textbf{n}=n_1\textbf{i}+n_2\textbf{j}+n_3\textbf{k}$ has Cartesian equation:
+            \begin{equation}
+                n_1x+n_2y+n_3z+d=0\text{ where }d=-\textbf{a}\cdot\textbf{n}
+            \end{equation}
+            The plane through non-collinear points $A$, $B$ and $C$ has vector equation:
+            \begin{equation}
+                \textbf{r}=\textbf{a}+\lambda(\textbf{b}-\textbf{a})+\mu(\textbf{c}-\textbf{a})=(1-\lambda-\mu)\textbf{a}+\lambda\textbf{b}+\mu\textbf{c}
+            \end{equation}
+            The plane through $A$ and parallel to $\textbf{b}$ and $\textbf{c}$ as vector equation:
+            \begin{equation}
+                \textbf{r}=\textbf{a}+s\textbf{b}+t\textbf{c}
+            \end{equation}
+            The perpendicular distance of $(\alpha,\beta,\gamma)$ from $n_1x+n_2y+n_3z+d=0$ is:
+            \begin{equation}
+                \frac{|n_1\alpha+n_2\beta+n_3\gamma+d|}{\sqrt{n_1^2+n_2^2+n_3^2}}
+            \end{equation}
+
+            \subsubsection{Hyperbolic Functions}
+            \begin{equation}
+                \cosh^2x-\sinh^2x=1
+            \end{equation}
+            \begin{equation}
+                \sinh2x=2\sinh x\cosh x
+            \end{equation}
+            \begin{equation}
+                \cosh2x=\cosh^2x+\sinh^2x
+            \end{equation}
+            \begin{equation}
+                \cosh^{-1}=\ln\left\{x+\sqrt{x^2-1}\right\}\quad{(x\ge1)}
+            \end{equation}
+            \begin{equation}
+                \sinh^{-1}=\frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)\quad{(|x|<1)}
+            \end{equation}
+
+            \subsubsection{Conics}
+            \noindent\textbf{Ellipses} \\
+
+            Standard Form:
+            \begin{equation}
+                \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+            \end{equation}
+            Parametric Form:
+            \begin{equation}
+                (a\cos\theta,b\sin\theta)
+            \end{equation}
+            Eccentricity
+            \begin{equation}
+                \begin{gathered}
+                    e<1 \\ b^2=a^2(1-e^2)
+                \end{gathered}
+            \end{equation}
+            Foci:
+            \begin{equation}
+                (\pm ae,0)
+            \end{equation}
+            Directrices:
+            \begin{equation}
+                x=\pm\frac{a}{e}
+            \end{equation}
+            Asymptotes: none \\
+
+            \noindent\textbf{Parabolas} \\
+
+            Standard Form:
+            \begin{equation}
+                y=4ax
+            \end{equation}
+            Parametric Form:
+            \begin{equation}
+                (at^2,2at)
+            \end{equation}
+            Eccentricity:
+            \begin{equation}
+                e=1
+            \end{equation}
+            Foci:
+            \begin{equation}
+                (a,0)
+            \end{equation}
+            Directrices:
+            \begin{equation}
+                x=-a
+            \end{equation}
+            Asymptotes: none \\
+
+            \noindent\textbf{Hyperbolae} \\
+
+            Standard Form:
+            \begin{equation}
+                \frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+            \end{equation}
+            Parametric Forms:
+            \begin{equation}
+                (a\sec\theta,b\tan\theta)
+            \end{equation}
+            \begin{equation}
+                (\pm a\cosh\theta,b\sinh\theta)
+            \end{equation}
+            Eccentricity:
+            \begin{equation}
+                \begin{gathered}
+                    e>1 \\
+                    b^2=a^2(e^2-1)
+                \end{gathered}
+            \end{equation}
+            Foci:
+            \begin{equation}
+                (\pm ae,0)
+            \end{equation}
+            Directrices:
+            \begin{equation}
+                x=\pm\frac{a}{e}
+            \end{equation}
+            Asymptotes:
+            \begin{equation}
+                \frac{x}{a}=\pm\frac{y}{b}
+            \end{equation}
+
+            \noindent\textbf{Rectangular Hyperbolae} \\
+
+            Standard Form:
+            \begin{equation}
+                xy=c^2
+            \end{equation}
+            Parametric Form:
+            \begin{equation}
+                \left(ct,\frac{c}{t}\right)
+            \end{equation}
+            Eccentricity:
+            \begin{equation}
+                e=\sqrt{2}
+            \end{equation}
+            Foci:
+            \begin{equation}
+                (\pm\sqrt{2}c,\pm\sqrt{2}c)
+            \end{equation}
+            Directrices:
+            \begin{equation}
+                x+y=\pm\sqrt{2}c
+            \end{equation}
+            Asymptotes:
+            \begin{equation}
+                x=0,\ y=0
+            \end{equation}
+
+            \subsubsection{Differentiation}
+            \begin{alignat}{2}
+                f(x)&\qquad f'(x) \notag\\
+                \arcsin x&\qquad\frac{1}{\sqrt{1-x^2}} \\
+                \arccos x&\qquad-\frac{1}{\sqrt{1-x^2}} \\
+                \arctan x&\qquad\frac{1}{\sqrt{1+x^2}} \\
+                \sinh x&\qquad\cosh x \\
+                \cosh x&\qquad\sinh x \\
+                \tanh x&\qquad\sech^2x \\
+                \arsinh x&\qquad\frac{1}{1+x^2} \\
+                \arcosh x&\qquad\frac{1}{\sqrt{x^2-1}} \\
+                \artanh x&\qquad \frac{1}{1-x^2}\\
+            \end{alignat}
+
+            \subsubsection{Integration (+ constant; $a>0$ where relevant)}
+            \begin{alignat}{2}
+                f(x)&\qquad \int f(x)dx \notag\\
+                \sinh x&\qquad\cosh x \\
+                \cosh x&\qquad\sinh x \\
+                \tanh x&\qquad\ln\cosh x \\
+                \frac{1}{\sqrt{a^2-x^2}}&\qquad\sin^-1\left(\frac{x}{a}\right)+c\quad(|x|<a) \\
+                \frac{1}{a^2+x^2}&\qquad\frac{1}{a}\tan^-1\left(\frac{x}{a}\right)+c \\
+                \frac{1}{x^2-a^2}&\qquad\cosh^-1(\frac{x}{a})\ \text{or}\ \ln\left\{x+\sqrt{x^2-a^2}+c\quad(x>a)\right\} \\
+                \frac{1}{\sqrt{a^2+x^2}}&\qquad\sinh^{-1}\left(\frac{x}{a}\right)\ \text{or}\ \ln\left\{x+\sqrt{x^2+a^2}\right\}+c \\
+                \frac{1}{a^2-x^2}&\qquad\frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right|=\frac{1}{a}\tanh^{-1}\left(\frac{x}{a}\right)+c\quad(|x|<a) \\
+                \frac{1}{x^2-a^2}&\qquad\frac{1}{2a}\ln\left|\frac{a-x}{a+x}\right|+c
+            \end{alignat}
+
+            \subsubsection{Arc Length}
+            \begin{equation}
+                s=\int\sqrt{1+\left(\frac{dy}{dx}\right)^2}dx\quad\text{(Cartesian coordinates)}
+            \end{equation}
+            \begin{equation}
+                s=\int\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt\quad\text{(parametric form)}
+            \end{equation}
+            \begin{equation}
+                s=\int\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}d\theta\quad\text{(polar form)}
+            \end{equation}
+
+            \subsubsection{Surface Area of Revolution}
+            \begin{equation}
+                s_x=2\pi\int y\sqrt{1+\left(\frac{dy}{dx}\right)^2}dx\quad\text{(Cartesian coordinates)}
+            \end{equation}
+            \begin{equation}
+                s_x=2\pi\int y\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt\quad\text{(parametric form)}
+            \end{equation}
+            \begin{equation}
+                s_x=2\pi\int r\sin\theta\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}d\theta\quad\text{(polar form)}
+            \end{equation}
+
+            \subsection{Mechanics}
+            \subsubsection{Constant Acceleration}
+            \begin{alignat}{2}
+                s=ut+\frac{1}{2}at^2&\qquad\textbf{s}=\textbf{u}t+\frac{1}{2}\textbf{a}t^2 \\
+                s=vt-\frac{1}{2}at^2&\qquad\textbf{s}=\textbf{v}t-\frac{1}{2}\textbf{a}t^2 \\
+                v=u+at&\qquad\textbf{v}=\textbf{u}+\textbf{a}t \\
+                s=\frac{1}{2}(u+v)t&\qquad\textbf{s}=\frac{1}{2}(\textbf{u}+\textbf{v})t \\
+                v^2=u^2+2as&
+            \end{alignat}
+
+            \subsubsection{Centres of Mass}
+            For uniform bodies: \\
+            \begin{equation}
+                \text{Triangular lamina:}\ \frac{2}{3}\ \text{along median from vertex}
+            \end{equation}
+            \begin{equation}
+                \text{Solid hemisphere, radius }r\text{:}\ \frac{3}{8}r\ \text{from centre}
+            \end{equation}
+            \begin{equation}
+                \text{Hemispherical shell:}\ \frac{2}{3}\ \text{along median from vertex}
+            \end{equation}
+            \begin{equation}
+                \text{Circular arc, radius }r\text{ angle at centre }2\alpha\text{:}\ \frac{r\sin\alpha}{\alpha}\ \text{from centre}
+            \end{equation}
+            \begin{equation}
+                \text{Sector of circle, radius }r\text{ angle at centre }2\alpha\text{:}\ \frac{2r\sin\alpha}{3\alpha}\ \text{from centre}
+            \end{equation}
+            \begin{equation}
+                \text{Solid cone or pyramid of height }h\text{:}\ \frac{1}{4}h\ \text{above the base on the line from the centre of the base to the vertex}
+            \end{equation}
+            \begin{equation}
+                \text{Conical shell of height }h\text{:}\ \frac{1}{3}h\ \text{above the base on the line from the centre of the base to the vertex}
+            \end{equation}
+        \newpage
+
+        \subsection{Probability and Statistics}
+        \subsubsection{Probability}
+        \begin{equation}
+            P(A\cup B)=P(A)+P(B)-P(A\cap B)
+        \end{equation}
+        \begin{equation}
+            P(A\cap B)=P(A)\times P(B|A)
+        \end{equation}
+
+        \subsubsection{Standard Deviation}
+        \begin{equation}
+            \sqrt{\frac{\sum(x-\bar{x})^2}{n}}=\sqrt{\frac{\sum x^2}{n}-\bar{x}^2}
+        \end{equation}
+
+        \subsubsection{Discrete Distributions}
+        \noindent\textbf{Binomial $\binomial(n,p)$} \\
+        $P(X=x)$:
+        \begin{equation}
+            \binom{n}{x}p^x(1-p)^{n-x}
+        \end{equation}
+        Mean:
+        \begin{equation}
+            np
+        \end{equation}
+        Variance:
+        \begin{equation}
+            np(1-p)
+        \end{equation}
+
+        \noindent\textbf{Poisson $\poisson(\lambda)$} \\
+        $P(X=x):$
+        \begin{equation}
+            e^{-\lambda}\frac{\lambda^x}{x!}
+        \end{equation}
+        Mean:
+        \begin{equation}
+            \lambda
+        \end{equation}
+        Variance:
+        \begin{equation}
+            \lambda
+        \end{equation}
+        
+        \paragraph{Sampling Distributions}
+        For a random sample $X_1,X_2,\dots,X_n$ of $n$ independent observations from a distribution having mean $\mu$ and a variance $\sigma^2$:
+        \begin{equation}
+            \bar{X}\text{ is an unbiased estimator of }\mu\text{, with }\Var(\bar{X})=\frac{\sigma^2}{n}
+        \end{equation}
+        \begin{equation}
+            S^2\text{ is an unbiased estimator of }\sigma^2\text{, where }S^2=\frac{\sum(X_i-\bar{X})^2}{n-1}
+        \end{equation}
+        For a random sample of $n$ observations from $\normal(\mu,\sigma^2)$:
+        \begin{equation}
+            \frac{\bar{X}-\mu}{\sigma}\sim\normal(0,1)
+        \end{equation}
+        \begin{equation}
+            \frac{\bar{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t_{n-1}
+        \end{equation}
+
+        \subsubsection{Distribution-Free (Non-Parametric) Tests}
+        Contingency tables:
+        \begin{equation}
+            \sum \frac{(O_i-E_i)^2}{E_i}\text{ is approximately distributed as }\chi^2
+        \end{equation}
+        \newpage
+
+    \section{Non-Formula Sheet} \label{non_formula_sheet}
+        \subsection{Pure Mathematics}
+            Quadratic Formula
+            \begin{equation} \label{eq:quadratic_formula}
+                x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+            \end{equation}
+        
+            \subsubsection{Vieta's Formulae}
+                For a \gls{quadratic} $ax^2+bx+c$ with \glspl{root} $\alpha$, $\beta$:
+                \begin{equation}
+                    \sum\alpha=\alpha+\beta=-\frac{b}{a}
+                \end{equation}
+                \begin{equation}
+                    \alpha\beta=\frac{c}{a}
+                \end{equation}
+
+                For a cubic $ax^3+bx^2+cx+d$ with \glspl{root} $\alpha$, $\beta$, $\gamma$:
+                \begin{equation}
+                    \sum\alpha=\alpha+\beta+\gamma=-\frac{b}{a}
+                \end{equation}
+                \begin{equation}
+                    \sum\alpha\beta=\alpha\beta+\alpha\gamma+\beta\gamma=\frac{c}{a}
+                \end{equation}
+                \begin{equation}
+                    \alpha\beta\gamma=-\frac{d}{a}
+                \end{equation}
+
+                For a quartic $ax^4+bx^3+cx^2+dx+e$ with \glspl{root} $\alpha$, $\beta$, $\gamma$, $\delta$:
+                \begin{equation}
+                    \sum\alpha=\alpha+\beta+\gamma+\delta=-\frac{b}{a}
+                \end{equation}
+                \begin{equation}
+                    \sum\alpha\beta=\alpha\beta+\alpha\gamma+\alpha\delta+\beta\gamma+\beta\delta+\gamma\delta=\frac{c}{a}
+                \end{equation}
+                \begin{equation}
+                    \sum\alpha\beta\gamma=\alpha\beta\gamma+\alpha\beta\delta+\alpha\gamma\delta+\beta\gamma\delta=-\frac{d}{a}
+                \end{equation}
+                \begin{equation}
+                    \alpha\beta\gamma\delta=\frac{e}{a}
+                \end{equation}
+
+
+                \subsubsection{{Integration}}
+                \begin{equation}
+                    \int u\frac{du}{dx}dx=uv-\int v\frac{du}{dx}dx
+                \end{equation}
+                \begin{equation}
+                    \int \frac{f'(x)}{f(x)}=\ln|f(x)|+c
+                \end{equation}
+                \begin{align}
+                    \tan x&\qquad\ln|\sec x|+c \\
+                    \cot x&\qquad\ln|\sin x|+c \\
+                    \cosec x&\qquad-\ln|\cosec x+\cot x|=\ln\left|\tan \frac{1}{2}x\right|+c \\
+                    \sec x&\qquad\ln|\sec x+\tan x|=\ln\left|\tan\left(\frac{1}{2}x+\frac{1}{4}\pi\right)\right|+c \\
+                    \sec^2x&\qquad\tan x+c \\
+                    \tanh x&\qquad\ln\cosh x+c
+                \end{align}
+
+            \subsubsection{Binomial Series}
+                \begin{equation}
+                    (a+b)^n=a^n+\binom{n}{1}a^{n-1}b+\binom{n}{2}a^{n-2}b^2+\cdots+\binom{n}{r}a^{n-r}b^r+\cdots+b^n\quad(n\in\N)
+                \end{equation}
+
+                \subsubsection{Arithmetic Series}
+                \begin{equation} \label{eq:arithmetic_series_finite_sum}
+                    S_n=\frac{1}{2}n(a+l)=\frac{1}{2}n[2a+(n-1)d]
+                \end{equation}
+
+                \subsubsection{Geometric Series}
+                \begin{equation} \label{eq:geometric_series_finite_sum}
+                    S_n=\frac{a(1-r^n)}{1-r}
+                \end{equation}
+                \begin{equation} \label{eq:geometric_series_infinite_sum}
+                    S_\infty=\frac{a}{1-r}
+                \end{equation}
+
+            \subsubsection{Trigonometry: Small Angles}
+                \begin{equation} \label{sine_small_angle}
+                    \sin\theta\approx\theta
+                \end{equation}
+                \begin{equation} \label{cosine_small_angle}
+                    \cos\theta\approx1-\frac{\theta^2}{2}
+                \end{equation}
+                \begin{equation} \label{tangent_small_angle}
+                    \tan\theta\approx\theta
+                \end{equation}
+
+            \subsubsection{Trigonometric Identities}
+                \begin{equation} \label{sine_compound_angle_formula}
+                    \sin(A\pm B)=\sin A\cos B\pm\cos A\sin B
+                \end{equation}
+                \begin{equation} \label{cosine_compound_angle_formula}
+                    \cos(A\pm B)=\cos A\cos B\mp\sin A\sin B
+                \end{equation}
+                \begin{equation} \label{sine_addition_formula}
+                    \sin A+\sin B=2\sin{\frac{A+B}{2}}\cos{\frac{A-B}{2}}
+                \end{equation}
+                \begin{equation} \label{sine_subtraction_formula}
+                    \sin A-\sin B=2\cos{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
+                \end{equation}
+                \begin{equation} \label{cosine_addition_formula}
+                    \cos A+\cos B=2\cos{\frac{A+B}{2}}\cos{\frac{A-B}{2}}
+                \end{equation}
+                \begin{equation} \label{cosine_subtraction_formula}
+                    \cos A-\cos B=-2\sin{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
+                \end{equation}
+
+            \subsubsection{Differentiation from First Principles}
+                \begin{equation}
+                    f'(x)=\lim{h->0}{\frac{f(x+h)-f(x)}{h}}
+                \end{equation}
+
+            \subsubsection{Numerical Solutions of Equations}
+                The Newton-Raphson iteration for solving $f(x)=0$:
+                \begin{equation}
+                    x_(n+1)=x_n-\frac{f(x_n)}{f'(x_n)}
+                \end{equation}
+
+            \subsubsection{Numerical Integration}
+                The Trapezium Rule:
+                \begin{equation}
+                    \int_a^bydx\approx\frac{1}{2}\left\{h(y_0+y_n)+2(y_1+y_2+\cdots+y_{n-1})\right\},\ \text{where}\ h=\frac{b-a}{n}
+                \end{equation}
+            
+            \subsubsection{Further Numerical Integration}
+                The mid-ordinate rule:
+                \begin{equation}
+                    \int_a^bydx\approx h\left(y_{\frac{1}{2}+y_{\frac{3}{2}+\cdots+y_{n-\frac{3}{2}}+y_{n-\frac{1}{2}}}}\right)
+                \end{equation}
+                where $h=\frac{b-a}{n}$ \\
+                Simpson's Rule:
+                \begin{equation}
+                    \int_a^bydx\approx\frac{1}{3}h\left\{(y_0+y_n)+4(y_1+y_3+\cdots+y_{n-1}+2(y_2+y_4+\cdots+y_{n-2}))\right\}
+                \end{equation}
+
+            \subsubsection{Numerical Solutions to Differential Equations}
+                For $\frac{dy}{dx}=f(x)$ and small $h$, recurrence relations are: \\
+                Euler's Method:
+                \begin{equation}
+                    y_{n+1}=y_n+hf(x),\quad x_{n+1}=x_n+h
+                \end{equation}
+                For $\frac{dy}{dx}=f(x,y)$: \\
+                Euler's Method:
+                \begin{equation}
+                    y_{r+1}=y_r+hf(x_r,y_r),\quad x_{r+1}=x^r+h
+                \end{equation}
+                Improved Euler's Method:
+                \begin{equation}
+                    y_{r+1}=y_{r-1}+2hf(x_r,y_r),\quad x_{r+1}=x_r+h
+                \end{equation}
+
+            \subsection{Mechanics}
+
+        \subsection{Probability and Statistics}
+
+    \newpage
+
+\printnoidxglossary
+
+\end{document}

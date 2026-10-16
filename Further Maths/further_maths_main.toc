@@ -87,7 +87,7 @@
 \contentsline {subsubsection}{Hyperbolae}{58}{section*.6}%
 \contentsline {subsubsection}{Rectangular Hyperbolae}{58}{section*.7}%
 \contentsline {subsection}{\numberline {A.1.9}Differentiation}{59}{subsection.A.1.9}%
-\contentsline {subsection}{\numberline {A.1.10}Integration (+ constant; $a>0$ where relevant)}{60}{subsection.A.1.10}%
+\contentsline {subsection}{\numberline {A.1.10}Integration (+ constant; $a>0$here relevant)}{60}{subsection.A.1.10}%
 \contentsline {subsection}{\numberline {A.1.11}Arc Length}{60}{subsection.A.1.11}%
 \contentsline {subsection}{\numberline {A.1.12}Surface Area of Revolution}{60}{subsection.A.1.12}%
 \contentsline {section}{\numberline {A.2}Mechanics}{61}{appendix.A.2}%

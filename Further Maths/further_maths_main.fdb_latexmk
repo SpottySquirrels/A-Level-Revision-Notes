@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792175391.60302 "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" "further_maths_main.pdf" "further_maths_main" 1792175394.3045 0
+["pdflatex"] 1792175580.55323 "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" "further_maths_main.pdf" "further_maths_main" 1792175583.26138 0
   "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" 1792169486 2706 120890c11529fe00171c7a9da56d6455 ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1791809797 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1791793187 1004 54797486969f23fa377b128694d548df ""
@@ -198,14 +198,14 @@
   "chapters/core_ii.tex" 1792144970 520 39259115db6b8298166395483694efe5 ""
   "chapters/decision_i.tex" 1792152983 8721 6d89e73a03d7dfd73508620336be024f ""
   "chapters/decision_ii.tex" 1792145182 542 0fe0caa5a0c87d9a282c008b2da7f24f ""
-  "chapters/formula_sheet.tex" 1792146720 13266 34944e045a7d18dfa1cf7b71deec68a7 ""
+  "chapters/formula_sheet.tex" 1792175576 13283 45c04f58efcebca417e2db3159b58b64 ""
   "chapters/formulae_non_formula_sheet.tex" 1792173365 7517 ec0f7a78c3cd52dc36920850f7a644fe ""
   "chapters/mechanics_i.tex" 1792174972 4251 90adc7ef40a8ee2fc9909664d5cd6455 ""
   "chapters/mechanics_ii.tex" 1792145118 328 a2e897f5a3165dcaee2ab364d468c268 ""
-  "further_maths_main.aux" 1792175394 35684 2be35d54d43610d6977fdc1558f46264 "pdflatex"
-  "further_maths_main.out" 1792175394 17431 244f1b0d64319fcf178faa1dd7561d03 "pdflatex"
+  "further_maths_main.aux" 1792175583 35682 7c6aafe1f67b72c954ff7a53629e8b14 "pdflatex"
+  "further_maths_main.out" 1792175583 17408 62814d92cc64c678868ae621a730a8f6 "pdflatex"
   "further_maths_main.tex" 1792169486 2706 120890c11529fe00171c7a9da56d6455 ""
-  "further_maths_main.toc" 1792175394 10019 b02acb74cf0ae24a6b1ae6b5a3b62bff "pdflatex"
+  "further_maths_main.toc" 1792175583 10017 8a1e1ee63a77c4737bca1c4d5468685a "pdflatex"
   "glossary.tex" 1792175387 8740 14c0ffef438ca3419269937911eda95e ""
   (generated)
   "further_maths_main.aux"

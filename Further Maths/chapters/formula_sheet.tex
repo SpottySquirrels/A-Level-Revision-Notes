@@ -1,0 +1,419 @@
+% TODO: Make all sections/subsections one tier higher (subsection > section etc.)
+
+\subsection{Pure Mathematics}
+    \subsubsection{Summations}
+    \begin{equation}
+        \sum_{r=1}^nr^2=\frac{1}{6}n(n+1)(2n+1)
+    \end{equation}
+    \begin{equation}
+        \sum_{r=1}^nr^3=\frac{1}{6}n^2(n+1)^2
+    \end{equation}
+
+    \subsubsection{Matrix Transformations}
+    Anticlockwise rotation through $\theta$ about $O$:
+    \begin{equation}
+        \begin{bmatrix}
+            \cos\theta & -\sin\theta \\
+            \sin\theta & \cos\theta
+        \end{bmatrix}
+    \end{equation}
+    Reflection in the line $y=(\tan\theta)x$:
+    \begin{equation}
+        \begin{bmatrix}
+            \cos2\theta & \sin2\theta \\
+            \sin2\theta & -\cos2\theta
+        \end{bmatrix}
+    \end{equation}
+
+
+
+    The matrices for rotations (in three dimensions) though an angle $\theta$ about one of the axes are:
+    \begin{equation}
+        \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & \cos\theta & -\sin\theta \\
+            0 & \sin\theta & \cos\theta
+        \end{bmatrix}
+        \quad\text{for the}\ x\text{-axis}
+    \end{equation}
+    \begin{equation}
+        \begin{bmatrix}
+            \cos\theta & 0 & \sin\theta \\
+            0 & 1 & 0 \\
+            -\sin\theta & 0 & \cos\theta
+        \end{bmatrix}
+        \quad\text{for the}\ y\text{-axis}
+    \end{equation}
+    \begin{equation}
+        \begin{bmatrix}
+            \cos\theta & -\sin\theta & 0 \\
+            \sin\theta & \cos\theta & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}
+        \quad\text{for the}\ z\text{-axis}
+    \end{equation}
+
+
+
+    \subsubsection{Area of a Sector}
+    \begin{equation}
+        A=\frac{1}{2}\int r^2d\theta\quad\text{(polar coordinates)}
+    \end{equation}
+
+    \subsubsection{Complex Numbers}
+    \begin{equation}
+        [r\cos\theta+i\sin\theta]^n=r^n(\cos n\theta+i\sin n\theta)
+    \end{equation}
+    The \glspl{root} of $z^n=1$ are given by
+    \begin{equation}
+        z=e^{\frac{2\pi ki}{n}},\ \text{for}\ k=0,1,2,\dots,n-1
+    \end{equation}
+
+    \subsubsection{Maclaurin's and Taylor's Series}
+    \begin{equation}
+        f(x)=f(0)+xf'(0)+\frac{x^2}{2!}f''(0)+\cdots+\frac{x^r}{r!}f^{(r)}(0)+\cdots
+    \end{equation}
+    \begin{equation}
+        e^x=\exp(x)=1+x+\frac{x^2}{2!}+\cdots+\frac{x^r}{r!}+\cdots\quad\text{for all}\ x
+    \end{equation}
+    \begin{equation}
+        \ln(n+1)=x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots+(-1)^r\frac{x^r}{r}+\cdots\quad(-1<x\le1)
+    \end{equation}
+    \begin{equation}
+        \cos x=1-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots+(-1)^{r+1}\frac{x^{2r+1}}{(2r+1)!}+\cdots\quad\text{for all}\ x
+    \end{equation}
+    \begin{equation}
+        \cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots+(-1)^r\frac{x^{2r}}{(2r)!}\quad\text{for all}\ x
+    \end{equation}
+    \begin{equation}
+        \arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots+(-1)^r\frac{x^{2r+1}}{2r+1}+\cdots\quad(-1\le x\le1)
+    \end{equation}
+
+    \subsubsection{Vectors}
+    The resolved part of $\textbf{a}$ in the direction of $\textbf{b}$ is
+    \begin{equation}
+        \frac{\textbf{a}\cdot\textbf{b}}{\textbf{b}}
+    \end{equation}
+    Vector Product
+    \begin{equation}
+        \textbf{a}\times\textbf{b}=|\textbf{a}||\textbf{b}|\sin\theta\hat{\textbf{n}}=\left|
+            \begin{matrix}
+                \textbf{i} & \textbf{j} & \textbf{k} \\
+                a_1 & a_2 & a_3 \\
+                b_1 & b_2 & b_3 \\
+            \end{matrix}
+        \right|=
+        \begin{bmatrix}
+            a_2b_3-a_3b_2 \\
+            a_3b_1-a_1b_3 \\
+            a_1b_2-a_2b_1
+        \end{bmatrix}
+    \end{equation}
+    \begin{equation}
+        \textbf{a}\cdot(\textbf{b}b\times\textbf{c})=\left|
+            \begin{matrix}
+                a_1 & a_2 & a_3 \\
+                b_1 & b_2 & b_3 \\
+                c_1 & c_2 & c_3
+            \end{matrix}
+        \right|=\textbf{b}(\textbf{c}\times\textbf{a})=\textbf{c}=(\textbf{a}\times\textbf{b})
+    \end{equation}
+    If $A$ is the point with position vector $\textbf{a}=a_1\textbf{i}+a_2\textbf{j}+a_3\textbf{k}$ and the direction vector $\textbf{b}$ is given by $\textbf{b}=b_1\textbf{i}+b_2\textbf{j}+b_3\textbf{k}$, then the straight line through $A$ with direction vector $\textbf{b}$ has Cartesian equation:
+    \begin{equation}
+        \frac{x-a_1}{b_1}=\frac{y-a_2}{b_2}=\frac{z-a_3}{b_3}=\lambda
+    \end{equation}
+    The plane through $A$ with normal vector $\textbf{n}=n_1\textbf{i}+n_2\textbf{j}+n_3\textbf{k}$ has Cartesian equation:
+    \begin{equation}
+        n_1x+n_2y+n_3z+d=0\text{ where }d=-\textbf{a}\cdot\textbf{n}
+    \end{equation}
+    The plane through non-collinear points $A$, $B$ and $C$ has vector equation:
+    \begin{equation}
+        \textbf{r}=\textbf{a}+\lambda(\textbf{b}-\textbf{a})+\mu(\textbf{c}-\textbf{a})=(1-\lambda-\mu)\textbf{a}+\lambda\textbf{b}+\mu\textbf{c}
+    \end{equation}
+    The plane through $A$ and parallel to $\textbf{b}$ and $\textbf{c}$ as vector equation:
+    \begin{equation}
+        \textbf{r}=\textbf{a}+s\textbf{b}+t\textbf{c}
+    \end{equation}
+    The perpendicular distance of $(\alpha,\beta,\gamma)$ from $n_1x+n_2y+n_3z+d=0$ is:
+    \begin{equation}
+        \frac{|n_1\alpha+n_2\beta+n_3\gamma+d|}{\sqrt{n_1^2+n_2^2+n_3^2}}
+    \end{equation}
+
+    \subsubsection{Hyperbolic Functions}
+    \begin{equation}
+        \cosh^2x-\sinh^2x=1
+    \end{equation}
+    \begin{equation}
+        \sinh2x=2\sinh x\cosh x
+    \end{equation}
+    \begin{equation}
+        \cosh2x=\cosh^2x+\sinh^2x
+    \end{equation}
+    \begin{equation}
+        \cosh^{-1}=\ln\left\{x+\sqrt{x^2-1}\right\}\quad{(x\ge1)}
+    \end{equation}
+    \begin{equation}
+        \sinh^{-1}=\frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)\quad{(|x|<1)}
+    \end{equation}
+
+    \subsubsection{Conics}
+    \noindent\textbf{Ellipses} \\
+
+    Standard Form:
+    \begin{equation}
+        \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+    \end{equation}
+    Parametric Form:
+    \begin{equation}
+        (a\cos\theta,b\sin\theta)
+    \end{equation}
+    Eccentricity
+    \begin{equation}
+        \begin{gathered}
+            e<1 \\ b^2=a^2(1-e^2)
+        \end{gathered}
+    \end{equation}
+    Foci:
+    \begin{equation}
+        (\pm ae,0)
+    \end{equation}
+    Directrices:
+    \begin{equation}
+        x=\pm\frac{a}{e}
+    \end{equation}
+    Asymptotes: none \\
+
+    \noindent\textbf{Parabolas} \\
+
+    Standard Form:
+    \begin{equation}
+        y=4ax
+    \end{equation}
+    Parametric Form:
+    \begin{equation}
+        (at^2,2at)
+    \end{equation}
+    Eccentricity:
+    \begin{equation}
+        e=1
+    \end{equation}
+    Foci:
+    \begin{equation}
+        (a,0)
+    \end{equation}
+    Directrices:
+    \begin{equation}
+        x=-a
+    \end{equation}
+    Asymptotes: none \\
+
+    \noindent\textbf{Hyperbolae} \\
+
+    Standard Form:
+    \begin{equation}
+        \frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+    \end{equation}
+    Parametric Forms:
+    \begin{equation}
+        (a\sec\theta,b\tan\theta)
+    \end{equation}
+    \begin{equation}
+        (\pm a\cosh\theta,b\sinh\theta)
+    \end{equation}
+    Eccentricity:
+    \begin{equation}
+        \begin{gathered}
+            e>1 \\
+            b^2=a^2(e^2-1)
+        \end{gathered}
+    \end{equation}
+    Foci:
+    \begin{equation}
+        (\pm ae,0)
+    \end{equation}
+    Directrices:
+    \begin{equation}
+        x=\pm\frac{a}{e}
+    \end{equation}
+    Asymptotes:
+    \begin{equation}
+        \frac{x}{a}=\pm\frac{y}{b}
+    \end{equation}
+
+    \noindent\textbf{Rectangular Hyperbolae} \\
+
+    Standard Form:
+    \begin{equation}
+        xy=c^2
+    \end{equation}
+    Parametric Form:
+    \begin{equation}
+        \left(ct,\frac{c}{t}\right)
+    \end{equation}
+    Eccentricity:
+    \begin{equation}
+        e=\sqrt{2}
+    \end{equation}
+    Foci:
+    \begin{equation}
+        (\pm\sqrt{2}c,\pm\sqrt{2}c)
+    \end{equation}
+    Directrices:
+    \begin{equation}
+        x+y=\pm\sqrt{2}c
+    \end{equation}
+    Asymptotes:
+    \begin{equation}
+        x=0,\ y=0
+    \end{equation}
+
+    \subsubsection{Differentiation}
+    \begin{alignat}{2}
+        f(x)&\qquad f'(x) \notag\\
+        \arcsin x&\qquad\frac{1}{\sqrt{1-x^2}} \\
+        \arccos x&\qquad-\frac{1}{\sqrt{1-x^2}} \\
+        \arctan x&\qquad\frac{1}{\sqrt{1+x^2}} \\
+        \sinh x&\qquad\cosh x \\
+        \cosh x&\qquad\sinh x \\
+        \tanh x&\qquad\sech^2x \\
+        \arsinh x&\qquad\frac{1}{1+x^2} \\
+        \arcosh x&\qquad\frac{1}{\sqrt{x^2-1}} \\
+        \artanh x&\qquad \frac{1}{1-x^2}\\
+    \end{alignat}
+
+    \subsubsection{Integration (+ constant; $a>0$ where relevant)}
+    \begin{alignat}{2}
+        f(x)&\qquad \int f(x)dx \notag\\
+        \sinh x&\qquad\cosh x \\
+        \cosh x&\qquad\sinh x \\
+        \tanh x&\qquad\ln\cosh x \\
+        \frac{1}{\sqrt{a^2-x^2}}&\qquad\sin^-1\left(\frac{x}{a}\right)+c\quad(|x|<a) \\
+        \frac{1}{a^2+x^2}&\qquad\frac{1}{a}\tan^-1\left(\frac{x}{a}\right)+c \\
+        \frac{1}{x^2-a^2}&\qquad\cosh^-1(\frac{x}{a})\ \text{or}\ \ln\left\{x+\sqrt{x^2-a^2}+c\quad(x>a)\right\} \\
+        \frac{1}{\sqrt{a^2+x^2}}&\qquad\sinh^{-1}\left(\frac{x}{a}\right)\ \text{or}\ \ln\left\{x+\sqrt{x^2+a^2}\right\}+c \\
+        \frac{1}{a^2-x^2}&\qquad\frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right|=\frac{1}{a}\tanh^{-1}\left(\frac{x}{a}\right)+c\quad(|x|<a) \\
+        \frac{1}{x^2-a^2}&\qquad\frac{1}{2a}\ln\left|\frac{a-x}{a+x}\right|+c
+    \end{alignat}
+
+    \subsubsection{Arc Length}
+    \begin{equation}
+        s=\int\sqrt{1+\left(\frac{dy}{dx}\right)^2}dx\quad\text{(Cartesian coordinates)}
+    \end{equation}
+    \begin{equation}
+        s=\int\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt\quad\text{(parametric form)}
+    \end{equation}
+    \begin{equation}
+        s=\int\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}d\theta\quad\text{(polar form)}
+    \end{equation}
+
+    \subsubsection{Surface Area of Revolution}
+    \begin{equation}
+        s_x=2\pi\int y\sqrt{1+\left(\frac{dy}{dx}\right)^2}dx\quad\text{(Cartesian coordinates)}
+    \end{equation}
+    \begin{equation}
+        s_x=2\pi\int y\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt\quad\text{(parametric form)}
+    \end{equation}
+    \begin{equation}
+        s_x=2\pi\int r\sin\theta\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}d\theta\quad\text{(polar form)}
+    \end{equation}
+
+    \subsection{Mechanics}
+    \subsubsection{Constant Acceleration}
+    \begin{alignat}{2}
+        s=ut+\frac{1}{2}at^2&\qquad\textbf{s}=\textbf{u}t+\frac{1}{2}\textbf{a}t^2 \\
+        s=vt-\frac{1}{2}at^2&\qquad\textbf{s}=\textbf{v}t-\frac{1}{2}\textbf{a}t^2 \\
+        v=u+at&\qquad\textbf{v}=\textbf{u}+\textbf{a}t \\
+        s=\frac{1}{2}(u+v)t&\qquad\textbf{s}=\frac{1}{2}(\textbf{u}+\textbf{v})t \\
+        v^2=u^2+2as&
+    \end{alignat}
+
+    \subsubsection{Centres of Mass}
+    For uniform bodies: \\
+    \begin{equation}
+        \text{Triangular lamina:}\ \frac{2}{3}\ \text{along median from vertex}
+    \end{equation}
+    \begin{equation}
+        \text{Solid hemisphere, radius }r\text{:}\ \frac{3}{8}r\ \text{from centre}
+    \end{equation}
+    \begin{equation}
+        \text{Hemispherical shell:}\ \frac{2}{3}\ \text{along median from vertex}
+    \end{equation}
+    \begin{equation}
+        \text{Circular arc, radius }r\text{ angle at centre }2\alpha\text{:}\ \frac{r\sin\alpha}{\alpha}\ \text{from centre}
+    \end{equation}
+    \begin{equation}
+        \text{Sector of circle, radius }r\text{ angle at centre }2\alpha\text{:}\ \frac{2r\sin\alpha}{3\alpha}\ \text{from centre}
+    \end{equation}
+    \begin{equation}
+        \text{Solid cone or pyramid of height }h\text{:}\ \frac{1}{4}h\ \text{above the base on the line from the centre of the base to the vertex}
+    \end{equation}
+    \begin{equation}
+        \text{Conical shell of height }h\text{:}\ \frac{1}{3}h\ \text{above the base on the line from the centre of the base to the vertex}
+    \end{equation}
+\newpage
+
+\subsection{Probability and Statistics}
+\subsubsection{Probability}
+\begin{equation}
+    P(A\cup B)=P(A)+P(B)-P(A\cap B)
+\end{equation}
+\begin{equation}
+    P(A\cap B)=P(A)\times P(B|A)
+\end{equation}
+
+\subsubsection{Standard Deviation}
+\begin{equation}
+    \sqrt{\frac{\sum(x-\bar{x})^2}{n}}=\sqrt{\frac{\sum x^2}{n}-\bar{x}^2}
+\end{equation}
+
+\subsubsection{Discrete Distributions}
+\noindent\textbf{Binomial $\binomial(n,p)$} \\
+$P(X=x)$:
+\begin{equation}
+    \binom{n}{x}p^x(1-p)^{n-x}
+\end{equation}
+Mean:
+\begin{equation}
+    np
+\end{equation}
+Variance:
+\begin{equation}
+    np(1-p)
+\end{equation}
+
+\noindent\textbf{Poisson $\poisson(\lambda)$} \\
+$P(X=x):$
+\begin{equation}
+    e^{-\lambda}\frac{\lambda^x}{x!}
+\end{equation}
+Mean:
+\begin{equation}
+    \lambda
+\end{equation}
+Variance:
+\begin{equation}
+    \lambda
+\end{equation}
+
+\paragraph{Sampling Distributions}
+For a random sample $X_1,X_2,\dots,X_n$ of $n$ independent observations from a distribution having mean $\mu$ and a variance $\sigma^2$:
+\begin{equation}
+    \bar{X}\text{ is an unbiased estimator of }\mu\text{, with }\Var(\bar{X})=\frac{\sigma^2}{n}
+\end{equation}
+\begin{equation}
+    S^2\text{ is an unbiased estimator of }\sigma^2\text{, where }S^2=\frac{\sum(X_i-\bar{X})^2}{n-1}
+\end{equation}
+For a random sample of $n$ observations from $\normal(\mu,\sigma^2)$:
+\begin{equation}
+    \frac{\bar{X}-\mu}{\sigma}\sim\normal(0,1)
+\end{equation}
+\begin{equation}
+    \frac{\bar{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t_{n-1}
+\end{equation}
+
+\subsubsection{Distribution-Free (Non-Parametric) Tests}
+Contingency tables:
+\begin{equation}
+    \sum \frac{(O_i-E_i)^2}{E_i}\text{ is approximately distributed as }\chi^2
+\end{equation}
+\newpage

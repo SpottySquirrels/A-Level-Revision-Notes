@@ -1,0 +1,105 @@
+\documentclass{book}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+\usepackage[toc]{glossaries}
+\usepackage[toc,page]{appendix}
+\usepackage{subfiles}
+
+\frontmatter
+
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\poisson}{Po}
+\DeclareMathOperator{\normal}{N}
+\DeclareMathOperator{\binomial}{B}
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imag}{Im}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\bigO}{\mathcal{O}}
+
+\newcommand{\comment}[1]{} % Allows multiline comments
+
+\title{Further Maths Revision Notes}
+\author{C. Irving}
+\date{}
+
+\makenoidxglossaries
+\loadglsentries{glossary.tex}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+ 
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Core Pure Year I} \label{ch:core_i}
+    \subfile{chapters/core_i.tex}
+
+\chapter{Core Pure Year II} \label{ch:core_ii}
+    \subfile{chapters/core_ii.tex}
+
+\chapter{Decision Year I} \label{ch:decision_i}
+    \subfile{chapters/decision_i.tex}
+
+\chapter{Decision Year II} \label{ch:decision_ii}
+    \subfile{chapters/decision_ii.tex}
+
+\chapter{Further Mechanics Year I} \label{ch:mechanics_i}
+    \subfile{chapters/mechanics_i.tex}
+
+\chapter{Further Mechanics Year II} \label{ch:mechanics_ii}
+    \subfile{chapters/mechanics_ii.tex}
+
+\comment{ % Excluded for now
+\chapter{Further Pure Mathematics Year I} \label{ch:pure_i}
+    \subfile{chapters/pure_i.tex}
+
+\chapter{Further Pure Mathematics Year II} \label{ch:pure_ii}
+    \subfile{chapters/pure_ii.tex}
+\chapter{Further Statistics Year I} \label{ch:statistics_i}
+    \subfile{chapters/statistics_i.tex}
+
+\chapter{Further Statistics Year II} \label{ch:statistics_ii}
+    \subfile{chapters/statistics_i.tex}
+}
+
+\appendix
+\chapter{Appendix: Formula Sheet} \label{ch:formula_sheet}
+    \subfile{chapters/formula_sheet.tex}
+
+\chapter{Non-Formula Sheet} \label{ch:non_formula_sheet}
+    \subfile{chapters/formulae_non_formula_sheet.tex}
+
+\printnoidxglossary
+
+\end{document}

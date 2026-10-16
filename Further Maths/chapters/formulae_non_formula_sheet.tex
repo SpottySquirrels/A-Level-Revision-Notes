@@ -1,0 +1,153 @@
+\subsection{Pure Mathematics}
+    Quadratic Formula
+    \begin{equation} \label{eq:quadratic_formula}
+        x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+    \end{equation}
+
+    \subsubsection{Vieta's Formulae}
+        For a \gls{quadratic} $ax^2+bx+c$ with \glspl{root} $\alpha$, $\beta$:
+        \begin{equation}
+            \sum\alpha=\alpha+\beta=-\frac{b}{a}
+        \end{equation}
+        \begin{equation}
+            \alpha\beta=\frac{c}{a}
+        \end{equation}
+
+        For a cubic $ax^3+bx^2+cx+d$ with \glspl{root} $\alpha$, $\beta$, $\gamma$:
+        \begin{equation}
+            \sum\alpha=\alpha+\beta+\gamma=-\frac{b}{a}
+        \end{equation}
+        \begin{equation}
+            \sum\alpha\beta=\alpha\beta+\alpha\gamma+\beta\gamma=\frac{c}{a}
+        \end{equation}
+        \begin{equation}
+            \alpha\beta\gamma=-\frac{d}{a}
+        \end{equation}
+
+        For a quartic $ax^4+bx^3+cx^2+dx+e$ with \glspl{root} $\alpha$, $\beta$, $\gamma$, $\delta$:
+        \begin{equation}
+            \sum\alpha=\alpha+\beta+\gamma+\delta=-\frac{b}{a}
+        \end{equation}
+        \begin{equation}
+            \sum\alpha\beta=\alpha\beta+\alpha\gamma+\alpha\delta+\beta\gamma+\beta\delta+\gamma\delta=\frac{c}{a}
+        \end{equation}
+        \begin{equation}
+            \sum\alpha\beta\gamma=\alpha\beta\gamma+\alpha\beta\delta+\alpha\gamma\delta+\beta\gamma\delta=-\frac{d}{a}
+        \end{equation}
+        \begin{equation}
+            \alpha\beta\gamma\delta=\frac{e}{a}
+        \end{equation}
+
+
+        \subsubsection{{Integration}}
+        \begin{equation}
+            \int u\frac{du}{dx}dx=uv-\int v\frac{du}{dx}dx
+        \end{equation}
+        \begin{equation}
+            \int \frac{f'(x)}{f(x)}=\ln|f(x)|+c
+        \end{equation}
+        \begin{align}
+            \tan x&\qquad\ln|\sec x|+c \\
+            \cot x&\qquad\ln|\sin x|+c \\
+            \cosec x&\qquad-\ln|\cosec x+\cot x|=\ln\left|\tan \frac{1}{2}x\right|+c \\
+            \sec x&\qquad\ln|\sec x+\tan x|=\ln\left|\tan\left(\frac{1}{2}x+\frac{1}{4}\pi\right)\right|+c \\
+            \sec^2x&\qquad\tan x+c \\
+            \tanh x&\qquad\ln\cosh x+c
+        \end{align}
+
+    \subsubsection{Binomial Series}
+        \begin{equation}
+            (a+b)^n=a^n+\binom{n}{1}a^{n-1}b+\binom{n}{2}a^{n-2}b^2+\cdots+\binom{n}{r}a^{n-r}b^r+\cdots+b^n\quad(n\in\N)
+        \end{equation}
+
+        \subsubsection{Arithmetic Series}
+        \begin{equation} \label{eq:arithmetic_series_finite_sum}
+            S_n=\frac{1}{2}n(a+l)=\frac{1}{2}n[2a+(n-1)d]
+        \end{equation}
+
+        \subsubsection{Geometric Series}
+        \begin{equation} \label{eq:geometric_series_finite_sum}
+            S_n=\frac{a(1-r^n)}{1-r}
+        \end{equation}
+        \begin{equation} \label{eq:geometric_series_infinite_sum}
+            S_\infty=\frac{a}{1-r}
+        \end{equation}
+
+    \subsubsection{Trigonometry: Small Angles}
+        \begin{equation} \label{sine_small_angle}
+            \sin\theta\approx\theta
+        \end{equation}
+        \begin{equation} \label{cosine_small_angle}
+            \cos\theta\approx1-\frac{\theta^2}{2}
+        \end{equation}
+        \begin{equation} \label{tangent_small_angle}
+            \tan\theta\approx\theta
+        \end{equation}
+
+    \subsubsection{Trigonometric Identities}
+        \begin{equation} \label{sine_compound_angle_formula}
+            \sin(A\pm B)=\sin A\cos B\pm\cos A\sin B
+        \end{equation}
+        \begin{equation} \label{cosine_compound_angle_formula}
+            \cos(A\pm B)=\cos A\cos B\mp\sin A\sin B
+        \end{equation}
+        \begin{equation} \label{sine_addition_formula}
+            \sin A+\sin B=2\sin{\frac{A+B}{2}}\cos{\frac{A-B}{2}}
+        \end{equation}
+        \begin{equation} \label{sine_subtraction_formula}
+            \sin A-\sin B=2\cos{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
+        \end{equation}
+        \begin{equation} \label{cosine_addition_formula}
+            \cos A+\cos B=2\cos{\frac{A+B}{2}}\cos{\frac{A-B}{2}}
+        \end{equation}
+        \begin{equation} \label{cosine_subtraction_formula}
+            \cos A-\cos B=-2\sin{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
+        \end{equation}
+
+    \subsubsection{Differentiation from First Principles}
+        \begin{equation}
+            f'(x)=\lim{h->0}{\frac{f(x+h)-f(x)}{h}}
+        \end{equation}
+
+    \subsubsection{Numerical Solutions of Equations}
+        The Newton-Raphson iteration for solving $f(x)=0$:
+        \begin{equation}
+            x_(n+1)=x_n-\frac{f(x_n)}{f'(x_n)}
+        \end{equation}
+
+    \subsubsection{Numerical Integration}
+        The Trapezium Rule:
+        \begin{equation}
+            \int_a^bydx\approx\frac{1}{2}\left\{h(y_0+y_n)+2(y_1+y_2+\cdots+y_{n-1})\right\},\ \text{where}\ h=\frac{b-a}{n}
+        \end{equation}
+    
+    \subsubsection{Further Numerical Integration}
+        The mid-ordinate rule:
+        \begin{equation}
+            \int_a^bydx\approx h\left(y_{\frac{1}{2}+y_{\frac{3}{2}+\cdots+y_{n-\frac{3}{2}}+y_{n-\frac{1}{2}}}}\right)
+        \end{equation}
+        where $h=\frac{b-a}{n}$ \\
+        Simpson's Rule:
+        \begin{equation}
+            \int_a^bydx\approx\frac{1}{3}h\left\{(y_0+y_n)+4(y_1+y_3+\cdots+y_{n-1}+2(y_2+y_4+\cdots+y_{n-2}))\right\}
+        \end{equation}
+
+    \subsubsection{Numerical Solutions to Differential Equations}
+        For $\frac{dy}{dx}=f(x)$ and small $h$, recurrence relations are: \\
+        Euler's Method:
+        \begin{equation}
+            y_{n+1}=y_n+hf(x),\quad x_{n+1}=x_n+h
+        \end{equation}
+        For $\frac{dy}{dx}=f(x,y)$: \\
+        Euler's Method:
+        \begin{equation}
+            y_{r+1}=y_r+hf(x_r,y_r),\quad x_{r+1}=x^r+h
+        \end{equation}
+        Improved Euler's Method:
+        \begin{equation}
+            y_{r+1}=y_{r-1}+2hf(x_r,y_r),\quad x_{r+1}=x_r+h
+        \end{equation}
+
+    \subsection{Mechanics}
+
+    \subsection{Probability and Statistics}

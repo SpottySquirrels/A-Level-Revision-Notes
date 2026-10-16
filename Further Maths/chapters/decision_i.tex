@@ -1,0 +1,116 @@
+\section{Algorithms} \label{algorithms}
+    \section{Basic Algorithms}
+
+    \newpage
+
+    \section{Bubble Sort}
+        \subsection{Description}
+            Bubble sort is an algorithm that sorts an unsorted list of data.
+            It passes through the list, checking each pair of items to see if they need to be swapped to be in order.
+            For example, if it were sorting a list of numbers into numerical order and it found the pair 2, 1, it would swap them.
+            This is an example of a single bubble sort pass, with each comparison marked:
+            \begin{verbatim}
+                [3   5]  8   2   5   6   3
+                3  [5   8]  2   5   6   3
+                3   5  [8   2]  5   6   3
+                3   5   2  [8   5]  6   3
+                3   5   2   5  [8   6]  3
+                3   5   2   5   6  [8   3]
+                3   5   2   5   6   3   8
+            \end{verbatim}
+            Now, the 8 is in the right place, and the bubble sort will do another pass, ignoring the 8, since it must be in the right place after 1 pass, since it is the largest number.
+            In general, after $n$ passes, the last $n$ items are sorted.
+            Bubble sort gets its name from this property of the largets elements `bubbling' to the top (end) of the list.
+            If the algorithm does a pass without swapping any items, it must have already finished sorting the list, so it will return early.
+
+            Example of bubble sort: \\
+            \begin{center}
+            \begin{tabular}{c c c c c c c c}
+                Pass 1: &3 &5 &8 &2 &5 &6 &3 \\
+                Pass 2: &3 &5 &2 &5 &6 &3 &\textbf{8} \\
+                Pass 3: &3 &2 &5 &5 &3 &\textbf{6} &\textbf{8} \\
+                Pass 4: &2 &3 &5 &3 &\textbf{5} &\textbf{6} &\textbf{8} \\
+                Pass 6: &2 &3 &3 &\textbf{5} &\textbf{5} &\textbf{6} &\textbf{8} \\
+                Pass 7: &2 &3 &\textbf{3} &\textbf{5} &\textbf{5} &\textbf{6} &\textbf{8} \\
+                \multicolumn{8}{l}{\textbf{No more swaps; sort complete.}}
+            \end{tabular}
+            \end{center}
+            Notice that pass 6 is the same as pass 7, as only on pass 7 has the algorithm not performed any swaps.
+
+        \subsection{Order}
+            \begin{theorem}
+                Bubble sort has an order of $\bigO(n)$
+            \end{theorem}
+            \begin{proof}
+                Let $n$ be the number of elements in the list to be sorted.
+                This means that (in the worst-case scenario) the bubble sort will have to do $i-1$ pass to guarantee that every item has been sorted (since after the $i$th pass, $i$ items have been sorted, $n-i$ items will be left to sort, the $i$th item must also be sorted).
+                In the $i$th pass, $i-1$ items will have been sorted, so the total number of comparisons will be:
+                $$\sum_{i=1}^n(n-i)=\frac{n(n-1)}{2}=\frac{1}{2}n^2+\frac{1}{2}n$$
+                Taking the fastest-growing term of $\frac{1}{2}n^2+\frac{1}{2}n$ (the $\frac{1}{2}n^2$ term) and discarding the constant coefficient ($\frac{1}{2}$), this gives $n^2$, thus the order of the bubble sort algorithm is $\bigO(n^2)$.
+            \end{proof}
+        
+        \subsection{Implementation}
+            In pseudocode, this is an example implementation of a bubble sort algorithm:
+            \begin{verbatim}
+// Sorts a list using bubble sort; returns sorted list
+// Example:
+//     Input:  [3, 2, 7, 3, 5]
+//     Output: [2, 3, 3, 5, 7]
+//     Explanation: The unsorted input is sorted so the the numbers are returned in order
+FUNC bubble_sort(list):            // Takes an unsorted list as input
+    VAR n = list.UPPER_BOUND
+
+    FOR (i = 0 TO n):                     // Goes through each pass
+        VAR hasSwapped = FALSE
+        FOR (j = 0 TO n - i):             // Goes through each value in the list
+            IF (list[i] > list[j + 1]):   // Checks if items need swapping
+                hasSwapped = TRUE
+                VAR temp = list[j + 1]    // Swaps items
+                list[j + 1] = list[i]
+                list[i] = temp
+            END IF
+        END FOR
+
+        IF (NOT hasSwapped):   // If it doesn't find any items to swap, the list must be sorted
+            OUTPUT("No more swaps; sort complete.")
+            RETURN list        // Return the sorted list early, since there are no more swaps
+        END IF
+    END FOR
+
+    RETURN list                // Returns sorted list
+END FUNC
+            \end{verbatim}
+    \newpage
+
+    \section{Quick Sort}
+        \subsection{Description}
+
+        \subsection{Order}
+
+        \subsection{Implementation}
+
+    \newpage
+
+    \section{Bin-Packing Algorithms}
+
+    \newpage
+    
+    \section{Order of Algorithms}
+
+    \newpage
+
+\newpage
+\section{Graphs} \label{graphs}
+\newpage
+\section{Algorithms on Graphs} \label{algorithms_on_graphs}
+\newpage
+\section{Route Inspection} \label{route_inspection}
+\newpage
+\section{The Travelling Salesman Problem} \label{the_travelling_salesman_problem}
+\newpage
+\section{Linear Programming} \label{linea_programming}
+\newpage
+\section{The Simplex Algorithm} \label{the_simplex_algorithm}
+\newpage
+\section{Critical Path Analysis} \label{critical_path_analysis}
+\newpage

@@ -1,0 +1,109 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Core Pure Year I}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Complex Numbers I}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}The Imaginary Constant}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Complex Arithmetic}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Complex Conjugates}{1}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Complex Roots of Polynomials}{2}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Argand Diagrams}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Complex Numbers on Argand Diagrams}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Modulus-Argument Form}{3}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Loci and Regions in Argand Diagrams}{5}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Series I}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Roots of Polynomials}{6}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Sums of Roots}{6}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Linear Transformations of Roots}{6}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Volumes of Revolution}{7}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Matrices}{8}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Linear Transformations}{9}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Proof by Induction}{10}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Vectors}{11}{section.1.9}%
+\contentsline {chapter}{\numberline {2}Core Pure Year II}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Complex Numbers II}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Series II}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Methods in Calculus}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Polar Coordinates}{16}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Hyperbolic Function}{17}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Methods in Differential Equations}{18}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Modelling with Differential Equations}{19}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Decision Year I}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Algorithms}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Basic Algorithms}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Bubble Sort}{22}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Description}{22}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Order}{22}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Implementation}{23}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Quick Sort}{24}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Description}{24}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Order}{24}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Implementation}{24}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Bin-Packing Algorithms}{25}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Order of Algorithms}{26}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Graphs}{27}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Algorithms on Graphs}{28}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Route Inspection}{29}{section.3.9}%
+\contentsline {section}{\numberline {3.10}The Travelling Salesman Problem}{30}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Linear Programming}{31}{section.3.11}%
+\contentsline {section}{\numberline {3.12}The Simplex Algorithm}{32}{section.3.12}%
+\contentsline {section}{\numberline {3.13}Critical Path Analysis}{33}{section.3.13}%
+\contentsline {chapter}{\numberline {4}Decision Year II}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Transportation Problems}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Allocation Problems}{36}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Flows in Networks I}{37}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Flows in Networks II}{38}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Dynamic Programming}{39}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Game Theory}{40}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Recurrence Relations}{41}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Decision Analysis}{42}{section.4.8}%
+\contentsline {chapter}{\numberline {5}Further Mechanics Year I}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Momentum and Impulse}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Work, Energy and Power}{44}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Elastic Strings and Springs}{45}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Elastic Collisions in One Dimension}{46}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Elastic Collisions in Two Dimensions}{47}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Further Mechanics Year II}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Circular Motion}{49}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Centre of Mass of Plane Figures}{50}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Further Centres of Mass}{51}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Kinematics}{52}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Dynamics}{53}{section.6.5}%
+\contentsline {chapter}{\numberline {A}Appendix: Formula Sheet}{55}{appendix.A}%
+\contentsline {subsection}{\numberline {A.0.1}Pure Mathematics}{55}{subsection.A.0.1}%
+\contentsline {subsubsection}{Summations}{55}{section*.2}%
+\contentsline {subsubsection}{Matrix Transformations}{55}{section*.3}%
+\contentsline {subsubsection}{Area of a Sector}{56}{section*.4}%
+\contentsline {subsubsection}{Complex Numbers}{56}{section*.5}%
+\contentsline {subsubsection}{Maclaurin's and Taylor's Series}{56}{section*.6}%
+\contentsline {subsubsection}{Vectors}{56}{section*.7}%
+\contentsline {subsubsection}{Hyperbolic Functions}{57}{section*.8}%
+\contentsline {subsubsection}{Conics}{57}{section*.9}%
+\contentsline {subsubsection}{Differentiation}{59}{section*.10}%
+\contentsline {subsubsection}{Integration (+ constant; $a>0$ where relevant)}{60}{section*.11}%
+\contentsline {subsubsection}{Arc Length}{60}{section*.12}%
+\contentsline {subsubsection}{Surface Area of Revolution}{60}{section*.13}%
+\contentsline {subsection}{\numberline {A.0.2}Mechanics}{61}{subsection.A.0.2}%
+\contentsline {subsubsection}{Constant Acceleration}{61}{section*.14}%
+\contentsline {subsubsection}{Centres of Mass}{61}{section*.15}%
+\contentsline {subsection}{\numberline {A.0.3}Probability and Statistics}{62}{subsection.A.0.3}%
+\contentsline {subsubsection}{Probability}{62}{section*.16}%
+\contentsline {subsubsection}{Standard Deviation}{62}{section*.17}%
+\contentsline {subsubsection}{Discrete Distributions}{62}{section*.18}%
+\contentsline {paragraph}{Sampling Distributions}{62}{section*.19}%
+\contentsline {subsubsection}{Distribution-Free (Non-Parametric) Tests}{63}{section*.20}%
+\contentsline {chapter}{\numberline {B}Non-Formula Sheet}{65}{appendix.B}%
+\contentsline {subsection}{\numberline {B.0.1}Pure Mathematics}{65}{subsection.B.0.1}%
+\contentsline {subsubsection}{Vieta's Formulae}{65}{section*.21}%
+\contentsline {subsubsection}{{Integration}}{66}{section*.22}%
+\contentsline {subsubsection}{Binomial Series}{66}{section*.23}%
+\contentsline {subsubsection}{Arithmetic Series}{66}{section*.24}%
+\contentsline {subsubsection}{Geometric Series}{66}{section*.25}%
+\contentsline {subsubsection}{Trigonometry: Small Angles}{66}{section*.26}%
+\contentsline {subsubsection}{Trigonometric Identities}{67}{section*.27}%
+\contentsline {subsubsection}{Differentiation from First Principles}{67}{section*.28}%
+\contentsline {subsubsection}{Numerical Solutions of Equations}{67}{section*.29}%
+\contentsline {subsubsection}{Numerical Integration}{67}{section*.30}%
+\contentsline {subsubsection}{Further Numerical Integration}{67}{section*.31}%
+\contentsline {subsubsection}{Numerical Solutions to Differential Equations}{68}{section*.32}%
+\contentsline {subsection}{\numberline {B.0.2}Mechanics}{68}{subsection.B.0.2}%
+\contentsline {subsection}{\numberline {B.0.3}Probability and Statistics}{68}{subsection.B.0.3}%
+\contentsline {chapter}{Glossary}{69}{section*.33}%

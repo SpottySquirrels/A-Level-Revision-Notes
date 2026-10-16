@@ -1,0 +1,204 @@
+\section{Complex Numbers I} \label{complex_numbers_i}
+    \subsection{The Imaginary Constant}
+        Using only the \glspl{real_number}, there is no number $x$ that satisfies the equation $x^2+1=0$.
+        To satisfy this \gls{polynomial}, you must first define a square root of -1.
+        This constant is called the \gls{imaginary_constant} $i$, defined such that $i^2=-1$.
+        
+        Using the \gls{imaginary_constant}, \glspl{complex_number} can be defined as $a+bi$, where $a,b\in\R$.
+        The set of all numbers in the form $a+bi$ is called the set of \glspl{complex_number}, written $\C$.
+
+        The functions $\real(z)$ and $\imag(z)$ (sometimes written as $\Re(z)$ and $\Im(z)$) take the \gls{real_part} and \gls{imaginary_part} of a \gls{complex_number} respectively.
+        For example,
+        \begin{equation} \label{eq:real_part}
+            \text{Re}(a+bi)\equiv\Re(z):=a,\ a,b\in\R
+        \end{equation}
+        \begin{equation} \label{eq:imaginary_part}
+            \text{Im}(a+bi)\equiv\Im(z):=bi,\ a,b\in\R
+        \end{equation}
+
+    \subsection{Complex Arithmetic}
+        \Glspl{complex_number} can be added and multiplied similarly to how binomials would be.
+        Given two \glspl{complex_number} $w:=a+bi$ and $z:=c+di$, where $a,b,c,d\in\R$, the following rules define complex addition and multiplication:
+        \begin{equation} \label{eqn:complex_addition}
+            w+z=(a+bi)+(c+di)=(a+c)+(b+d)i
+        \end{equation}
+        \begin{equation} \label{eqn:complex_multiplication}
+            w\times z=(a+bi)(c+di)=(ac-bd)+(ad+bc)i
+        \end{equation}
+
+    \subsection{Complex Conjugates}
+        The \gls{complex_conjugate} of a \gls{complex_number} of $z$, written as $z^*$ is $z$ with a flipped sign before the imaginary part.
+        \begin{equation}
+            (a+bi)^*:=a-bi,\ a,b\in\R
+        \end{equation}
+        From this definition, we can see that the sum and product of a \gls{complex_number} and its conjugate are both real.
+        Let $z:=a+bi$, where $a,b\in\R$.
+        \begin{equation} \label{eqn:sum_of_conjugate}
+            z+z^*=2a\in\R
+        \end{equation}
+        \begin{equation} \label{eqn:product_of_conjugate}
+            zz^*=a^2+b^2\in\R
+        \end{equation}
+        Using the multiplication rule in equation \ref{eqn:product_of_conjugate}, a fraction of \glspl{complex_number} can be `realised' by multiplying by the \gls{complex_conjugate} of the denominator over itself.
+        \Gls{realising_the_denominator} means rewriting a fraction of \glspl{complex_number} as a fraction with a real denominator.
+        \begin{equation} \label{eqn:realise_denominator}
+        \begin{split}
+            \frac{a+bi}{c+di}&=\frac{a+bi}{c+di}\times\frac{c-di}{c-di}\\
+            &=\frac{(a+bi)(c+di)}{c^2+d^2}\\
+            &=\frac{(ac-bd)+(ad+bc)i}{c^2+d^2}
+        \end{split}
+        \end{equation}
+    \subsection{Complex Roots of Polynomials}
+        All $n$th degree \glspl{polynomial} (\glspl{polynomial} with a power of $x$ up to $x^n$) have exactly $n$ \glspl{root}, counting \glspl{complex_root} and algebraic multiplicities.
+        Therefore, if an equation does not cross $y=0$ on a \gls{cartesian_graph}, it must have other, complex \glspl{root}.
+        The simplest example of this is the \gls{quadratic} $x^2+1=0$.
+        \[x^2=-1\]
+        \[x=\pm i\]
+        For \glspl{quadratic}, whenever the discriminant ($\Delta:=b^2-4ac$ for a \gls{quadratic} $ax^2+bx+c$) is less than $0$, the \gls{quadratic} has \glspl{complex_root}, since the quadratic formula (\ref{eq:quadratic_formula}) can be rewritten as
+        \[x=\frac{-b\pm\sqrt{\Delta}}{2a}\]
+        which would give a \gls{complex_number} whenever $\Delta<0$, since $\sqrt{x}$ is complex iff $x<0$ ($x\in\R$).
+        
+        If a \gls{polynomial} has a \gls{complex_root} $\alpha$, it must also have the \gls{complex_conjugate} \gls{root} $\alpha^*$.
+        For example, if a \gls{quadratic} has a \gls{root} $\alpha=2+3i$, then the other \gls{root} must be $\alpha^*=2-3i$.
+        For a \gls{cubic}, there can only be one pair of \glspl{root}, thus the third \gls{root} cannot be a \gls{complex_root}, since it would have to have a fourth \gls{root} to form a \gls{conjugate_pair}.
+        Thus, the third \gls{root} of a \gls{cubic} must a \gls{real_number}.
+    \newpage
+
+\section{Argand Diagrams} \label{argand_diagrams}
+    \subsection{Complex Numbers on Argand Diagrams}
+        An \gls{argand_diagram} can be thought of similarly to a \gls{cartesian_graph}; \glspl{complex_number} in the form $x+iy$ can be plotted like $(x, y)$ can on a \gls{cartesian_graph}.
+        Instead of an $x$ axis and a $y$ axis, there are instead a real axis and an imaginary axis, used to plot the \gls{real_part} and \gls{imaginary_part} of \glspl{complex_number}.
+        An \gls{argand_diagram} looks like this:
+
+        \begin{center}
+        \begin{tikzpicture}[scale=1.5, >=stealth] % From Gemini
+            % Draw axes
+            \draw[->] (-0.5, 0) -- (4, 0) node[right] {$\real(z)$};
+            \draw[->] (0, -0.5) -- (0, 3) node[above] {$\imag(z)$};
+            
+            % Define coordinates for complex number z = a + bi (e.g., z = 3 + 2i)
+            \coordinate (O) at (0,0);
+            \coordinate (Z) at (3,2);
+            \coordinate (X) at (3,0);
+            
+            % Draw vector from origin to z
+            %\draw[thick, red] (O) -- (Z) node[midway, above left] {$z = a+bi$};
+            \draw[thick, red] (O) -- (Z);
+            \draw[red] (Z) node[above] {$z=a+bi$};
+            % Projection lines to axes
+            \draw[dashed, gray] (Z) -- (X) node[below] {$a$};
+            \draw[dashed, gray] (Z) -- (0,2) node[left] {$b$};
+            
+            % Plot point at z
+            \filldraw[red] (Z) circle (1.5pt);
+            
+            % Draw angle theta
+            %\draw (0.5,0) arc[start angle=0, end angle=33.7, radius=0.5];
+            %\node at (0.7, 0.25) {$\theta$};
+        \end{tikzpicture}
+        \end{center}
+
+        Where the point $z=a+bi$ is drawn where the point $(a, b)$ would be drawn on a \gls{cartesian_graph}.
+        
+    \subsection{Modulus-Argument Form}
+        The \gls{modulus_argument_form} of a \gls{complex_number} is similar to the polar form of a point on a \gls{cartesian_graph}.
+        It defines the point using its distance from the origin, and the angle it makes with the positive half of the real axis, in \glspl{radian}.
+        The \gls{modulus} of $z$ is written as $|z|$, which is calculated using Pythagoras' Theorem:
+        \begin{equation}
+            |z|=\sqrt{\real^2(z)+\imag^2(z)}
+        \end{equation}
+        where $\real^2(z)$ and $\imag^2(z)$ mean $(\real(z))^2$ and $(\imag(z))^2$ respectively.
+        The angle that $z$ makes with the positive real number line is called the \gls{argument}, and is positive, going anti-clockwise if $\imag(z)\ge0$, and negative, going clockwise if $\imag(z)<0$.
+        The \gls{argument} of $z$ is written as $\arg(z)$.
+
+        An \gls{argand_diagram} is split into four \glspl{quadrant}, called \gls{quadrant} 1, 2, 3 and 4:
+
+        \begin{center}
+        \begin{tikzpicture}[scale=1.5, >=stealth]
+            \draw[->] (-2, 0) -- (2, 0) node[right] {$\real(z)$};
+            \draw[->] (0, -2) -- (0, 2) node[above] {$\imag(z)$};
+            
+            \coordinate (Q1) at (1,1);
+            \coordinate (Q2) at (-1,1);
+            \coordinate (Q3) at (-1,-1);
+            \coordinate (Q4) at (1,-1);
+            
+            \draw (Q1) node {Quadrant 1};
+            \draw (Q2) node {Quadrant 2};
+            \draw (Q3) node {Quadrant 3};
+            \draw (Q4) node {Quadrant 4};
+        \end{tikzpicture}
+        \end{center}
+
+
+        For values of $z$ in the first and fourth \glspl{quadrant} ($\real(z)>0$):
+        \begin{equation}
+            \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)
+        \end{equation}
+        For values of $z$ in the second \gls{quadrant}:
+        \begin{equation}
+            \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)+\pi
+        \end{equation}
+        For values of $z$ in the third \gls{quadrant}:
+        \begin{equation}
+            \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)-\pi
+        \end{equation}
+
+        On an \gls{argand_diagram}, the \gls{complex_conjugate} of a number is itself mirror in the line $\imag(z)=0$ (see subsection \ref{ssec:loci_and_regions_in_argand_diagrams}):
+
+        \begin{center}
+        \begin{tikzpicture}[scale=1.5, >=stealth]
+            \draw[->] (-4, 0) -- (4, 0) node[right] {$\real(z)$};
+            \draw[->] (0, -3) -- (0, 3) node[above] {$\imag(z)$};
+            
+            \coordinate (O) at (0,0);
+            \coordinate (Z) at (3,2);
+            \coordinate (conj_Z) at (3,-2);
+            \coordinate (neg_Z) at (-3,-2);
+            \coordinate (neg_conj_Z) at (-3,2);
+            
+            \draw[thick, red] (O) -- (Z);
+            \draw[thick, red] (O) -- (conj_Z);
+            \draw[thick, red] (O) -- (neg_Z);
+            \draw[thick, red] (O) -- (neg_conj_Z);
+
+            \draw[red] (Z) node[above] {$z=a+bi$};
+            \draw[red] (conj_Z) node[below] {$z^*=a-bi$};
+            \draw[red] (neg_Z) node[below] {$-z=-a-bi$};
+            \draw[red] (neg_conj_Z) node[above] {$-z^*=-a+bi$};
+
+            \filldraw[red] (Z) circle (1.5pt);
+            \filldraw[red] (conj_Z) circle (1.5pt);
+            \filldraw[red] (neg_Z) circle (1.5pt);
+            \filldraw[red] (neg_conj_Z) circle (1.5pt);
+        \end{tikzpicture}
+        \end{center}
+
+    \subsection{Loci and Regions in Argand Diagrams} \label{ssec:loci_and_regions_in_argand_diagrams}
+
+    \newpage
+
+\section{Series I} \label{series_i}
+
+\section{Roots of Polynomials} \label{roots_of_polynomials}
+    \subsection{Sums of Roots}
+        The \glspl{root} of \glspl{polynomial} can be related using Vieta's formulae (see ).
+        The \glspl{root} of a general \gls{polynomial} are written as $\alpha$, $\beta$, $\gamma$, $\delta$, etc., and the coefficients are written as $a$, $b$, $c$, $d$, $e$, etc., where $a$ is the coefficient of the greatest power of the \gls{polynomial}, $b$ is the coefficient of the next greatest power, etc.
+        The sum of all \glspl{root} is then written as $\sum\alpha\equiv\alpha+\beta+\cdots$.
+        Multiple \glspl{root} can be multiplied together and then summed, for example the sum of all pairs of \glspl{root} ($\alpha\beta+\alpha\gamma+\cdots$) would be written as $\sum\alpha\beta$.
+        This would be the sum of \textit{all} possible pairs of \glspl{root}.
+
+    \subsection{Linear Transformations of Roots}
+
+\newpage
+\newpage
+\section{Volumes of Revolution} \label{volumes_of_revolution}
+\newpage
+\section{Matrices} \label{matricies}
+\newpage
+\section{Linear Transformations} \label{linear_transformations}
+\newpage
+\section{Proof by Induction} \label{proof_by_induction}
+\newpage
+\section{Vectors} \label{vectors}
+\newpage

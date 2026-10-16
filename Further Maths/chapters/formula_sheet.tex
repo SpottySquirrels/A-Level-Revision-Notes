@@ -1,7 +1,8 @@
-% TODO: Make all sections/subsections one tier higher (subsection > section etc.)
+This formula sheet contains the formulae from the Pearson Edexcel formula sheet.
+    See original \href{https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/pearson-edexcel-a-level-gce-in-mathematics-formulae-book.pdf}{here}.
 
-\subsection{Pure Mathematics}
-    \subsubsection{Summations}
+\section{Pure Mathematics}
+    \subsection{Summations}
     \begin{equation}
         \sum_{r=1}^nr^2=\frac{1}{6}n(n+1)(2n+1)
     \end{equation}
@@ -9,7 +10,7 @@
         \sum_{r=1}^nr^3=\frac{1}{6}n^2(n+1)^2
     \end{equation}
 
-    \subsubsection{Matrix Transformations}
+    \subsection{Matrix Transformations}
     Anticlockwise rotation through $\theta$ about $O$:
     \begin{equation}
         \begin{bmatrix}
@@ -25,42 +26,12 @@
         \end{bmatrix}
     \end{equation}
 
-
-
-    The matrices for rotations (in three dimensions) though an angle $\theta$ about one of the axes are:
-    \begin{equation}
-        \begin{bmatrix}
-            1 & 0 & 0 \\
-            0 & \cos\theta & -\sin\theta \\
-            0 & \sin\theta & \cos\theta
-        \end{bmatrix}
-        \quad\text{for the}\ x\text{-axis}
-    \end{equation}
-    \begin{equation}
-        \begin{bmatrix}
-            \cos\theta & 0 & \sin\theta \\
-            0 & 1 & 0 \\
-            -\sin\theta & 0 & \cos\theta
-        \end{bmatrix}
-        \quad\text{for the}\ y\text{-axis}
-    \end{equation}
-    \begin{equation}
-        \begin{bmatrix}
-            \cos\theta & -\sin\theta & 0 \\
-            \sin\theta & \cos\theta & 0 \\
-            0 & 0 & 1
-        \end{bmatrix}
-        \quad\text{for the}\ z\text{-axis}
-    \end{equation}
-
-
-
-    \subsubsection{Area of a Sector}
+    \subsection{Area of a Sector}
     \begin{equation}
         A=\frac{1}{2}\int r^2d\theta\quad\text{(polar coordinates)}
     \end{equation}
 
-    \subsubsection{Complex Numbers}
+    \subsection{Complex Numbers}
     \begin{equation}
         [r\cos\theta+i\sin\theta]^n=r^n(\cos n\theta+i\sin n\theta)
     \end{equation}
@@ -69,7 +40,7 @@
         z=e^{\frac{2\pi ki}{n}},\ \text{for}\ k=0,1,2,\dots,n-1
     \end{equation}
 
-    \subsubsection{Maclaurin's and Taylor's Series}
+    \subsection{Maclaurin's and Taylor's Series}
     \begin{equation}
         f(x)=f(0)+xf'(0)+\frac{x^2}{2!}f''(0)+\cdots+\frac{x^r}{r!}f^{(r)}(0)+\cdots
     \end{equation}
@@ -89,7 +60,7 @@
         \arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots+(-1)^r\frac{x^{2r+1}}{2r+1}+\cdots\quad(-1\le x\le1)
     \end{equation}
 
-    \subsubsection{Vectors}
+    \subsection{Vectors}
     The resolved part of $\textbf{a}$ in the direction of $\textbf{b}$ is
     \begin{equation}
         \frac{\textbf{a}\cdot\textbf{b}}{\textbf{b}}
@@ -139,7 +110,7 @@
         \frac{|n_1\alpha+n_2\beta+n_3\gamma+d|}{\sqrt{n_1^2+n_2^2+n_3^2}}
     \end{equation}
 
-    \subsubsection{Hyperbolic Functions}
+    \subsection{Hyperbolic Functions}
     \begin{equation}
         \cosh^2x-\sinh^2x=1
     \end{equation}
@@ -156,8 +127,8 @@
         \sinh^{-1}=\frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)\quad{(|x|<1)}
     \end{equation}
 
-    \subsubsection{Conics}
-    \noindent\textbf{Ellipses} \\
+    \subsection{Conics}
+    \subsubsection{Ellipses}
 
     Standard Form:
     \begin{equation}
@@ -181,9 +152,9 @@
     \begin{equation}
         x=\pm\frac{a}{e}
     \end{equation}
-    Asymptotes: none \\
+    Asymptotes: none
 
-    \noindent\textbf{Parabolas} \\
+    \subsubsection{Parabolas}
 
     Standard Form:
     \begin{equation}
@@ -205,9 +176,9 @@
     \begin{equation}
         x=-a
     \end{equation}
-    Asymptotes: none \\
+    Asymptotes: none
 
-    \noindent\textbf{Hyperbolae} \\
+    \subsubsection{Hyperbolae}
 
     Standard Form:
     \begin{equation}
@@ -240,7 +211,7 @@
         \frac{x}{a}=\pm\frac{y}{b}
     \end{equation}
 
-    \noindent\textbf{Rectangular Hyperbolae} \\
+    \subsubsection{Rectangular Hyperbolae}
 
     Standard Form:
     \begin{equation}
@@ -267,7 +238,7 @@
         x=0,\ y=0
     \end{equation}
 
-    \subsubsection{Differentiation}
+    \subsection{Differentiation}
     \begin{alignat}{2}
         f(x)&\qquad f'(x) \notag\\
         \arcsin x&\qquad\frac{1}{\sqrt{1-x^2}} \\
@@ -281,7 +252,7 @@
         \artanh x&\qquad \frac{1}{1-x^2}\\
     \end{alignat}
 
-    \subsubsection{Integration (+ constant; $a>0$ where relevant)}
+    \subsection{Integration (+ constant; $a>0$ where relevant)}
     \begin{alignat}{2}
         f(x)&\qquad \int f(x)dx \notag\\
         \sinh x&\qquad\cosh x \\
@@ -295,7 +266,7 @@
         \frac{1}{x^2-a^2}&\qquad\frac{1}{2a}\ln\left|\frac{a-x}{a+x}\right|+c
     \end{alignat}
 
-    \subsubsection{Arc Length}
+    \subsection{Arc Length}
     \begin{equation}
         s=\int\sqrt{1+\left(\frac{dy}{dx}\right)^2}dx\quad\text{(Cartesian coordinates)}
     \end{equation}
@@ -306,7 +277,7 @@
         s=\int\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}d\theta\quad\text{(polar form)}
     \end{equation}
 
-    \subsubsection{Surface Area of Revolution}
+    \subsection{Surface Area of Revolution}
     \begin{equation}
         s_x=2\pi\int y\sqrt{1+\left(\frac{dy}{dx}\right)^2}dx\quad\text{(Cartesian coordinates)}
     \end{equation}
@@ -317,8 +288,8 @@
         s_x=2\pi\int r\sin\theta\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}d\theta\quad\text{(polar form)}
     \end{equation}
 
-    \subsection{Mechanics}
-    \subsubsection{Constant Acceleration}
+    \section{Mechanics}
+    \subsection{Constant Acceleration}
     \begin{alignat}{2}
         s=ut+\frac{1}{2}at^2&\qquad\textbf{s}=\textbf{u}t+\frac{1}{2}\textbf{a}t^2 \\
         s=vt-\frac{1}{2}at^2&\qquad\textbf{s}=\textbf{v}t-\frac{1}{2}\textbf{a}t^2 \\
@@ -327,7 +298,7 @@
         v^2=u^2+2as&
     \end{alignat}
 
-    \subsubsection{Centres of Mass}
+    \subsection{Centres of Mass}
     For uniform bodies: \\
     \begin{equation}
         \text{Triangular lamina:}\ \frac{2}{3}\ \text{along median from vertex}
@@ -352,8 +323,8 @@
     \end{equation}
 \newpage
 
-\subsection{Probability and Statistics}
-\subsubsection{Probability}
+\section{Probability and Statistics}
+\subsection{Probability}
 \begin{equation}
     P(A\cup B)=P(A)+P(B)-P(A\cap B)
 \end{equation}
@@ -361,13 +332,13 @@
     P(A\cap B)=P(A)\times P(B|A)
 \end{equation}
 
-\subsubsection{Standard Deviation}
+\subsection{Standard Deviation}
 \begin{equation}
     \sqrt{\frac{\sum(x-\bar{x})^2}{n}}=\sqrt{\frac{\sum x^2}{n}-\bar{x}^2}
 \end{equation}
 
-\subsubsection{Discrete Distributions}
-\noindent\textbf{Binomial $\binomial(n,p)$} \\
+\subsection{Discrete Distributions}
+\subsubsection{Binomial $\binomial(n,p)$}
 $P(X=x)$:
 \begin{equation}
     \binom{n}{x}p^x(1-p)^{n-x}
@@ -381,7 +352,7 @@ Variance:
     np(1-p)
 \end{equation}
 
-\noindent\textbf{Poisson $\poisson(\lambda)$} \\
+\subsubsection{Poisson $\poisson(\lambda)$}
 $P(X=x):$
 \begin{equation}
     e^{-\lambda}\frac{\lambda^x}{x!}
@@ -395,7 +366,7 @@ Variance:
     \lambda
 \end{equation}
 
-\paragraph{Sampling Distributions}
+\subsubsection{Sampling Distributions}
 For a random sample $X_1,X_2,\dots,X_n$ of $n$ independent observations from a distribution having mean $\mu$ and a variance $\sigma^2$:
 \begin{equation}
     \bar{X}\text{ is an unbiased estimator of }\mu\text{, with }\Var(\bar{X})=\frac{\sigma^2}{n}
@@ -411,7 +382,7 @@ For a random sample of $n$ observations from $\normal(\mu,\sigma^2)$:
     \frac{\bar{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t_{n-1}
 \end{equation}
 
-\subsubsection{Distribution-Free (Non-Parametric) Tests}
+\subsection{Distribution-Free (Non-Parametric) Tests}
 Contingency tables:
 \begin{equation}
     \sum \frac{(O_i-E_i)^2}{E_i}\text{ is approximately distributed as }\chi^2

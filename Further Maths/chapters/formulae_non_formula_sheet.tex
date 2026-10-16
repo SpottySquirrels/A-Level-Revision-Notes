@@ -106,13 +106,13 @@
 
     \subsubsection{Differentiation from First Principles}
         \begin{equation}
-            f'(x)=\lim{h->0}{\frac{f(x+h)-f(x)}{h}}
+            f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
         \end{equation}
 
     \subsubsection{Numerical Solutions of Equations}
         The Newton-Raphson iteration for solving $f(x)=0$:
         \begin{equation}
-            x_(n+1)=x_n-\frac{f(x_n)}{f'(x_n)}
+            x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
         \end{equation}
 
     \subsubsection{Numerical Integration}
@@ -148,6 +148,33 @@
             y_{r+1}=y_{r-1}+2hf(x_r,y_r),\quad x_{r+1}=x_r+h
         \end{equation}
 
+    \subsubsection{3D Matrices}
+        The matrices for rotations (in three dimensions) though an angle $\theta$ about one of the axes are:
+        \begin{equation}
+            \begin{bmatrix}
+                1 & 0 & 0 \\
+                0 & \cos\theta & -\sin\theta \\
+                0 & \sin\theta & \cos\theta
+            \end{bmatrix}
+            \quad\text{for the}\ x\text{-axis}
+        \end{equation}
+        \begin{equation}
+            \begin{bmatrix}
+                \cos\theta & 0 & \sin\theta \\
+                0 & 1 & 0 \\
+                -\sin\theta & 0 & \cos\theta
+            \end{bmatrix}
+            \quad\text{for the}\ y\text{-axis}
+        \end{equation}
+        \begin{equation}
+            \begin{bmatrix}
+                \cos\theta & -\sin\theta & 0 \\
+                \sin\theta & \cos\theta & 0 \\
+                0 & 0 & 1
+            \end{bmatrix}
+            \quad\text{for the}\ z\text{-axis}
+        \end{equation}
+    
     \subsection{Mechanics}
 
     \subsection{Probability and Statistics}

@@ -68,42 +68,32 @@
 \contentsline {section}{\numberline {6.4}Kinematics}{52}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Dynamics}{53}{section.6.5}%
 \contentsline {chapter}{\numberline {A}Appendix: Formula Sheet}{55}{appendix.A}%
-\contentsline {subsection}{\numberline {A.0.1}Pure Mathematics}{55}{subsection.A.0.1}%
-\contentsline {subsubsection}{Summations}{55}{section*.2}%
-\contentsline {subsubsection}{Matrix Transformations}{55}{section*.3}%
-\contentsline {subsubsection}{Area of a Sector}{56}{section*.4}%
-\contentsline {subsubsection}{Complex Numbers}{56}{section*.5}%
-\contentsline {subsubsection}{Maclaurin's and Taylor's Series}{56}{section*.6}%
-\contentsline {subsubsection}{Vectors}{56}{section*.7}%
-\contentsline {subsubsection}{Hyperbolic Functions}{57}{section*.8}%
-\contentsline {subsubsection}{Conics}{57}{section*.9}%
-\contentsline {subsubsection}{Differentiation}{59}{section*.10}%
-\contentsline {subsubsection}{Integration (+ constant; $a>0$ where relevant)}{60}{section*.11}%
-\contentsline {subsubsection}{Arc Length}{60}{section*.12}%
-\contentsline {subsubsection}{Surface Area of Revolution}{60}{section*.13}%
-\contentsline {subsection}{\numberline {A.0.2}Mechanics}{61}{subsection.A.0.2}%
-\contentsline {subsubsection}{Constant Acceleration}{61}{section*.14}%
-\contentsline {subsubsection}{Centres of Mass}{61}{section*.15}%
-\contentsline {subsection}{\numberline {A.0.3}Probability and Statistics}{62}{subsection.A.0.3}%
-\contentsline {subsubsection}{Probability}{62}{section*.16}%
-\contentsline {subsubsection}{Standard Deviation}{62}{section*.17}%
-\contentsline {subsubsection}{Discrete Distributions}{62}{section*.18}%
-\contentsline {paragraph}{Sampling Distributions}{62}{section*.19}%
-\contentsline {subsubsection}{Distribution-Free (Non-Parametric) Tests}{63}{section*.20}%
-\contentsline {chapter}{\numberline {B}Non-Formula Sheet}{65}{appendix.B}%
-\contentsline {subsection}{\numberline {B.0.1}Pure Mathematics}{65}{subsection.B.0.1}%
-\contentsline {subsubsection}{Vieta's Formulae}{65}{section*.21}%
-\contentsline {subsubsection}{{Integration}}{66}{section*.22}%
-\contentsline {subsubsection}{Binomial Series}{66}{section*.23}%
-\contentsline {subsubsection}{Arithmetic Series}{66}{section*.24}%
-\contentsline {subsubsection}{Geometric Series}{66}{section*.25}%
-\contentsline {subsubsection}{Trigonometry: Small Angles}{66}{section*.26}%
-\contentsline {subsubsection}{Trigonometric Identities}{67}{section*.27}%
-\contentsline {subsubsection}{Differentiation from First Principles}{67}{section*.28}%
-\contentsline {subsubsection}{Numerical Solutions of Equations}{67}{section*.29}%
-\contentsline {subsubsection}{Numerical Integration}{67}{section*.30}%
-\contentsline {subsubsection}{Further Numerical Integration}{67}{section*.31}%
-\contentsline {subsubsection}{Numerical Solutions to Differential Equations}{68}{section*.32}%
-\contentsline {subsection}{\numberline {B.0.2}Mechanics}{68}{subsection.B.0.2}%
-\contentsline {subsection}{\numberline {B.0.3}Probability and Statistics}{68}{subsection.B.0.3}%
-\contentsline {chapter}{Glossary}{69}{section*.33}%
+\contentsline {section}{\numberline {A.1}Pure Mathematics}{55}{appendix.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Summations}{55}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Matrix Transformations}{55}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Area of a Sector}{55}{subsection.A.1.3}%
+\contentsline {subsection}{\numberline {A.1.4}Complex Numbers}{56}{subsection.A.1.4}%
+\contentsline {subsection}{\numberline {A.1.5}Maclaurin's and Taylor's Series}{56}{subsection.A.1.5}%
+\contentsline {subsection}{\numberline {A.1.6}Vectors}{56}{subsection.A.1.6}%
+\contentsline {subsection}{\numberline {A.1.7}Hyperbolic Functions}{57}{subsection.A.1.7}%
+\contentsline {subsection}{\numberline {A.1.8}Conics}{57}{subsection.A.1.8}%
+\contentsline {subsubsection}{Ellipses}{57}{section*.2}%
+\contentsline {subsubsection}{Parabolas}{58}{section*.3}%
+\contentsline {subsubsection}{Hyperbolae}{58}{section*.4}%
+\contentsline {subsubsection}{Rectangular Hyperbolae}{58}{section*.5}%
+\contentsline {subsection}{\numberline {A.1.9}Differentiation}{59}{subsection.A.1.9}%
+\contentsline {subsection}{\numberline {A.1.10}Integration (+ constant; $a>0$ where relevant)}{60}{subsection.A.1.10}%
+\contentsline {subsection}{\numberline {A.1.11}Arc Length}{60}{subsection.A.1.11}%
+\contentsline {subsection}{\numberline {A.1.12}Surface Area of Revolution}{60}{subsection.A.1.12}%
+\contentsline {section}{\numberline {A.2}Mechanics}{61}{appendix.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Constant Acceleration}{61}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Centres of Mass}{61}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}Probability and Statistics}{62}{appendix.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Probability}{62}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Standard Deviation}{62}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Discrete Distributions}{62}{subsection.A.3.3}%
+\contentsline {subsubsection}{Binomial $\binomial (n,p)$}{62}{section*.6}%
+\contentsline {subsubsection}{Poisson $\poisson (\lambda )$}{62}{section*.7}%
+\contentsline {subsubsection}{Sampling Distributions}{62}{section*.8}%
+\contentsline {subsection}{\numberline {A.3.4}Distribution-Free (Non-Parametric) Tests}{63}{subsection.A.3.4}%
+\contentsline {chapter}{Glossary}{65}{section*.9}%

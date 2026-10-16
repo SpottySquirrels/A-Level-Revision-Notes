@@ -1,65 +1,66 @@
+% Core
 \newglossaryentry{imaginary_constant}{
-    name=imaginary constant,
+    name={imaginary constant},
     description={The square root of -1, written $i$},
     plural={imaginary constants}
 }
 \newglossaryentry{real_number}{
-    name=real number,
+    name={real number},
     description={A number on the real number line; a number in the interval $(-\infty, \infty)$.
     The set of real numbers is written $\R$},
     plural={real numbers}
 }
 \newglossaryentry{complex_number}{
-    name=complex number,
+    name={complex number},
     description={A number in the form $a+bi$, where $a,b\in\R$.
     The set of complex numbers is written $\C$},
     plural={complex numbers}
 }
 \newglossaryentry{polynomial}{
-    name=polynomial,
+    name={polynomial},
     description={An expression in the form $a_0+a_1x^1+a_2x^2+\cdots+a_nx^n$},
     plural={polynomials}
 }
 \newglossaryentry{complex_conjugate}{
-    name=complex conjugate,
+    name={complex conjugate},
     description={A complex number with a flipped sign before its imaginary part.
     The complex conjugate of a complex number $z$ is written $z^*$},
     plural={}
 }
 \newglossaryentry{root}{
-    name=root,
+    name={root},
     description={A value that satisfies an equation, for example 1 and -1 are the roots of the equation $x^2-1=0$, since for $x=1$ and $x=-1$, the equation holds},
     plural={roots}
 }
 \newglossaryentry{complex_root}{
-    name=complex root,
+    name={complex root},
     description={A root $x$ of an equation where $x\in\C$.
     It is often also used to mean that $x\notin\R$},
     plural={complex roots}
 }
 \newglossaryentry{cartesian_graph}{
-    name=Cartesian graph,
+    name={Cartesian graph},
     description={A graph in the $x$-$y$ plane},
     plural={Cartesian graphs}
 }
 \newglossaryentry{realising_the_denominator}{
-    name=realising the denominator,
+    name={realising the denominator},
     description={The process of multiplying a complex fraction in the form $\frac{w}{z}$ by $\frac{z^*}{z^*}$ (where $w,z\in\C$) to make the denominator a real value without changing the value of the fraction.},
 }
 \newglossaryentry{quadratic}{
-    name=quadratic,
+    name={quadratic},
     description={A second degree \gls{polynomial}, i.e. an equation in the form $ax^2+bx+c=0$, where $a\neq0$.
     When plotted on a \gls{cartesian_graph}, it forms a parabola.
     Its \glspl{root} are given by the quadratic formula, $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$},
     plural={quadratics}
 }
 \newglossaryentry{conjugate_pair}{
-    name=conjugate pair,
+    name={conjugate pair},
     description={A pair of \glspl{complex_number}, where one is the \gls{complex_conjugate} of the other},
     plural={conjugate pairs}
 }
 \newglossaryentry{cubic}{
-    name=cubic,
+    name={cubic},
     description={A 3rd degree \gls{polynomial}, i.e. an equation in the form $x^3+bx^2+cx+d=0$, where $a\neq0$},
     plural={conjugate pairs}
 }
@@ -69,50 +70,155 @@
     plural={Argand diagrams}
 }
 \newglossaryentry{real_part}{
-    name=real part,
+    name={real part},
     description={The real term of a \gls{complex_number}, i.e. where $z=a+bi,\ a,b\in\Relbar$, the real part of $z$ is $a$
     The real part of a \gls{complex_number} $z$ is written as $\real(z)$ or $\Re(z)$},
     plural={}
 }
 \newglossaryentry{imaginary_part}{
-    name=imaginary part,
+    name={imaginary part},
     description={The coefficient of the imaginary term of a complex number, i.e. where $z=a+bi,\ a,b\in\R$, the imaginary part of $z$ is $b$.
     The imaginary part of a \gls{complex_number} $z$ is written as $imag(z)$ or $\Im(z)$},
     plural={}
 }
 \newglossaryentry{modulus_argument_form}{
-    name=modulus-arguemnt form,
+    name={modulus-arguemnt form},
     description={The form $r(\cos\theta+i\sin\theta)\equiv\cis\theta$},
     plural={}
 }
 \newglossaryentry{radian}{
-    name=radian,
+    name={radian},
     description={An angle unit, equal to the angle required to make the arc length of a unit circle equal 1.
     A whole circle is $2\pi$ radians; half a circle is $\pi$ radians.
     The symbol for radians is either $^\text{c}$ or $\text{rad}$, as in $\pi^\text{c}$ or $\pi\ \text{rad}$, or is often omitted},
     plural={radians}
 }
 \newglossaryentry{modulus}{
-    name=modulus,
+    name={modulus},
     description={The magnitude of a number, where $|x|$ is the modulus of $x$.
     For positive \glspl{real_number}, the modulus is itself, for negative \glspl{real_number}, the modulus is the positive version of itself ($|x|=-x,\ x\in\R^-$).
     For a \gls{complex_number} $z$, $|z|=\sqrt{\real^2(z)+\imag^2(z)}$}, % TODO: come back
     plural={}
 }
 \newglossaryentry{quadrant}{
-    name=quadrant,
+    name={quadrant},
     description={A quarter of a graph; the 1st quadrant is the top right, the second is the top left, the third is the bottom left, and the fourth is the bottom right.},
     plural={quadrants}
 }
 \newglossaryentry{argument}{
-    name=argument,
+    name={argument},
     description={The angle that a \gls{complex_number} makes with the positive real number line.
     It is written as $\arg(z)$.
     The argument is in the real interval $(-\pi,\pi]$},
     plural={arguments}
 }
+
+
+
+% Further Mechanics
+\newglossaryentry{mass}{
+    name={momentum},
+    description={},
+    plural={masses},
+    symbol={$m$}
+}
+\newglossaryentry{velocity}{
+    name={momentum},
+    description={Velocity is a vector quantity measuring the rate of change of position of an object.
+    See equations \ref{}}, % TODO: Put eqn refs here for definitions of velocity
+    plural={velocities},
+    symbol={\textbf{v}}
+}
+\newglossaryentry{momentum}{
+    name={momentum},
+    description={The product of an object's \gls{mass} and \gls{velocity}.
+    It the \glspl{si_unit} \gls{kilogram} \glspl{metre} per \gls{second} (kgms$^{-1}$), or \gls{newton} \glspl{second} (Ns).
+    See equations \ref{eq:momentum_m_v}, \ref{eq:momentum_f_t}},
+    plural={momenta},
+    symbol={\textbf{p}}
+}
+\newglossaryentry{force}{
+    name={force},
+    description={A push or pull on an object.
+    It has the \glspl{si_unit} \glspl{newton} (N).
+    See equations \ref{}}, % TODO: Put eqn refs here for definitions of force
+    plural={forces},
+    symbol={\textbf{F}}
+}
+\newglossaryentry{time}{
+    name={time},
+    description={The progression of existence, represented as the fourth dimension of (3+1)D spacetime.
+    It has the \glspl{si_unit} \glspl{second} (s)},
+    plural={times},
+    symbol={$t$}
+}
+\newglossaryentry{si_unit}{
+    name={SI unit},
+    description={The International System of units; the standard unit system used globally for maths and other STEM subjects.
+    All SI units are made from the 7 base units: the \gls{metre} (m), \gls{kilogram} (kg), the \gls{second} (s), the \gls{ampere} (A), the \gls{kelvin} (K), the \gls{mole} (mol) and the \gls{candela} (cd).
+    All of the base units are derived from 7 universal constants: the speed of light ($c$), the hyperfine transition frequency of caesium-133, the Planck constant ($h$), the Avrogadro constant ($N_A$), the luminous efficacy of 540THz radiation, the Boltzmann constant ($k$), and the elementary change ($e$)},
+    plural={SI units}
+}
+\newglossaryentry{metre}{
+    name={metre},
+    description={The \gls{si_unit} of length},
+    plural={metres},
+    symbol={m}
+}
+\newglossaryentry{kilogram}{
+    name={kilogram},
+    description={The \gls{si_unit} of mass.
+    It appears to have an SI prefix (kilo), however due to historical reasons, it is considered a base unit.
+    The gram still exists, defined as a thousandth of a kilogram},
+    plural={kilograms},
+    symbol={kg}
+}
+\newglossaryentry{second}{
+    name={second},
+    description={The \gls{si_unit} of time},
+    plural={seconds},
+    symbol={s}
+}
+\newglossaryentry{ampere}{
+    name={ampere},
+    description={The \gls{si_unit} of electric current},
+    plural={amperes},
+    symbol={A}
+}
+\newglossaryentry{kelvin}{
+    name={kelvin},
+    description={The \gls{si_unit} of temperature.
+    A change of temperature of 1K is the same as a change of 1$^\circ$C, but 0K is approximately -273$^\circ$C},
+    plural={kelvin},
+    symbol={K}
+}
+\newglossaryentry{mole}{
+    name={mole},
+    description={The \gls{si_unit} of quantity.
+    1mol is approximately the number of atoms of carbon-12 in 12g of carbon-12.
+    It is defined as $N_A^-1$},
+    plural={moles},
+    symbol={mol}
+}
+\newglossaryentry{candela}{
+    name={candela},
+    description={The \gls{si_unit} of luminous intensity.
+    It is approximately the luminous intensity of a wax candle},
+    plural={candela},
+    symbol={cd}
+}
+\newglossaryentry{newton}{
+    name={newton},
+    description={The \gls{si_unit} of force.
+    The newton is not a base unit, but instead is equivalent to a \gls{kilogram} \gls{metre} per \gls{second} squared (kgms$^{-2}$)},
+    plural={newtons}
+    symbol={N}
+}
+
+
+
 \newglossaryentry{}{
-    name=,
+    name={},
     description={},
     plural={}
 }

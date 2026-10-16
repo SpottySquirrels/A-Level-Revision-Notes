@@ -1,5 +1,67 @@
 \section{Momentum and Impulse} \label{momentum_and_impulse}
-\newpage
+    \subsection{Momentum}
+        \Gls{momentum} is the property of an object given by its mass and velocity; the more massive an object is and the faster it is moving, the more \gls{momentum} it has.
+        A car moving slowly won't have much \gls{momentum} since its velocity is low, but if it is moving quickly it will.
+        A bullet thrown by hand wouldn't have much \gls{momentum}, since it is very small and not very fast moving, but when shot, it would have a lot of \gls{momentum}, since it is moving very fast, despite being small.
+        
+        Since \gls{momentum} is proportional to velocity and \gls{momentum}, the equation is given as:
+        \begin{equation}
+            \textbf{p}=m\textbf{v}
+        \end{equation}
+        Where $\textbf{p}$ is \gls{momentum}, $m$ is the mass of the object, and $\textbf{v}$ is the velocity.
+        See equation \ref{eq:momentum_m_v}.
+
+        \subsubsection{Units}
+        In \glspl{si_unit}, \gls{mass} is in \glspl{kilogram} (kg), and \gls{velocity} is in \glspl{metre} per \gls{second} (ms$^{-1}$).
+        Since the two values are multiplied, this means that the units of \gls{velocity} must be \gls{kilogram} \glspl{metre} per \gls{second} (kgms$^{-1}$).
+        
+        However, since newtons are defined as \gls{kilogram} \glspl{metre} per \gls{second} squared (kgms$^{-2}$), newton \glspl{second} (Ns) would be \gls{kilogram} \glspl{metre} per \gls{second} (kgms$^{-1}$), which is the unit for \gls{momentum}, so \gls{momentum} can either be written in kgms$^{-1}$ or in Ns.
+
+        \subsubsection{Force/Time Definition}
+        Since the units of \gls{momentum} can be written as \gls{newton} \glspl{second} (the unit of force $\times$ the unit of time), it looks like it might be possible to write momentum as a product of force and time.
+        \begin{theorem}
+            Momentum is the product of \gls{force} and \gls{time}:
+            \normalfont\begin{equation}
+                \textbf{p}=\textbf{F}t
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            We start the proof with the following identities:
+            \begin{equation} \label{eq:p_f_t_proof_f_m_a_identity}
+                \textbf{F}=m\textbf{a}
+            \end{equation}
+            \begin{equation} \label{eq:p_f_t_proof_a_v_t_identity}
+                \textbf{a}=\frac{\textbf{v}}{t}
+            \end{equation}
+            \begin{equation} \label{eq:p_f_t_proof_p_m_v_identity}
+                \textbf{p}=m\textbf{v}
+            \end{equation}
+            From this, \textbf{F} can be written in terms of $m$, \textbf{v}, and $t$ by substituting equation \ref{eq:p_f_t_proof_a_v_t_identity} into equation \ref{eq:p_f_t_proof_f_m_a_identity} we get:
+            \begin{equation*}
+                \textbf{F}=m\frac{\textbf{v}}{t}
+            \end{equation*}
+            Multiplying both sides by $t$ gives:
+            \begin{equation*}
+                \textbf{F}t=m\textbf{v}
+            \end{equation*}
+            And finally, the $m\textbf{v}$ can be replaced with the identity in equation \ref{eq:p_f_t_proof_p_m_v_identity} to get the result:
+            \begin{equation*}
+                \textbf{p}=\textbf{F}t
+            \end{equation*}
+        \end{proof}
+        This means that the \gls{momentum} given to a particle after exerting a force $\textbf{F}$ for $t$ time will be $\textbf{F}t$.
+
+    \subsection{Impulse}
+        Impulse (\textbf{I}) is the change of \gls{momentum} between two moments, i.e.:
+        \begin{equation}
+            \textbf{I}=\Delta\textbf{p}=m(\textbf{v}-\textbf{u})
+        \end{equation}
+        Where \textbf{v} is final \gls{velocity}, and \textbf{u} is the initial \gls{velocity}.
+
+    \subsection{Momentum and Impulse as Vectors}
+
+    \newpage
+
 \section{Work, Energy and Power} \label{work_energy_and_power}
 \newpage
 \section{Elastic Strings and Springs} \label{elastic_strings_and_springs}

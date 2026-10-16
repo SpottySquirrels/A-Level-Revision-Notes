@@ -1,10 +1,10 @@
-\subsection{Pure Mathematics}
+\section{Pure Mathematics}
     Quadratic Formula
     \begin{equation} \label{eq:quadratic_formula}
         x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
     \end{equation}
 
-    \subsubsection{Vieta's Formulae}
+    \subsection{Vieta's Formulae}
         For a \gls{quadratic} $ax^2+bx+c$ with \glspl{root} $\alpha$, $\beta$:
         \begin{equation}
             \sum\alpha=\alpha+\beta=-\frac{b}{a}
@@ -39,7 +39,7 @@
         \end{equation}
 
 
-        \subsubsection{{Integration}}
+        \subsection{Integration}
         \begin{equation}
             \int u\frac{du}{dx}dx=uv-\int v\frac{du}{dx}dx
         \end{equation}
@@ -55,7 +55,7 @@
             \tanh x&\qquad\ln\cosh x+c
         \end{align}
 
-    \subsubsection{Binomial Series}
+    \subsection{Binomial Series}
         \begin{equation}
             (a+b)^n=a^n+\binom{n}{1}a^{n-1}b+\binom{n}{2}a^{n-2}b^2+\cdots+\binom{n}{r}a^{n-r}b^r+\cdots+b^n\quad(n\in\N)
         \end{equation}
@@ -73,7 +73,7 @@
             S_\infty=\frac{a}{1-r}
         \end{equation}
 
-    \subsubsection{Trigonometry: Small Angles}
+    \subsection{Trigonometry: Small Angles}
         \begin{equation} \label{sine_small_angle}
             \sin\theta\approx\theta
         \end{equation}
@@ -84,7 +84,7 @@
             \tan\theta\approx\theta
         \end{equation}
 
-    \subsubsection{Trigonometric Identities}
+    \subsection{Trigonometric Identities}
         \begin{equation} \label{sine_compound_angle_formula}
             \sin(A\pm B)=\sin A\cos B\pm\cos A\sin B
         \end{equation}
@@ -104,24 +104,24 @@
             \cos A-\cos B=-2\sin{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
         \end{equation}
 
-    \subsubsection{Differentiation from First Principles}
+    \subsection{Differentiation from First Principles}
         \begin{equation}
             f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
         \end{equation}
 
-    \subsubsection{Numerical Solutions of Equations}
+    \subsection{Numerical Solutions of Equations}
         The Newton-Raphson iteration for solving $f(x)=0$:
         \begin{equation}
             x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
         \end{equation}
 
-    \subsubsection{Numerical Integration}
+    \subsection{Numerical Integration}
         The Trapezium Rule:
         \begin{equation}
             \int_a^bydx\approx\frac{1}{2}\left\{h(y_0+y_n)+2(y_1+y_2+\cdots+y_{n-1})\right\},\ \text{where}\ h=\frac{b-a}{n}
         \end{equation}
     
-    \subsubsection{Further Numerical Integration}
+    \subsection{Further Numerical Integration}
         The mid-ordinate rule:
         \begin{equation}
             \int_a^bydx\approx h\left(y_{\frac{1}{2}+y_{\frac{3}{2}+\cdots+y_{n-\frac{3}{2}}+y_{n-\frac{1}{2}}}}\right)
@@ -132,7 +132,7 @@
             \int_a^bydx\approx\frac{1}{3}h\left\{(y_0+y_n)+4(y_1+y_3+\cdots+y_{n-1}+2(y_2+y_4+\cdots+y_{n-2}))\right\}
         \end{equation}
 
-    \subsubsection{Numerical Solutions to Differential Equations}
+    \subsection{Numerical Solutions to Differential Equations}
         For $\frac{dy}{dx}=f(x)$ and small $h$, recurrence relations are: \\
         Euler's Method:
         \begin{equation}
@@ -148,7 +148,7 @@
             y_{r+1}=y_{r-1}+2hf(x_r,y_r),\quad x_{r+1}=x_r+h
         \end{equation}
 
-    \subsubsection{3D Matrices}
+    \subsection{3D Matrices}
         The matrices for rotations (in three dimensions) though an angle $\theta$ about one of the axes are:
         \begin{equation}
             \begin{bmatrix}
@@ -175,6 +175,19 @@
             \quad\text{for the}\ z\text{-axis}
         \end{equation}
     
-    \subsection{Mechanics}
+    \section{Mechanics}
+        \subsection{Momentum and Impulse}
+        \begin{equation} \label{eq:momentum_m_v}
+            \textbf{p}=m\textbf{v}
+        \end{equation}
+        \begin{equation} \label{eq:momentum_f_t}
+            \textbf{p}=\textbf{F}t
+        \end{equation}
+        \begin{equation} \label{eq:impulse_m_delta_v}
+            \textbf{I}=m\Delta\textbf{v}=m(\textbf{v}-\textbf{u})
+        \end{equation}
+        \begin{equation} \label{eq:imulse_delta_p}
+            \textbf{I}=\Delta\textbf{p}=m\textbf{v}-m\textbf{u}
+        \end{equation}
 
-    \subsection{Probability and Statistics}
+    \section{Probability and Statistics}

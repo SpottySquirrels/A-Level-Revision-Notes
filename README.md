@@ -5,4 +5,4 @@
 * Maths (Edexcel)
 * Maths
 
-Look in the folder and find the .pdf file to see the notes.
+Look in the folder and find the *subject*_main.pdf file to see the notes for each subject.

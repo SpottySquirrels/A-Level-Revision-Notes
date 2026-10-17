@@ -414,6 +414,7 @@ INPUT ./chapters/mechanics.tex
 INPUT chapters/mechanics.tex
 INPUT ./chapters/mechanics.tex
 INPUT chapters/mechanics.tex
+INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT ./chapters/statistics.tex
 INPUT chapters/statistics.tex
 INPUT ./chapters/statistics.tex

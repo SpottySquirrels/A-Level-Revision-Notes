@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1792181926.23603 "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Maths/maths_main.tex" "maths_main.pdf" "maths_main" 1792181928.15399 0
+["pdflatex"] 1792267647.03428 "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Maths/maths_main.tex" "maths_main.pdf" "maths_main" 1792267648.94923 0
   "appendices/formula_sheet.tex" 1792181010 0 d41d8cd98f00b204e9800998ecf8427e ""
   "appendices/non_formula_sheet.tex" 1792181029 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Maths/maths_main.tex" 1792181925 1782 b156a3bd3f4b2f4a51ac6a120ad0e629 ""
+  "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Maths/maths_main.tex" 1792267640 1782 b156a3bd3f4b2f4a51ac6a120ad0e629 ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1791809797 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1791793187 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1791793188 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -169,15 +169,15 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1791824077 5655996 795b756740562267ad2ae16e70168a76 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1791824221 3668393 c0fac1dba2d4b93a579dba2b88c8a064 ""
   "c:/texlive/2026/texmf.cnf" 1791824054 713 e69b156964470283e0530f5060668171 ""
-  "chapters/mechanics.tex" 1792181632 609 1923dc4f0aa44bc7798c4018867deaf8 ""
+  "chapters/mechanics.tex" 1792267616 734 182324e040f9783575b0d8bd03ee44e5 ""
   "chapters/pure_i.tex" 1792180448 1010 b72af9413eda679d04e07aa49c7271c3 ""
   "chapters/pure_ii.tex" 1792180719 815 66e3638e1ad9e64f42902b9291c579b7 ""
-  "chapters/statistics.tex" 1792181600 777 c4e397236ae3322e979bf58da525947a ""
+  "chapters/statistics.tex" 1792267586 909 935a98a313da6ace9bcb958a81e545ba ""
   "glossary.tex" 1792180943 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "maths_main.aux" 1792181928 10935 a399c85a87c5a4b1871a5c46afe4b0b3 "pdflatex"
-  "maths_main.out" 1792181928 7776 84c35703fe1ee5b803863d129244d115 "pdflatex"
-  "maths_main.tex" 1792181925 1782 b156a3bd3f4b2f4a51ac6a120ad0e629 ""
-  "maths_main.toc" 1792181928 4092 729b1ac6c8ef5499d59de1e323fbe4e6 "pdflatex"
+  "maths_main.aux" 1792267648 12006 b218e1fcfab684a60899f1caebd6ac8b "pdflatex"
+  "maths_main.out" 1792267648 8492 afc9c8a10e986bfa7b5aed7d9804ef1e "pdflatex"
+  "maths_main.tex" 1792267640 1782 b156a3bd3f4b2f4a51ac6a120ad0e629 ""
+  "maths_main.toc" 1792267648 4592 59cb2cf3fe6f72ee296244cc8f0af19d "pdflatex"
   (generated)
   "maths_main.aux"
   "maths_main.log"

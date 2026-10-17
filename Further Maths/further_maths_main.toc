@@ -28,24 +28,27 @@
 \contentsline {section}{\numberline {2.7}Modelling with Differential Equations}{19}{section.2.7}%
 \contentsline {chapter}{\numberline {3}Decision Year I}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Algorithms}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Basic Algorithms}{21}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Bubble Sort}{22}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Description}{22}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Order}{22}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Implementation}{23}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Quick Sort}{24}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Description}{24}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Order}{24}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Implementation}{24}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Bin-Packing Algorithms}{25}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Order of Algorithms}{26}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Graphs}{27}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Algorithms on Graphs}{28}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Route Inspection}{29}{section.3.9}%
-\contentsline {section}{\numberline {3.10}The Travelling Salesman Problem}{30}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Linear Programming}{31}{section.3.11}%
-\contentsline {section}{\numberline {3.12}The Simplex Algorithm}{32}{section.3.12}%
-\contentsline {section}{\numberline {3.13}Critical Path Analysis}{33}{section.3.13}%
+\contentsline {subsection}{\numberline {3.1.1}Basic Algorithms}{21}{subsection.3.1.1}%
+\contentsline {subsubsection}{Trace Tables}{21}{section*.2}%
+\contentsline {subsubsection}{Flow Charts}{22}{section*.3}%
+\contentsline {subsection}{\numberline {3.1.2}Bubble Sort}{23}{subsection.3.1.2}%
+\contentsline {subsubsection}{Description}{23}{section*.4}%
+\contentsline {subsubsection}{Order}{23}{section*.5}%
+\contentsline {subsubsection}{Implementation}{24}{section*.6}%
+\contentsline {subsection}{\numberline {3.1.3}Quick Sort}{25}{subsection.3.1.3}%
+\contentsline {subsubsection}{Description}{25}{section*.7}%
+\contentsline {subsubsection}{Order}{25}{section*.8}%
+\contentsline {subsubsection}{Implementation}{25}{section*.9}%
+\contentsline {subsection}{\numberline {3.1.4}Bin-Packing Algorithms}{26}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Order of Algorithms}{27}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}Graphs and Networks}{28}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Walks}{28}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Algorithms on Graphs}{29}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Route Inspection}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.5}The Travelling Salesman Problem}{31}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Linear Programming}{32}{section.3.6}%
+\contentsline {section}{\numberline {3.7}The Simplex Algorithm}{33}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Critical Path Analysis}{34}{section.3.8}%
 \contentsline {chapter}{\numberline {4}Decision Year II}{35}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Transportation Problems}{35}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Allocation Problems}{36}{section.4.2}%
@@ -58,8 +61,8 @@
 \contentsline {chapter}{\numberline {5}Further Mechanics Year I}{43}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Momentum and Impulse}{43}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Momentum}{43}{subsection.5.1.1}%
-\contentsline {subsubsection}{Units}{43}{section*.2}%
-\contentsline {subsubsection}{Force/Time Definition}{43}{section*.3}%
+\contentsline {subsubsection}{Units}{43}{section*.10}%
+\contentsline {subsubsection}{Force/Time Definition}{43}{section*.11}%
 \contentsline {subsection}{\numberline {5.1.2}Impulse}{44}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}Momentum and Impulse as Vectors}{44}{subsection.5.1.3}%
 \contentsline {section}{\numberline {5.2}Work, Energy and Power}{45}{section.5.2}%
@@ -82,10 +85,10 @@
 \contentsline {subsection}{\numberline {A.1.6}Vectors}{56}{subsection.A.1.6}%
 \contentsline {subsection}{\numberline {A.1.7}Hyperbolic Functions}{57}{subsection.A.1.7}%
 \contentsline {subsection}{\numberline {A.1.8}Conics}{57}{subsection.A.1.8}%
-\contentsline {subsubsection}{Ellipses}{57}{section*.4}%
-\contentsline {subsubsection}{Parabolas}{58}{section*.5}%
-\contentsline {subsubsection}{Hyperbolae}{58}{section*.6}%
-\contentsline {subsubsection}{Rectangular Hyperbolae}{58}{section*.7}%
+\contentsline {subsubsection}{Ellipses}{57}{section*.12}%
+\contentsline {subsubsection}{Parabolas}{58}{section*.13}%
+\contentsline {subsubsection}{Hyperbolae}{58}{section*.14}%
+\contentsline {subsubsection}{Rectangular Hyperbolae}{58}{section*.15}%
 \contentsline {subsection}{\numberline {A.1.9}Differentiation}{59}{subsection.A.1.9}%
 \contentsline {subsection}{\numberline {A.1.10}Integration (+ constant; $a>0$here relevant)}{60}{subsection.A.1.10}%
 \contentsline {subsection}{\numberline {A.1.11}Arc Length}{60}{subsection.A.1.11}%
@@ -97,17 +100,17 @@
 \contentsline {subsection}{\numberline {A.3.1}Probability}{62}{subsection.A.3.1}%
 \contentsline {subsection}{\numberline {A.3.2}Standard Deviation}{62}{subsection.A.3.2}%
 \contentsline {subsection}{\numberline {A.3.3}Discrete Distributions}{62}{subsection.A.3.3}%
-\contentsline {subsubsection}{Binomial $\binomial (n,p)$}{62}{section*.8}%
-\contentsline {subsubsection}{Poisson $\poisson (\lambda )$}{62}{section*.9}%
-\contentsline {subsubsection}{Sampling Distributions}{62}{section*.10}%
+\contentsline {subsubsection}{Binomial $\binomial (n,p)$}{62}{section*.16}%
+\contentsline {subsubsection}{Poisson $\poisson (\lambda )$}{62}{section*.17}%
+\contentsline {subsubsection}{Sampling Distributions}{62}{section*.18}%
 \contentsline {subsection}{\numberline {A.3.4}Distribution-Free (Non-Parametric) Tests}{63}{subsection.A.3.4}%
 \contentsline {chapter}{\numberline {B}Apendix: Non-Formula Sheet}{65}{appendix.B}%
 \contentsline {section}{\numberline {B.1}Pure Mathematics}{65}{appendix.B.1}%
 \contentsline {subsection}{\numberline {B.1.1}Vieta's Formulae}{65}{subsection.B.1.1}%
 \contentsline {subsection}{\numberline {B.1.2}Integration}{66}{subsection.B.1.2}%
 \contentsline {subsection}{\numberline {B.1.3}Binomial Series}{66}{subsection.B.1.3}%
-\contentsline {subsubsection}{Arithmetic Series}{66}{section*.11}%
-\contentsline {subsubsection}{Geometric Series}{66}{section*.12}%
+\contentsline {subsubsection}{Arithmetic Series}{66}{section*.19}%
+\contentsline {subsubsection}{Geometric Series}{66}{section*.20}%
 \contentsline {subsection}{\numberline {B.1.4}Trigonometry: Small Angles}{66}{subsection.B.1.4}%
 \contentsline {subsection}{\numberline {B.1.5}Trigonometric Identities}{67}{subsection.B.1.5}%
 \contentsline {subsection}{\numberline {B.1.6}Differentiation from First Principles}{67}{subsection.B.1.6}%
@@ -119,4 +122,4 @@
 \contentsline {section}{\numberline {B.2}Mechanics}{68}{appendix.B.2}%
 \contentsline {subsection}{\numberline {B.2.1}Momentum and Impulse}{68}{subsection.B.2.1}%
 \contentsline {section}{\numberline {B.3}Probability and Statistics}{68}{appendix.B.3}%
-\contentsline {chapter}{Glossary}{69}{section*.13}%
+\contentsline {chapter}{Glossary}{69}{section*.21}%

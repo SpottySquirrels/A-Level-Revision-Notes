@@ -1,15 +1,71 @@
 \section{Algorithms} \label{algorithms}
-    \section{Basic Algorithms}
-        An algorithm is a 
+    \subsection{Basic Algorithms}
+        An \gls{algorithm} is a set of instructions that tell a person or computer how to do a task. 
+        \Glspl{algorithm} can be represented in different ways.
+        This is the `happy algorithm' written as a set of steps of instructions and a flow chart:
+        \begin{enumerate}
+            \item Plain language steps (or pseudocode):
+                \begin{itemize}
+                    \item Write down an \gls{integer}
+                    \item Square its digits and find the sum of the squares
+                    \item Continue with this number
+                    \item Repeat until this number is 1 (the number is then considered `happy') or until the \gls{algorithm} gets trapped in a cycle (in which case it is considered `unhappy')
+                \end{itemize}
+            \item Flow Charts (see section \ref{flow_charts}):
+                % TODO
+        \end{enumerate}
+
+        \subsubsection{Trace Tables}
+        \Glspl{trace_table} are used to track vales of different variables in an \gls{algorithm}.
+        For example, for the `happy \gls{algorithm}' (see \emph{TODO: ADD FIG REF}) could be traced for an input of 12:
+
+        \begin{tabular}{c c l c}
+            \textbf{Input number} & \multicolumn{2}{c}{\textbf{Sum of square of digits}} & \textbf{Output} \\
+            12 & 5 & ($1^2+2^2=5$) & - \\
+            5 & 25 & ($5^2=25$) & - \\
+            25 & 29 & ($2^2+5^2=29$) & - \\
+            29 & 85 & ($2^2+9^2=85$) & - \\
+            85 & 89 & ($8^2+5^2=89$) & - \\
+            89 & 145 & ($8^2+9^2=145$) & - \\
+            145 & 42 & ($1^2+4^2+5^2=42$) & - \\
+            42 & 20 & ($4^2+2^2=20$) & - \\
+            20 & 4 & ($2^2+0^2=4$) & - \\
+            4 & 16 & ($4^2=16$) & - \\
+            16 & 37 & ($1^2+6^2=37$) & - \\
+            37 & 58 & ($3^2+7^2=58$) & - \\
+            58 & 89 & ($5^2+8^2=89$) & \Gls{algorithm} has entered a \\ &&& loop; 12 is unhappy.
+        \end{tabular}
+
+        A trace table for an algorithm can be created by following the algorithm through, recording each time each variable changes, in order.
+        The trace table should be written in order, e.g. if there are variables $x,y,z$ and $x$ changes, then $y$ changes, then $x$ changes again before $z$ changes, the change in $z$ would be recorded after the second change in $x$, not in the top row of the $z$ column.
+
+        \subsubsection{Flow Charts} \label{flow_charts}
+            Flow charts are a way of writing algorithms, made up of boxes containing instructions.
+            Each shape of box has a different meaning:
+            \begin{enumerate}
+                \item Rounded box (start/end):
+                    The start/end boxes, also known as terminators, are put at the beginning and end of an algorithm.
+                    % TODO: image
+                \item Rectangle (instruction):
+                    The instruction box tell the person reading the \gls{algorithm} what steps have to be taken, for example a sorting \gls{algorithm} such as \gls{bubble_sort} (see section \ref{bubble_sort}) would have an instruction box telling the person reading the algorithm to swap two elements.
+                    %TODO: image
+                \item Diamond (decision):
+                    A decision box splits the \gls{algorithm}'s flow into multiple different directions based on a boolean decision.
+                    The decision will evaluate a statement, e.g. $a>b?$, and if it is true, it will go to one place to continue executing instructions, and if it is false, it will go somewhere else to continue executing different instructions.
+                    The question in a decision box is always phrased as `$[\text{boolean statement}]?$', e.g. `$x=3?$', or `$\phi\wedge\psi?$'.
+                    As an example, \gls{bubble_sort} (see section \ref{bubble_sort}) would have a decision similar to $\text{list}[i]>\text{list}[i+1]?$ and if it is true, it will swap the two items, otherwise it will continue to the next step.
+                    % TODO: image
+            \end{enumerate}
+            Combining these boxes can allow flow charts to represent more compex programming features, for example loops (flow arrows can connect boxes further on through the program flow to ones from earlier, and decisions can decide to break out of the loop and continue elsewhere).
 
     \newpage
 
-    \section{Bubble Sort}
-        \subsection{Description}
-            Bubble sort is an algorithm that sorts an unsorted list of data.
+    \subsection{Bubble Sort} \label{bubble_sort}
+        \subsubsection{Description}
+            Bubble sort is an \gls{algorithm} that sorts an unsorted list of data (a \gls{sorting_algorithm}).
             It passes through the list, checking each pair of items to see if they need to be swapped to be in order.
             For example, if it were sorting a list of numbers into numerical order and it found the pair 2, 1, it would swap them.
-            This is an example of a single bubble sort pass, with each comparison marked:
+            This is an example of a single \gls{bubble_sort} pass, with each comparison marked:
             \begin{verbatim}
                 [3   5]  8   2   5   6   3
                  3  [5   8]  2   5   6   3
@@ -19,12 +75,12 @@
                  3   5   2   5   6  [8   3]
                  3   5   2   5   6   3   8
             \end{verbatim}
-            Now, the 8 is in the right place, and the bubble sort will do another pass, ignoring the 8, since it must be in the right place after 1 pass, since it is the largest number.
+            Now, the 8 is in the right place, and the \gls{bubble_sort} will do another pass, ignoring the 8, since it must be in the right place after 1 pass, since it is the largest number.
             In general, after $n$ passes, the last $n$ items are sorted.
-            Bubble sort gets its name from this property of the largets elements `bubbling' to the top (end) of the list.
-            If the algorithm does a pass without swapping any items, it must have already finished sorting the list, so it will return early.
+            \Gls{bubble_sort} gets its name from this property of the largets elements `bubbling' to the top (end) of the list.
+            If the \gls{algorithm} does a pass without swapping any items, it must have already finished sorting the list, so it will return early.
 
-            Example of bubble sort:
+            Example of \gls{bubble_sort}:
             \begin{center}
             \begin{tabular}{c c c c c c c c}
                 Pass 1: &3 &5 &8 &2 &5 &6 &3 \\
@@ -38,7 +94,7 @@
             \end{center}
             Notice that pass 6 is the same as pass 7, as only on pass 7 has the algorithm not performed any swaps.
 
-        \subsection{Order}
+        \subsubsection{Order}
             \begin{theorem}
                 Bubble sort has an order of $\bigO(n)$
             \end{theorem}
@@ -50,32 +106,37 @@
                 Taking the fastest-growing term of $\frac{1}{2}n^2+\frac{1}{2}n$ (the $\frac{1}{2}n^2$ term) and discarding the constant coefficient ($\frac{1}{2}$), this gives $n^2$, thus the order of the bubble sort algorithm is $\bigO(n^2)$.
             \end{proof}
         
-        \subsection{Implementation}
+        \subsubsection{Implementation}
             In pseudocode, this is an example implementation of a bubble sort algorithm:
+            
+            % Maximum 66 chars across in a verbatim section (otherwise it goes beyond the regular text and starts complaining)
             \begin{verbatim}
 // Sorts a list using bubble sort; returns sorted list
 // Example:
 //     Input:  [3, 2, 7, 3, 5]
 //     Output: [2, 3, 3, 5, 7]
-//     Explanation: The unsorted input is sorted so the the numbers are returned in order
-FUNC bubble_sort(list):            // Takes an unsorted list as input
-    VAR n = list.UPPER_BOUND
+//     Explanation: The unsorted input is sorted so the the 
+//                  numbers are returned in order
+FUNC bubble_sort(list):            // Takes an unsorted list as
+    VAR n = list.UPPER_BOUND       // input
 
-    FOR (i = 0 TO n):                     // Goes through each pass
-        VAR hasSwapped = FALSE
-        FOR (j = 0 TO n - i):             // Goes through each value in the list
-            IF (list[i] > list[j + 1]):   // Checks if items need swapping
-                hasSwapped = TRUE
+    FOR (i = 0 TO n):                     // Goes through each
+        VAR hasSwapped = FALSE            // pass
+        FOR (j = 0 TO n - i):             // Goes through each
+                                          // value in the list
+            IF (list[i] > list[j + 1]):   // Checks if items need
+                hasSwapped = TRUE         // swapping
                 VAR temp = list[j + 1]    // Swaps items
                 list[j + 1] = list[i]
                 list[i] = temp
             END IF
         END FOR
 
-        IF (NOT hasSwapped):   // If it doesn't find any items to swap, the list must be sorted
+        IF (NOT hasSwapped):   // If it doesn't find any items to
+                               // swap, the list must be sorted
             OUTPUT("No more swaps; sort complete.")
-            RETURN list        // Return the sorted list early, since there are no more swaps
-        END IF
+            RETURN list        // Return the sorted list early,
+        END IF                 // since there are no more swaps
     END FOR
 
     RETURN list                // Returns sorted list
@@ -83,8 +144,8 @@ END FUNC
             \end{verbatim}
     \newpage
 
-    \section{Quick Sort}
-        \subsection{Description}
+    \subsection{Quick Sort}
+        \subsubsection{Description}
             A quick sort is a recursive sorting algorithm.
             It begins by choosing a `pivot' in the middle of the list (the $\lceil\frac{n}{2}\rceil$th element).
             Then, it splits the list into two smaller sub-lists, the left and the right.
@@ -103,7 +164,7 @@ END FUNC
             \end{tabular}
             \end{center}
 
-        \subsection{Order}
+        \subsubsection{Order}
         \begin{theorem}
             Quick sort has an order of $\bigO(n^2)$.
         \end{theorem}
@@ -113,43 +174,89 @@ END FUNC
             Lorem ipsum; QED
         \end{proof}
 
-        \subsection{Implementation}
+        \subsubsection{Implementation}
 
     \newpage
 
-    \section{Bin-Packing Algorithms}
+    \subsection{Bin-Packing Algorithms}
 
     \newpage
     
-    \section{Order of Algorithms}
-        The order of an algorithm is how long it takes an algorithm to finish, based on the size of its input $n$, in the worst-case scenario.
-        This is also called its time complexity, and is written as $\bigO(f(n))$, where $f(n)$ is a function of the algorithm's input size.
+    \subsection{Order of Algorithms}
+        The order of an \gls{algorithm} is how long it takes an \gls{algorithm} to finish, based on the size of its input $n$, in the worst-case scenario.
+        This is also called its time complexity, and is written as $\bigO(f(n))$, where $f(n)$ is a function of the \gls{algorithm}'s input size.
 
-        For example, the linear search algorithm looks through each element in a list one by one, checking to try to find a specific item.
-        The worst case for linear search is if the item being looked for is either not in the list, or is the final item in the list, meaning that the algorithm has to check all $n$ elements.
+        For example, the linear search \gls{algorithm} looks through each element in a list one by one, checking to try to find a specific item.
+        The worst case for linear search is if the item being looked for is either not in the list, or is the final item in the list, meaning that the \gls{algorithm} has to check all $n$ elements.
         This means that linear search has an order of $\bigO(n)$.
 
-        The order of an algorithm can be used to find the time taken for an algorithm to finish based on other recorded times. For example, if an $\bigO(n)$ algorithm takes 5ms to finish with 100 items, it will take 10ms to finish with 200 items.
+        The order of an \gls{algorithm} can be used to find the time taken for an \gls{algorithm} to finish based on other recorded times. For example, if an $\bigO(n)$ algorithm takes 5ms to finish with 100 items, it will take 10ms to finish with 200 items.
         
-        Common orders are $\bigO(1)$ (constant time), $\bigO(n)$ (linear time), $\bigO(n^2)$ (quadratic time), and $\bigO(n^3)$ (cubic time).
+        Common orders are $\bigO(1)$ (constant time), $\bigO(n)$ (linear time), $\bigO(n^2)$ \\ (quadratic time), and $\bigO(n^3)$ (cubic time).
         Quadratic, cubic, etc. time is also called polynomial time.
-        An algorithm is considered more efficient if its order scales slower with a bigger input.
-        For example, if an algorithm runs in constant time ($\bigO(1)$), then that is considered very good, since with an arbitrarily big input, it will still run in the same amount of time.
-        On the other hand, an algorithm with an order of $\bigO(2^x)$ (exponential time) would be considered inefficient and slow, since it scales very quickly as the input grows, making it very slow for large inputs.
+        An \gls{algorithm} is considered more efficient if its order scales slower with a bigger input.
+        For example, if an \gls{algorithm} runs in constant time ($\bigO(1)$), then that is considered very good, since with an arbitrarily big input, it will still run in the same amount of time.
+        On the other hand, an \gls{algorithm} with an order of $\bigO(2^x)$ (exponential time) would be considered inefficient and slow, since it scales very quickly as the input grows, making it very slow for large inputs.
     \newpage
 
-\newpage
-\section{Graphs} \label{graphs}
-\newpage
+\section{Graphs and Networks} \label{graphs_and_networks}
+    \Glspl{graph}, (AKA networks) are sets of \glspl{vertex} (AKA nodes) that are connected by \glspl{edge} (AKA arcs).
+    This is an example of a \gls{graph}, with \glspl{vertex} A, B, C, D, and edges connecting A-B, B-C, A-C, A-D.
+
+    \begin{figure}
+        \begin{center}
+        \begin{tikzpicture}[shorten >=1pt] \label{fig:simple_graph}
+            \node[vertex] (A) at (-1,-1) {A};
+            \node[vertex] (B) at (0,0) {B};
+            \node[vertex] (C) at (1,-1)  {C};
+            \node[vertex] (D) at (-2.5,-1) {D};
+
+            \draw[edge] (A) -- (B);
+            \draw[edge] (B) -- (C);
+            \draw[edge] (C) -- (A);
+            \draw[edge] (D) -- (A);
+
+        \end{tikzpicture}
+        \end{center}
+
+        \caption{A simple graph}
+    \end{figure}
+
+    \Glspl{vertex} have a property called `\gls{vertex_degree}', which means how many \glspl{edge} connect to that \gls{vertex}.
+    For example, in figure \ref{fig:simple_graph}, \gls{vertex} A has a \gls{vertex_degree} of 3, because it is connected to B, C and D, where as \gls{vertex} D has a \gls{vertex_degree} of 1, because it is only connected to \gls{vertex} A.
+
+    \subsection{Walks}
+        A \gls{walk} is a route along \glspl{edge} of a \gls{graph}, but there are other parameters that can be put on a \gls{walk} to make different types of \gls{walk}.
+
+        A \gls{path} is a \gls{walk} where no \gls{vertex} is more than once.
+
+        A \gls{trail} is a \gls{walk} where no \gls{edge} is visited more than once.
+
+        A \gls{cycle} is a \gls{walk} where the first \gls{vertex} visited is also the final \gls{vertex} visited, and no other vertex is visited more than once.
+
+        A \gls{hamiltonian_cycle} is a \gls{cycle} where every \gls{vertex} is visited.
+    \newpage
+
 \section{Algorithms on Graphs} \label{algorithms_on_graphs}
-\newpage
+
+    \newpage
+
 \section{Route Inspection} \label{route_inspection}
-\newpage
+
+    \newpage
+
 \section{The Travelling Salesman Problem} \label{the_travelling_salesman_problem}
-\newpage
+
+    \newpage
+
 \section{Linear Programming} \label{linea_programming}
-\newpage
+
+    \newpage
+
 \section{The Simplex Algorithm} \label{the_simplex_algorithm}
-\newpage
+
+    \newpage
+
 \section{Critical Path Analysis} \label{critical_path_analysis}
-\newpage
+
+    \newpage

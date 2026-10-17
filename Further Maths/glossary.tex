@@ -112,6 +112,12 @@
     The argument is in the real interval $(-\pi,\pi]$},
     plural={arguments}
 }
+\newglossaryentry{integer}{
+    name={integer},
+    description={A number with no decimal part.
+    The set of all integers \\ ($\{\cdots-3,-2,-1,0,1,2,3,\cdots\})$ is written as $\Z$},
+    plural={arguments}
+}
 
 
 
@@ -220,8 +226,102 @@
 % Decision
 \newglossaryentry{algorithm}{
     name={algorithm},
-    description={A set of instructions instructing a person or computer on what steps to follow to achieve a goal},
+    description={A set of instructions instructing a person or computer on what steps to follow to achieve a goal.
+    See section \ref{algorithms}},
     plural={algorithms}
+}
+\newglossaryentry{trace_table}{
+    name={trace table},
+    description={A table that tracks variables while an \gls{algorithm} is running},
+    plural={trace tables}
+}
+\newglossaryentry{instruction}{
+    name={instruction},
+    description={A step of an \gls{algorithm}, telling the person/computer running the \gls{algorithm} what to do at a specific point},
+    plural={instructions}
+}
+\newglossaryentry{sorting_algorithm}{
+    name={sorting algorithm},
+    description={A type of \gls{algorithm} that takes a list of items and sorts them.
+    One example is \gls{bubble_sort}},
+    plural={sorting algorithms}
+}
+\newglossaryentry{bubble_sort}{
+    name={bubble sort},
+    description={A \gls{sorting_algorithm} that looks through each pair of items and swaps them if they are in the wrong order.
+    It has an order of $\bigO(n^2)$.
+    See section \ref{bubble_sort}},
+    plural={bubble sorts}
+}
+\newglossaryentry{graph}{
+    name={graph},
+    description={A set of \glspl{vertex}, connected by \glspl{edge}, also called a network.
+    See section \ref{graphs_and_networks}},
+    plural={graphs}
+}
+\newglossaryentry{vertex}{
+    name={vertex},
+    description={A point of a graph, also called a node},
+    plural={vertices}
+}
+\newglossaryentry{edge}{
+    name={edge},
+    description={A line connecting two \glspl{vertex}, also called an arc.
+    Edges can have weights (weighted edges) and directions (directed edges).
+    These are used to make weighted graphs and directed graphs respectively},
+    plural={edges}
+}
+\newglossaryentry{weighted_edge}{
+    name={weighted edge},
+    description={An \gls{edge} with a weight assigned to it.
+    This is a scalar usually representing a real-world value.
+    For example, if each \gls{edge} represents a road connecting two places (two \glspl{vertex}), then the weight could represent the length of the road, or the time taken to travel it},
+    plural={weighted edges}
+}
+\newglossaryentry{directed_edge}{
+    name={directed edge},
+    description={An \gls{edge} that only connects its two \glspl{vertex} in one direction, and cannot be travelled in the other direction},
+    plural={directed edges}
+}
+\newglossaryentry{weighted_graph}{
+    name={weighted graph},
+    description={A \gls{graph} containing one or more \glspl{weighted_edge}},
+    plural={weighted graphs}
+}
+\newglossaryentry{directed_graph}{
+    name={directed graph},
+    description={A \gls{graph} containing one or more \glspl{directed_edge}},
+    plural={directed graphs}
+}
+\newglossaryentry{vertex_degree}{
+    name={degree},
+    description={(Graph theory) The the number of \glspl{edge} connecting to a given \gls{vertex}},
+    plural={directed graphs}
+}
+\newglossaryentry{walk}{
+    name={walk},
+    description={A route along \glspl{edge} of a \gls{graph}},
+    plural={walks}
+}
+\newglossaryentry{path}{
+    name={path},
+    description={A \gls{walk} where no \gls{vertex} is visited twice},
+    plural={paths}
+}
+\newglossaryentry{trail}{
+    name={trail},
+    description={A \gls{walk} where no \gls{edge} is visited twice},
+    plural={trails}
+}
+\newglossaryentry{cycle}{
+    name={cycle},
+    description={A \gls{walk} where the first \gls{vertex} visited is also the last \gls{vertex} visited, and no other \gls{vertex} is visited twice},
+    plural={cycles}
+}
+\newglossaryentry{hamiltonian_cycle}{
+    name={Hamiltonian cycle},
+    description={A \gls{cycle} where every \gls{vertex} the \gls{graph} is visited},
+    plural={Hamiltonian cycles}
 }
 
 

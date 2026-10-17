@@ -4,7 +4,15 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage[english]{babel}
+
 \usepackage{tikz}
+\tikzset{
+    % Graph styles
+    vertex/.style={circle,fill=white,minimum size=12pt,inner sep=2pt,draw=black},
+    edge/.style={thick,black,shorten >=0pt,shorten <=0pt},
+    directed_edge/.style={edge,-stealth}
+}
+
 \usepackage{amsfonts}
 
 \usepackage{hyperref}
@@ -43,6 +51,12 @@
 \DeclareMathOperator{\bigO}{\mathcal{O}}
 
 \newcommand{\comment}[1]{} % Allows multiline comments
+
+\makeatletter % Temporarily makes '@' a letter
+% Makes figures and tables place `here', instead of defaulting to the top of the page
+\renewcommand{\fps@figure}{htbp}
+\renewcommand{\fps@table}{htbp}
+\makeatother
 
 \title{Further Maths Revision Notes}
 \author{C. Irving}

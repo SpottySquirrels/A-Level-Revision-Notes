@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792255241.92462 "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" "further_maths_main.pdf" "further_maths_main" 1792255245.11458 0
-  "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" 1792253682 3156 e50ed5824047e368268fa7792b9ecafd ""
+["pdflatex"] 1792265871.52326 "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" "further_maths_main.pdf" "further_maths_main" 1792265874.59386 0
+  "c:/Users/caden/OneDrive/Documents/A Level Revision Notes/Further Maths/further_maths_main.tex" 1792255709 3158 f71a8577d77c1d66cd9dac388193e7b2 ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1791794581 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1791809797 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1791809089 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -197,7 +197,7 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1791824077 5655996 795b756740562267ad2ae16e70168a76 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1791824221 3668393 c0fac1dba2d4b93a579dba2b88c8a064 ""
   "c:/texlive/2026/texmf.cnf" 1791824054 713 e69b156964470283e0530f5060668171 ""
-  "chapters/core_i.tex" 1792255237 11180 380dc0aaf6170e583440513bbe696b83 ""
+  "chapters/core_i.tex" 1792255862 11185 68c1d92e8b48f419a73bb46b8ea72d3d ""
   "chapters/core_ii.tex" 1792144970 520 39259115db6b8298166395483694efe5 ""
   "chapters/decision_i.tex" 1792255132 15440 fa8be5c19bbba5325d543b1da15ea614 ""
   "chapters/decision_ii.tex" 1792145182 542 0fe0caa5a0c87d9a282c008b2da7f24f ""
@@ -205,10 +205,13 @@
   "chapters/formulae_non_formula_sheet.tex" 1792255237 7541 53df86c71877b6912ba7d30133458bf2 ""
   "chapters/mechanics_i.tex" 1792174972 4251 90adc7ef40a8ee2fc9909664d5cd6455 ""
   "chapters/mechanics_ii.tex" 1792145118 328 a2e897f5a3165dcaee2ab364d468c268 ""
-  "further_maths_main.aux" 1792255244 43223 9ec87472ae2b6cc4357929db97a902a1 "pdflatex"
-  "further_maths_main.out" 1792255244 16968 d36ab1c3e3854b93c041e25c60b00105 "pdflatex"
-  "further_maths_main.tex" 1792253682 3156 e50ed5824047e368268fa7792b9ecafd ""
-  "further_maths_main.toc" 1792255244 10154 fbc0ea9d34d1ba063bb14b6991edaea5 "pdflatex"
+  "chapters/pure_i.tex" 1792265870 11429 1f9c5bd94e1de66a0b8026477beddadf ""
+  "chapters/pure_ii.tex" 1792145209 274 460f87a42dcdd2babc91c22d2603fbba ""
+  "chapters/statistics_i.tex" 1792145117 438 21541d286d990dd692a1f44282899382 ""
+  "further_maths_main.aux" 1792265874 51168 cb9ce71bfdbe1e00cb7c0b5d53d627dd "pdflatex"
+  "further_maths_main.out" 1792265874 23219 4599622321bc5dd333e54c262ad4cb00 "pdflatex"
+  "further_maths_main.tex" 1792255709 3158 f71a8577d77c1d66cd9dac388193e7b2 ""
+  "further_maths_main.toc" 1792265874 13340 53253bad19528d5a88be902e486d3b18 "pdflatex"
   "glossary.tex" 1792254998 12912 5c6afd92a4e7b69baefc52cf930f7d04 ""
   (generated)
   "further_maths_main.aux"

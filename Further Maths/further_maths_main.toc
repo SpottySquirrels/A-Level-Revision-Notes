@@ -75,51 +75,89 @@
 \contentsline {section}{\numberline {6.3}Further Centres of Mass}{51}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Kinematics}{52}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Dynamics}{53}{section.6.5}%
-\contentsline {chapter}{\numberline {A}Appendix: Formula Sheet}{55}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Pure Mathematics}{55}{appendix.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}Summations}{55}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}Matrix Transformations}{55}{subsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.1.3}Area of a Sector}{55}{subsection.A.1.3}%
-\contentsline {subsection}{\numberline {A.1.4}Complex Numbers}{56}{subsection.A.1.4}%
-\contentsline {subsection}{\numberline {A.1.5}Maclaurin's and Taylor's Series}{56}{subsection.A.1.5}%
-\contentsline {subsection}{\numberline {A.1.6}Vectors}{56}{subsection.A.1.6}%
-\contentsline {subsection}{\numberline {A.1.7}Hyperbolic Functions}{57}{subsection.A.1.7}%
-\contentsline {subsection}{\numberline {A.1.8}Conics}{57}{subsection.A.1.8}%
-\contentsline {subsubsection}{Ellipses}{57}{section*.12}%
-\contentsline {subsubsection}{Parabolas}{58}{section*.13}%
-\contentsline {subsubsection}{Hyperbolae}{58}{section*.14}%
-\contentsline {subsubsection}{Rectangular Hyperbolae}{58}{section*.15}%
-\contentsline {subsection}{\numberline {A.1.9}Differentiation}{59}{subsection.A.1.9}%
-\contentsline {subsection}{\numberline {A.1.10}Integration (+ constant; $a>0$here relevant)}{60}{subsection.A.1.10}%
-\contentsline {subsection}{\numberline {A.1.11}Arc Length}{60}{subsection.A.1.11}%
-\contentsline {subsection}{\numberline {A.1.12}Surface Area of Revolution}{60}{subsection.A.1.12}%
-\contentsline {section}{\numberline {A.2}Mechanics}{61}{appendix.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Constant Acceleration}{61}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Centres of Mass}{61}{subsection.A.2.2}%
-\contentsline {section}{\numberline {A.3}Probability and Statistics}{62}{appendix.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Probability}{62}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Standard Deviation}{62}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Discrete Distributions}{62}{subsection.A.3.3}%
-\contentsline {subsubsection}{Binomial $\binomial (n,p)$}{62}{section*.16}%
-\contentsline {subsubsection}{Poisson $\poisson (\lambda )$}{62}{section*.17}%
-\contentsline {subsubsection}{Sampling Distributions}{62}{section*.18}%
-\contentsline {subsection}{\numberline {A.3.4}Distribution-Free (Non-Parametric) Tests}{63}{subsection.A.3.4}%
-\contentsline {chapter}{\numberline {B}Apendix: Non-Formula Sheet}{65}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Pure Mathematics}{65}{appendix.B.1}%
-\contentsline {subsection}{\numberline {B.1.1}Vieta's Formulae}{65}{subsection.B.1.1}%
-\contentsline {subsection}{\numberline {B.1.2}Integration}{66}{subsection.B.1.2}%
-\contentsline {subsection}{\numberline {B.1.3}Binomial Series}{66}{subsection.B.1.3}%
-\contentsline {subsubsection}{Arithmetic Series}{66}{section*.19}%
-\contentsline {subsubsection}{Geometric Series}{66}{section*.20}%
-\contentsline {subsection}{\numberline {B.1.4}Trigonometry: Small Angles}{66}{subsection.B.1.4}%
-\contentsline {subsection}{\numberline {B.1.5}Trigonometric Identities}{67}{subsection.B.1.5}%
-\contentsline {subsection}{\numberline {B.1.6}Differentiation from First Principles}{67}{subsection.B.1.6}%
-\contentsline {subsection}{\numberline {B.1.7}Numerical Solutions of Equations}{67}{subsection.B.1.7}%
-\contentsline {subsection}{\numberline {B.1.8}Numerical Integration}{67}{subsection.B.1.8}%
-\contentsline {subsection}{\numberline {B.1.9}Further Numerical Integration}{67}{subsection.B.1.9}%
-\contentsline {subsection}{\numberline {B.1.10}Numerical Solutions to Differential Equations}{68}{subsection.B.1.10}%
-\contentsline {subsection}{\numberline {B.1.11}3D Matrices}{68}{subsection.B.1.11}%
-\contentsline {section}{\numberline {B.2}Mechanics}{68}{appendix.B.2}%
-\contentsline {subsection}{\numberline {B.2.1}Momentum and Impulse}{68}{subsection.B.2.1}%
-\contentsline {section}{\numberline {B.3}Probability and Statistics}{68}{appendix.B.3}%
-\contentsline {chapter}{Glossary}{69}{section*.21}%
+\contentsline {chapter}{\numberline {7}Further Pure Mathematics Year I}{55}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Vectors}{55}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}The Vector Product}{55}{subsection.7.1.1}%
+\contentsline {subsubsection}{Vector Product Indentities}{56}{section*.12}%
+\contentsline {subsection}{\numberline {7.1.2}Finding Areas of Triangles and Parallelograms with Vectors}{57}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Conic Sections I}{59}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Conic Sections II}{60}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Inequalities}{61}{section.7.4}%
+\contentsline {section}{\numberline {7.5}The $t$-Formulae}{62}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Taylor Series}{63}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Methods in Calculus}{64}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Numerical Methods}{65}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Reducible Differential Equations}{66}{section.7.9}%
+\contentsline {chapter}{\numberline {8}Further Pure Mathematics Year II}{67}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Number Theory}{67}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Groups}{68}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Complex Numbers}{69}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Recurrence Relations}{70}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Matrix Algebra}{71}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Integration Techniques}{72}{section.8.6}%
+\contentsline {chapter}{\numberline {9}Further Statistics Year I}{73}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Discrete Random Variables}{73}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Poisson Distributions}{74}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Geometric and Negative Binomial Distributions}{75}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Hypothesis Testing}{76}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Central Limit Theorem}{77}{section.9.5}%
+\contentsline {section}{\numberline {9.6}$\chi ^2$ Tests}{78}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Probability Generating Functions}{79}{section.9.7}%
+\contentsline {section}{\numberline {9.8}Quality of Tests}{80}{section.9.8}%
+\contentsline {chapter}{\numberline {10}Further Statistics Year II}{81}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Discrete Random Variables}{81}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Poisson Distributions}{82}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Geometric and Negative Binomial Distributions}{83}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Hypothesis Testing}{84}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Central Limit Theorem}{85}{section.10.5}%
+\contentsline {section}{\numberline {10.6}$\chi ^2$ Tests}{86}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Probability Generating Functions}{87}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Quality of Tests}{88}{section.10.8}%
+\contentsline {chapter}{\numberline {A}Appendix: Formula Sheet}{89}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Pure Mathematics}{89}{appendix.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Summations}{89}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Matrix Transformations}{89}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Area of a Sector}{89}{subsection.A.1.3}%
+\contentsline {subsection}{\numberline {A.1.4}Complex Numbers}{90}{subsection.A.1.4}%
+\contentsline {subsection}{\numberline {A.1.5}Maclaurin's and Taylor's Series}{90}{subsection.A.1.5}%
+\contentsline {subsection}{\numberline {A.1.6}Vectors}{90}{subsection.A.1.6}%
+\contentsline {subsection}{\numberline {A.1.7}Hyperbolic Functions}{91}{subsection.A.1.7}%
+\contentsline {subsection}{\numberline {A.1.8}Conics}{91}{subsection.A.1.8}%
+\contentsline {subsubsection}{Ellipses}{91}{section*.13}%
+\contentsline {subsubsection}{Parabolas}{92}{section*.14}%
+\contentsline {subsubsection}{Hyperbolae}{92}{section*.15}%
+\contentsline {subsubsection}{Rectangular Hyperbolae}{92}{section*.16}%
+\contentsline {subsection}{\numberline {A.1.9}Differentiation}{93}{subsection.A.1.9}%
+\contentsline {subsection}{\numberline {A.1.10}Integration (+ constant; $a>0$here relevant)}{94}{subsection.A.1.10}%
+\contentsline {subsection}{\numberline {A.1.11}Arc Length}{94}{subsection.A.1.11}%
+\contentsline {subsection}{\numberline {A.1.12}Surface Area of Revolution}{94}{subsection.A.1.12}%
+\contentsline {section}{\numberline {A.2}Mechanics}{95}{appendix.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Constant Acceleration}{95}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Centres of Mass}{95}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}Probability and Statistics}{96}{appendix.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Probability}{96}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Standard Deviation}{96}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Discrete Distributions}{96}{subsection.A.3.3}%
+\contentsline {subsubsection}{Binomial $\binomial (n,p)$}{96}{section*.17}%
+\contentsline {subsubsection}{Poisson $\poisson (\lambda )$}{96}{section*.18}%
+\contentsline {subsubsection}{Sampling Distributions}{96}{section*.19}%
+\contentsline {subsection}{\numberline {A.3.4}Distribution-Free (Non-Parametric) Tests}{97}{subsection.A.3.4}%
+\contentsline {chapter}{\numberline {B}Apendix: Non-Formula Sheet}{99}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Pure Mathematics}{99}{appendix.B.1}%
+\contentsline {subsection}{\numberline {B.1.1}Vieta's Formulae}{99}{subsection.B.1.1}%
+\contentsline {subsection}{\numberline {B.1.2}Integration}{100}{subsection.B.1.2}%
+\contentsline {subsection}{\numberline {B.1.3}Binomial Series}{100}{subsection.B.1.3}%
+\contentsline {subsubsection}{Arithmetic Series}{100}{section*.20}%
+\contentsline {subsubsection}{Geometric Series}{100}{section*.21}%
+\contentsline {subsection}{\numberline {B.1.4}Trigonometry: Small Angles}{100}{subsection.B.1.4}%
+\contentsline {subsection}{\numberline {B.1.5}Trigonometric Identities}{101}{subsection.B.1.5}%
+\contentsline {subsection}{\numberline {B.1.6}Differentiation from First Principles}{101}{subsection.B.1.6}%
+\contentsline {subsection}{\numberline {B.1.7}Numerical Solutions of Equations}{101}{subsection.B.1.7}%
+\contentsline {subsection}{\numberline {B.1.8}Numerical Integration}{101}{subsection.B.1.8}%
+\contentsline {subsection}{\numberline {B.1.9}Further Numerical Integration}{101}{subsection.B.1.9}%
+\contentsline {subsection}{\numberline {B.1.10}Numerical Solutions to Differential Equations}{102}{subsection.B.1.10}%
+\contentsline {subsection}{\numberline {B.1.11}3D Matrices}{102}{subsection.B.1.11}%
+\contentsline {section}{\numberline {B.2}Mechanics}{102}{appendix.B.2}%
+\contentsline {subsection}{\numberline {B.2.1}Momentum and Impulse}{102}{subsection.B.2.1}%
+\contentsline {section}{\numberline {B.3}Probability and Statistics}{102}{appendix.B.3}%
+\contentsline {chapter}{Glossary}{103}{section*.22}%

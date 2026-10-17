@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.12)  17 OCT 2026 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.12)  17 OCT 2026 20:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -607,6 +607,94 @@ File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count372
 ) (./further_maths_main.aux
 \g__glossaries_gls_ref_main_int=\count373
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `further_maths_main.aux'.
 
@@ -667,15 +755,14 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3] [4])
+) [3] [4] [5])
 \tf@toc=\write5
 \openout5 = `further_maths_main.toc'.
 
- [5] [6
-
-]
+ [6]
 Chapter 1.
 (./chapters/core_i.tex [1
+
 
 ] [2] [3]
 Overfull \hbox (28.17252pt too wide) in paragraph at lines 174--175
@@ -711,11 +798,61 @@ Chapter 6.
 ] [50] [51] [52] [53]) [54
 
 ]
+Chapter 7.
+(./chapters/pure_i.tex [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66])
+Chapter 8.
+(./chapters/pure_ii.tex [67
+
+] [68] [69] [70] [71] [72])
+Chapter 9.
+(./chapters/statistics_i.tex [73
+
+] [74] [75] [76] [77]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+[78] [79] [80])
+Chapter 10.
+(./chapters/statistics_i.tex [81
+
+] [82] [83] [84] [85]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+[86] [87] [88])
 Appendix A.
-(./chapters/formula_sheet.tex [55] [56] [57] [58]
+(./chapters/formula_sheet.tex [89
+
+] [90] [91] [92]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59] [60]
+ [93] [94]
 Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
@@ -730,55 +867,48 @@ Overfull \hbox (77.50711pt too wide) detected at line 323
 [][][][]\OML/cmm/m/it/10 h[] []h []
  []
 
-[61] [62] [63]) [64
+[95] [96] [97]) [98
 
 ]
 Appendix B.
-(./chapters/formulae_non_formula_sheet.tex [65] [66] [67])
+(./chapters/formulae_non_formula_sheet.tex [99] [100] [101])
 
 Package glossaries Info: Preparing to sort glossary `main' (total number of
 (glossaries)             referenced entries: 48)
 
-[68] [69
+[102] [103
 
 
-]
-
-LaTeX Warning: Reference `' on page 70 undefined on input line 119.
-
-
-LaTeX Warning: Reference `' on page 70 undefined on input line 119.
-
-[70] [71]
+] [104] [105]
 Overfull \hbox (6.13237pt too wide) in paragraph at lines 119--119
 []\OT1/cmr/m/n/10 The pro-gres-sion of ex-is-tence, rep-re-sented as the fourth di-men-sion of (3+1)D
  []
 
-[72] (./further_maths_main.aux)
+[106] (./further_maths_main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `further_maths_main.out' has not changed.
-(rerunfilecheck)             Checksum: D36AB1C3E3854B93C041E25C60B00105;16968.
+(rerunfilecheck)             Checksum: 4599622321BC5DD333E54C262AD4CB00;23219.
  ) 
 Here is how much of TeX's memory you used:
- 31852 strings out of 467050
- 634134 string characters out of 5410549
- 1246495 words of memory out of 5000000
- 60347 multiletter control sequences out of 15000+600000
- 639385 words of font info for 81 fonts, out of 8000000 for 9000
+ 32023 strings out of 467050
+ 636477 string characters out of 5410549
+ 1247234 words of memory out of 5000000
+ 60413 multiletter control sequences out of 15000+600000
+ 640632 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 198i,15n,292p,2590b,999s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 198i,15n,292p,2590b,998s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on further_maths_main.pdf (78 pages, 369477 bytes).
+Output written on further_maths_main.pdf (112 pages, 398780 bytes).
 PDF statistics:
- 1689 PDF objects out of 1728 (max. 8388607)
- 1553 compressed objects within 16 object streams
- 426 named destinations out of 1000 (max. 500000)
- 853 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2076 PDF objects out of 2487 (max. 8388607)
+ 1902 compressed objects within 20 object streams
+ 520 named destinations out of 1000 (max. 500000)
+ 1149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,3 +6,9 @@
 *.out
 *.synctex.gz
 *.toc
+
+# After changing .gitignore, run:
+# git rm -r --cached
+# git add .
+# git commit -m "Steop trakcing ignored files"
+# Then sync files to GitHub

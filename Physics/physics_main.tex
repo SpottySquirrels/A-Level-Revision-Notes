@@ -6,6 +6,8 @@
 \usepackage[english]{babel}
 \usepackage{tikz}
 \usepackage{amsfonts}
+\usepackage{mhchem}
+\usepackage{xparse}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -19,6 +21,71 @@
 \usepackage{subfiles}
 
 \frontmatter
+
+\newcommand{\electron}[1][]{\mathrm{e}^{#1}}
+\newcommand{\betaparticle}[1][]{\mathrm{\beta}^{#1}}
+\newcommand{\muon}[1][]{\mathrm{\mu}^{#1}}
+\newcommand{\taulepton}[1][]{\mathrm{\tau}^{#1}}
+
+\newcommand{\neutrino}[1][]{\mathrm{\nu}_\mathrm{#1}}
+\newcommand{\antineutrino}[1][]{\bar{\mathrm{\nu}}_\mathrm{#1}}
+
+\newcommand{\upquark}{\mathrm{u}}
+\newcommand{\downquark}{\mathrm{d}}
+\newcommand{\strangequark}{\mathrm{s}}
+\newcommand{\charmquark}{\mathrm{c}}
+\newcommand{\topquark}{\mathrm{t}}
+\newcommand{\bottomquark}{\mathrm{b}}
+
+\newcommand{\antiupquark}{\bar{\mathrm{u}}}
+\newcommand{\antidownquark}{\bar{\mathrm{d}}}
+\newcommand{\antistrangequark}{\bar{\mathrm{s}}}
+\newcommand{\anticharmquark}{\bar{\mathrm{c}}}
+\newcommand{\antitopquark}{\bar{\mathrm{t}}}
+\newcommand{\antibottomquark}{\bar{\mathrm{b}}}
+
+\newcommand{\photon}{\mathrm{\gamma}}
+\newcommand{\gluon}{\mathrm{g}}
+\newcommand{\wboson}[1][]{\mathrm{W}^{#1}}
+\newcommand{\zboson}{\mathrm{Z}^0}
+\newcommand{\higgsboson}{\mathrm{H}^0}
+\newcommand{\graviton}{\mathrm{G}}
+
+\newcommand{\leptonnumber}[1][\mathrm{e}/\mathrm{\mu}/\mathrm{\tau}]{L_{\mathrm{#1}}}
+
+\newcommand{\quark}{\mathrm{q}}
+\newcommand{\antiquark}{\bar{\mathrm{q}}}
+\newcommand{\lepton}{\mathrm{\ell}}
+\newcommand{\antilepton}{\bar{\mathrm{\ell}}}
+
+\newcommand{\pion}[1][]{\mathrm{\pi}^{#1}}
+\newcommand{\kaon}[1][]{\mathrm{K}^{#1}}
+\newcommand{\antikaon}[1][0]{\bar{\mathrm{K}}^{#1}}
+
+\newcommand{\nucleon}[1][]{\mathrm{N}^{#1}}
+\newcommand{\antinucleon}[1][]{\bar{\mathrm{N}^{#1}}}
+\newcommand{\proton}{\mathrm{p}}
+\newcommand{\neutron}{\mathrm{n}}
+\newcommand{\antiproton}{\bar{\mathrm{p}}}
+\newcommand{\antineutron}{\bar{\mathrm{n}}}
+
+% Commands use xparse for multivariable functions with optional parameters
+\NewDocumentCommand{\sigmabaryon}{ O{} O{} }{\mathrm{\Sigma}^{#1}_{#2}}
+\NewDocumentCommand{\deltabaryon}{ O{} O{} }{\mathrm{\Delta}^{#1}_{#2}}
+\NewDocumentCommand{\lambdabaryon}{ O{} O{} }{\mathrm{\Lambda}^{#1}_{#2}}
+\NewDocumentCommand{\xibaryon}{ O{} O{} }{\mathrm{\Xi}^{#1}_{#2}}
+\NewDocumentCommand{\omegabaryon}{ O{} O{} }{\mathrm{\Omega}^{#1}_{#2}}
+
+\NewDocumentCommand{\antisigmabaryon}{ O{} O{} }{\bar{\mathrm{\Sigma}^{#1}_{#2}}}
+\NewDocumentCommand{\antideltabaryon}{ O{} O{} }{\bar{\mathrm{\Delta}^{#1}_{#2}}}
+\NewDocumentCommand{\antilambdabaryon}{ O{} O{} }{\bar{\mathrm{\Lambda}^{#1}_{#2}}}
+\NewDocumentCommand{\antixibaryon}{ O{} O{} }{\bar{\mathrm{\Xi}^{#1}_{#2}}}
+\NewDocumentCommand{\antiomegabaryon}{ O{} O{} }{\bar{\mathrm{\Omega}^{#1}_{#2}}}
+
+\newcommand{\baryonquarks}[1][qqq]{\mathrm{#1}}
+\newcommand{\antibaryonquarks}[1][qqq]{\bar{\mathrm{#1}}}
+
+\NewDocumentCommand{\mesonquark}{ O{q} O{q} }{\mathrm{#1}\bar{\mathrm{#2}}}
 
 \newcommand{\comment}[1]{} % Allows multiline comments
 
@@ -81,6 +148,16 @@
 
 \chapter{Skills in Physics Year II} \label{ch:skills_in_physics_ii}
     \subfile{chapters/skills_in_physics_ii.tex}
+
+\appendix
+\chapter{Appendix: Formula and Data Sheet} \label{formula_and_data_sheet}
+    \subfile{appendices/formula_and_data_sheet.tex}
+
+\chapter{Appendix: Other Formulae} \label{other_formulae}
+    \subfile{appendices/other_formulae.tex}
+
+\chapter{Appendix: Particle Zoo} \label{particle_zoo}
+    \subfile{appendices/particle_zoo.tex}
 
 \printnoidxglossaries
 

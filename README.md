@@ -1,14 +1,19 @@
 # My A-Level Revision Notes
 
 * Computer Science (AQA)
-* Further Math (Edexcel, Mechanics & Decision)
+* Further Math (Edexcel, Mechanics & Decision) (I might add more notes for Further Pure & Stats)
 * Maths (Edexcel)
-* Maths
+* Physics (AQA, Turning Points in Physics) (I might add more notes for the other optional topics)
 
 Look in the folder and find the *subject*_main.pdf file to see the notes for each subject.
 
+The source code is in the files ending .tex.
+
 ## Progress
 Computer Science - Not started
+
 Further Maths - WIP
+
 Maths - Not started
+
 Physics - Not started

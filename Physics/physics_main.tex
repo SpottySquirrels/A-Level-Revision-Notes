@@ -1,3 +1,4 @@
+%!TEX program = lualatex
 \documentclass{book}
 
 \usepackage{amssymb}
@@ -6,8 +7,10 @@
 \usepackage[english]{babel}
 \usepackage{tikz}
 \usepackage{amsfonts}
-\usepackage{mhchem}
+\usepackage[version=4]{mhchem}
 \usepackage{xparse}
+\usepackage{tikz-feynman}
+\usetikzlibrary{positioning}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -88,6 +91,12 @@
 \NewDocumentCommand{\mesonquark}{ O{q} O{q} }{\mathrm{#1}\bar{\mathrm{#2}}}
 
 \newcommand{\comment}[1]{} % Allows multiline comments
+
+\makeatletter % Temporarily makes '@' a letter
+% Makes figures and tables place `here', instead of defaulting to the top of the page
+\renewcommand{\fps@figure}{htbp}
+\renewcommand{\fps@table}{htbp}
+\makeatother
 
 \title{Physics Revision Notes}
 \author{C. Irving}

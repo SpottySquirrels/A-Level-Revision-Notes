@@ -61,12 +61,14 @@
 
         The force responsible for beta minus decay is the weak nuclear force, mediated by the $\wboson[-]$ boson.
 
+        Since a neutron is turning into a proton, the equation for beta minus decay can be written using the quark flavour of the neutron and proton, as $\ce{{\baryonquarks[udd]} -> {\baryonquarks[uud]} + {\betaparticle[-]} + {\antineutrino[e]}}$, which can be further simplified by removing the $\upquark$ and $\downquark$ that are left unchanged, to just leave $\ce{{\downquark} -> {\upquark} + {\betaparticle[-]} + {\antineutrino[e]}}$.
+
     \subsection{Beta Plus Decay}
         Beta plus decay is very similar to beta minus decay, however instead of a neutron becoming a proton, a proton becomes a neutron, releasing a positron (also called a beta plus particle), and an electron neutrino.
         Inside the decaying proton, an up quark becomes a down quark, which releases the positron to conserve the charge and the electron neutrino to conserve lepton/electron number ($\leptonnumber[e]$).
         Since the atom loses a proton (and thus -1 charge), it becomes an ion, which is called ionisation.
         However, whereas alpha radiation decreases the atomic number by 2, beta plus radiation decreases it by 1.
-        The equation for beta minus decay of element X to element Y is:
+        The equation for beta plus decay of element X to element Y is:
         \begin{equation}
             \ce{_Z^AX -> _Z^{A-1}Y + _{1}^0{\betaparticle[+]} + {\neutrino[e]}}
         \end{equation}
@@ -74,15 +76,98 @@
         \begin{equation}
             \ce{_Z^AX -> _{Z-1}^AY + {\electron[+]} + {\neutrino[e]}}
         \end{equation}
-        An example of this is the beta minus decay of hydrogen-3 to helium-3:
+        An example of this is the beta plus decay of hydrogen-3 to helium-3:
         \begin{equation}
             \ce{_{12}^{23}Mg -> _{11}^{23}He + _{1}^0{\betaparticle[+]} + {\neutrino[e]}}
         \end{equation}
 
         The force responsible for beta plus decay is the weak nuclear force, mediated by the $\wboson[+]$ boson.
 
+        Since a proton is turning into a neutron, the equation for beta plus decay can be written using the quark flavour of the proton and neutron, as $\ce{{\baryonquarks[uud]} -> {\baryonquarks[udd]} + {\betaparticle[+]} + {\neutrino[e]}}$, which can be further simplified by removing the $\upquark$ and $\downquark$ that are left unchanged, to just leave $\ce{{\upquark} -> {\downquark} + {\betaparticle[+]} + {\neutrino[e]}}$.
+
         \newpage
 
 \section{Feynman Diagrams}
+    A Feynman diagram represents an interaction between particles.
+    It has a time axis, showing the progression of the interaction from the incoming particles to the outgoing particles.
+    
+    This is a simple Feynman diagram, representing two electrons ($\electron[-]$) repelling each other.
+    The interaction is mediated by the electromagnetic force, carried by a `virtual photon' ($\photon$):
+
+    \begin{figure} \label{fig:electron_repulsion}
+        \begin{center}
+            \begin{tikzpicture}[x=15mm, y=15mm]
+                \begin{feynman}
+                    \vertex (i1) {e$^-$};
+                    \vertex [above=1.5 of i1] (i2) {e$^-$};
+                    
+                    \vertex [right=2 of i1] (f1) {e$^-$};
+                    \vertex [above=1.5 of f1] (f2) {e$^-$};
+
+                    \vertex at ($(i1) + (.5,.75)$) (a);
+                    \vertex at ($(f1) + (-.5,.75)$) (b);
+
+                    \diagram*{
+                        (i1) -- [fermion] (a) -- [photon, edge label=$\text{\gamma}$] (b),
+                        (a) -- [fermion] (i2),
+                        (f1) -- [fermion] (b),
+                        (b) -- [fermion] (f2),
+                    };
+                    \draw[-stealth] (-.4,-.1) -- (-.4,1.35); % time axis
+                    \node at (-.4,1.5) {$t$}; % time axis label
+                \end{feynman}
+            \end{tikzpicture}
+        \end{center}
+        \caption{A simple Feynman diagram.}
+    \end{figure}
+
+    Feynman diagrams can be used to show more complicated processes, such as beta minus decay ($\ce{{\downquark} -> {\upquark} + {\betaparticle[-]} + {\antineutrino[e]}}$):
+
+    \begin{figure} \label{fig:beta_minus_decay}
+        \begin{center}
+            %https://tex.stackexchange.com/questions/617907/tikz-feynman-how-to-do-a-feynman-diagram-of-a-beta-decay
+            \begin{tikzpicture}[x=15mm, y=15mm]
+                \begin{feynman}
+                    \vertex (i1) {u}; % up quark (left, n^0)
+                    \vertex[right=.15 of i1] (i2) {d}; % down quark (middle, n^0)
+                    \vertex[right=.15 of i2] (i3) {d}; % down quark (right, n^0)
+                    \vertex[below=.3 of i2] (n) {n$^0$}; % neutron
+
+                    \vertex[above=2 of i1] (f1) {u}; % up quark (left, p^+)
+                    \vertex[right=.15 of f1] (f2) {d}; % down quark (middle, p^+)
+                    \vertex[right=.15 of f2] (f3) {u}; % up quark (middle, p^+)
+                    \vertex[above=.3 of f2] (p) {p$^+$}; % proton
+
+                    \vertex[above=1 of i3] (a); % left u quark bend
+                    \vertex[right=.15 of a] (b); % middle d quark bend
+                    \vertex[right=.15 of b] (c); % right d->u quark bend
+
+                    \vertex at ($(c) + (1,.25)$) (d); % left part of W boson line
+                    \vertex at ($(d) + (.2, 1)$) (f4) {$\bar{\text{\nu}}_\text{e}$}; % electron antineutrino
+                    \vertex at ($(d) + (.9,.5)$) (f5) {$\text{\beta}^-$}; % beta particle
+                    
+                    \diagram*{
+                        (i1) -- [fermion] (a) -- [fermion] (f1), % left up quark
+                        (i2) -- [fermion] (b) -- [fermion] (f2), % middle down quark
+                        (i3) -- [fermion] (c) -- [fermion] (f3), % down->up quark
+                        (c) -- [boson, edge label'=W$^-$] (d) -- [fermion] (f5), % W boson; beta particle
+                        (d) -- [anti fermion] (f4), % electron antineutrino
+                    };
+
+                    \draw[-stealth] (-.4,-.4) -- (-.4,2.15); % time axis
+                    \node at (-.4,2.3) {$t$}; % time axis label
+                \end{feynman}
+            \end{tikzpicture}
+        \end{center}
+        \caption{A Feynman diagram of $\betaparticle[-]$ decay; see section \ref{beta_minus}}
+    \end{figure}
+
+    In Feynman diagrams, fermions (leptons and baryons) are shown with solid straight lines with arrows representing their direction of travel through time.
+    Matter travels forwards though time, and antimatter is modelled as travelling backwards, due to its charge being reversed from that of regular matter.
+    Some diagrams show antimatter as travelling forwards in time along with regular matter.
+
+    Most bosons (photons, $\wboson[\pm]$ bosons, $\zboson$ bosons) are shown with wavy lines (see the photon in figure \ref{fig:electron_repulsion} and the $\wboson[-]$ boson in \ref{fig:beta_minus_decay}).
+    
+    Mesons can be shown with a quark and antiquark line, or as a dashed line.
 
     \newpage

@@ -7,6 +7,9 @@
 *.synctex.gz
 *.toc
 
+# Remove feyngraph.mp file
+*.mp
+
 # After changing .gitignore, run:
 # git rm -r --cached
 # git add .

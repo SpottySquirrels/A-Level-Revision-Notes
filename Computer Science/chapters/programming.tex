@@ -1,4 +1,115 @@
-\section{Basics} \label{basics}
+\section{Variables} \label{variables}
+    A variable is a named location in memory that can store a value.
+    Variables have data types, which determines what type of data can be stored in them, e.g. strings or integers.
+    Variables can also be set with a value, which tells the program what to store in the variable.
+    Giving a variable an initial value before it is used is called initialisation.
+
+    Variables in VB.Net are declared using \\ \verb|Dim <variable name> As <datatype>|:
+
+    \begin{verbatim}
+' Declare a variable caled `foo' with type String
+Dim foo As String
+
+' Declare a variable called `bar' with type String and
+' initialise it with a value of "Hello World"
+Dim bar As String = "Hello World"
+
+' Declare a variable called `baz' with type Integer and
+' initialise it with a value of 0
+Dim baz As Integer = 0
+    \end{verbatim}
+
+    In C++, they are declared using \verb|<datatype> <variable name>;|:
+
+    \begin{verbatim}
+// Declare a variable called `foo' with type std::string
+std::string foo;
+
+// Declare a variable called `bar' with type std::string and
+// initialise it with a value of "Hello World"
+std::string bar = "Hello World";
+
+// Declare a variable called `baz' with type int and
+// initialise it with a value of 0
+int baz = 0;
+    \end{verbatim}
+
+    After declaring a variable, its value can be changed.
+    In VB.Net, this is done using \verb|<variable name> = <new value>|, and in C++ this is done using \verb|<variable name> = <new value>;|.
+    
+    Calculations can also be done using variables, for example, this is how to add two variable in VB.Net:
+
+    \begin{verbatim}
+Dim a As Integer = 2
+Dim b As Integer = 5
+Dim sum As Integer = a + b ' Add a and b and store the sum
+    \end{verbatim}
+
+    And this is it in C++:
+    
+    \begin{verbatim}
+int a = 2;
+int b = 5;
+int sum = a + b; // Add a and b and store the sum
+    \end{verbatim}
+
+    Other operations such as addition, subtraction, multiplication and division can be done using \verb|+|, \verb|-|, \verb|*| and \verb|/|.
+    As well as these, there is also the modulo and integer divison operations.
+
+    Modulo (\verb|Mod| in VB.Net, \verb|%| in C++) takes the first number, divides it by the second number, then takes the remainder.
+    For example, $7\mod 3=1$, because $7\div3=2\;\text{remainder}\;1$.
+
+    Integer divison (\verb|\| in VB.Net) takes the first number and divides it by the second number, but rounds down so that it only takes the integer part.
+    It does not have a specific symbol in C++, so it done by \verb|Math.floor(a / b)|, using the \verb|Math| library for the floor function.
+
+    \newpage
+
+\section{Input/Output} \label{input_output}
+    Input and output are how the program can talk to the user.
+    Input takes in data that the user enters, and output gives data back to the user.
+
+    Taking an input in VB.Net is done using \verb|foo = Console.ReadLine()|, and in C++, it is done using \verb|std::cin >> foo|;.
+
+    Outputting text in VB.Net is done using \\ \verb|Console.WriteLine(bar)|, and in C++, it is done using \\ \verb|std::cout << bar;|.
+
+    Using input and output together can take data in, transform it somehow, and then output it.
+    This an example in VB.Net:
+    
+    \begin{verbatim}
+' Prompt the user to enter their name
+Console.WriteLine("Enter your name")
+
+' Take the user's input and store it to a variable called `name'
+Dim name As String = Console.ReadLine()
+
+' Output Hello and the name that they input.
+Console.WriteLine("Hello " & name)
+    \end{verbatim}
+
+    This is the same example in C++:
+
+    \begin{verbatim}
+// Prompt user to enter their name
+// \n leaves a new line after the input
+std::cout << "Enter your name" << \n;
+
+// Take the user's input and store it to a variable called `name'
+std::string name;
+std::cin >> name;
+
+// Output Hello and the name that they input.
+std::cout << "Hello " + name;
+    \end{verbatim}
+
+    The two examples have to join strings together, which is called concatenation.
+    In VB.Net, this is done using \verb|&|, and in C++, it is done using \verb|+|.
+    This creates a new string made up of the other two.
+    For example, concatenating \verb|"Hello "| and \verb|"World"| would give the string \verb|"Hello World"|.
+    Note that the \verb|"Hello "| string has a space on the end, meaning that there is a space between the two words in the concatenated string.
+
+    \newpage
+
+\section{Comments} \label{comments}
     \newpage
 
 \section{Selection} \label{selection}
@@ -8,4 +119,7 @@
     \newpage
 
 \section{Arrays} \label{arrays}
+    \newpage
+
+\section{Records} \label{records}
     \newpage

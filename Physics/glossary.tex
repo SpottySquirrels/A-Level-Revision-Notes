@@ -1,0 +1,159 @@
+\newglossaryentry{atom}{
+    name={atom},
+    description={A \gls{nucleus} with surrounding electron shells; makes up most matter},
+    plural={atoms}
+}
+\newglossaryentry{nucleus}{
+    name={nucleus},
+    description={The core of an \gls{atom}, made up of \glspl{nucleon} (protons and neutrons)},
+    plural={nuclei}
+}
+\newglossaryentry{electron}{
+    name={electron},
+    description={The first generation charged lepton.
+    It is the most common lepton, and is what balances the positive charge in \glspl{atom}, forming electron shells},
+    plural={electrons},
+    symbol={$\electron[-]$}
+}
+\newglossaryentry{electron_shell}{
+    name={electron shell},
+    description={The different clouds of \glspl{electron} around the \gls{nucleus} of an \gls{atom}.
+    Each electron shell represents a different energy level of the \glspl{electron} in them.
+    An electron has the following quantum numbers: $L_\text{e}=1$, $Q=-1e$; and a mass of approximately $9.109\times10^{-31}\,$kg, which gives a rest energy of $0.511\times10^{-31}\,$MeV, or $8.187\times10^{-14}\,$J},
+    plural={electrons shells}
+}
+\newglossaryentry{nucleon}{
+    name={nucleon},
+    description={The most common type of baryon, making up atomic \glspl{nucleus}.
+    \Glspl{proton} and neutrons are the only nucleons.
+    See section \ref{zoo:nucleons}},
+    plural={nucleons},
+    symbol={N}
+}
+\newglossaryentry{proton}{
+    name={nucleon},
+    description={Only stable type of baryon, making up atomic \glspl{nucleus} along with \glspl{neutron}.
+    Protons are \glspl{nucleon}.
+    See section \ref{zoo:nucleons}},
+    plural={protons},
+    symbol={$\proton$}
+}
+\newglossaryentry{neutron}{
+    name={neutron},
+    description={Makes up atomic \glspl{nucleus} along with \glspl{proton}.
+    Neutrons are \glspl{nucleon}.
+    See section \ref{zoo:nucleons}},
+    plural={neutrons},
+    symbol={$\neutron$}
+}
+\newglossaryentry{alpha_decay}{
+    name={alpha decay},
+    description={A type of radioactive decay where an unstable \gls{nucleus} releases an \gls{alpha_particle} (2 \glspl{proton} and 2 \glspl{neutron}, equivalent to a helium-2 \gls{nucleus}).
+    The equation for alpha decay is:
+    \begin{equation}
+        \ce{\ce{_Z^AX -> _{Z-4}^{A-2}Y + ^4_2{\alphaparticle}}}
+    \end{equation}
+    See section \ref{alpha_decay}}
+}
+\newglossaryentry{alpha_particle}{
+    name={alpha particle},
+    description={The particle released in alpha decay. It is made up of two \glspl{proton} and two \glspl{neutron}, which is equivalent to a helium-2 \gls{nucleus}},
+    plural={alpha_particles},
+    symbol={$\alphaparticle$}
+}
+\newglossaryentry{ion}{
+    name={ion},
+    description={An \gls{atom} that has gained or lost an \gls{electron}, meaning that the \gls{atom} now has a non-zero charge.
+    Positive ions are called cations, negative ions are called anions},
+    plural={ions}
+}
+\newglossaryentry{beta_minus_decay}{
+    name={beta minus decay},
+    description={A type of radioactive decay where a \gls{nucleus} with too many \glspl{neutron} has a \gls{neutron} decay into a \gls{proton}, releasing a \gls{beta_minus_particle} (an \gls{electron}) and an electron antineutrino.
+    The \gls{neutron} decaying into a \gls{proton} can be simplified to just a single down quark in the \gls{neutron} turning into an up quark in the \gls{proton}.
+    The equation for beta minus decay is:
+    \begin{equation}
+        \ce{{\downquark} -> {\upquark} + {\betaparticle[-]} + {\antineutrino[e]}}
+    \end{equation}}
+    See section \ref{beta_minus}
+}
+\newglossaryentry{beta_plus_decay}{
+    name={beta plus decay},
+    description={A type of radioactive decay where a \gls{nucleus} with too many \glspl{proton} has a \gls{proton} decay into a \gls{neutron}, releasing a \gls{beta_plus_particle} (a \gls{positron}) and an electron neutrino.
+    The \gls{neutron} decaying into a \gls{proton} can be simplified to just a single up quark in the \gls{proton} turning into an down quark in the \gls{neutron}.
+    The equation for beta minus decay is:
+    \begin{equation}
+        \ce{{\downquark} -> {\upquark} + {\betaparticle[-]} + {\antineutrino[e]}}
+    \end{equation}}
+    See section \ref{beta_plus}
+}
+\newglossaryentry{beta_minus_particle}{
+    name={beta minus particle},
+    description={The name given to the \gls{electron} released in \gls{beta_minus_decay}},
+    plural={beta minus particles},
+    symbol={$\betaparticle[-]$}
+}
+\newglossaryentry{beta_plus_particle}{
+    name={beta plus particle},
+    description={The name given to the \gls{positron} released in \gls{beta_minus_decay}},
+    plural={beta plus particles},
+    symbol={$\betaparticle[+]$}
+}
+\newglossaryentry{positron}{
+    name={positron},
+    description={The antiparticle of an \gls{electron}.
+    It has a positive charge, and can annihilate an \gls{electron}, or be produced alongside one in \gls{pair_production}},
+    plural={positrons},
+    symbol={$\electron[+]$}
+}
+\newglossaryentry{pair_production}{
+    name={pair production},
+    description={The process of a photon (with a minimum energy of 1.022MeV) producing an \gls{electron} and a \gls{positron}.
+    See section \ref{feynman_diagrams}},
+}
+\newglossaryentry{neutrino}{
+    name={neutrino},
+    description={An uncharged lepton with an extremely small mass and high velocity.
+    There are three generations of neutrino: electron neutrino ($\neutrino[e]$, generation I), muon neutrino ($\neutrino[\mu]$, generation II) and tau neutrino ($\neutrino[\tau]$, generation III).
+    Each generation has more mass than the previous},
+    plural={neutrinos},
+    symbol={$\neutrino[]$}
+}
+\newglossaryentry{antineutrino}{
+    name={antineutrino},
+    description={An uncharged antilepton with an extremely small mass and high velocity.
+    Antineutrinos are the antiparticle of \glspl{neutrino}.
+    There are three generations of antineutrino, corresponding to the three generations of \gls{neutrino}: electron antineutrino ($\antineutrino[e]$, generation I), muon antineutrino ($\antineutrino[\mu]$, generation II) and tau antineutrino ($\antineutrino[\tau]$, generation III).
+    Each generation has more mass than the previous},
+    plural={antineutrinos},
+    symbol={$\antineutrino[]$}
+}
+\newglossaryentry{quark}{
+    name={quark},
+    description={Quarks are fermions that feel the strong force.
+    They are fundamental particles.
+    There are six types of quark, split over three generations: up ($\upquark$, generation I), down ($\downquark$, generation I), strange ($\strangequark$, generation II), charm ($\charmquark$, generation II), top ($\topquark$, generation III) and bottom ($\bottomquark$, generation III).
+    The different quarks are also split into up-type and down-type, based on their charges.
+    The up-type quarks are: up, strange and top; the down-type quarks are down, charm and bottom.
+    There is one up-type quark and one down-type quark per generation},
+    plural={quarks},
+    symbol={q}
+}
+% Lepton number
+% Weak nuclear force
+% Strong nuclear force
+
+
+
+\newglossaryentry{UNUSED_WITHOUT_SYMBOL}{
+    name={},
+    description={},
+    plural={}
+}
+
+\newglossaryentry{UNUSED_WITH_SYMBOL}{
+    name={},
+    description={},
+    plural={},
+    symbol={}
+}

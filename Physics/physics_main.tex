@@ -9,8 +9,9 @@
 \usepackage{amsfonts}
 \usepackage[version=4]{mhchem}
 \usepackage{xparse}
-\usepackage{tikz-feynman}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \usetikzlibrary{positioning}
+\usepackage{mathtools}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -30,6 +31,8 @@
 \newcommand{\muon}[1][]{\mathrm{\mu}^{#1}}
 \newcommand{\taulepton}[1][]{\mathrm{\tau}^{#1}}
 
+\newcommand{\alphaparticle}{\text{\alpha}}
+
 \newcommand{\neutrino}[1][]{\mathrm{\nu}_\mathrm{#1}}
 \newcommand{\antineutrino}[1][]{\bar{\mathrm{\nu}}_\mathrm{#1}}
 
@@ -40,12 +43,12 @@
 \newcommand{\topquark}{\mathrm{t}}
 \newcommand{\bottomquark}{\mathrm{b}}
 
-\newcommand{\antiupquark}{\bar{\mathrm{u}}}
-\newcommand{\antidownquark}{\bar{\mathrm{d}}}
-\newcommand{\antistrangequark}{\bar{\mathrm{s}}}
-\newcommand{\anticharmquark}{\bar{\mathrm{c}}}
-\newcommand{\antitopquark}{\bar{\mathrm{t}}}
-\newcommand{\antibottomquark}{\bar{\mathrm{b}}}
+\newcommand{\upantiquark}{\bar{\mathrm{u}}}
+\newcommand{\downantiquark}{\bar{\mathrm{d}}}
+\newcommand{\strangeantiquark}{\bar{\mathrm{s}}}
+\newcommand{\charmantiquark}{\bar{\mathrm{c}}}
+\newcommand{\topantiquark}{\bar{\mathrm{t}}}
+\newcommand{\bottomantiquark}{\bar{\mathrm{b}}}
 
 \newcommand{\photon}{\mathrm{\gamma}}
 \newcommand{\gluon}{\mathrm{g}}
@@ -86,9 +89,19 @@
 \NewDocumentCommand{\antiomegabaryon}{ O{} O{} }{\bar{\mathrm{\Omega}^{#1}_{#2}}}
 
 \newcommand{\baryonquarks}[1][qqq]{\mathrm{#1}}
-\newcommand{\antibaryonquarks}[1][qqq]{\bar{\mathrm{#1}}}
+\newcommand{\antibaryonquarks}[1][qqq]{\overline{\mathrm{#1}}}
 
-\NewDocumentCommand{\mesonquark}{ O{q} O{q} }{\mathrm{#1}\bar{\mathrm{#2}}}
+\NewDocumentCommand{\mesonquarks}{ O{q} O{q} }{\mathrm{#1}\bar{\mathrm{#2}}}
+
+% VSCode doesn't like braket notation; the red bits are not errors
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\third}{\frac{1}{3}}
+\newcommand{\twothird}{\frac{2}{3}}
+\newcommand{\overroot}[1][]{\frac{1}{\sqrt{#1}}}
 
 \newcommand{\comment}[1]{} % Allows multiline comments
 
@@ -98,7 +111,7 @@
 \renewcommand{\fps@table}{htbp}
 \makeatother
 
-\title{Physics Revision Notes}
+\title{\Huge Physics Revision Notes}
 \author{C. Irving}
 \date{}
 
@@ -169,5 +182,7 @@
     \subfile{appendices/particle_zoo.tex}
 
 \printnoidxglossaries
+
+\newpage
 
 \end{document}

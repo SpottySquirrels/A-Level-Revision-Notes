@@ -1,10 +1,203 @@
 \section{Number Systems} \label{number_systems}
-    \newpage
+    \subsection{Casual Definitions}
+        Numbers can be categorised into many different groups, starting with the natural numbers.
+        The natural numbers are the numbers used for counting, 0, 1, 2,\dots.
+        The set of nautral numbers is written:
+        \begin{equation}
+            \N=\set{0,1,2,\dots}
+        \end{equation}
+        
+        The next set is the set of integers ($\Z$).
+        This is the set of all real numbers without a decimal part, including all natural numbers (0, 1, 2,\dots), and all of the negatives of the natural numbers ($-1$, $-2$,\dots).
+        \begin{equation}
+            \Z=\set{0,1,-1,2,-2,\dots}
+        \end{equation}
+        
+        After the integers, the rational numbers can be defined as the set of all ratios $\frac{a}{b}$, where $a$ and $b$ are integers, and $b\neq0$.
+        The set of rational numbers is written $\Q$:
+        \begin{equation}
+            \Q=\set{\frac{a}{b}:a,b\in\Z,b\neq0}
+        \end{equation}
 
-\section{Binary Arithmetic} \label{binary_arithmetic}
+        The set of real numbers ($\R$) is the set of all numbers in the interval $(-\infty,\infty)$, i.e. the whole number line.
+
+        Each of these sets are proper subsets of each other, with $\N$ being the smallest, and $\R$ being the largest.
+        A subset is defined such that is $A$ is a subset of $B$ ($A\subseteq B$), then $B$ contains every element in $A$, and $A$ only contains elements in $B$.
+        Proper subsets are subsets such that $A\subseteq B$ and $A\neq B$, and is written $A\subsetneq B$.
+        \begin{equation}
+            \N\subsetneq\Z\subsetneq\Q\subsetneq\R
+        \end{equation}
+        Because of how subsets are defined, if $A\subset B\subset C$, then $A\subset C$ ($\subset$ referring to either $\subseteq$ or $\subsetneq$).
+
+        As well as these, there are some other notable sets:
+
+        The set of all positive integers is written $\Z^+$, which is the same as the set of natural numbers excluding 0\footnote{The symbol $\setminus$ means excluding, i.e. $A\setminus B$ is the set containing all elements of $A$ that are not in $B$ or, formally: $A\setminus B=\set{x\in A:x\notin B}$.}:
+        \begin{equation}
+            \Z^+=\N\setminus\{0\}
+        \end{equation}
+        
+        The empty set is written $\emptyset$:
+        \begin{equation}
+            \emptyset=\set{}
+        \end{equation}
+        Since the empty set contains no elements, any set contains every element of $\emptyset$, and $\emptyset$ does not contain any elements not in any given set, so $\emptyset\subseteq A$ for any set $A$.
+
+        The irrational numbers is the set of all real numbers that aren't rational:
+        \begin{equation}
+            \text{The set of irrational numbers}=\R\setminus\Q
+        \end{equation}
+        There is no widely-accepted symbol for the set of irrational numbers, so $\R\setminus\Q$ is often used.
+
+    \subsection{Formal Definitions} % This section could be removed, since it's completely unapplicable to A-Level
+        These definitions are \textbf{not} required for A-Level.
+
+        \subsubsection{The Natural Numbers}
+            We will define 0 as the empty set, $0=\set{}$.
+            Now, we will define the successor of any natural number $n$ as $S(n)=\set{n, \set{n}}$.
+            This means that the successor of 0 is $S(0)=\set{0, \set{0}}=\set{\set{}, \set{\set{}}}$.
+            In casual terms, $S(n)=n+1$, so $S(0)$ is the definition of 1 in the natural numbers.
+            Now, the set of natural numbers is defined as the set containing 0 such that for all elements $n\in\N$, $S(n)\in\N$.
+            This means that $S(0)\in\N$, which means that $S(S(0))=S(1)\in\N$, etc.
+
+        \subsubsection{The Integers}
+            Every integer can be written as a pair of natural numbers, $(n_1,n_2)$ such that $\Z\ni x=n_1-n_2$.
+            \begin{proof}
+                For $x\in\N$, $x$ can be written as $x-0$, so $x=(x,0)$.
+                For the negative numbers, the opposite can be used; for some integer $x<0$, $x$ must be a natural number, since $-x$ would be a positive integer if $x$ is a negative integer, and all positive integers are also natural numbers.
+                Thus, $x$ can be written as $0-(-x)$, so $x=(0,-x)$.
+                Because all natural numbers and all negative integers can be written in this form, that means that all integers can be written in this form ($\N\cup\Z^-=\Z$).
+            \end{proof}
+            However, this definition means that there are duplicate integers, (e.g. $2-1=3-2=1$), so we will define an equivalence relation between the integers.
+            
+            Let $\sim$ be an equivalence relation such that $(a,b)\sim(c,d)$ iff\footnote{`iff' means if and only if.} $a-b=c-d$.
+            This means that $(a,b)\sim(c,d)$ iff $a+d=b+c$.
+            
+            Addition in the natural numbers can be defined as follows:
+
+            $x+0=x$ for any natural number $x$.
+            For any $x,S(y)\in\N$, $x+S(y)=S(x+y)$.
+
+            From here, the integers will fall into equivalence classes (sets of integers such that each integer in a set is equal to all other integers in the set).
+            The proof that $\sim$ is an equivalence relation is as follows:
+            \begin{proof}
+                By the definition of an equivalence relation: a relation $R\subseteq A^2$ is an equivalence relation iff $R(x,x)\,\forall\,x\in A$ and $R(x,y)\iff R(y,x)\,\forall\,x,y\in A$ and $R(x,y)\wedge R(y,z)\implies R(x,z)\,\forall\,x,y,z\in A$ (where $R(x,y)$ means $(x,y)\in A^2$).
+
+                Therefore if $\sim$ is an equivalence relation, for all $x,y,z\in\Z$: $x\sim x$, $x\sim y\iff y\sim x$ and $(x\sim y)\wedge(y\sim z)\implies(x\sim z)$.
+                \begin{itemize}
+                    \item Criterion 1, $x\sim x$: let $x=(a,b)$, thus $x\sim x$ must be true, since $x\sim x\iff a+b=a+b$, which is clearly true.
+                    \item Criterion 2, $x\sim y\iff y\sim x$: let $x=(a,b)$ and $y=(c,d)$, thus $x\sim y$ means that $a+d=b+c$, and $y\sim x$ means that $d+a=c+b$.
+                    Since addition is commutative, $a+d=d+a=b+c=c+b$.
+                    \item Criterion 3, $(x\sim y)\wedge(y\sim z)\implies(x\sim z)$: let $x=(a,b)$, $y=(c,d)$ and $z=(e,f)$.
+                    $x\sim y$ can be rewritten as $a+d=b+c$, $y\sim z$ can be rewritten as $c+f=d+e$ and $x\sim z$ can be rewritten as $a+f=b+e$.
+                    Thus, if $a+d=b+c$ and $c+f=d+e$, then the two equations can be combined to make $(a+d)+(c+f)=(b+c)+(d+e)$.
+                    Removing the $c$ and $d$ term from each side then gives $a+f=b+e\implies x\sim z$.
+                \end{itemize}
+                Thus, all criteria hold, so $\sim$ is an equivalence relation.
+            \end{proof}
+            From this equivalence relation, the set of integers can be defined as the set of equivalence classes under $\sim$.
+
+        \subsubsection{The Rationals}
+
+        \subsubsection{The Reals}
+
     \newpage
 
 \section{Binary Numbers} \label{binary_numbers}
+    Binary numbers are numbers written in base-2, in contrast to the normal denary form (base-10).
+    This means that binary has two digits, 0 and 1.
+    Place value still works like denary, but with powers of 2 instead of powers of 10.
+    This means that the rightmost digit has a place value of $2^0$, the next one left has a place value of $2^1$, the next one has a place value of $2^2$, etc.
+    Binary digits are also called bits.
+
+    \subsection{Binary to Denary Conversion}
+        Working out the value of a binary number means adding together all of the place with 1 digits (nothing has to be multiplied by the digit, since the only digits are 0 and 1, so anything with a 0 is just ignored, and anything with a 1 is added).
+        For example, the denary value of the number $01011010_2$ (the $_2$ means base-2) can be calculated as follows:
+        \begin{center}
+        \begin{tabular}{c c c c c c c c}
+            $2^7$&$2^6$&$2^5$&$2^4$&$2^3$&$2^2$&$2^1$&$2^0$ \\
+            0  &  1  &  0  &  1  &  1  &  0  &  1  &  0
+        \end{tabular}
+        \end{center}
+        Add each column with a 1 in:
+        $2^6+2^4+2^3+2^1=64_{10}+16_{10}+8_{10}+2_{10}=90_{10}$ ($_{10}$ means base-10).
+
+        So $01011010_2=90_{10}$.
+
+    \subsection{Denary to Binary Conversion}
+        To convert back, find the greatest power of two smaller than the number you're converting.
+        Using $90_{10}$ as an example, $2^7=128$ is greater then 90, but $2^6=64$ is smaller, so $2^6$ is the greatest power of 2 less than 90.
+        Now, subtract $2^6$ from 90, and record a 1 in the $2^6$ place of the binary number.
+        Repeat with this process, until the number remaining minus the greatest power of two less than it $=0$.
+
+        \begin{equation*}
+        \begin{aligned}
+            90-2^6&=26 \\
+            26-2^4&=10 \\
+            10-2^3&=2 \\
+            2-2^1&=0
+        \end{aligned}
+        \end{equation*}
+
+        So the columns with 1s are the $2^6$, $2^4$, $2^3$ and $2^1$ columns, and the rest are 0s:
+        \begin{center}
+        \begin{tabular}{c c c c c c c c}
+            $2^7$&$2^6$&$2^5$&$2^4$&$2^3$&$2^2$&$2^1$&$2^0$ \\
+            0  &  1  &  0  &  1  &  1  &  0  &  1  &  0
+        \end{tabular}
+        \end{center}
+        So $90_{10}=01011010_2$.
+
+    \subsection{Special Properties of Binary Numbers}
+        The largest number that can be stored in an $n$-digit binary number is found by setting all of the digits to 1.
+        For example, the largest value that can be stored in 8 bits is $11111111_2$, which is $2^7+2^6+\cdots+2^0=255$.
+        This will always be 1 less than the place value of the $n+1$th digit, since adding 1 to the number would force every bit to carry, adding a new bit on the left.
+        Therefore, the largest value that can be stored in $n$ bits is $2^n-1$.
+
+        The furthest left and furthest right bits are called the most and least significant bits (MSB/LSB) respectively.
+        The MSB (furthest left) has the greatest place value in the number, and it determines the greatest number that can be represented.
+        The LSB (furthest right) has the least place value in the number ($2^0=1$), and this determines the parity of the number (whether it is odd or even).
+        Since all places above the LSB are even (since they are all powers of 2), only the LSB can make the number odd, thus if the LSB is 1, the number is odd, and if it is 0, the number is even.
+
+    \subsection{Overflow}
+
+    \newpage
+
+\section{Binary Arithmetic} \label{binary_arithmetic}
+    Doing arithmetic with binary numbers is very similar to doing arithmetic with denary numbers, just with place values that are powers of 2, rather than powers of 10.
+
+    \subsection{Bit Shifts}
+        A bit shift is where all of the bits in a binary number are moved left or right, with zeros placed appropriately to preserve place value.
+
+        \subsubsection{Left Shifts}
+            A left shift moves all of the bits left by 1 bit, adding a zero to the furthest right bit (which would otherwise be left empty).
+            Moving all of the bits left by 1 multiplies them all by 2, meaning that the overall effect is multiplying the number by 2.
+            This is equivalent to mulitplication by 10 in denary, where all of the digits are moved left, and a zero is added at the end.
+            
+            As an example of a left bit shift, this is $90_{10}=01011010_2$ shifted left by 1 bit:
+            \begin{center}
+            \begin{tabular}{c c c c c c c c}
+                $2^7$&$2^6$&$2^5$&$2^4$&$2^3$&$2^2$&$2^1$&$2^0$ \\
+                1  &  0  &  1  &  1  &  0  &  1  &  0  &  0
+            \end{tabular}
+            \end{center}
+            Converting that back to denary gives $10110100_2=180_{10}$, meaning that the original 90 has been multiplied by 2.
+
+        \subsubsection{Right Shifts}
+            Similar to how a left shift multiplies a binary number by two, a right shift divides it by 2.
+            Using integers, this is integer division, i.e. taking $3_{10}=11_2$ and shifting it right by 1 gives $1_2=1_{10}$, not $1.5_{10}$.
+            However, if the number is also using decimal bits, the shift will move the LSB to the $2^{-1}=\frac{1}{2}$ bit.
+
+            As an example of a left bit shift, this is $90_{10}=01011010_2$ shifted right by 1 bit:
+            \begin{center}
+            \begin{tabular}{c c c c c c c c}
+                $2^7$&$2^6$&$2^5$&$2^4$&$2^3$&$2^2$&$2^1$&$2^0$ \\
+                  0  &  0  &  1  &  0  &  1  &  1  &  0  &  1
+            \end{tabular}
+            \end{center}
+            Converting that back to denary gives $10110100_2=45_{10}$, meaning that the original 90 has been divided by 2.
+
+    \subsection{Binary Addition}
+
     \newpage
 
 \section{Sound} \label{sound}

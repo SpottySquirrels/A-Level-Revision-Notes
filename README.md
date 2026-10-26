@@ -10,10 +10,10 @@ Look in the folder and find the *subject*_main.pdf file to see the notes for eac
 The source code is in the files ending .tex.
 
 ## Progress
-Computer Science - Not started
+Computer Science - WIP
 
 Further Maths - WIP
 
 Maths - Not started
 
-Physics - Not started
+Physics - WIP

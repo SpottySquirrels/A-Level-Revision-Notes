@@ -1,97 +1,99 @@
+\href{https://drive.google.com/drive/folders/13SmG6rx6WKPDzJa3Cav_TOF4B4u4sRZd}{\hypertarget{book:FP1}{Further Pure I Textbook (FP1)}}
+
 \section{Vectors} \label{pure_vectors}
     \subsection{The Vector Product}
-        For two 3D vectors, $\textbf{a}$ and $\textbf{b}$, the vector product (also called the cross product) is written $\textbf{a}\times\textbf{b}$.
+        For two 3D vectors, $\mathbf{a}$ and $\mathbf{b}$, the vector product (also called the cross product) is written $\mathbf{a}\times\mathbf{b}$.
         The vector product is defined as:
         \begin{equation} \label{eq:vector_product}
-            \textbf{a}\times\textbf{b}=|\textbf{a}||\textbf{b}|\sin \theta\,\hat{\textbf{n}}
+            \mathbf{a}\times\mathbf{b}=|\mathbf{a}||\mathbf{b}|\sin \theta\,\nhat
         \end{equation}
-        Where $\theta$ is the angle between the two angles (this can be found using the dot product), and $\hat{\textbf{n}}$ is the unit vector perpendicular to $\textbf{a}$ and $\textbf{b}$.
-        However, since $\textbf{a}$ and $\textbf{b}$ are both 3D, there are two opposite unit vectors that are both perpendicular to both $\textbf{a}$ and $\textbf{b}$ ($\hat{\textbf{n}}$ and $-\hat{\textbf{n}}$).
+        Where $\theta$ is the angle between the two angles (this can be found using the dot product), and $\nhat$ is the unit vector perpendicular to $\mathbf{a}$ and $\mathbf{b}$.
+        However, since $\mathbf{a}$ and $\mathbf{b}$ are both 3D, there are two opposite unit vectors that are both perpendicular to both $\mathbf{a}$ and $\mathbf{b}$ ($\nhat$ and $-\nhat$).
 
-        The `right-hand rule' can be used to find the direction of $\hat{\textbf{n}}$.
-        Imagining your index finger as $\textbf{a}$, your middle finger as $\textbf{b}$, the thumb of you right hand will point in the direction of $\hat{\textbf{n}}$.
-        This means that swapping $\textbf{a}$ and $\textbf{b}$ will flip the direction of $\hat{\textbf{n}}$.
-        Therefore, $\textbf{a}\times\textbf{b}=-(\textbf{b}\times\textbf{a})$.
+        The `right-hand rule' can be used to find the direction of $\nhat$.
+        Imagining your index finger as $\mathbf{a}$, your middle finger as $\mathbf{b}$, the thumb of you right hand will point in the direction of $\nhat$.
+        This means that swapping $\mathbf{a}$ and $\mathbf{b}$ will flip the direction of $\nhat$.
+        Therefore, $\mathbf{a}\times\mathbf{b}=-(\mathbf{b}\times\mathbf{a})$.
         This property is called anticommutatitivity (opposed to commutatitivity, such as for addition, where $a+b=b+a$).
 
         Another way of thinking about flipping the direction of the vector product is by changing the direction of the angle measurement.
-        $\theta$ is measured as the smallest angle between $\textbf{a}$ and $\textbf{b}$, meaning that $\sin\theta>0$.
-        However, flipping $\textbf{a}$ and $\textbf{b}$ would be the same as measuring the angle in the other direction, which would give an angle $2\pi-\theta$ (in \glspl{radian}).
+        $\theta$ is measured as the smallest angle between $\mathbf{a}$ and $\mathbf{b}$, meaning that $\sin\theta>0$.
+        However, flipping $\mathbf{a}$ and $\mathbf{b}$ would be the same as measuring the angle in the other direction, which would give an angle $2\pi-\theta$ (in \glspl{radian}).
         Using the identity:
         \begin{equation}
             \sin\theta=-\sin(2\pi-\theta)
         \end{equation}
-        Measuring the angle from the opposite direction would give a negative answer, which is the same as it would when negating $\hat{\textbf{n}}$.
+        Measuring the angle from the opposite direction would give a negative answer, which is the same as it would when negating $\nhat$.
 
         \subsubsection{Vector Product Indentities}
-        From definition \ref{eq:vector_product}, the following identities can be found for the product of the basis vectors $\textbf{i}$, $\textbf{j}$, and $\textbf{k}$:
+        From definition \ref{eq:vector_product}, the following identities can be found for the product of the basis vectors $\mathbf{i}$, $\mathbf{j}$, and $\mathbf{k}$:
         \begin{equation} \label{eq:vector_product_of_ii_jj_kk}
-            \textbf{i}\times\textbf{i}=\textbf{j}\times\textbf{j}=\textbf{k}\times\textbf{k}=0
+            \mathbf{i}\times\mathbf{i}=\mathbf{j}\times\mathbf{j}=\mathbf{k}\times\mathbf{k}=0
         \end{equation}
         \begin{equation} \label{eq:vector_product_of_ij}
-            \textbf{i}\times\textbf{j}=-(\textbf{j}\times\textbf{i})=\textbf{k}
+            \mathbf{i}\times\mathbf{j}=-(\mathbf{j}\times\mathbf{i})=\mathbf{k}
         \end{equation}
         \begin{equation} \label{eq:vector_product_of_jk}
-            \textbf{j}\times\textbf{k}=-(\textbf{k}\times\textbf{j})=\textbf{i}
+            \mathbf{j}\times\mathbf{k}=-(\mathbf{k}\times\mathbf{j})=\mathbf{i}
         \end{equation}
         \begin{equation} \label{eq:vector_product_of_ki}
-            \textbf{k}\times\textbf{i}=-(\textbf{i}\times\textbf{k})=\textbf{j}
+            \mathbf{k}\times\mathbf{i}=-(\mathbf{i}\times\mathbf{k})=\mathbf{j}
         \end{equation}
 
         \begin{theorem}
-            Using any two non-zero vectors, $\normalfont\textbf{a}$ and $\normalfont\textbf{b}$, $\normalfont\textbf{a}\times\textbf{b}=0$ if and only if they are parallel.
+            Using any two non-zero vectors, $\normalfont\mathbf{a}$ and $\normalfont\mathbf{b}$, $\normalfont\mathbf{a}\times\mathbf{b}=0$ if and only if they are parallel.
         \end{theorem}
         \begin{proof}
-            Given definition \ref{eq:vector_product}, $|\textbf{a}\times\textbf{b}|$ can be found as the product of the magnitudes of each of of the parts of the definition:
+            Given definition \ref{eq:vector_product}, $|\mathbf{a}\times\mathbf{b}|$ can be found as the product of the magnitudes of each of of the parts of the definition:
             \begin{equation}
-                |\textbf{a}\times\textbf{b}|=|\textbf{a}||\textbf{b}||\sin\theta||\hat{\textbf{n}}|
+                |\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}||\sin\theta||\nhat|
             \end{equation}
             Given that $0\le\theta\le\pi$, $\sin\theta\ge0$, so $|\sin\theta|=\sin\theta$.
-            We also know that $|\hat{\textbf{n}}|$ is a unit vector by definition, so $|\hat{\textbf{n}}|=1$, so the formula for the magnitude of $|\textbf{a}\times\textbf{b}|$ simplifies to:
+            We also know that $|\nhat|$ is a unit vector by definition, so $|\nhat|=1$, so the formula for the magnitude of $|\mathbf{a}\times\mathbf{b}|$ simplifies to:
             \begin{equation}
-                |\textbf{a}\times\textbf{b}|=|\textbf{a}||\textbf{b}|\sin\theta
+                |\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}|\sin\theta
             \end{equation}
-            Thus, (since $\textbf{a}$ and $\textbf{b}$ are non-zero), $|\textbf{a}\times\textbf{b}|=0$ if and only if $\sin\theta=0$, which would mean that $\theta=0$ or $\theta=\pi$.
-            If $\theta=0$ or $\theta=\pi$, then $\textbf{a}$ and $\textbf{b}$ must be parallel, since $\theta=0$ means that $\sin\theta=0$.
+            Thus, (since $\mathbf{a}$ and $\mathbf{b}$ are non-zero), $|\mathbf{a}\times\mathbf{b}|=0$ if and only if $\sin\theta=0$, which would mean that $\theta=0$ or $\theta=\pi$.
+            If $\theta=0$ or $\theta=\pi$, then $\mathbf{a}$ and $\mathbf{b}$ must be parallel, since $\theta=0$ means that $\sin\theta=0$.
         \end{proof}
 
         \begin{theorem}
-            Using any two vectors, $\normalfont\textbf{a}$ and $\normalfont\textbf{b}$, $\normalfont\textbf{a}\times\textbf{b}=|\normalfont\textbf{a}||\textbf{b}|$ if and only if they are perpendicular.
+            Using any two vectors, $\normalfont\mathbf{a}$ and $\normalfont\mathbf{b}$, $\normalfont\mathbf{a}\times\mathbf{b}=|\normalfont\mathbf{a}||\mathbf{b}|$ if and only if they are perpendicular.
         \end{theorem}
         \begin{proof}
-            Given definition \ref{eq:vector_product}, $|\textbf{a}\times\textbf{b}|$ can be found as the product of the magnitudes of each of of the parts of the definition:
+            Given definition \ref{eq:vector_product}, $|\mathbf{a}\times\mathbf{b}|$ can be found as the product of the magnitudes of each of of the parts of the definition:
             \begin{equation}
-                |\textbf{a}\times\textbf{b}|=|\textbf{a}||\textbf{b}||\sin\theta||\hat{\textbf{n}}|
+                |\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}||\sin\theta||\nhat|
             \end{equation}
             Given that $0\le\theta\le\pi$, $\sin\theta\ge0$, so $|\sin\theta|=\sin\theta$.
-            We also know that $|\hat{\textbf{n}}|$ is a unit vector by definition, so $|\hat{\textbf{n}}|=1$, so the formula for the magnitude of $|\textbf{a}\times\textbf{b}|$ simplifies to:
+            We also know that $|\nhat|$ is a unit vector by definition, so $|\nhat|=1$, so the formula for the magnitude of $|\mathbf{a}\times\mathbf{b}|$ simplifies to:
             \begin{equation}
-                |\textbf{a}\times\textbf{b}|=|\textbf{a}||\textbf{b}|\sin\theta
+                |\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}|\sin\theta
             \end{equation}
-            Thus, $|\textbf{a}\times\textbf{b}|=|\textbf{a}||\textbf{b}|$ if and only if $\sin\theta=1$, which would mean that $\theta=\frac{\pi}{2}$, which means that they are perpendicular, since $\frac{\pi}{2}$ is a right-angle.
+            Thus, $|\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}|$ if and only if $\sin\theta=1$, which would mean that $\theta=\frac{\pi}{2}$, which means that they are perpendicular, since $\frac{\pi}{2}$ is a right-angle.
         \end{proof}
 
         \begin{theorem}
-            Where the vectors $\normalfont\textbf{a}$ and $\normalfont\textbf{b}$ are defined as follows:
+            Where the vectors $\normalfont\mathbf{a}$ and $\normalfont\mathbf{b}$ are defined as follows:
             \begin{equation*}
-                \normalfont{\textbf{a}}=a_1\normalfont{\textbf{i}}+a_2\normalfont{\textbf{j}}+a_3\normalfont{\textbf{k}}=
+                \normalfont{\mathbf{a}}=a_1\normalfont{\mathbf{i}}+a_2\normalfont{\mathbf{j}}+a_3\normalfont{\mathbf{k}}=
                 \begin{pmatrix}
                     a_1 \\ a_2 \\ a_3
                 \end{pmatrix}
             \end{equation*}
             \begin{equation*}
-                \normalfont{\textbf{b}}=b_1\normalfont{\textbf{i}}+b_2\normalfont{\textbf{j}}+b_3\normalfont{\textbf{k}}
+                \normalfont{\mathbf{b}}=b_1\normalfont{\mathbf{i}}+b_2\normalfont{\mathbf{j}}+b_3\normalfont{\mathbf{k}}
                 \begin{pmatrix}
                     b_1 \\ b_2 \\ b_3
                 \end{pmatrix}
             \end{equation*}
-            Their vector product, $\normalfont{\textbf{a}}\times\normalfont{\textbf{b}}$, is:
+            Their vector product, $\normalfont{\mathbf{a}}\times\normalfont{\mathbf{b}}$, is:
             \begin{equation} \label{vector_product_ijk_form}
-                \normalfont{\textbf{a}}\times\normalfont{\textbf{b}}=(a_2b_3-a_3b_2)\normalfont{\textbf{i}}+(a_3b_1-a_1b_3)\normalfont{\textbf{j}}+(a_1b_2-a_2b_1)\normalfont{\textbf{k}}
+                \normalfont{\mathbf{a}}\times\normalfont{\mathbf{b}}=(a_2b_3-a_3b_2)\normalfont{\mathbf{i}}+(a_3b_1-a_1b_3)\normalfont{\mathbf{j}}+(a_1b_2-a_2b_1)\normalfont{\mathbf{k}}
             \end{equation}
             Or in column form:
-            \begin{equation}
-                \normalfont{\textbf{a}}\times\normalfont{\textbf{b}}=
+            \begin{equation} \label{eq:vector_product_column_form}
+                \normalfont{\mathbf{a}}\times\normalfont{\mathbf{b}}=
                 \begin{pmatrix}
                     a_1 \\ a_2 \\ a_3
                 \end{pmatrix}
@@ -108,27 +110,27 @@
             \end{equation}
         \end{theorem}
         \begin{proof}
-            We'll begin with expanding $\textbf{a}\times\textbf{b}$ using their $\textbf{i}$, $\textbf{j}$, $\textbf{k}$ forms:
+            We'll begin with expanding $\mathbf{a}\times\mathbf{b}$ using their $\mathbf{i}$, $\mathbf{j}$, $\mathbf{k}$ forms:
             \begin{equation}
-                \textbf{a}\times\textbf{b}=(a_1\textbf{i}+a_2\textbf{j}+a_3\textbf{k})\times(b_1\textbf{i}+b_2\textbf{j}+b_3\textbf{k})
+                \mathbf{a}\times\mathbf{b}=(a_1\mathbf{i}+a_2\mathbf{j}+a_3\mathbf{k})\times(b_1\mathbf{i}+b_2\mathbf{j}+b_3\mathbf{k})
             \end{equation}
             From there, the two trinomials can be expanded normally:
             \begin{equation}
             \begin{aligned}
-                \textbf{a}\times\textbf{b}
-                &=a_1b_1(\textbf{i}\times\textbf{i})+a_1b_2(\textbf{i}\times\textbf{j})+a_1b_3(\textbf{i}\times\textbf{k}) \\
-                &+a_2b_1(\textbf{j}\times\textbf{i})+a_2b_2(\textbf{j}\times\textbf{j})+a_2b_3(\textbf{j}\times\textbf{k}) \\
-                &+a_3b_1(\textbf{k}\times\textbf{i})+a_3b_2(\textbf{k}\times\textbf{j})+a_3b_3(\textbf{k}\times\textbf{k})
+                \mathbf{a}\times\mathbf{b}
+                &=a_1b_1(\mathbf{i}\times\mathbf{i})+a_1b_2(\mathbf{i}\times\mathbf{j})+a_1b_3(\mathbf{i}\times\mathbf{k}) \\
+                &+a_2b_1(\mathbf{j}\times\mathbf{i})+a_2b_2(\mathbf{j}\times\mathbf{j})+a_2b_3(\mathbf{j}\times\mathbf{k}) \\
+                &+a_3b_1(\mathbf{k}\times\mathbf{i})+a_3b_2(\mathbf{k}\times\mathbf{j})+a_3b_3(\mathbf{k}\times\mathbf{k})
             \end{aligned}
             \end{equation}
             From here, we can use the identities \ref{eq:vector_product_of_ii_jj_kk}, \ref{eq:vector_product_of_ij}, \ref{eq:vector_product_of_jk}, \ref{eq:vector_product_of_ki} to simplify each term of the expanded trinomial:
             \begin{equation}
             \begin{aligned}
-                \textbf{a}\times\textbf{b}
-                &=a_1b_2(\textbf{k})+a_1b_3(-\textbf{j}) \\
-                &+a_2b_1(-\textbf{k})+a_2b_3(\textbf{i}) \\
-                &+a_3b_1(\textbf{-i})+a_3b_2(\textbf{j}) \\
-                &=(a_2b_3-a_3b_1)\textbf{i}+(a_3b_2-a_1b_3)\textbf{j}+(a_1b_2-a_2b_1)\textbf{k}
+                \mathbf{a}\times\mathbf{b}
+                &=a_1b_2(\mathbf{k})+a_1b_3(-\mathbf{j}) \\
+                &+a_2b_1(-\mathbf{k})+a_2b_3(\mathbf{i}) \\
+                &+a_3b_1(\mathbf{-i})+a_3b_2(\mathbf{j}) \\
+                &=(a_2b_3-a_3b_1)\mathbf{i}+(a_3b_2-a_1b_3)\mathbf{j}+(a_1b_2-a_2b_1)\mathbf{k}
             \end{aligned}
             \end{equation}
             Which is the form in equation \ref{vector_product_ijk_form}.
@@ -136,19 +138,19 @@
 
         This can also be written as the determinant of a $3\times3$ matrix:
         \begin{equation}
-            \textbf{a}\times\textbf{b}=\left|\begin{matrix}
-                \textbf{i} & \textbf{j} & \textbf{k} \\
+            \mathbf{a}\times\mathbf{b}=\left|\begin{matrix}
+                \mathbf{i} & \mathbf{j} & \mathbf{k} \\
                 a_1 & a_2 & a_3 \\
                 b_1 & b_2 & b_3
-            \end{matrix}\right|=\textbf{i}
+            \end{matrix}\right|=\mathbf{i}
             \left|\begin{matrix}
                 a_2 & a_3 \\
                 b_2 & b_3
-            \end{matrix}\right|+\textbf{j}
+            \end{matrix}\right|+\mathbf{j}
             \left|\begin{matrix}
                 a_1 & a_3 \\
                 b_1 & b_3
-            \end{matrix}\right|+\textbf{k}
+            \end{matrix}\right|+\mathbf{k}
             \left|\begin{matrix}
                 a_1 & a_2 \\
                 b_1 & b_2
@@ -160,21 +162,200 @@
         \begin{equation}
             A=\frac{1}{2}ab\sin\theta
         \end{equation}
-        This closely resembles the formula for the vector product, where $a=|\textbf{a}|$ and $b=|\textbf{b}|$.
+        This closely resembles the formula for the vector product, where $a=|\mathbf{a}|$ and $b=|\mathbf{b}|$.
         The using those definitions of $a$ and $b$, the formula for the area of a triangle is:
         \begin{equation}
         \begin{aligned}
-            A&=\frac{1}{2}|\textbf{a}||\textbf{b}|\sin\theta \\
-            &=\frac{1}{2}|\textbf{a}\times\textbf{b}|
+            A&=\frac{1}{2}|\mathbf{a}||\mathbf{b}|\sin\theta \\
+            &=\frac{1}{2}|\mathbf{a}\times\mathbf{b}|
         \end{aligned}
         \end{equation}
         Thus, this formula can be used to derive the area of a triangle from its side, where its sides are given by vectors.
         This formula can also be extended to parallelograms; the area of a parallelogram with sides $a$ and $b$ is twice the area of a triangle with sides $a$ and $b$, so its area would be given as:
         \begin{equation}
-            A=|\textbf{a}\times\textbf{b}|
+            A=|\mathbf{a}\times\mathbf{b}|
         \end{equation}
 
         \newpage
+
+        \subsection{Example Questions}
+
+        \question{q:1}{FP1}{1A/1f}{}{Simplify $(\ijkvec{3}{1}{-1})\times\ijkvec{0}{2}{0}$.}
+
+        \answer{q:1}{
+            $(\ijkvec{3}{1}{-1})\times\ijkvec{0}{2}{0}$ can be written as a $3\times3$ matrix determinant:
+
+            $$(\ijkvec{3}{1}{-1})\times\ijkvec{0}{2}{0}=\left|
+                \begin{matrix}
+                    \mathbf{i}&\mathbf{j}&\mathbf{k} \\
+                    3 & 1 & -1 \\
+                    0 & 2 & 0
+                \end{matrix}
+            \right|$$
+
+            Which can then be separated into:
+            $$\left|
+                \begin{matrix}
+                    \ijkdeterminant \\
+                    3 & 1 & -1 \\
+                    0 & 2 & 0
+                \end{matrix}
+            \right|=\mathbf{i}\left|
+                \begin{matrix}
+                    1 & -1 \\
+                    2 & 0
+                \end{matrix}
+            \right|+\mathbf{j}\left|
+                \begin{matrix}
+                    3 & -1 \\
+                    0 & 0
+                \end{matrix}
+            \right|+\mathbf{k}\left|
+                \begin{matrix}
+                    3 & 1 \\
+                    0 & 2
+                \end{matrix}
+            \right|$$
+            Then, each of the matrix determinants can be found to fully simplify the vector product:
+            $$\left|
+                \begin{matrix}
+                    1 & -1 \\
+                    2 & 0
+                \end{matrix}
+            \right|=1\times0-(-1)\times2=2$$
+
+            $$\left|
+                \begin{matrix}
+                    3 & -1 \\
+                    0 & 0
+                \end{matrix}
+            \right|=3\times0-(-1)\times0=0$$
+
+            $$\left|
+                \begin{matrix}
+                    3 & 1 \\
+                    0 & 2
+                \end{matrix}
+            \right|=3\times2-1\times0=6$$
+
+            So the final vector is $\ijkvec{2}{0}{6}=\boxed{\ijkvec{2}{0}{6}}$.
+        }
+
+        \question{q:2}{FP1}{1A/9}{}{Given that $\mathbf{a}=\ijkvec{-1}{2}{-5}$ and $\mathbf{b}=\ijkvec{5}{-2}{1}$, find:
+            \begin{enumerate}
+                \item $\mathbf{a}\cdot\mathbf{b}$
+                \item $\mathbf{a}\times\mathbf{b}$
+                \item The unit vector in the direction $\mathbf{a}\times\mathbf{b}$
+            \end{enumerate}
+        }
+
+        \answer{q:2}{
+            \begin{enumerate}
+                \item\begin{equation*}
+                    \begin{aligned}
+                        \mathbf{a}\cdot\mathbf{b}&=(\ijkvec{-1}{2}{-5})\cdot(\ijkvec{5}{-2}{1}) \\
+                        &=(-1\times5)+(2\times-2)+(-5\times1) \\
+                        &=-5-4-5 \\
+                        &=\boxed{-14}
+                    \end{aligned}
+                \end{equation*}
+
+                \item \begin{equation*}
+                    \begin{aligned}
+                        \mathbf{a}\times\mathbf{b}&=\left|
+                            \begin{matrix}
+                                \ijkdeterminant \\
+                                -1 & 2 & -5 \\
+                                5 & -2 & 1
+                            \end{matrix}
+                        \right| \\
+                        &=\mathbf{i}\left|
+                            \begin{matrix}
+                                2 & -5 \\
+                                -2 & 1
+                            \end{matrix}
+                        \right|+\mathbf{j}\left|
+                            \begin{matrix}
+                                -1 & -5 \\
+                                5 & 1
+                            \end{matrix}
+                        \right|+\mathbf{k}\left|
+                            \begin{matrix}
+                                -1 & 2 \\
+                                5 & -2
+                            \end{matrix}
+                        \right| \\
+                        &=\boxed{\ijkvec{-8}{-24}{-8}}
+                    \end{aligned}
+                \end{equation*}
+
+                \item The unit vector in direction $\mathbf{v}$ is $\frac{\mathbf{v}}{|\mathbf{v}|}$.
+                Using the result from part b:
+                \begin{equation*}
+                    \begin{aligned}
+                        |\mathbf{a}\times\mathbf{b}|&=\sqrt{(-8)^2+(-24)^2+(-8)^2} \\
+                        &=8\sqrt{11}
+                    \end{aligned}
+                \end{equation*}
+                Therefore, the unit vector in direction $\mathbf{a}\times\mathbf{b}$ is:
+                \begin{equation*}
+                    \begin{aligned}
+                        \frac{1}{8\sqrt{11}}(\ijkvec{-8}{-24}{-8}) =\boxed{-\frac{1}{\sqrt{11}}(\ijkvec{1}{3}{1})}
+                    \end{aligned}
+                \end{equation*}
+            \end{enumerate}            
+        }
+
+        \question{q:3}{FP1}{1A/15}{}{
+            If $\mathbf{a}$, $\mathbf{b}$ and $\mathbf{c}$ satisfy $\mathbf{a}+\mathbf{b}+\mathbf{c}=\mathbf{0}$, show that:
+            \begin{equation}
+                \mathbf{a}\times\mathbf{b}=\mathbf{b}\times\mathbf{c}=\mathbf{c}\times\mathbf{a}
+            \end{equation}
+        }
+        \answer{q:3}{
+            We will begin by multiplying $\mathbf{a}$ by $\mathbf{a}+\mathbf{b}+\mathbf{c}=\mathbf{0}$:
+
+            \begin{equation*}
+                \begin{aligned}
+                    \mathbf{a}\times(\mathbf{a}+\mathbf{b}+\mathbf{c})&=\mathbf{a}\times0 \\
+                    \mathbf{a}\times\mathbf{a}+\mathbf{a}\times\mathbf{b}+\mathbf{a}\times\mathbf{c}&=0
+                \end{aligned}
+            \end{equation*}
+            
+            Since for any vector $\mathbf{v}$, $\mathbf{v}\times\mathbf{v}=0$, the $\mathbf{a}\times\mathbf{a}$ can be removed.
+            Then, using the anticommutatitivity of the vector product ($\mathbf{v}\times\mathbf{u}=-(\mathbf{u}\times\mathbf{v})$), the $\mathbf{b}\times\mathbf{c}$ can be negated then moved to the right hand side:
+
+            \begin{equation*}
+                \begin{aligned}
+                    \mathbf{a}\times\mathbf{b}+\mathbf{a}\times\mathbf{c}&=0 \\
+                    \mathbf{a}\times\mathbf{b}-\mathbf{c}\times\mathbf{a}&=0 \\
+                    \mathbf{a}\times\mathbf{b}&=\mathbf{c}\times\mathbf{a}
+                \end{aligned}
+            \end{equation*}
+
+            Now we will repeat the process by multiplying $\mathbf{b}$ by $\mathbf{a}+\mathbf{b}+\mathbf{c}=\mathbf{0}$:
+
+            \begin{equation*}
+                \begin{aligned}
+                    \mathbf{b}\times(\mathbf{a}+\mathbf{b}+\mathbf{c})&=\mathbf{a}\times0 \\
+                    \mathbf{b}\times\mathbf{a}+\mathbf{b}\times\mathbf{b}+\mathbf{b}\times\mathbf{c}&=0 \\
+                    \mathbf{b}\times\mathbf{a}+\mathbf{b}\times\mathbf{c}&=0 \\
+                    \mathbf{b}\times\mathbf{a}-\mathbf{c}\times\mathbf{b}&=0 \\
+                    \mathbf{b}\times\mathbf{a}&=\mathbf{c}\times\mathbf{b} \\
+                    \mathbf{a}\times\mathbf{b}&=\mathbf{b}\times\mathbf{c}
+                \end{aligned}
+            \end{equation*}
+
+            Thus, since $\mathbf{a}\times\mathbf{b}=\mathbf{c}\times\mathbf{a}$ and $\mathbf{a}\times\mathbf{b}=\mathbf{b}\times\mathbf{c}$:
+            \begin{equation}
+                \mathbf{a}\times\mathbf{b}=\mathbf{b}\times\mathbf{c}=\mathbf{c}\times\mathbf{a}
+            \end{equation} \qed
+        }
+
+        %\question{q:demo}{book}{QuestionNum}{marks}{QuestionText}
+        %\answer{q:demo}{Answer}
+        
+    \newpage
 
 \section{Conic Sections I} \label{}
 

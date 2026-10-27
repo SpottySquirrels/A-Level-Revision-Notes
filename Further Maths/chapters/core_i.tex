@@ -1,4 +1,7 @@
+\href{https://drive.google.com/drive/folders/1le-4uediDAlxbglAtcbnSlPrLuQiPTE3}{\hypertarget{book:C1}{Core Pure I Textbook (C1)}}
+
 \section{Complex Numbers I} \label{complex_numbers_i}
+
     \subsection{The Imaginary Constant}
         Using only the \glspl{real_number}, there is no number $x$ that satisfies the equation $x^2+1=0$.
         To satisfy this \gls{polynomial}, you must first define a square root of -1.
@@ -62,6 +65,95 @@
         For example, if a \gls{quadratic} has a \gls{root} $\alpha=2+3i$, then the other \gls{root} must be $\alpha^*=2-3i$.
         For a \gls{cubic}, there can only be one pair of \glspl{root}, thus the third \gls{root} cannot be a \gls{complex_root}, since it would have to have a fourth \gls{root} to form a \gls{conjugate_pair}.
         Thus, the third \gls{root} of a \gls{cubic} must a \gls{real_number}.
+
+    \subsection{Example Questions}
+        \question{q:1.1}{C1}{1A/8}{}{
+            Given that $z=a+bi$ and $w=a-bi$, $a,b\in\R$, show that:
+            \begin{enumerate}
+                \item $z+w$ is always real
+                \item $z-w$ is always imaginary
+            \end{enumerate}
+        }
+        \answer{q:1.1}{
+            \begin{enumerate}
+                \item $z+w$ can be expanded to $(a+bi)+(a-bi)$, which simplifies to $2a+bi-bi=2a$. Since $a\in\R$, $2a\in\R$, thus $z+w\in\R$.\qed
+                \item $z-w$ can be expanded to $(a+bi)-(a-bi)$, which simplifies to $a-a+2bi=2bi$. Since $b\in\R$, $2b\in\R$, thus $2bi$ is purely imaginary.\qed
+            \end{enumerate}
+        }
+
+        \question{q:1.2}{C1}{1C/9}{}{
+            \begin{enumerate}
+                \item Given that $i^1=i$ and $i^2=-1$, write $i^3$ and $i^4$ in their simplest forms.
+                \item Write $i^5$, $i^6$, $i^7$ and $i^8$ in their simplest forms.
+                \item Write down the value of:
+                \begin{enumerate}
+                    \item $i^{100}$
+                    \item $i^{253}$
+                    \item $i^{301}$
+                \end{enumerate}
+            \end{enumerate}
+        }
+        \answer{q:1.2}{
+            \begin{enumerate}
+                \item Since $i^2=-1$, $i^3$ must be $i^2\times i=-1\times i=\boxed{-i}$. Then, $i^4$ is $i^3\times i=-i\times i=-(i^2)=-(-1)=\boxed{1}$.
+                \item $i^5$ is $i^4\times i=1\times i=\boxed{i}$; $i^6$ is $i^5\times i=\boxed{-1}$; $i^7=i^6\times i=\boxed{-i}$; $i^8=i^7\times i=\boxed{1}$.
+                \item From the pattern in parts a and b, it is clear that $i^{n+4k}=i^n$ for all $k\in\Z$, thus $i^n=i^{n\mod 4}$.
+                \begin{enumerate}
+                    \item $100\mod4=0$, so $i^{100}=i^0=\boxed{1}$.
+                    \item $253\mod4=1$, so $i^{253}=i^1=\boxed{i}$.
+                    \item $301\mod4=1$, so $i^{301}=i^1=\boxed{i}$.
+                \end{enumerate}
+            \end{enumerate}
+        }
+
+        \question{q:1.3}{C1}{1C/Challenge}{}{
+            \begin{enumerate}
+                \item Expand $(a+bi)^2$
+                \item Hence, or otherwise, find $\sqrt{40-42i}$, giving your answer in the form $a-bi$, where $a$ and $b$ are positive integers.
+            \end{enumerate}
+        }
+        \answer{q:1.3}{
+            \begin{enumerate}
+                \item $(a+bi)^2=\boxed{a^2+2abi-b^2}$.
+                \item Let $z=a-bi=\sqrt{40-42i}$.
+                Thus, $z^2=40-42i=a^2-2abi-b^2$.
+                This shows that $40=a^2-b^2$ and $-42=-2ab$, since the real and imaginary terms must match up.
+                Rearranging $-42=2ab$ in terms of $a$ gives:
+                \begin{equation*}
+                    \begin{aligned}
+                        -42&=-2ab \\
+                        21&=ab \\
+                        a&=\frac{21}{b}
+                    \end{aligned}
+                \end{equation*}
+                Which can then be substituted into $40=a^2+b^2$:
+                \begin{equation*}
+                    \begin{aligned}
+                        40&=(\frac{21}{b})^2-b^2 \\
+                        40&=\frac{441}{b^2}-b^2 \\
+                        40b^2&=441-b^4
+                    \end{aligned}
+                \end{equation*}
+                This is now a quadratic in terms of $b^2$, so we'll define $\beta=b^2$, and it can now be solved using the quadratic equation:
+                \begin{equation*}
+                    \begin{aligned}
+                        b^4+40b^2-441&=0 \\
+                        \beta^2+40\beta-441&=0 \\
+                        \beta&=\frac{-40\pm\sqrt{40^2-4(-441)}}{2} \\
+                        &=\frac{-40\pm\sqrt{3364}}{2} \\
+                        &=\frac{-40\pm58}{2} \\
+                        &=-20\pm29 \\
+                        \beta=9\;\text{or}\;\beta=-49 \\
+                        b=\pm\sqrt{\beta} \\
+                    \end{aligned}
+                \end{equation*}
+                Thus, $b=3$ or $b=-3$ or $b=7i$ or $b=-7i$.
+                Since the question stipulates that \textit{``$a$ and $b$ are positive integers''}, $b$ must be 3.
+                Therefore, $a=\frac{21}{3}=7$.
+                So $\sqrt{40-42i}=\boxed{7-3i}$.
+            \end{enumerate}
+        }
+
     \newpage
 
 \section{Argand Diagrams} \label{argand_diagrams}
@@ -175,6 +267,8 @@
         \end{center}
 
     \subsection{Loci and Regions in Argand Diagrams} \label{ssec:loci_and_regions_in_argand_diagrams}
+
+    \subsection{Example Questions}
 
     \newpage
 

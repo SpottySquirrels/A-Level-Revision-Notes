@@ -62,7 +62,12 @@
 \newglossaryentry{cubic}{
     name={cubic},
     description={A 3rd degree \gls{polynomial}, i.e. an equation in the form $x^3+bx^2+cx+d=0$, where $a\neq0$},
-    plural={conjugate pairs}
+    plural={cubics}
+}
+\newglossaryentry{quartic}{
+    name={cubic},
+    description={A 4th degree \gls{polynomial}, i.e. an equation in the form $ax^4+bx^3+cx^2+dx+e=0$, where $a\neq0$},
+    plural={quartics}
 }
 \newglossaryentry{argand_diagram}{
     name=Argand diagram,
@@ -117,6 +122,73 @@
     description={A number with no decimal part.
     The set of all integers \\ ($\{\cdots-3,-2,-1,0,1,2,3,\cdots\})$ is written as $\Z$},
     plural={arguments}
+}
+\newglossaryentry{trigonometry}{
+    name={trigonometry},
+    description={The field of maths that studies trigonometric \glspl{function} ($\sin$, $\cos$, $\tan$, $\sinh$, $\cosh$, $\tanh$, etc.)}
+}
+\newglossaryentry{function}{
+    name={function},
+    description={A map between two set (from the function's range to its domain) that maps each item in one (its range) to an item in the other (its domain).
+    The image of $x$ under the function $f$ is written $f(x)$.
+    A function that maps elements of $X$ to elements in $Y$ is written $f:X\to Y$},
+    plural={functions}
+}
+\newglossaryentry{sine}{
+    name={sine},
+    description={A \glslink{trigonometry}{trigonometric} \gls{function}.
+    In a right-angled triangle with a hypotensuse $H$, opposite side $O$, adjacent side $A$ and angle $\theta$, $\sin\theta=\frac{O}{H}$.
+    It is an odd \gls{function}, meaning that $-\sin\theta=\sin(-\theta)$.
+    Its definition is:
+    \begin{equation}
+        \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}
+    \end{equation}
+    Its \gls{reciprocal} \gls{function} is the cosecant \gls{function}, $\csc$},
+    plural={sines},
+    symbol={$\sin$}
+}
+\newglossaryentry{cosine}{
+    name={cosine},
+    description={A \glslink{trigonometry}{trigonometric} \gls{function}.
+    In a right-angled triangle with a hypotensuse $H$, opposite side $O$, adjacent side $A$ and angle $\theta$, $\cos\theta=\frac{A}{H}$.
+    It can be related to the \gls{sine} \gls{function} with the identity $\cos\theta=\sin(\theta+\frac{\pi}{2})$.
+    It is an odd \gls{function}, meaning that $-\sin\theta=\sin(-\theta)$.
+    Its definition is:
+    \begin{equation}
+        \cos\theta=\frac{e^{i\theta}+e^{-i\theta}}{2}
+    \end{equation}
+    Its \gls{reciprocal} \gls{function} is the secant \gls{function}, $\sec$},
+    plural={cosines},
+    symbol={$\cos$}
+}
+\newglossaryentry{reciprocal}{
+    name={reciprocal},
+    description={The reciprocal of a number is its multiplicative inverse, i.e. for some number $x$ with a reciprocal $x^{-1}$, $x\times x^{-1}=1$},
+    plural={reciprocal}
+}
+\newglossaryentry{locus}{
+    name={locus},
+    description={A set of points that satisfy some criteria, such as $\set{z\in\C:|z|=1}$},
+    plural={loci}
+}
+\newglossaryentry{complex_plane}{
+    name={complex plane},
+    description={The 2D plane of that the \glspl{complex_number} are on},
+    plural={complex planes}
+}
+\newglossaryentry{cartesian_plane}{
+    name={Cartesian plane},
+    description={The 2D plane of real points $(x,y)$},
+    plural={Cartesian planes}
+}
+\newglossaryentry{cartesian_equation}{
+    name={Cartesian equation},
+    description={An equation relating points on the \gls{cartesian_plane}, e.g. $y=x+1$},
+    plural={Cartesian equations}
+}
+\newglossaryentry{vietas_formulae}{
+    name={Vieta's formulae},
+    description={A set of formulae relating the \glspl{root} of a \gls{polynomial} to its coefficients}
 }
 
 
@@ -202,7 +274,7 @@
     name={mole},
     description={The \gls{si_unit} of quantity.
     1mol is approximately the number of atoms of carbon-12 in 12g of carbon-12.
-    It is defined as $N_A^-1$},
+    It is defined as $N_A^{-1}$},
     plural={moles},
     symbol={mol}
 }

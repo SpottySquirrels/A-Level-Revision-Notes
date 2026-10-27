@@ -12,7 +12,9 @@
     edge/.style={thick,black,shorten >=0pt,shorten <=0pt},
     directed_edge/.style={edge,-stealth}
 }
+\usetikzlibrary{calc}
 \usepackage{etoolbox}
+\usepackage{stix} % Allows '/' shaped dots (\adots)
 
 \usepackage{amsfonts}
 
@@ -123,6 +125,8 @@
 \newcommand{\nhat}{\hat{\mathbf{n}}}
 
 \renewcommand{\qed}{\hfill\qedsymbol} % Formats QED box to be at the right of the page
+
+\newcommand{\set}[1]{\left\{#1\right\}}
 
 \newcommand{\comment}[1]{} % Allows multiline comments
 

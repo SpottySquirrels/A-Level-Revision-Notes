@@ -163,31 +163,32 @@
         An \gls{argand_diagram} looks like this:
 
         \begin{center}
-        \begin{tikzpicture}[scale=1.5, >=stealth] % From Gemini
-            % Draw axes
-            \draw[->] (-0.5, 0) -- (4, 0) node[right] {$\real(z)$};
-            \draw[->] (0, -0.5) -- (0, 3) node[above] {$\imag(z)$};
-            
-            % Define coordinates for complex number z = a + bi (e.g., z = 3 + 2i)
-            \coordinate (O) at (0,0);
-            \coordinate (Z) at (3,2);
-            \coordinate (X) at (3,0);
-            
-            % Draw vector from origin to z
-            %\draw[thick, red] (O) -- (Z) node[midway, above left] {$z = a+bi$};
-            \draw[thick, red] (O) -- (Z);
-            \draw[red] (Z) node[above] {$z=a+bi$};
-            % Projection lines to axes
-            \draw[dashed, gray] (Z) -- (X) node[below] {$a$};
-            \draw[dashed, gray] (Z) -- (0,2) node[left] {$b$};
-            
-            % Plot point at z
-            \filldraw[red] (Z) circle (1.5pt);
-            
-            % Draw angle theta
-            %\draw (0.5,0) arc[start angle=0, end angle=33.7, radius=0.5];
-            %\node at (0.7, 0.25) {$\theta$};
-        \end{tikzpicture}
+            \begin{tikzpicture}[>=stealth] % From Gemini; edited
+                % Draw axes
+                \draw[->] (-0.5, 0) -- (4, 0) node[right] {$\real(z)$};
+                \draw[->] (0, -0.5) -- (0, 3) node[above] {$\imag(z)$};
+                
+                % Define coordinates for complex number z = a + bi (e.g., z = 3 + 2i)
+                \coordinate (O) at (0,0);
+                \coordinate (Z) at (3,2);
+                \coordinate (X) at (3,0);
+                
+                % Draw vector from origin to z
+                %\draw[thick, red] (O) -- (Z) node[midway, above left] {$z = a+bi$};
+                \draw[thick, red] (O) -- (Z);
+                \draw[red] (Z) node[above] {$z=a+bi$};
+                \draw[gray] (O) node[below left] {$0$};
+                % Projection lines to axes
+                \draw[dashed, gray] (Z) -- (X) node[below] {$a$};
+                \draw[dashed, gray] (Z) -- (0,2) node[left] {$b$};
+                
+                % Plot point at z
+                \filldraw[red] (Z) circle (1.5pt);
+                
+                % Draw angle theta
+                %\draw (0.5,0) arc[start angle=0, end angle=33.7, radius=0.5];
+                %\node at (0.7, 0.25) {$\theta$};
+            \end{tikzpicture}
         \end{center}
 
         Where the point $z=a+bi$ is drawn where the point $(a, b)$ would be drawn on a \gls{cartesian_graph}.
@@ -206,20 +207,20 @@
         An \gls{argand_diagram} is split into four \glspl{quadrant}, called \gls{quadrant} 1, 2, 3 and 4:
 
         \begin{center}
-        \begin{tikzpicture}[scale=1.5, >=stealth]
-            \draw[->] (-2, 0) -- (2, 0) node[right] {$\real(z)$};
-            \draw[->] (0, -2) -- (0, 2) node[above] {$\imag(z)$};
-            
-            \coordinate (Q1) at (1,1);
-            \coordinate (Q2) at (-1,1);
-            \coordinate (Q3) at (-1,-1);
-            \coordinate (Q4) at (1,-1);
-            
-            \draw (Q1) node {Quadrant 1};
-            \draw (Q2) node {Quadrant 2};
-            \draw (Q3) node {Quadrant 3};
-            \draw (Q4) node {Quadrant 4};
-        \end{tikzpicture}
+            \begin{tikzpicture}[scale=1.5, >=stealth]
+                \draw[->] (-2, 0) -- (2, 0) node[right] {$\real(z)$};
+                \draw[->] (0, -2) -- (0, 2) node[above] {$\imag(z)$};
+                
+                \coordinate (Q1) at (1,1);
+                \coordinate (Q2) at (-1,1);
+                \coordinate (Q3) at (-1,-1);
+                \coordinate (Q4) at (1,-1);
+                
+                \draw (Q1) node {Quadrant 1};
+                \draw (Q2) node {Quadrant 2};
+                \draw (Q3) node {Quadrant 3};
+                \draw (Q4) node {Quadrant 4};
+            \end{tikzpicture}
         \end{center}
 
 
@@ -236,62 +237,442 @@
             \arg(z)=\arctan\left(\frac{\imag(z)}{\real(z)}\right)-\pi
         \end{equation}
 
+        For a \gls{complex_number} $z=x+iy$ with \gls{modulus} $|z|=r$ and \gls{argument} $\arg z=\theta$, the following are true from right-angled \gls{trigonometry}:
+
+        \begin{align}
+            x&=r\cos\theta \\
+            y&=r\sin\theta
+        \end{align}
+
+        Thus, $z$ can be written as:
+
+        \begin{equation}
+            z=r(\cos\theta+i\sin\theta)
+        \end{equation}
+
+        To shorten this form, the \gls{function} $\cis\theta$ (short for \glslink{cosine}{\textbf{c}osine} plus \textbf{\textit{i}} \glslink{sine}{\textbf{s}ine}) can be used to simplify it down to:
+
+        \begin{equation}
+            z=r\cis\theta
+        \end{equation}
+
         On an \gls{argand_diagram}, the \gls{complex_conjugate} of a number is itself mirror in the line $\imag(z)=0$ (see subsection \ref{ssec:loci_and_regions_in_argand_diagrams}):
 
         \begin{center}
-        \begin{tikzpicture}[scale=1.5, >=stealth]
-            \draw[->] (-4, 0) -- (4, 0) node[right] {$\real(z)$};
-            \draw[->] (0, -3) -- (0, 3) node[above] {$\imag(z)$};
-            
-            \coordinate (O) at (0,0);
-            \coordinate (Z) at (3,2);
-            \coordinate (conj_Z) at (3,-2);
-            \coordinate (neg_Z) at (-3,-2);
-            \coordinate (neg_conj_Z) at (-3,2);
-            
-            \draw[thick, red] (O) -- (Z);
-            \draw[thick, red] (O) -- (conj_Z);
-            \draw[thick, red] (O) -- (neg_Z);
-            \draw[thick, red] (O) -- (neg_conj_Z);
+            \begin{tikzpicture}[>=stealth]
+                \draw[->] (-4, 0) -- (4, 0) node[right] {$\real(z)$};
+                \draw[->] (0, -3) -- (0, 3) node[above] {$\imag(z)$};
+                
+                \coordinate (O) at (0,0);
+                \coordinate (Z) at (3,2);
+                \coordinate (conj_Z) at (3,-2);
+                \coordinate (neg_Z) at (-3,-2);
+                \coordinate (neg_conj_Z) at (-3,2);
+                
+                \draw[thick, red] (O) -- (Z);
+                \draw[thick, red] (O) -- (conj_Z);
+                \draw[thick, red] (O) -- (neg_Z);
+                \draw[thick, red] (O) -- (neg_conj_Z);
 
-            \draw[red] (Z) node[above] {$z=a+bi$};
-            \draw[red] (conj_Z) node[below] {$z^*=a-bi$};
-            \draw[red] (neg_Z) node[below] {$-z=-a-bi$};
-            \draw[red] (neg_conj_Z) node[above] {$-z^*=-a+bi$};
+                \draw[red] (Z) node[above] {$z=a+bi$};
+                \draw[red] (conj_Z) node[below] {$z^*=a-bi$};
+                \draw[red] (neg_Z) node[below] {$-z=-a-bi$};
+                \draw[red] (neg_conj_Z) node[above] {$-z^*=-a+bi$};
 
-            \filldraw[red] (Z) circle (1.5pt);
-            \filldraw[red] (conj_Z) circle (1.5pt);
-            \filldraw[red] (neg_Z) circle (1.5pt);
-            \filldraw[red] (neg_conj_Z) circle (1.5pt);
-        \end{tikzpicture}
+                \filldraw[red] (Z) circle (1.5pt);
+                \filldraw[red] (conj_Z) circle (1.5pt);
+                \filldraw[red] (neg_Z) circle (1.5pt);
+                \filldraw[red] (neg_conj_Z) circle (1.5pt);
+            \end{tikzpicture}
         \end{center}
 
+        Using the fact that the negative of a \gls{complex_number} is itself rotated by $180^\circ\equiv\pi$ \glspl{radian}, a \gls{complex_number} can be mirrored over the lines $\real(z)=0$, $\imag(z)=0$, and $\real(z)=\pm\imag(z)$.
+        
+        Looking that this graph, it is clear to see that the \gls{argument} of the \gls{complex_conjugate} of a \gls{complex_number} is negative that of the original \gls{complex_number}, thus:
+
+        \begin{align}
+            \arg z=-\arg z^* \\
+            r\cis\theta=r\cis(-\theta)
+        \end{align}
+
+        \subsubsection{Complex Numbers in the Form \texorpdfstring{$r(\cos\theta-i\sin\theta)$}{\textit{r(}cos\textit{θ-i}sin\textit{θ)}}} % Red highlighted brackets are correct
+            \Glspl{complex_number} can be written in the form $r(\cos\theta-\sin\theta)$, however this is not generally helpful, so they should be converted to regular $r\cis\theta$ form.
+            This can be done using the identities:
+
+            \begin{align}
+                \sin\theta=-\sin(-\theta) \\
+                cos\theta=\cos(-\theta)
+            \end{align}
+
+            These identities show that $\sin$ is an odd \gls{function} ($f(x)=-f(-x)$), and $\cos$ is an even \gls{function} ($f(x)=f(-x)$).
+            This means that $\sin$ has a rotational symmetry of 2 when rotated around the origin, and $\cos$ has a line of symmetry at $x=0$.
+
+            From this, the $-\sin\theta$ term can be rewritten as $\sin(-\theta)$, and $\cos\theta$ can match with $\cos(-\theta)$, to make sure that the angle in the \gls{cosine} and \gls{sine} terms are the same.
+            From there, that gives:
+
+            \begin{equation}
+                r(\cos\theta-i\sin\theta)=r\left(\cos(-\theta)+i\sin(-\theta)\right)=r\cis(-\theta)
+            \end{equation}
+
+            And since \glspl{complex_conjugate} have negated angles, that means that:
+            
+            \begin{equation}
+                r\cis(-\theta)=(r\cis\theta)^*
+            \end{equation}
+
     \subsection{Loci and Regions in Argand Diagrams} \label{ssec:loci_and_regions_in_argand_diagrams}
+        A \gls{locus} (plural \glspl{locus}) is a set of points satisfying some criteria.
+        For example, the \gls{locus} of points such that, for all points $z$, $|z|=1$ forms a circle on the \gls{complex_plane} with a radius of 1, since the set of points $|z|=1$ is the set of points 1 unit away from the centre, by the definition of the \gls{modulus}.
+
+        \subsubsection{Circles in the Complex Plane}
+            Generalising the $|z|=1$ locus:
+            \begin{theorem}
+                A circle of any radius $r$ can be made with the \gls{locus} $|z|=r$.
+            \end{theorem}
+            \begin{proof}
+                Given the equation of a circle centred on $(0,0)$ in the \gls{cartesian_plane}:
+                \begin{equation}
+                    x^2+y^2=r^2
+                \end{equation}
+                We can define $z=x+iy$, which means that $|z|=\sqrt{x^2+y^2}$.
+                Thus, squaring both sides of the equation $|z|=r$ gives:
+                \begin{equation}
+                    x^2+y^2=r^2
+                \end{equation}
+                Which is the same as the \gls{cartesian_equation} for a circle.
+            \end{proof}
+
+            The circle can then be moved to be centred on a point $a+bi$, similarly to how a circle in the \gls{cartesian_plane} can be moved to a point $(a,b)$:
+            \begin{theorem}
+                A circle centred on $a+bi$ in the \gls{complex_plane} has the equation:
+                \begin{equation}
+                    \left|z-(a+bi)\right|=r
+                \end{equation}
+            \end{theorem}
+            \begin{proof}
+                Using the \gls{cartesian_equation} for a circle centred on $(a,b)$:
+                \begin{equation}
+                    (x-a)^2+(y-b)^2=r^2
+                \end{equation}
+                We can define $z=x+iy$.
+                Thus, the \gls{modulus} of $z-(a+bi)$ is:
+                \begin{equation*}
+                    \begin{aligned}
+                        |z-(a+bi)|&=|(x-a)+(y-b)i| \\
+                        &=\sqrt{(x-a)^2+(y-b)^2}
+                    \end{aligned}
+                \end{equation*}
+                Thus, squaring each side of the equation $\left|z-(a+bi)\right|=r$ gives:
+                \begin{equation}
+                    (x-a)^2+(y-b)^2=r^2
+                \end{equation}
+                Which is the \gls{cartesian_equation}, thus they are the same.
+            \end{proof}
+
+            On an \gls{argand_diagram}, this is what the \gls{locus} $\left|z-(a+bi)\right|=r$ looks like:
+
+            \begin{figure}
+                \begin{center}
+                    \begin{tikzpicture}[>=stealth]
+                        \draw[->] (-0.5, 0) -- (3.5, 0) node[right] {$\real(z)$};
+                        \draw[->] (0, -0.5) -- (0, 3.5) node[above] {$\imag(z)$};
+                        
+                        \coordinate (O) at (0,0);
+                        \coordinate (Z) at (2,2);
+                        \coordinate (X) at (2,0);
+                        
+                        %\draw[dashed, gray] (O) -- (Z);
+                        \draw[red] (Z) node[above] {$a+bi$};
+                        \draw[gray] (O) node[below left] {$0$};
+
+                        \draw[dashed, gray] (Z) -- (2.70711,1.29289); % (2-\sqrt(2), 2+\sqrt(2))
+                        \draw[red] (2.35356,1.64644) node[above right] {$r$}; % midpoint of radius
+
+                        \draw[dashed, gray] (Z) -- (X) node[below] {$a$};
+                        \draw[dashed, gray] (Z) -- (0,2) node[left] {$b$};
+                        
+                        \draw[thick, red] (Z) circle (1);
+
+                        \filldraw[red] (Z) circle (1.5pt);
+                    \end{tikzpicture}
+                    \caption{The \gls{locus} $\left|z-(a+bi)\right|=r$ on an \gls{argand_diagram}}
+                \end{center}
+            \end{figure}
+        
+        \subsubsection{Lines in the Complex Plane}
+            Similar how you can make a \gls{locus} from $|z|=r$, you can also make a \gls{locus} from $\arg z=\theta$.
+
+            \begin{theorem} \label{thm:complex_ray_locus_origin}
+                The \gls{locus} $\arg z=\theta$ is a ray\footnote{A ray is a similar to a line, except it has one end point, and extends infinitely in the other direction. See figure \ref{fig:complex_ray_locus} for an example.} from 0 at an angle of $\theta$.
+            \end{theorem}
+            \begin{proof}
+                First, we will turn the equation $\arg z=\theta$ into its \glslink{cartesian_equation}{Cartesian} form using:
+                \begin{equation}
+                    \theta=\arctan\left(\frac{y}{x}\right)
+                \end{equation}
+                This means that:
+                \begin{equation*}
+                    \begin{aligned}
+                        \tan\theta&=\frac{y}{x} \\
+                        y&=x\tan\theta
+                    \end{aligned}
+                \end{equation*}
+                This is the \gls{cartesian_equation} for a line rotated from $y=0$ by an angle $\theta$.
+                However, the \gls{locus} cannot be a line; since two points opposite each other on an \gls{argand_diagram} have different \glspl{argument}.
+                For example, the points $\cis\left(\frac{\pi}{4}\right)$ and $-\cis\left(\frac{\pi}{4}\right)$ have \glspl{argument} of $\frac{\pi}{4}$ and $-\frac{3\pi}{4}$ respectively.
+                This means that the \gls{locus} cannot cross 0.
+                Since $\arg z$ is undefined for $z=0$, the locus also cannot contain 0.
+                This leaves a ray from 0 (not including 0) to infinity with the angle $\theta$ from the positive real line.
+            \end{proof}
+
+            Similar to how the circlular \gls{locus} could be moved by changing $z$ to $z-(a+bi)$, the ray \gls{locus} can also be moved by subtracting $(a+bi)$ from $z$.
+
+            \begin{theorem}
+                The \gls{locus} $\arg (z-(a+bi))=\theta$ is a ray with angle $\theta$ from the point $a+bi$.
+            \end{theorem}
+            \begin{proof}
+                We will define $z=x+iy$, and thus we can convert $\arg(z-(a+bi))=\theta$ to:
+                \begin{equation*}
+                    \begin{aligned}
+                        \theta&=\arctan\left(\frac{y-b}{x-a}\right) \\
+                        \tan\theta&=\frac{y-b}{x-a} \\
+                        y-b&=(x-a)\tan\theta
+                    \end{aligned}
+                \end{equation*}
+                Which is the \gls{cartesian_equation} for a line through a point $(a,b)$.
+                Using the same logic as in the proof for theorem \ref{thm:complex_ray_locus_origin} -- the points on either side of $0$ cannot have the same \gls{argument}, thus after moving to $a+bi$, the line is still only a ray from (and not including) $a+bi$, at the angle $\theta$.
+            \end{proof}
+
+            On an \gls{argand_diagram}, this is what the \gls{locus} $\arg(z-(a+bi))=\theta$ looks like:
+
+            \begin{figure} \label{fig:complex_ray_locus}
+                \begin{center}
+                    \begin{tikzpicture}[>=stealth]
+                        \draw[->] (-0.5,0) -- (3.5,0) node[right] {$\real(z)$};
+                        \draw[->] (0,-0.5) -- (0,3.5) node[above] {$\imag(z)$};
+                        
+                        \coordinate (O) at (0,0);
+                        \coordinate (Z) at (1,.5);
+                        \coordinate (E) at (3.5,3);
+                        
+                        \draw[thick, red] (Z) -- (E);
+                        \draw[red] (Z) node[below] {$a+bi$};
+                        \draw[gray] (O) node[below left] {$0$};
+
+                        %\draw[dashed, gray] (Z) -- (2.70711,1.29289); % (2-\sqrt(2), 2+\sqrt(2))
+                        %\draw[red] (2.35356,1.64644) node[above right] {$r$}; % midpoint of radius
+
+                        %\draw[dashed, gray] (Z) -- (1,0) node[below] {$a$};
+                        %\draw[dashed, gray] (Z) -- (0,.5) node[left] {$b$};
+                        
+                        %\draw[thick, red] (Z) circle (1);
+
+                        \filldraw[red] (Z) circle (1.5pt);
+
+                        \draw[dashed, gray] (1.75,0.5) arc[start angle=0, end angle=45, radius=.75]; % Angle ~= π/4
+                        \draw[dashed, gray] (Z) -- ($(Z) + (1.5,0)$);
+                        \node[gray] at (1.92388,0.88268) {$\theta$};
+                        \node[red, above right] at (E) {$\adots$};
+                    \end{tikzpicture}
+                    \caption{The \gls{locus} $\arg(z-(a+bi))=\theta$ on an \gls{argand_diagram}}
+                \end{center}
+            \end{figure}
 
     \subsection{Example Questions}
 
     \newpage
 
 \section{Series I} \label{series_i}
+    \newpage
 
 \section{Roots of Polynomials} \label{roots_of_polynomials}
     \subsection{Sums of Roots}
-        The \glspl{root} of \glspl{polynomial} can be related using Vieta's formulae (see section \ref{vietas_formulae}).
+        The \glspl{root} of \glspl{polynomial} can be related using \gls{vietas_formulae} (see section \ref{vietas_formulae}).
         The \glspl{root} of a general \gls{polynomial} are written as $\alpha$, $\beta$, $\gamma$, $\delta$, etc., and the coefficients are written as $a$, $b$, $c$, $d$, $e$, etc., where $a$ is the coefficient of the greatest power of the \gls{polynomial}, $b$ is the coefficient of the next greatest power, etc.
         The sum of all \glspl{root} is then written as $\sum\alpha\equiv\alpha+\beta+\cdots$.
         Multiple \glspl{root} can be multiplied together and then summed, for example the sum of all pairs of \glspl{root} ($\alpha\beta+\alpha\gamma+\cdots$) would be written as $\sum\alpha\beta$.
         This would be the sum of \textit{all} possible pairs of \glspl{root}.
 
+        \Gls{vietas_formulae} for \glspl{quadratic} ($ax^2+bx+c$ with \glspl{root} $\alpha$, $\beta$) are:
+        \begin{align}
+            \sum\alpha&=-\frac{b}{a} \\
+            \alpha\beta&=\frac{c}{a}
+        \end{align}
+
+        \Gls{vietas_formulae} for \glspl{cubic} ($ax^3+bx^2+cx+d$ with \glspl{root} $\alpha$, $\beta$, $\gamma$) are:
+        \begin{align}
+            \sum\alpha&=-\frac{b}{a} \\
+            \sum\alpha\beta&=\frac{c}{a} \\
+            \alpha\beta\gamma&=-\frac{d}{a}
+        \end{align}
+
+        \Gls{vietas_formulae} for \glspl{quartic} ($ax^4+bx^3+cx^2+dx+e$ with \glspl{root} $\alpha$, $\beta$, $\gamma$, $\delta$) are:
+        \begin{align}
+            \sum\alpha&=-\frac{b}{a} \\
+            \sum\alpha\beta&=\frac{c}{a} \\
+            \sum\alpha\beta\gamma&=-\frac{d}{a} \\
+            \alpha\beta\gamma\delta&=\frac{e}{a}
+        \end{align}
+        
+        More complex equations can be also formed using \gls{vietas_formulae}, by rearranging the formulae into other forms.
+
+    \subsection{Other Forms of Vieta's Formulae}
+        \begin{theorem}[Sum of Reciprocals of Roots]
+            For an $n$-degree \gls{polynomial} (where $2\le n\in\N$), the sum of the \gls{reciprocal} of all $n$ \glspl{root} is the sum of all combinations of products of $n-1$ \gls{root} divided by the product of all \glspl{root}.
+            \begin{equation}
+                \sum^n\frac{1}{\alpha}=\frac{\sum\prod^{n-1}\alpha}{\prod\alpha}
+            \end{equation}
+            For a \gls{quadratic} ($n=2$), this looks like:
+            \begin{equation}
+                \frac{1}{\alpha}+\frac{1}{\beta}=\frac{\sum\alpha}{\alpha\beta}=\frac{\alpha+\beta}{\alpha\beta}
+            \end{equation}
+            For a \gls{cubic} ($n=3$), this looks like:
+            \begin{equation}
+                \frac{1}{\alpha}+\frac{1}{\beta}+\frac{1}{\gamma}=\frac{\sum\alpha\beta}{\alpha\beta\gamma}=\frac{\alpha\beta+\alpha\gamma+\beta\gamma}{\alpha\beta\gamma}
+            \end{equation}
+            The numerator and denominator can then be simplified using \gls{vietas_formulae}.
+        \end{theorem}
+        \begin{proof}
+            For the simplest case, $n=2$:
+            \begin{equation*}
+                \begin{aligned}
+                    \frac{1}{\alpha}+\frac{1}{\beta}&=\frac{\beta}{\alpha\beta}+\frac{\alpha}{\alpha\beta} \\
+                    &=\frac{\alpha+\beta}{\alpha\beta}
+                \end{aligned}
+            \end{equation*}
+            For the general case ($n\ge2$), the sum of \glspl{root} can be rewritten using common denominators.
+            For a set of numbers $S$, the product of all numbers ($\prod S$) must be a common denominator, since dividing it by any $s\in S$ would give $\prod(S\setminus{\set{s}})$, meaning that it is divisible by $s$ for any $s\in S$ ($s\mid\prod S\;\forall\;s\in S$).
+            Thus, considering that we need a common denominator for all of the \glspl{root} of the \gls{polynomial}, we can write the common denominator as $\prod\alpha$ (the product of all \glspl{root}).
+            Now, when each \gls{reciprocal} \gls{root} $\left(\frac{1}{\alpha}\right)$ is multiplied on the top and bottom by $\prod\alpha$:
+            \begin{equation}
+                \frac{1}{\alpha}=\frac{\prod\alpha}{\alpha\prod\alpha}=\frac{\alpha\beta\gamma\cdots}{\alpha^2\beta\gamma\cdots}=\frac{\beta\gamma\cdots}{\alpha\beta\gamma\cdots}
+            \end{equation}
+            \begin{equation}
+                \frac{1}{\beta}=\frac{\prod\alpha}{\beta\prod\alpha}=\frac{\alpha\beta\gamma\cdots}{\alpha\beta^2\gamma\cdots}=\frac{\alpha\gamma\cdots}{\alpha\beta\gamma\cdots}
+            \end{equation}
+            \begin{equation}
+                \frac{1}{\alpha}+\frac{1}{\beta}+\cdots=\frac{(\beta\gamma\cdots)+(\alpha\gamma\cdots)+\cdots}{\alpha\beta\gamma\cdots}
+            \end{equation}
+            The root already on the denominator is now on the denominator twice (once from it already being there, twice from multiplying by $\prod\alpha$), and once on the numerator (from $\prod\alpha$), so it can cancel.
+            This will leave the sum of all products of $n-1$ \glspl{root} ($\sum\prod^{n-1}\alpha$), since the set of all products of $n-1$ \glspl{root} is the product of all \glspl{root} except $\alpha$, the product of all \glspl{root} except $\beta$, etc., which is exactly what is now in the numerator.
+        \end{proof}
+
+        \begin{theorem}[Product of Roots to the Power $n$]
+            For some $n$, the product of all \glspl{root} to the power $n$ is:
+            \begin{equation}
+                \prod\left(\alpha^n\right)=\left(\prod\alpha\right)^n
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            First, we'll expand $\prod\left(\alpha^n\right)$ into:
+            \begin{equation*}
+                \begin{aligned}
+                    \prod\left(\alpha^n\right)&=\alpha^n\beta^n\gamma^n\cdots \\
+                    &=\underbrace{\alpha\times\alpha\times\cdots}_\text{$n$}\times\underbrace{\beta\times\beta\times\cdots}_\text{$n$}\times\underbrace{\gamma\times\gamma\times\cdots}_\text{$n$}
+                \end{aligned}
+            \end{equation*}
+            This can then be rearranged by grouping one \gls{root} from each $\alpha^n$ into a product, which can be simplified using th fact that $\prod\alpha\equiv\alpha\beta\gamma\cdots$:
+            \begin{equation*}
+                \begin{aligned}
+                    \prod\left(\alpha^n\right)&=\underbrace{(\alpha\beta\gamma\cdots)\times(\alpha\beta\gamma\cdots)\times\cdots}_\text{$n$}
+                    &=\left(\prod\alpha\right)^n
+                \end{aligned}
+            \end{equation*}
+        \end{proof}
+
+        \begin{theorem}[Sum of Squares of Roots]
+            The sum of squares of \glspl{root} of a \gls{polynomial} is:
+            \begin{equation}
+                \sum\left(\alpha^2\right)=\left(\sum\alpha\right)^2-2\sum\alpha\beta
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            We will begin by expanding the expression $\left(\sum\alpha\right)^2$:
+            \begin{equation}
+                    \left(\sum\alpha\right)^2=(\alpha+\beta+\gamma+\cdots)(\alpha+\beta+\gamma+\cdots)
+            \end{equation}
+            This can be expanded using a table with each \gls{root} across the top and side:
+            \begin{center}
+                \begin{tabular}{c|c c c c}
+                    $+$     &$\alpha$  &$\beta$      &$\gamma$      &$\cdots$ \\
+                    \hline
+                    $\alpha$&$\alpha^2$    &$\alpha\beta$&$\alpha\gamma$&$\cdots$ \\
+                    $\beta$ &$\alpha\beta$ &$\beta^2$    &$\beta\gamma$ &$\cdots$ \\
+                    $\gamma$&$\alpha\gamma$&$\beta\gamma$&$\gamma^2$    &$\cdots$ \\
+                    $\vdots$&$\vdots$      &$\vdots$     &$\vdots$      &$\ddots$
+                \end{tabular}
+            \end{center}
+            From this table, it is clear that the sum of the diagonal is the sum of squares of \glspl{root} ($\sum\left(\alpha^2\right)$), and the upper and lower triangles are identical, as well as being the set of all pairs of \glspl{root}.
+            Thus, the sum of elements in the table is:
+            \begin{equation}
+                \sum\left(\alpha^2\right)+2\sum\alpha\beta
+            \end{equation}
+            Which we have already established is equal to $\left(\sum\alpha\right)^2$, thus the equation can be rearranged to get:
+            \begin{equation}
+                \begin{aligned}
+                    \left(\sum\alpha\right)^2&=\sum\left(\alpha^2\right)+2\sum\alpha\beta \\
+                    \sum\left(\alpha^2\right)&=\left(\sum\alpha\right)^2-2\sum\alpha\beta
+                \end{aligned}
+            \end{equation}
+        \end{proof}
+
+        \begin{theorem}[Sum of Cubes of Quadratic Roots] \label{thm:sum_of_subes_of_quadratic_roots}
+            For a \gls{quadratic} with \glspl{root} $\alpha$ and $\beta$, the sum of cubes of \glspl{root} is:
+            \begin{equation}
+                \alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)
+            \end{equation}
+            Which can also be written:
+            \begin{equation}
+                \sum\left(\alpha^3\right)=\left(\sum\alpha\right)^3-3\alpha\beta\left(\sum\alpha\right)
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            We will begin by expanding $(\alpha+\beta)^3$:
+            \begin{equation*}
+                \begin{aligned}
+                    (\alpha+\beta)^3&=(\alpha+\beta)(\alpha+\beta)(\alpha+\beta) \\
+                    &=(\alpha^2+2\alpha\beta+\beta^2)(\alpha+\beta) \\
+                    &=\alpha^3+\alpha^2\beta+2\alpha^2\beta+2\alpha\beta^2+\alpha\beta^2+\beta^3 \\
+                    &=\alpha^3+3\alpha^2\beta+3\alpha\beta^2+\beta^3
+                \end{aligned}
+            \end{equation*}
+            This can then be rearrange by taking the $\alpha^3+\beta^3$ off to the side, then factoring $3\alpha^2\beta+3\alpha\beta^2$:
+            \begin{equation}
+                (\alpha+\beta)^3=\alpha^3+\beta^3+3\alpha\beta(\alpha+\beta)
+            \end{equation}
+            This can then be rearranged to give the final result of the proof:
+            \begin{equation}
+                \alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)
+            \end{equation}
+        \end{proof}
+
+        As a more general version of theorem \ref{thm:sum_of_subes_of_quadratic_roots}, the sum of cubes of any $n$-degree \glspl{polynomial} can be written as:
+        \begin{equation}
+            \sum\left(\alpha^3\right)=\left(\alpha\right)^3-3\left(\sum\alpha\right)\left(\sum\alpha\beta\right)+3\left(\sum\alpha\beta\gamma\right)
+        \end{equation}
+        For a \gls{quadratic}, the $3\sum\alpha\beta\gamma$ term is 0 because there is no $\gamma$ \gls{root}.
+
     \subsection{Linear Transformations of Roots}
 
-\newpage
+    \newpage
+    
 \section{Volumes of Revolution} \label{volumes_of_revolution}
-\newpage
+
+
+    \newpage
+
 \section{Matrices} \label{matricies}
-\newpage
+
+    \newpage
+
 \section{Linear Transformations} \label{linear_transformations}
-\newpage
+
+    \newpage
+
 \section{Proof by Induction} \label{proof_by_induction}
-\newpage
+
+    \newpage
+
 \section{Vectors} \label{core_vectors}
-\newpage
+
+    \newpage

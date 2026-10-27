@@ -130,14 +130,57 @@
 }
 \newglossaryentry{quark}{
     name={quark},
-    description={Quarks are fermions that feel the strong force.
+    description={Quarks are \glspl{fermion} that feel the strong force.
     They are fundamental particles.
-    There are six types of quark, split over three generations: up ($\upquark$, generation I), down ($\downquark$, generation I), strange ($\strangequark$, generation II), charm ($\charmquark$, generation II), top ($\topquark$, generation III) and bottom ($\bottomquark$, generation III).
-    The different quarks are also split into up-type and down-type, based on their charges.
-    The up-type quarks are: up, strange and top; the down-type quarks are down, charm and bottom.
+    There are six types of quark, split over three generations: \glslink{up_quark}{up} ($\upquark$, generation I), \glslink{down_quark}{down} ($\downquark$, generation I), \glslink{strange_quark}{strange} ($\strangequark$, generation II), \glslink{charm_quark}{charm} ($\charmquark$, generation II), \glslink{top_quark}{top} ($\topquark$, generation III) and \glslink{bottom_quark}{bottom} ($\bottomquark$, generation III).
+    The different quarks are also split into up-type and down-type, based on their charges (up-type has charge of $Q=\twothird$; down-type has charge of $Q=-\third$).
+    The up-type quarks are: \glslink{up_quark}{up}, \glslink{strange_quark}{strange} and \glslink{top_quark}{top}; the down-type quarks are \glslink{down_quark}{down}, \glslink{charm_quark}{charm} and \glslink{bottom_quark}{bottom}.
     There is one up-type quark and one down-type quark per generation},
     plural={quarks},
-    symbol={q}
+    symbol={$\quark$}
+}
+\newglossaryentry{antiquark}{
+    name={antiquark},
+    description={The antiparticle of a \gls{quark}.
+    The charge is negated from its regular \gls{quark} variant, meaning that up-type antiquarks have a charge of $Q=-\twothird$, and down-type antiquarks have a charge of $Q=\third$.},
+    plural={quarks},
+    symbol={$\antiquark$}
+}
+\newglossaryentry{up_quark}{
+    name={up quark},
+    description={The up-type generation I quark},
+    plural={up quarks},
+    symbol={$\upquark$}
+}
+\newglossaryentry{down_quark}{
+    name={down quark},
+    description={The down-type generation I quark},
+    plural={down quarks},
+    symbol={$\downquark$}
+}
+\newglossaryentry{strange_quark}{
+    name={strange quark},
+    description={The up-type generation II quark},
+    plural={top quarks},
+    symbol={$\strangequark$}
+}
+\newglossaryentry{charm_quark}{
+    name={charm quark},
+    description={The down-type generation II quark},
+    plural={charm quarks},
+    symbol={$\charmquark$}
+}
+\newglossaryentry{top_quark}{
+    name={top quark},
+    description={The up-type generation III quark},
+    plural={top quarks},
+    symbol={$\topquark$}
+}
+\newglossaryentry{bottom_quark}{
+    name={bottom quark},
+    description={The down-type generation III quark},
+    plural={bottom quarks},
+    symbol={$\bottomquark$}
 }
 \newglossaryentry{lepton_number}{
     name={lepton number},
@@ -156,7 +199,7 @@
 \newglossaryentry{strong_nuclear_force}{
     name={strong nuclear force},
     description={The fundamental force that holds atomic \glspl{nucleus} together.
-    At distances of $<\half\,$fm, it is an attractive force, overpowering the repulsive electromagnetic force and holding the \glspl{proton} in the \gls{nucleus} together.
+    At distances of $<\half\,$fm, it is an attractive force, overpowering the repulsive \gls{electromagnetic_force} and holding the \glspl{proton} in the \gls{nucleus} together.
     At distances of $1\,$fm to around $3\,$fm it is repulsive, getting weaker and weaker, until it is almost 0 at around $3\,$fm},
     plural={strong nuclear forces}
 }
@@ -171,6 +214,124 @@
     description={A \gls{photon} that is a \gls{virtual_particle}},
     plural={virtual photons},
     symbol={$\photon$}
+}
+\newglossaryentry{electromagnetic_force}{
+    name={electromagnetic force},
+    description={A fundamental force that acts on charged particles, repelling similar charges and attracting particles with opposite charges},
+    plural={electromagnetic forces}
+}
+\newglossaryentry{feynman_diagram}{
+    name={Feynman diagram},
+    description={A diagram representing particle interactions},
+    plural={Feynman diagrams}
+}
+\newglossaryentry{w_boson}{
+    name={W boson},
+    description={A gauge \gls{boson} that carries the \gls{weak_nuclear_force}.
+    It is charged, either $\wboson[+]$ or $\wboson[-]$.
+    The antiparticle of a W boson is a W boson with the opposite charge},
+    plural={W bosons},
+    symbol={$\wboson[\pm]$}
+}
+\newglossaryentry{photon}{
+    name={photon},
+    description={A gauge \gls{boson} that carries the \gls{electromagnetic_force}},
+    plural={photons},
+    symbol={$\photon$}
+}
+\newglossaryentry{lepton}{
+    name={lepton},
+    description={A particle that does not feel the \gls{strong_nuclear_force}.
+    There are two categories of lepton; the charged leptons and \gls{neutrino} (uncharged leptons).
+    There are three charged leptons (\glspl{electron}, \glspl{muon}, \glspl{tau}), each with their own corresponding antilepton, and there are three \glspl{neutrino}, each with their own corresponding \gls{antineutrino}},
+    plural={leptons},
+    symbol={$\lepton$}
+}
+\newglossaryentry{antilepton}{
+    name={antilepton},
+    description={The antiparticle of a \gls{lepton}.
+    The charged antileptons are all positively charged.
+    These are positrons (antielectrons, $\electron[+]$), antimuons ($\muon[+]$) and antitau ($\taulepton[+]$)},
+    plural={antileptons},
+    symbol={$\antilepton$}
+}
+\newglossaryentry{baryon}{
+    name={baryon},
+    description={A \gls{hadron} made of three \glspl{quark}, meaning that it has a \gls{baryon_number} of $B=+1$ (antibaryons have a \gls{baryon_number} of $B=-1$)},
+    plural={baryons}
+}
+\newglossaryentry{fermion}{
+    name={fermion},
+    description={A fundamental particle that obeys Fermi-Dirac statistics.
+    Fermions include \glspl{quark}, \glspl{lepton} and \glspl{baryon}.
+    All observed particles are either fermions or \glspl{boson}},
+    plural={fermions}
+}
+\newglossaryentry{hadron}{
+    name={hadron},
+    description={A particle made up of multiple quarks held together by the \gls{strong_nuclear_force}.
+    Hadrons include \glspl{meson} and \glspl{baryon}},
+    plural={hadrons}
+}
+\newglossaryentry{baryon_number}{
+    name={baryon number},
+    description={A quantum number that determines whether a particle is a \gls{baryon}.
+    \Glspl{baryon} have a baryon number of $B=+1$ and antibaryons have a baryon number of $B=-1$.
+    \Glspl{quark} have a baryon number of $B=+\third$ and antiquarks have a baryon number of $B=-\third$, meaning that when three \glspl{quark} or \glspl{antiquark} combine into a \gls{baryon}/antibaryon, they give it a baryon number of $B=\pm1$},
+    plural={baryon numbers},
+    symbol={$B$}
+}
+\newglossaryentry{meson}{
+    name={meson},
+    description={A \gls{hadron} made up of a \gls{quark} and an \gls{antiquark}},
+    plural={mesons}
+}
+\newglossaryentry{boson}{
+    name={boson},
+    description={A fundamental particle that obeys Bose-Einstein statistics.
+    Bosons include gauge bosons such as \glspl{photon}, \glspl{w_boson}, \glspl{z_boson}, and \glspl{gluon} as well as the \gls{higgs_boson} (a scalar boson), \glspl{graviton} (a hypothetical tensor boson) and \glspl{meson}.
+    All observed particles are either bosons or \glspl{fermion}},
+    plural={bosons}
+}
+\newglossaryentry{z_boson}{
+    name={Z boson},
+    description={A gauge \gls{boson} that carries the \gls{weak_nuclear_force}.
+    It is neutrally charged.
+    Its antiparticle is itself},
+    plural={Z bosons},
+    symbol={$\zboson$}
+}
+\newglossaryentry{higgs_boson}{
+    name={Higgs boson},
+    description={A scalar \gls{boson} that allows other particles to have mass.},
+    plural={Higgs bosons},
+    symbol={$\higgsboson$}
+}
+\newglossaryentry{gluon}{
+    name={gluon},
+    description={A gauge \gls{boson} that carries the \gls{strong_nuclear_force}},
+    plural={gluons},
+    symbol={$\gluon$}
+}
+\newglossaryentry{graviton}{
+    name={graviton},
+    description={A hypothetical tensor \gls{boson} that mediates gravity},
+    plural={gravitons},
+    symbol={$graviton$}
+}
+\newglossaryentry{muon}{
+    name={muon},
+    description={The generation II charged \gls{lepton}.
+    It has a negative charge, and its antiparticle (an antimuon, $\muon[+]$) has a positive charge},
+    plural={muons},
+    symbol={$muon$}
+}
+\newglossaryentry{tau}{
+    name={tau},
+    description={The generation III charged \gls{lepton}.
+    It has a negative charge, and its antiparticle (an antitau, $\taulepton[+]$) has a positive charge},
+    plural={muons},
+    symbol={$tau$}
 }
 
 

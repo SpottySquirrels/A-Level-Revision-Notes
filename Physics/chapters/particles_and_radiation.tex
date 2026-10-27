@@ -60,7 +60,7 @@
             \ce{_1^3H -> _2^3He + _{-1}^0{\betaparticle[-]} + {\antineutrino[e]}}
         \end{equation}
 
-        The force responsible for \gls{beta_minus_decay} is the weak nuclear force, mediated by the $\wboson[-]$ boson.
+        The force responsible for \gls{beta_minus_decay} is the \gls{weak_nuclear_force}, mediated by the \glslink{w_boson}{$\wboson[-]$ boson}.
 
         Since a \gls{neutron} is turning into a \gls{proton}, the equation for \gls{beta_minus_decay} can be written using the \gls{quark} flavour of the \gls{neutron} and \gls{proton}, as:
         \begin{equation}
@@ -72,9 +72,9 @@
         \end{equation}
 
     \subsection{Beta Plus Decay} \label{beta_plus}
-        \Gls{beta_plus_decay} is very similar to \gls{beta_minus_decay}, however instead of a \gls{neutron} becoming a \gls{proton}, a \gls{proton} becomes a \gls{neutron}, releasing a \gls{positron} (also called a \gls{beta_plus_particle}), and an electron neutrino.
-        Inside the decaying \gls{proton}, an up quark becomes a down quark, which releases the \gls{positron} to conserve the charge and the electron neutrino to conserve lepton/electron number ($\leptonnumber[e]$).
-        Since the atom loses a \gls{proton} (and thus -1 charge), it becomes an \gls{ion}, which is called ionisation.
+        \Gls{beta_plus_decay} is very similar to \gls{beta_minus_decay}, however instead of a \gls{neutron} becoming a \gls{proton}, a \gls{proton} becomes a \gls{neutron}, releasing a \gls{positron} (also called a \gls{beta_plus_particle}), and an electron \gls{neutrino}.
+        Inside the decaying \gls{proton}, an \gls{up_quark} becomes a \gls{down_quark}, which releases the \gls{positron} to conserve the charge and the electron \gls{neutrino} to conserve \glslink{lepton_number}{lepton/electron number} ($\leptonnumber[e]$).
+        Since the \gls{atom} loses a \gls{proton} (and thus -1 charge), it becomes an \gls{ion}, which is called ionisation.
         However, whereas \gls{alpha_decay} decreases the atomic number by 2, and \gls{beta_minus_decay} increases it by 1, \gls{beta_plus_decay} decreases it by 1.
         The equation for \gls{beta_plus_decay} of element X to element Y is:
         \begin{equation}
@@ -89,9 +89,9 @@
             \ce{_{12}^{23}Mg -> _{11}^{23}He + _{1}^0{\betaparticle[+]} + {\neutrino[e]}}
         \end{equation}
 
-        The force responsible for \gls{beta_plus_decay} is the weak nuclear force, mediated by the $\wboson[+]$ boson.
+        The force responsible for \gls{beta_plus_decay} is the \gls{weak_nuclear_force}, mediated by the \glslink{w_boson}{$\wboson[+]$ boson}.
 
-        Since a \gls{proton} is turning into a \gls{neutron}, the equation for \gls{beta_plus_decay} can be written using the quark flavour of the \gls{proton} and \gls{neutron}, as:
+        Since a \gls{proton} is turning into a \gls{neutron}, the equation for \gls{beta_plus_decay} can be written using the \gls{quark} flavour of the \gls{proton} and \gls{neutron}, as:
         \begin{equation}
             \ce{{\baryonquarks[uud]} -> {\baryonquarks[udd]} + {\betaparticle[+]} + {\neutrino[e]}}
         \end{equation}
@@ -103,11 +103,11 @@
     \newpage
 
 \section{Feynman Diagrams} \label{feynman_diagrams}
-    A Feynman diagram represents an interaction between particles.
+    A \gls{feynman_diagram} represents an interaction between particles.
     It has a time axis, showing the progression of the interaction from the incoming particles to the outgoing particles.
     
-    This is a simple Feynman diagram, representing two electrons ($\electron[-]$) repelling each other.
-    The interaction is mediated by the electromagnetic force, carried by a virtual photon ($\photon$):
+    This is a simple \gls{feynman_diagram}, representing two \glspl{electron} ($\electron[-]$) repelling each other.
+    The interaction is mediated by the \gls{electromagnetic_force}, carried by a \gls{virtual_photon} ($\photon$):
 
     \begin{figure} \label{fig:electron_repulsion}
         \begin{center}
@@ -133,14 +133,14 @@
                 \end{feynman}
             \end{tikzpicture}
         \end{center}
-        \caption{A simple Feynman diagram.}
+        \caption{A simple \gls{feynman_diagram}.}
     \end{figure}
 
-    A virtual photon is a type of virtual particle.
-    Virtual particles cannot be detected, but are put into models such as Feynman diagrams to show force carriers such as photons and W bosons.
-    Any `interal' particles (particles that don't enter/leave the diagram) are virtual in Feynman diagrams.
+    A \gls{virtual_photon} is a type of \gls{virtual_particle}.
+    \Glspl{virtual_particle} cannot be detected, but are put into models such as \gls{feynman_diagram} to show force carriers such as \glspl{photon} and \gls{w_boson}.
+    Any `interal' particles (particles that don't enter/leave the diagram) are \glspl{virtual_particle} in \gls{feynman_diagram}.
 
-    Feynman diagrams can be used to show more complicated processes, such as beta minus decay (note the virtual $\wboson[-]$ boson):
+    \Gls{feynman_diagram} can be used to show more complicated processes, such as \gls{beta_minus_decay} (note the virtual \glslink{w_boson}{$\wboson[-]$ boson}):
 
     \begin{figure} \label{fig:beta_minus_decay}
         \begin{center}
@@ -177,16 +177,16 @@
                 \end{feynman}
             \end{tikzpicture}
         \end{center}
-        \caption{A Feynman diagram of $\betaparticle[-]$ decay; see section \ref{beta_minus}. \href{https://tex.stackexchange.com/questions/617907/tikz-feynman-how-to-do-a-feynman-diagram-of-a-beta-decay}{Diagram source}.}
+        \caption{A \gls{feynman_diagram} of \gls{beta_minus_decay}; see section \ref{beta_minus}. \href{https://tex.stackexchange.com/questions/617907/tikz-feynman-how-to-do-a-feynman-diagram-of-a-beta-decay}{Diagram source}.}
     \end{figure}
 
-    In Feynman diagrams, fermions (leptons and baryons) are shown with solid straight lines with arrows representing their direction of travel through time.
+    In \gls{feynman_diagram}, \glspl{fermion} (\glspl{lepton} and \glspl{baryon}) are shown with solid straight lines with arrows representing their direction of travel through time.
     Matter travels forwards though time, and antimatter is modelled as travelling backwards, due to its charge being reversed from that of regular matter.
     Some diagrams show antimatter as travelling forwards in time along with regular matter.
 
-    Most bosons (photons, $\wboson[\pm]$ bosons, $\zboson$ bosons) are shown with wavy lines (see the photon in figure \ref{fig:electron_repulsion} and the $\wboson[-]$ boson in \ref{fig:beta_minus_decay}).
+    Most \glspl{boson} (\glspl{photon}, \glspl{w_boson}, \glspl{z_boson}) are shown with wavy lines (see the \glspl{photon} in figure \ref{fig:electron_repulsion} and the \glslink{w_boson}{$\wboson[-]$ boson} in \ref{fig:beta_minus_decay}).
     
-    Mesons can be shown with a quark and antiquark line, or as a dashed line.
+    \Glspl{meson} can be shown with a \gls{quark} and \gls{antiquark} line, or as a dashed line.
 
     \subsection{Examples}
         \subsubsection{Beta Plus Decay}
@@ -224,7 +224,7 @@
                         \end{feynman}
                     \end{tikzpicture}
                 \end{center}
-                \caption{A Feynman diagram of $\betaparticle[+]$ decay; see section \ref{beta_plus}}
+                \caption{A \gls{feynman_diagram} of $\betaparticle[+]$ decay; see section \ref{beta_plus}}
             \end{figure}
 
         \subsubsection{Electron/Positron Annihilation and Pair Production}
@@ -252,40 +252,40 @@
                         \end{feynman}
                     \end{tikzpicture}
                 \end{center}
-                \caption{Electron/positron annihilation (bottom) and pair production (top).}
+                \caption{\Gls{electron}/\gls{positron} annihilation (bottom) and \gls{pair_production} (top).}
             \end{figure}
     
     \newpage
 
     \section{Leptons}
-        Leptons are fundamental particles that do not feel the strong nuclear force.
-        The symbol for a lepton is $\lepton$.
-        There are three generations of lepton, and each generation has a charged lepton and a neutrino variant.
+        \Glspl{lepton} are fundamental particles that do not feel the \gls{strong_nuclear_force}.
+        The symbol for a \gls{lepton} is $\lepton$.
+        There are three generations of \gls{lepton}, and each generation has a charged \gls{lepton} and a \gls{neutrino} variant.
 
-        The first generation has electrons ($\electron[-]$) and electron neutrinos ($\neutrino[e]$).
+        The first generation has \glspl{electron} ($\electron[-]$) and electron \glspl{neutrino} ($\neutrino[e]$).
 
-        The second generation has muons ($\muon[-]$) and muon neutrinos ($\neutrino[\mu]$).
+        The second generation has \glspl{muon} ($\muon[-]$) and muon \glspl{neutrino} ($\neutrino[\mu]$).
 
-        The third generation has taus (also called tauons; $\taulepton[-]$) and tau neutrinos ($\neutrino[\tau]$).
+        The third generation has \glspl{tau} (also called tauons; $\taulepton[-]$) and tau \glspl{neutrino} ($\neutrino[\tau]$).
 
-        The charged leptons all have a charge of -1, meaning that the charged antileptons all have charges of +1 ($\electron[+]$, $\muon[+]$, $\taulepton[+]$).
-        Antielectrons are called positrons.
-        The neutrinos are uncharged, so antineutrinos ($\antineutrino[]$) are also uncharged.
+        The charged \glspl{lepton} all have a charge of -1, meaning that the charged \glspl{antilepton} all have charges of +1 ($\electron[+]$, $\muon[+]$, $\taulepton[+]$).
+        Antielectrons are called \glspl{positron}.
+        The \glspl{neutrino} are uncharged, so \glspl{antineutrino} ($\antineutrino[]$) are also uncharged.
 
         \subsection{Lepton Number}
-            Lepton number is a quantum number describing whether or not a particle is a lepton.
-            All regular matter leptons (not antileptons) have a lepton number of $\leptonnumber[]=+1$, and all antileptons have a lepton number of $\leptonnumber[]=-1$.
-            All non-leptons have a lepton number of $\leptonnumber[]=0$.
+            \Glspl{lepton_number} is a quantum number describing whether or not a particle is a \glspl{lepton}.
+            All regular matter \glspl{lepton} (not \glspl{antilepton}) have a \gls{lepton_number} of $\leptonnumber[]=+1$, and all \glspl{antilepton} have a \gls{lepton_number} of $\leptonnumber[]=-1$.
+            All non-\glspl{lepton} have a \gls{lepton_number} of $\leptonnumber[]=0$.
 
-            Each generation of lepton has its own lepton number variant; electrons and electron neutrinos (generation I leptons) have an electron number of $\leptonnumber[e]=+1$; muons and muon neutrinos (generation II leptons) have a muon number of $\leptonnumber[\mu]=+1$ and tau and tau neutrinos (generation III leptons) have a tau number of $\leptonnumber[\tau]=+1$.
-            All lepton numbers are conserved in interactions, meaning that something such as $\ce{{\neutrino[e]} + {\neutron} -> {\proton} + {\electron[-]}}$ is valid ($\leptonnumber[e]:1+0=0+1$), but $\ce{{\neutrino[e]} + {\neutron} -> {\antiproton} + {\electron[+]}}$ cannot happen, due to electron number ($\leptonnumber[e]$) not being conserved ($\leptonnumber[e]:1+0\neq0-1$).
+            Each generation of \gls{lepton} has its own \gls{lepton_number} variant; \glspl{electron} and electron \glspl{neutrino} (generation I \gls{lepton}) have an \glslink{lepton_number}{electron number} of $\leptonnumber[e]=+1$; \glspl{muon} and muon \glspl{neutrino} (generation II \glspl{lepton}) have a \glslink{lepton_number}{muon number} of $\leptonnumber[\mu]=+1$ and \glspl{tau} and tau \glspl{neutrino} (generation III leptons) have a \glslink{lepton_number}{tau number} of $\leptonnumber[\tau]=+1$.
+            All \glspl{lepton_number} are conserved in interactions, meaning that something such as $\ce{{\neutrino[e]} + {\neutron} -> {\proton} + {\electron[-]}}$ is valid ($\leptonnumber[e]:1+0=0+1$), but $\ce{{\neutrino[e]} + {\neutron} -> {\antiproton} + {\electron[+]}}$ cannot happen, due to \glslink{lepton_number}{electron number} ($\leptonnumber[e]$) not being conserved ($\leptonnumber[e]:1+0\neq0-1$).
         
     \section{Quarks}
-        There are six types of quark, across three generations.
-        The first generation contains up and down quarks ($\upquark$, $\downquark$), the second generation contains strange and charm quarks ($\strangequark$, $\charmquark$), and the third generation contains top and bottom quarks ($\topquark$, $\bottomquark$).
+        There are six types of \gls{quark}, across three generations.
+        The first generation contains \glslink{up_quark}{up} and \glspl{down_quark} ($\upquark$, $\downquark$), the second generation contains \glslink{strange_quark}{strange} and \glspl{charm_quark} ($\strangequark$, $\charmquark$), and the third generation contains \glslink{top_quark}{top} and \glspl{bottom_quark} ($\topquark$, $\bottomquark$).
         Each generation gets progressively heavier.
-        All quarks either have a charge of $Q=+\third$ (up-type), or a charge of $Q=-\twothird$ (down-type).
-        All quarks have a baryon number of $B=+\third$, and all antiquarks have a baryon number of $B=-\third$.
+        All \glspl{quark} either have a charge of $Q=+\third$ (up-type), or a charge of $Q=-\twothird$ (down-type).
+        All \glspl{quark} have a \gls{baryon_number} of $B=+\third$, and all \glspl{antiquark} have a \gls{baryon_number} of $B=-\third$.
 
         \subsection{Strange Quarks}
 

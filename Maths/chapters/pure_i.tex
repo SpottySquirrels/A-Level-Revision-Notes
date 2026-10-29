@@ -2,7 +2,137 @@
 \newpage
 
 \section{Quadratics} \label{quadratics}
-\newpage
+    A quadratic is an expression in the form $ax^2+bx+c$, for some real constants $a$, $b$ and $c$.
+    The solutions for a quadratic in the form $ax^2+bx+c=0$ are given by the quadratic formula:
+    \begin{equation} \label{eq:quadratic_formula}
+        x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+    \end{equation}
+    
+    \subsection{The Discriminant}
+        From the quadratic formula (equation \ref{eq:quadratic_formula}), we can see that if $b^2-4ac<0$, the square root will give an imaginary number, meaning that the equation has no real roots.
+        This part of the formula is called the discriminant, written $\Delta$:
+        \begin{equation}
+            \Delta=b^2-4ac
+        \end{equation}
+
+        Using the discriminant, we can tell whether a quadratic has one distinct real root, two distinct real roots, or no real roots (two complex roots).
+        \begin{itemize}
+            \item \textbf{No real roots:} if $\Delta<0$, then $\sqrt{\Delta}\notin\R\implies x\notin\R$, so there are no real roots.
+            \item \textbf{One distinct real root:} if $\Delta=0$, then both values of $x$ are equal, so both of the roots are the same ($x=\frac{-b}{2a}$), thus the quadratic has only one distinct real root.
+            The Fundamental Theorem of Algebra says that for an $n$th degree polynomial, there exists $n$ roots, so the single distinct root is technically two roots with the same value.
+            \item \textbf{Two distinct real roots:} if $\Delta>0$, then the value of $+\sqrt{\Delta}$ is not the same as the value of $-\sqrt{\Delta}$, so the two roots are both real and different (since $a\neq-a\;\forall\;a\in\R\setminus\set{0}$ and $\sqrt{\Delta}\neq0$ if $\Delta>0$), giving two distinct real roots.
+        \end{itemize}
+
+    \subsection{Factorising}
+        A quadratic $ax^2+bx+c=0$ can be factorised into a pair of binomials $a(x-\alpha)(x-\beta)=0$, where $\alpha$ and $\beta$ are the roots of the polynomial.
+        To find $\alpha$ and $\beta$, find two values $m$ and $n$ that multiply to $ac$ and sum to $b$.
+        With these values, the expression $ax^2+bx+c$ can be rearranged into $(ax^2+mx)+(nx+mn)$.
+        From these brackets, find a common value to factor out of both, and then it will simplify to a pair of binomials.
+
+        This can then be used to get the roots.
+        Set each bracket individually to 0, and then solve for $\alpha$ or $\beta$.
+
+    \subsection{Quadratic Inequalities}
+        
+
+    \subsection{Set-Builder Notation}
+        A set of values can be written using set-builder notation as:
+
+        \begin{equation}
+            \set{x\in S:\phi(x)}
+        \end{equation}
+
+        Where $\phi(x)$ is a condition which can be true or false, based on the value of $x$, and $S$ is a set containing $x$.
+        The set represents the set of all values $x$ in the set $S$ that satisfy $\phi(x)$.
+        The `$\in S$' part can be omitted if it is obvious which set is being talked about, usually $S=\R$.
+        
+        An example of set-builder notation would be the set of all integers greater than 2:
+
+        \begin{equation}
+            \set{x\in\Z:x>2}
+        \end{equation}
+
+        This would be equivalent to the set:
+        
+        \begin{equation}
+            \set{3,4,5,\cdots}
+        \end{equation}
+
+        However, the condition $\phi(x)$ can be more complex; $\phi$ (I have removed the `$(x)$' for simplicity, but $\phi$ has the same meaning as $\phi(x)$) can be built from other conditions $\chi$ and $\psi$ using boolean logic:
+
+        \begin{align}
+            \chi\;\text{and}\;\psi&:\;\chi\wedge\psi \\
+            \chi\;\text{or}\;\psi&:\;\chi\vee\psi \\
+            \text{not}\;\psi&:\;\lnot\,\psi
+        \end{align}
+
+        Alternatively, they can be written using unions and intersections of multiple sets:
+
+        \begin{align}
+            \set{x:\chi\wedge\psi}&=\set{x:\chi}\cap\set{x:\psi} \\
+            \set{x:\chi\vee\psi}&=\set{x:\chi}\cup\set{x:\psi} \\
+            \set{x\in S:\lnot\,\psi}&=S\setminus\set{x:\psi}
+        \end{align}
+
+        Set-builder notation can be used to represent solution sets.
+        For example, the set of values that satisfy $\alpha<x<\beta$ can be written:
+
+        \begin{equation}
+            \set{x\in\R:\alpha<x<\beta}
+        \end{equation}
+
+        The set of values that satisfy $x<\alpha$ or $\beta<x$ (where $\alpha<\beta$) can be written:
+
+        \begin{equation}
+            \set{x\in\R:(x<\alpha)\vee(\beta<x)}=\set{x\in\R:x<\alpha}\cup\set{x\in\R:\beta<x}
+        \end{equation}
+
+        Alternatively, this set also represents all values of $x$ in $\R$ that are not in the closed interval $\left[\alpha,\beta\right]$, thus could be written $x\in\R\setminus\left[\alpha,\beta\right]$.
+
+        For a quadratic $p(x)=0$, the solution set would not require set-builder notation, since there are only one or two values, so it can be written $\set{\alpha,\beta}$.
+        If there are no real roots, the set of real roots is empty, and can be written as the empty set $\emptyset=\set{}$.
+
+    \subsection{Completing the Square} \label{completing_the_square}
+        \begin{theorem}[Completing the Square]
+            A quadratic in the form $ax^2+bx+c$ can be written in the form $a(x+m)^2+n$, where $m=\frac{b}{2a}$ and $n=-\frac{b^2}{4a}+c$:
+            \begin{equation}
+                a^2+bx+c=a\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a}+c
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            We will begin by factoring $a$ out of the first two terms of the original quadratic to get:
+            \begin{equation}
+                ax^2+bx+c=a\left(x^2+\frac{b}{a}\right)+c
+            \end{equation}
+            Now, the $\left(x^2+\frac{b}{a}\right)$ part can almost be factorised into $\left(x+\frac{b}{2a}\right)^2$, however expanding that will give an extra $\left(\frac{b}{2a}\right)^2$ term.
+            This means that it can be rewritten as:
+            \begin{equation}
+                \left(x^2+\frac{b}{a}\right)=\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a^2}
+            \end{equation}
+            This can be put back into the formula to get:
+            \begin{equation}
+                ax^2+b+c=a\left(\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a^2}\right)+c
+            \end{equation}
+            Moving the $\frac{b^2}{4a^2}$ term out of the brackets (and thus multiplying by $a$):
+            \begin{equation}
+                ax^2+bx+c=a\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a}+c
+            \end{equation}
+        \end{proof}
+
+    \subsection{Quadratic Turning Points}
+        A quadratic $p(x)$ is a parabola, so has a turning point where $\frac{dp}{dx}=0$.
+        This can be found in one of two ways:
+        \begin{itemize}
+            \item \textbf{Completing the Square:} use completing the square (see section \ref{completing_the_square}) to put the quadratic in the form $a(x-m)^2+n$.
+            This is the same as using graph transformations to move the parabola $ax^2$ (which has a turning point $(0,0)$) right by $m$ (subtract $m$ from the $x$ value), and then moving it up by $n$ (add $n$ to the overall value).
+            This means that the turning point is going to be $(0,0)$, moved right by $m$ and up by $n$, which is $(m,n)$.
+            Substituting in the values for the quadratic $ax^2+bx+c$, the turning point is $\left(-\frac{b}{2a},-\frac{b^2}{4a}+c\right)$.
+            \item \textbf{Differentiation:} since the turning point is the point where $\frac{dp}{dx}=0$, it can be found by finding the derivative of $p(x)$, which (for $p(x)=ax^2+bx+c$) is $2ax+b$.
+            Then, set $2ax+b$ to 0, giving $x=\frac{b}{2a}$.
+            This can then be substituted into $p(x)$ to give the $y$-coordinate ($y=p\left(\frac{b}{2a}\right)$).
+        \end{itemize}
+
+    \newpage
 
 \section{Equations and Inequalities} \label{equations_and_inequalities}
 \newpage

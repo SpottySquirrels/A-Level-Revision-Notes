@@ -13,6 +13,13 @@
 \usepackage{tikz}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usetikzlibrary{positioning}
+\tikzset{
+    cross/.pic={
+        \draw[pic actions] 
+        (-3pt,-3pt) -- (3pt,3pt)
+        (-3pt,3pt) -- (3pt,-3pt);
+    },
+}
 \usepackage{mathtools}
 
 \usepackage{hyperref}

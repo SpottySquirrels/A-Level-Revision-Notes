@@ -33,7 +33,62 @@
         Set each bracket individually to 0, and then solve for $\alpha$ or $\beta$.
 
     \subsection{Quadratic Inequalities}
+        A quadratic inequality is an expression one of these forms:
+        \begin{itemize}
+            \item $ax^2+bx+c>0$
+            \item $ax^2+bx+c<0$
+            \item $ax^2+bx+c\ge0$
+            \item $ax^2+bx+c\le0$
+        \end{itemize}
+        Because the inequality does not set the quadratic equal to a value, but instead allows it to be equal to a range of values, the value of $x$ can also be one in a range.
         
+        To solve quadratic inequalities, first find the roots of the quadratic, $\alpha$ and $\beta$.
+        Then, look at a graph of the function to find where the value of the quadratic is less than/greater than 0.
+
+        For example, let $p(x)=x^2-4x-5$.
+        The roots of $p(x)=0$ are $-1$ and 5, so we can then look at a graph to find where $p(x)>0$, where $p(x)<0$, where $p(x)\ge0$, and where $p(x)\le0$.
+
+        On the graph below, the graph is shaded red where $p(x)>0$ (where the line is above the $x$-axis).
+        This means that the values of $x$ are anywhere outside of the interval from $-1$ to 5.
+
+        \begin{figure}
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        axis lines = middle,
+                        xlabel = {$x$},
+                        ylabel = {$p(x)$},
+                        domain = -3:7,
+                        samples = 100,
+                        grid = both,
+                    ]
+                        \addplot[red, name path=curve] {x^2 - 4*x - 5};
+                        \addlegendentry{$x^2-4x-5$}
+
+                        % Define an invisible line on the x-axis (y=0) for the lower boundary
+                        \path[name path=axis] (axis cs:-3,0) -- (axis cs:7,0);
+                        
+                        % Fill the region between the curve and the axis line
+                        \addplot[red, opacity=0.3] fill between[
+                            of=curve and axis, 
+                            soft clip={domain=-3:-1} % Sets the exact x-boundaries for the shading
+                        ];
+                        \addplot[red, opacity=0.3] fill between[
+                            of=curve and axis, 
+                            soft clip={domain=5:7} % Sets the exact x-boundaries for the shading
+                        ];
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+        \end{figure}
+
+        This means that $x<-1$ or $x>5$.
+        If the inequality was $p(x)\ge0$, the solution would alos have $\le$ and $\ge$ symbols -- $x\le-1$ or $x\ge5$.
+
+        For $p(x)<0$, we can see that the values of $x$ where $p(x)$ is below the $x$-axis would be where $-1<x<5$.
+        Thus, for $p(x)\le0$, $-1\le x\le5$.
+
+        The set of values that satisfy an equation or inequality is called the solution set.
 
     \subsection{Set-Builder Notation}
         A set of values can be written using set-builder notation as:

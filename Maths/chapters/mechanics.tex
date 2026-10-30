@@ -1,28 +1,112 @@
 \section{Mechanics Year I} \label{mechanics_i}
 \subsection{Modelling in Mechanics} \label{modelling_in_mechanics}
-\newpage
+
+    \newpage
 
 \subsection{Constant Acceleration} \label{constant_acceleration}
-\newpage
+    When modelling objects with constant acceleration, (i.e. objects with a constant force being applied and with constant mass), there is a set of equations that relate the object's displacement, initial velocity, final velocity, acceleration, and the time period over which its velocity changes.
+    These equations are called the SUVAT equations.
+
+    The first equation is $s=\half(u+v)t$.
+    \begin{proof}
+        Drawing a velocity-time graph of an object gives a linear function, since $\frac{dv}{dt}=a$, which is constant, so the slope must be constant.
+        Thus, the area under it ($s$, since $s=\int v\,dt$) is a trapezium.
+        Given that the area of a trapezium is $A=\half(a+b)h$, where $a$ and $b$ are the lengths of the two sides and $h$ is the distance between them, we can find that $s$ is $\half(u+v)t$, since the two sides (the left and right of the graph, at time 0 and $t$) are $u$ and $v$, since the velocity at time 0 is the initial velocity $u$ and the velocity at time $t$ is the final velocity $v$.
+        The distance between the two velocities is $t$, thus giving the final formula $s=\half(u+v)t$.
+    \end{proof}
+
+    The second formula is $v=at+u$.
+    \begin{proof}
+        Given that:
+        \begin{equation}
+            v=\int a\,dt
+        \end{equation}
+        We can integrate $a$ (given that $a$ is constant) to get:
+        \begin{equation*}
+            \begin{aligned}
+                v=at+C
+            \end{aligned}
+        \end{equation*}
+        Here, $C$ is the value of $v$ at $t=0$, which is the initial velocity $u$, thus:
+        \begin{equation}
+            v=at+u
+        \end{equation}
+    \end{proof}
+
+    From these two equations, the other 3 can be derived.
+    \begin{itemize}
+        \item $s=ut+\half at^2$
+        \begin{proof}
+            We will substitute the equation $v=at+u$ into $s=\half(u+v)t$.
+            This gives:
+            \begin{equation*}
+                \begin{aligned}
+                    s&=\half(u+at+u)t \\
+                    &=\half(2u+at)t \\
+                    &=ut+\half at^2
+                \end{aligned}
+            \end{equation*}
+        \end{proof}
+        \item $s=vt-\half at^2$
+        \begin{proof}
+            We will rearrange $v=at+u$ to $u=v-at$ and substitute it into $s=\half(u+v)t$ to get:
+            \begin{equation*}
+                \begin{aligned}
+                    s&=\half(v-at+v)t \\
+                    &=\half(2v-at)t \\
+                    &=v-\half at^2
+                \end{aligned}
+            \end{equation*}
+        \end{proof}
+        \item $v^2=u^2+2as$
+        \begin{proof}
+            We will first rearrange $s=\half(u+v)t$ into $s=\left(\frac{u+v}{2}\right)t$ and $v=u+at$ into $t=\left(\frac{v-u}{a}\right)$.
+            Substituting the second one into the first gives:
+            \begin{equation}
+                s=\left(\frac{u+v}{2}\right)\left(\frac{v-u}{a}\right)
+            \end{equation}
+            This creates the factored form of a difference of two squares in the numerator, which simplifies to $v^2-u^2$.
+            The denominators multiply to get $2a$.
+            Rearranging then gives:
+            \begin{equation*}
+                \begin{aligned}
+                    s&=\frac{v^2-u^2}{2a} \\
+                    2as&=v^2-u^2 \\
+                    v^2&=u^2+2as
+                \end{aligned}
+            \end{equation*}
+        \end{proof}
+    \end{itemize}
+
+    If an object is in free-fall, its motion can be modelled with constant acceleration, taking its acceleration to be $g=9.8\,\text{m}\,\text{s}^{-2}$ downwards, which is (approximately) the acceleration due to gravity on Earth at sea-level.
+
+    \newpage
 
 \subsection{Forces and Motion} \label{forces_and_motion}
-\newpage
+
+    \newpage
 
 \subsection{Variable Acceleration} \label{variable_acceleration}
-\newpage
+
+    \newpage
 
 \section{Mechanics Year II} \label{mechanics_ii}
 \subsection{Moments} \label{moments}
-\newpage
+
+    \newpage
 
 \subsection{Forces and Friction} \label{forces_and_friction}
-\newpage
+
+    \newpage
 
 \subsection{Projectiles} \label{projectiles}
-\newpage
+
+    \newpage
 
 \subsection{Applications of Forces} \label{applications_of_forces}
-\newpage
+
+    \newpage
 
 \subsection{Further Kinematics} \label{further_kinematics}
-\newpage
+
+    \newpage

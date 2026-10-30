@@ -8,12 +8,3 @@
 Look in the folder and find the *subject*_main.pdf file to see the notes for each subject.
 
 The source code is in the files ending .tex.
-
-## Progress
-Computer Science - WIP
-
-Further Maths - WIP
-
-Maths - Not started
-
-Physics - WIP

@@ -5,6 +5,9 @@
 \usepackage{amsthm}
 \usepackage[english]{babel}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
 \usepackage{amsfonts}
 
 \usepackage{hyperref}
@@ -36,7 +39,16 @@
 
 \newcommand{\set}[1]{\left\{#1\right\}}
 
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\third}{\frac{1}{3}}
+
 \newcommand{\comment}[1]{} % Allows multiline comments
+
+\makeatletter % Temporarily makes '@' a letter
+% Makes figures and tables place `here', instead of defaulting to the top of the page
+\renewcommand{\fps@figure}{htbp}
+\renewcommand{\fps@table}{htbp}
+\makeatother
 
 \title{\Huge Maths Revision Notes}
 \author{C. Irving}

@@ -98,14 +98,14 @@
 
         \subsubsection{Order}
             \begin{theorem}
-                Bubble sort has an order of $\bigO(n)$
+                Bubble sort has an order of $\bigO{n}$
             \end{theorem}
             \begin{proof}
                 Let $n$ be the number of elements in the list to be sorted.
                 This means that (in the worst-case scenario) the bubble sort will have to do $i-1$ pass to guarantee that every item has been sorted (since after the $i$th pass, $i$ items have been sorted, $n-i$ items will be left to sort, the $i$th item must also be sorted).
                 In the $i$th pass, $i-1$ items will have been sorted, so the total number of comparisons will be:
                 $$\sum_{i=1}^n(n-i)=\frac{n(n-1)}{2}=\frac{1}{2}n^2+\frac{1}{2}n$$
-                Taking the fastest-growing term of $\frac{1}{2}n^2+\frac{1}{2}n$ (the $\frac{1}{2}n^2$ term) and discarding the constant coefficient ($\frac{1}{2}$), this gives $n^2$, thus the order of the bubble sort algorithm is $\bigO(n^2)$.
+                Taking the fastest-growing term of $\frac{1}{2}n^2+\frac{1}{2}n$ (the $\frac{1}{2}n^2$ term) and discarding the constant coefficient ($\frac{1}{2}$), this gives $n^2$, thus the order of the bubble sort algorithm is $\bigO{n^2}$.
             \end{proof}
         
         \subsubsection{Implementation}
@@ -117,7 +117,7 @@
 // Example:
 //     Input:  [3, 2, 7, 3, 5]
 //     Output: [2, 3, 3, 5, 7]
-//     Explanation: The unsorted input is sorted so the the 
+//     Explanation: The unsorted input is sorted so that the 
 //                  numbers are returned in order
 FUNC bubble_sort(list):            // Takes an unsorted list as
     VAR n = list.UPPER_BOUND       // input
@@ -149,7 +149,7 @@ END FUNC
     \subsection{Quick Sort}
         \subsubsection{Description}
             A quick sort is a recursive sorting algorithm.
-            It begins by choosing a `pivot' in the middle of the list (the $\lceil\frac{n}{2}\rceil$th element).
+            It begins by choosing a `pivot'; this is usually in the middle of the list (the $\lfloor\frac{n}{2}\rfloor$th element), but can be anywhere.
             Then, it splits the list into two smaller sub-lists, the left and the right.
             The left sub-list will contain all elements less than or equal to the pivot, and the right list will contain all elements greater than the pivot.
             The pivot is then left in the middle and is now sorted.
@@ -157,48 +157,211 @@ END FUNC
 
             This is an example of quick sort (the pivot will be in brackets, and then sorted elements will be bold):
             \begin{center}
-            \begin{tabular}{c c c c c c c c c c c}
-                &&Pass 1: &3 &5 &8 &(2)  &5 &6 &3 \\
-                &&Pass 2: &\textbf{2} &3 &5 &8  &(5) &6 &3 \\
-                &&Pass 3: &\textbf{2} &3 &(3) &5 &\textbf{5} &8 &(6) \\
-                &&Pass 4: &\textbf{2} &3 &(3) &5 &\textbf{5} &\textbf{6} &8 \\
+            \begin{tabular}{c c c c c c c c c c c c c}
+                &&Pass 1: &3 &5 &8 &(2)  &5 &6 &3&& \\
+                &&Pass 2: &\textbf{2} &3 &5 &8  &(5) &6 &3&& \\
+                &&Pass 3: &\textbf{2} &3 &(3) &5 &\textbf{5} &8 &(6)&& \\
+                &&Pass 4: &\textbf{2} &3 &(3) &5 &\textbf{5} &\textbf{6} &8&& \\
                 \multicolumn{11}{c}{\textbf{All sub-lists contain only 1 item; sort complete.}}
             \end{tabular}
             \end{center}
 
         \subsubsection{Order}
         \begin{theorem}
-            Quick sort has an order of $\bigO(n^2)$.
+            Quick sort has an order of $\bigO{n^2}$.
         \end{theorem}
         \begin{proof}
-            The worst case scenario for quicksort is where the pivot consistently falls on the maximum/minimum pivot, leaving the sub-lists with lengths 0 and $n-1$.
+            The worst case scenario for quicksort is where the pivot is consistantly the maximum/minimum pivot (i.e. \verb|item[0]| or \verb|item[n]|), leaving the sub-lists with lengths 0 and $n-1$.
             This means that the time taken to sort the list is the time taken for the $n$th pass plus the time taken to sort $n-1$ items.
-            Lorem ipsum; QED
+            Therefore, sorting $n$ items will take the time required to sort $n-1$ items + the time taken to sort $n-2$ items, to the time taken to sort 1 item.
+            This can be represented as the sum:
+            \begin{equation}
+                T=\sum_{x=1}^{n}x=\frac{n(n+1)}{2}
+            \end{equation}
+            Simplifying and removing constant coefficients, we get a time complexity of $\bigO{n^2}$.
+            
         \end{proof}
 
         \subsubsection{Implementation}
+        In pseudocode, this is an implementation of quick sort using a pivot in the middle:
+        \begin{verbatim}
+// Sorts list using quick sort; returns sorted list
+// Example:
+//     Input:  [3, 2, 7, 3, 5]
+//     Output: [2, 3, 3, 5, 7]
+//     Explanation: The unsorted list is sorted so that the
+//                  numbers are returned in order.
+FUNC quick_sort(list):              // Takes an unsorted list as
+    VAR n = list.UPPER_BOUND        // input
 
+    
+    IF (n == 1):                    // Base case: n = 1
+        RETURN list
+    ELSE                            // Recursive case: n > 1
+        VAR pivot = FLOOR(n / 2)    // Find the pivot index
+                                    // The item at the pivot
+                                    // index is list[pivot]
+
+        VAR leftSublist  = []       // Initialise the sublists to
+        VAR rightSublist = []       // sort items into
+
+        FOR EACH item IN list:          // Sort each item into a
+            IF (item < list[pivot]):    // sublist
+                leftSublist.PUSH(item)
+            ELSE
+                rightSublist.PUSH(item)
+            END IF
+        END FOR
+
+        VAR newList = []
+        newList.JOIN(leftSublist)   // Join the left sublist onto
+                                    // the new list
+        newList.PUSH(list[pivot])   // Add the pivot item onto
+                                    // the new list
+        newList.JOIN(rightSublist)  // Join the right sublist
+                                    // onto the new list
+
+        RETURN quick_sort(newList)  // Sort and return the new
+                                    // list
+    END IF
+END FUNC
+        \end{verbatim}
     \newpage
 
-    \subsection{Bin-Packing Algorithms}
+    \subsection{Bin Packing Algorithms}
+        A bin packing algorithm gives a way to fit a set of items with sizes into `bins' with sizes.
+        In abstracted terms, an item is a number, and a bin has a size -- also a number.
+        The set $S$ can fit into a bin with size $n$ if and only if $\sum S\le n$.
+
+        Bin questions often use a set of bins of equal size, and ask how many are required.
+
+        Finding the fewest number of bins required for a given set of bins and a given set of values is an NP-hard problem, meaning that there exists an algorithm to find the fewest number of bins with an order of $\bigO(n^k),\,k\in\R^+$ if and only if $\text{P}=\text{NP}$.
+
+        To find a greatest lower bound for how many bins are required (for a set of bins where all bins are the same size), take the sum of all items, and divide by the size of a bin.
+        This should be rounded up; if you need 2.5 bins, you actually need 3 to account for the extra 0.5.
+        This gives the formula:
+        \begin{equation}
+            \text{LB}=\frac{\sum S}{\text{size}\,(B)}
+        \end{equation}
+
+        \subsubsection{First-Fit Bin Packing}
+            \paragraph{Description}
+            The first-fit bin packing algorithm goes through each item in the list of items, and puts it into the first bin it finds with space for that item.
+
+            \paragraph{Order}
+            \begin{theorem}
+                The first-fit bin packing algorithm has an order of $\bigO{n\times k}$ for $n$ items and $k$ bins.
+            \end{theorem}
+            \begin{proof}
+                The algorithm must iterate through every item to see if it will fit into a bin.
+                The time taken per item scales by the amount of bins that there are.
+                Assuming the worst case, i.e. only the last bin fits each item, the algorithm will have to check $k$ bins, $n$ times for $n$ items, thus the order is $\bigO{n\times k}$.
+            \end{proof}
+
+            \paragraph{Implementation}
+            In pseudocode, this is an implementation of first-fit bin packing:
+            \begin{verbatim}
+// Takes a list of items (REAL) and a list of bins 
+// (BIN(OF REAL)), then packs the items into the bins using the
+// first-fit algorithm and returns the list of bins packed with
+// items
+// It will return an empty array if the items cannot be packed
+// into the bins given
+// Example:
+//     Input:  items=[3, 2, 7, 3, 5]
+//             bins=[BIN(size=10), BIN(size=5), BIN(size=10)]
+//     Output: [BIN(items=[3, 2, 3]),
+//              BIN(items=[5]),
+//              BIN(items=[7])]
+FUNC pack_first_fit(items, bins):
+    FOR EACH item IN items:
+        FOR EACH bin IN bins:           // Search all bins until
+            IF (NOT bin.IS_FULL):       // Check that bin is not
+                                        // full
+                bin.items.PUSH(item)    // Add item to bin
+                CONTINUE    // Continue to next item
+                            // This skips the error return later
+            END IF
+        END FOR
+
+        RETURN []           // Bins cannot be packed; return
+                            // empty array
+    END FOR
+END FUNC
+            \end{verbatim}
+
+        \subsubsection{First-Fit Decreasing Bin Packing}
+            \paragraph{Description}
+            First fit decreasing is like first-fit, but instead of iterating through the list of items normally, it sorts them into descending order instead, allowing the biggest items to fill up the space they need, then making the smaller items fit around them.
+            
+            \paragraph{Order}
+            Since first-fir descending bin packing requires sorting the list, the order will depend on the order of the sorting algorithm.
+            \begin{theorem}
+                Assuming the algorithm uses quick sort (order $\bigO{n^2}$), the order of the first-fit descending bin packing algorithm is $\bigO{n(n+k)}$
+            \end{theorem}
+            \begin{proof}
+                The time taken for the first-fit decreasing bin packing algorithm is the time taken to sort the list, then the time taken to pack the bins.
+                This means that the order will be $\bigO{n^2+n\times k}$, which simplifies to $\bigO{n(n+k)}$.
+            \end{proof}
+
+            \paragraph{Implementation}
+            \begin{verbatim}
+// Takes a list of items (REAL) and a list of bins 
+// (BIN(OF REAL)), then packs the items into the bins using the
+// first-fit decreasing algorithm and returns the list of bins
+// packed with items
+// It will return an empty array if the items cannot be packed
+// into the bins given
+// Example:
+//     Input:  items=[3, 2, 7, 3, 5]
+//             bins=[BIN(size=10), BIN(size=5), BIN(size=10)]
+//     Output: [BIN(items=[7]),
+//              BIN(items=[5, 3, 2]),
+//              BIN(items=[2])]
+FUNC pack_first_fit_decreasing(items, bins):
+    items = reverse_sort(items)     // Sort the items in reverse
+
+    // Regular first-fit bin packing algorithm:
+    FOR EACH item IN items:
+        FOR EACH bin IN bins:           // Search all bins until
+            IF (NOT bin.IS_FULL):       // Check that bin is not
+                                        // full
+                bin.items.PUSH(item)    // Add item to bin
+                CONTINUE    // Continue to next item
+                            // This skips the error return later
+            END IF
+        END FOR
+
+        RETURN []           // Bins cannot be packed; return
+                            // empty array
+    END FOR
+
+END FUNC
+            \end{verbatim}
+
+        \subsubsection{Full-Bin Bin Packing}
+        \paragraph{Description}
+            Full-bin bin packing involves using observation to fill bins using combinations of items that sum to the maximum size of a bin.
+            This means that it cannot be easily by computers, and can be hard to do manually, since if there are a lot of items and a lot of bins, it can be hard to find sums that fill a bin.
+
 
     \newpage
     
     \subsection{Order of Algorithms}
         The order of an \gls{algorithm} is how long it takes an \gls{algorithm} to finish, based on the size of its input $n$, in the worst-case scenario.
-        This is also called its time complexity, and is written as $\bigO(f(n))$, where $f(n)$ is a function of the \gls{algorithm}'s input size.
+        This is also called its time complexity, and is written as $\bigO({f(n)})$, where $f(n)$ is a function of the \gls{algorithm}'s input size.
 
         For example, the linear search \gls{algorithm} looks through each element in a list one by one, checking to try to find a specific item.
         The worst case for linear search is if the item being looked for is either not in the list, or is the final item in the list, meaning that the \gls{algorithm} has to check all $n$ elements.
-        This means that linear search has an order of $\bigO(n)$.
+        This means that linear search has an order of $\bigO{n}$.
 
-        The order of an \gls{algorithm} can be used to find the time taken for an \gls{algorithm} to finish based on other recorded times. For example, if an $\bigO(n)$ algorithm takes 5ms to finish with 100 items, it will take 10ms to finish with 200 items.
+        The order of an \gls{algorithm} can be used to find the time taken for an \gls{algorithm} to finish based on other recorded times. For example, if an $\bigO{n}$ algorithm takes 5ms to finish with 100 items, it will take 10ms to finish with 200 items.
         
-        Common orders are $\bigO(1)$ (constant time), $\bigO(n)$ (linear time), $\bigO(n^2)$ \\ (quadratic time), and $\bigO(n^3)$ (cubic time).
+        Common orders are $\bigO{1}$ (constant time), $\bigO{n}$ (linear time), $\bigO{n^2}$ \\ (quadratic time), and $\bigO{n^3}$ (cubic time).
         Quadratic, cubic, etc. time is also called polynomial time.
         An \gls{algorithm} is considered more efficient if its order scales slower with a bigger input.
-        For example, if an \gls{algorithm} runs in constant time ($\bigO(1)$), then that is considered very good, since with an arbitrarily big input, it will still run in the same amount of time.
-        On the other hand, an \gls{algorithm} with an order of $\bigO(2^x)$ (exponential time) would be considered inefficient and slow, since it scales very quickly as the input grows, making it very slow for large inputs.
+        For example, if an \gls{algorithm} runs in constant time ($\bigO{1}$), then that is considered very good, since with an arbitrarily big input, it will still run in the same amount of time.
+        On the other hand, an \gls{algorithm} with an order of $\bigO{2^x}$ (exponential time) would be considered inefficient and slow, since it scales very quickly as the input grows, making it very slow for large inputs.
     \newpage
 
 \section{Graphs and Networks} \label{graphs_and_networks}

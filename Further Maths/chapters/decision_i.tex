@@ -14,12 +14,13 @@
                     \item Repeat until this number is 1 (the number is then considered `happy') or until the \gls{algorithm} gets trapped in a cycle (in which case it is considered `unhappy')
                 \end{itemize}
             \item Flow Charts (see section \ref{flow_charts}):
-                % TODO
+                % TODO - put trace table here
         \end{enumerate}
 
         \subsubsection{Trace Tables}
         \Glspl{trace_table} are used to track vales of different variables in an \gls{algorithm}.
-        For example, for the `happy \gls{algorithm}' (see \emph{TODO: ADD FIG REF}) could be traced for an input of 12:
+        For example, for the `happy \gls{algorithm}' (see trace table \textbf{TODO: ADD FIG REF}) could be traced for an input of 12:
+        % Create trace table (code line 17 as of writing this) for happy algorithm (see D1 textbook) and link to it
 
         \begin{tabular}{c c l c}
             \textbf{Input number} & \multicolumn{2}{c}{\textbf{Sum of square of digits}} & \textbf{Output} \\
@@ -246,21 +247,21 @@ END FUNC
 
         \subsubsection{First-Fit Bin Packing}
             \paragraph{Description}
-            The first-fit bin packing algorithm goes through each item in the list of items, and puts it into the first bin it finds with space for that item.
+                The first-fit bin packing algorithm goes through each item in the list of items, and puts it into the first bin it finds with space for that item.
 
             \paragraph{Order}
-            \begin{theorem}
-                The first-fit bin packing algorithm has an order of $\bigO{n\times k}$ for $n$ items and $k$ bins.
-            \end{theorem}
-            \begin{proof}
-                The algorithm must iterate through every item to see if it will fit into a bin.
-                The time taken per item scales by the amount of bins that there are.
-                Assuming the worst case, i.e. only the last bin fits each item, the algorithm will have to check $k$ bins, $n$ times for $n$ items, thus the order is $\bigO{n\times k}$.
-            \end{proof}
+                \begin{theorem}
+                    The first-fit bin packing algorithm has an order of $\bigO{n\times k}$ for $n$ items and $k$ bins.
+                \end{theorem}
+                \begin{proof}
+                    The algorithm must iterate through every item to see if it will fit into a bin.
+                    The time taken per item scales by the amount of bins that there are.
+                    Assuming the worst case, i.e. only the last bin fits each item, the algorithm will have to check $k$ bins, $n$ times for $n$ items, thus the order is $\bigO{n\times k}$.
+                \end{proof}
 
             \paragraph{Implementation}
-            In pseudocode, this is an implementation of first-fit bin packing:
-            \begin{verbatim}
+                In pseudocode, this is an implementation of first-fit bin packing:
+                \begin{verbatim}
 // Takes a list of items (REAL) and a list of bins 
 // (BIN(OF REAL)), then packs the items into the bins using the
 // first-fit algorithm and returns the list of bins packed with
@@ -292,20 +293,20 @@ END FUNC
 
         \subsubsection{First-Fit Decreasing Bin Packing}
             \paragraph{Description}
-            First fit decreasing is like first-fit, but instead of iterating through the list of items normally, it sorts them into descending order instead, allowing the biggest items to fill up the space they need, then making the smaller items fit around them.
+                First fit decreasing is like first-fit, but instead of iterating through the list of items normally, it sorts them into descending order instead, allowing the biggest items to fill up the space they need, then making the smaller items fit around them.
             
             \paragraph{Order}
-            Since first-fir descending bin packing requires sorting the list, the order will depend on the order of the sorting algorithm.
-            \begin{theorem}
-                Assuming the algorithm uses quick sort (order $\bigO{n^2}$), the order of the first-fit descending bin packing algorithm is $\bigO{n(n+k)}$
-            \end{theorem}
-            \begin{proof}
-                The time taken for the first-fit decreasing bin packing algorithm is the time taken to sort the list, then the time taken to pack the bins.
-                This means that the order will be $\bigO{n^2+n\times k}$, which simplifies to $\bigO{n(n+k)}$.
-            \end{proof}
+                Since first-fir descending bin packing requires sorting the list, the order will depend on the order of the sorting algorithm.
+                \begin{theorem}
+                    Assuming the algorithm uses quick sort (order $\bigO{n^2}$), the order of the first-fit descending bin packing algorithm is $\bigO{n(n+k)}$
+                \end{theorem}
+                \begin{proof}
+                    The time taken for the first-fit decreasing bin packing algorithm is the time taken to sort the list, then the time taken to pack the bins.
+                    This means that the order will be $\bigO{n^2+n\times k}$, which simplifies to $\bigO{n(n+k)}$.
+                \end{proof}
 
             \paragraph{Implementation}
-            \begin{verbatim}
+                \begin{verbatim}
 // Takes a list of items (REAL) and a list of bins 
 // (BIN(OF REAL)), then packs the items into the bins using the
 // first-fit decreasing algorithm and returns the list of bins
@@ -340,10 +341,8 @@ END FUNC
             \end{verbatim}
 
         \subsubsection{Full-Bin Bin Packing}
-        \paragraph{Description}
             Full-bin bin packing involves using observation to fill bins using combinations of items that sum to the maximum size of a bin.
             This means that it cannot be easily by computers, and can be hard to do manually, since if there are a lot of items and a lot of bins, it can be hard to find sums that fill a bin.
-
 
     \newpage
     
@@ -355,10 +354,10 @@ END FUNC
         The worst case for linear search is if the item being looked for is either not in the list, or is the final item in the list, meaning that the \gls{algorithm} has to check all $n$ elements.
         This means that linear search has an order of $\bigO{n}$.
 
-        The order of an \gls{algorithm} can be used to find the time taken for an \gls{algorithm} to finish based on other recorded times. For example, if an $\bigO{n}$ algorithm takes 5ms to finish with 100 items, it will take 10ms to finish with 200 items.
+        The order of an \gls{algorithm} can be used to find the time taken for an \gls{algorithm} to finish based on other recorded times. For example, if an $\bigO{n}$ algorithm takes 5\,ms to finish with 100 items, it will take 10\,ms to finish with 200 items.
         
         Common orders are $\bigO{1}$ (constant time), $\bigO{n}$ (linear time), $\bigO{n^2}$ \\ (quadratic time), and $\bigO{n^3}$ (cubic time).
-        Quadratic, cubic, etc. time is also called polynomial time.
+        Quadratic, cubic, etc. time are also called polynomial time ($\bigO{n^k},\,k\in\R\setminus\set{0}$).
         An \gls{algorithm} is considered more efficient if its order scales slower with a bigger input.
         For example, if an \gls{algorithm} runs in constant time ($\bigO{1}$), then that is considered very good, since with an arbitrarily big input, it will still run in the same amount of time.
         On the other hand, an \gls{algorithm} with an order of $\bigO{2^x}$ (exponential time) would be considered inefficient and slow, since it scales very quickly as the input grows, making it very slow for large inputs.
@@ -369,26 +368,171 @@ END FUNC
     This is an example of a \gls{graph}, with \glspl{vertex} A, B, C, D, and edges connecting A-B, B-C, A-C, A-D.
 
     \begin{figure}
-        \begin{center}
-        \begin{tikzpicture}[shorten >=1pt] \label{fig:simple_graph}
-            \node[vertex] (A) at (-1,-1) {A};
-            \node[vertex] (B) at (0,0) {B};
-            \node[vertex] (C) at (1,-1)  {C};
-            \node[vertex] (D) at (-2.5,-1) {D};
+        \centering
+            \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                \node[vertex] (A) at (-1,-1){A};
+                \node[vertex] (B) at (0,0){B};
+                \node[vertex] (C) at (1,-1){C};
+                \node[vertex] (D) at (-2.5,-1){D};
 
-            \draw[edge] (A) -- (B);
-            \draw[edge] (B) -- (C);
-            \draw[edge] (C) -- (A);
-            \draw[edge] (D) -- (A);
+                \draw[edge] (A) -- (B);
+                \draw[edge] (B) -- (C);
+                \draw[edge] (C) -- (A);
+                \draw[edge] (D) -- (A);
 
-        \end{tikzpicture}
-        \end{center}
-
+            \end{tikzpicture}
         \caption{A simple graph}
+        \label{fig:simple_graph}
+    \end{figure}
+
+    It does not matter what shape a graph is drawn in, as long as all of the \glspl{vertex} still exist and \glspl{edge} still connect the same \glspl{vertex}.
+    This means that \gls{graph} \ref{fig:simple_graph} is the same as this graph:
+
+    \begin{figure}
+        \centering
+            \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                \node[vertex] (A) at (0,1){A};
+                \node[vertex] (B) at (1,1){B};
+                \node[vertex] (C) at (0,0){C};
+                \node[vertex] (D) at (1,0){D};
+
+                \draw[edge] (A) -- (B);
+                \draw[edge] (B) -- (C);
+                \draw[edge] (C) -- (A);
+                \draw[edge] (D) -- (A);
+
+            \end{tikzpicture}
+        \caption{A \gls{graph} that is the same as \gls{graph} \ref{fig:simple_graph}, but redrawn differently}
+    \end{figure}
+
+    Two graphs that share the same structure, even if the vertices are different (as long as there exists a bijection between the two sets of \glspl{vertex}).
+    This means that \gls{graph} \ref{} and the following \gls{graph} are isomorphic, even though the \glspl{vertex} are technically different\footnote{A bijection between the \glspl{vertex} of the \glspl{graph} could map $\text{A}\mapsto\alpha$, $\text{B}\mapsto\beta$, $\text{C}\mapsto\gamma$ and $\text{D}\mapsto\delta$, which preseves the structure of the \glspl{edge}.}:
+
+    \begin{figure}
+        \centering
+            \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                \node[vertex] (A) at (0,1){$\alpha$};
+                \node[vertex] (B) at (1,1){$\beta$};
+                \node[vertex] (C) at (.5,0){$\gamma$};
+                \node[vertex] (D) at (-.5,0){$\delta$};
+
+                \draw[edge] (A) -- (B);
+                \draw[edge] (B) -- (C);
+                \draw[edge] (C) -- (A);
+                \draw[edge] (D) -- (A);
+            \end{tikzpicture}
+        \caption{A \gls{graph} that is the same as \gls{graph} \ref{fig:simple_graph}, but redrawn differently}
     \end{figure}
 
     \Glspl{vertex} have a property called `\gls{vertex_degree}', which means how many \glspl{edge} connect to that \gls{vertex}.
     For example, in figure \ref{fig:simple_graph}, \gls{vertex} A has a \gls{vertex_degree} of 3, because it is connected to B, C and D, where as \gls{vertex} D has a \gls{vertex_degree} of 1, because it is only connected to \gls{vertex} A.
+
+    The formal definition of a \gls{graph} is an ordered pair of sets; one of \glspl{vertex} and \glspl{edge}.
+    Each direction of an \gls{edge} is represented by an ordered pair of \glspl{vertex}.
+    An \gls{edge} that connects both directions would be represented by both $(A,B)$ and $(B,A)$ being in the set of \glspl{edge}.
+
+    For \gls{graph} \ref{fig:simple_graph}, its definition in terms of sets of \glspl{vertex} and \glspl{edge} is:
+    \begin{align}
+        G&=(V,E) \\
+        V&=\set{A,B,C,D} \\
+        E&=\set{(A,B),(B,A),(B,C),(C,B),(A,C),(C,A),(A,D),(D,A)}
+    \end{align}
+
+    \Glspl{graph} can also have \glspl{loop}.
+    \Gls{loop} are \glspl{edge} $(A,A),\;A\in V$, i.e. an \gls{edge} connecting a \gls{vertex} to itself.
+    This is what \gls{graph} \ref{fig:simple_graph} with a \gls{loop} on \gls{vertex} A:
+
+    \begin{figure}
+        \centering
+            \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                \node[vertex] (A) at (-1,-1){A};
+                \node[vertex] (B) at (0,0){B};
+                \node[vertex] (C) at (1,-1){C};
+                \node[vertex] (D) at (-2.5,-1){D};
+
+                \draw[edge] (A) -- (B);
+                \draw[edge] (B) -- (C);
+                \draw[edge] (C) -- (A);
+                \draw[edge] (D) -- (A);
+
+                \draw[edge] (A) to [out=-60, in=-120, looseness=15] (A);
+                % 'out' is the angle that the loop comes out at
+                % 'in' is the angle that the loop comes in at
+                % 'looseness' is the radius
+            \end{tikzpicture}
+        \caption{A \gls{graph} with a \gls{loop} in}
+    \end{figure}
+
+    \subsection{Types of Graph}
+        \subsubsection{Connected Graphs}
+            A connected \gls{graph} is a \gls{graph} where every \gls{vertex} is connected to every other \gls{vertex}.
+            A \gls{directed_graph} is weakly connected if there is an \gls{edge} between every \gls{vertex} in the \gls{graph}, and strongly connected if there is an \gls{edge} in both directions between every \gls{vertex} in the \gls{graph}.
+
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,1){A};
+                        \node[vertex] (B) at (1,1){B};
+                        \node[vertex] (C) at (0,0){C};
+                        \node[vertex] (D) at (1,0){D};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (A) -- (D);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (C) -- (D);
+                        \draw[edge] (C) -- (A);
+                        \draw[edge] (D) -- (A);
+                    \end{tikzpicture}
+                \caption{A \gls{connected_graph}}
+            \end{figure}
+
+        \subsubsection{Simple Graphs}
+            A \gls{graph} is a \gls{simple_graph} if there exists at most one \gls{edge} between each \gls{vertex}, and there are no \glspl{loop}.
+            This means that this is not a simple graph:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,-1){A};
+                        \node[vertex] (B) at (0,0){B};
+                        \node[vertex] (C) at (1,-1){C};
+                        \node[vertex] (D) at (-2.5,-1){D};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (C) -- (A);
+                        \draw[edge] (D) -- (A);
+
+                        \draw[edge] (A) to [out=-60, in=-120, looseness=15] (A);
+                    \end{tikzpicture}
+                \caption{Not a \gls{simple_graph}, because it contains a \gls{loop}}
+            \end{figure}
+            But this is:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,-1){A};
+                        \node[vertex] (B) at (0,0){B};
+                        \node[vertex] (C) at (1,-1){C};
+                        \node[vertex] (D) at (-2.5,-1){D};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (C) -- (A);
+                        \draw[edge] (D) -- (A);
+                    \end{tikzpicture}
+                \caption{A \gls{simple_graph}}
+            \end{figure}
+
+    \subsection{Euler's Handshaking Lemma}
+        \begin{theorem}
+            The sum of \glspl{vertex_degree} in a \gls{graph} is equal to 2 times the number of \glspl{edge}.
+        \end{theorem}
+        \begin{proof}
+            Each \gls{edge} in a \gls{graph} connects exactly 2 \glspl{vertex}, meaning that it adds one \gls{vertex_degree} to each \gls{edge}.
+            This means that each \gls{edge} adds two \gls{vertex_degree} to the \gls{graph}.
+        \end{proof}
 
     \subsection{Walks}
         A \gls{walk} is a route along \glspl{edge} of a \gls{graph}, but there are other parameters that can be put on a \gls{walk} to make different types of \gls{walk}.
@@ -397,9 +541,154 @@ END FUNC
 
         A \gls{trail} is a \gls{walk} where no \gls{edge} is visited more than once.
 
-        A \gls{cycle} is a \gls{walk} where the first \gls{vertex} visited is also the final \gls{vertex} visited, and no other vertex is visited more than once.
+        A \gls{cycle} is a \gls{walk} where the first \gls{vertex} visited is also the final \gls{vertex} visited, and no other \gls{vertex} is visited more than once.
 
         A \gls{hamiltonian_cycle} is a \gls{cycle} where every \gls{vertex} is visited.
+
+        \subsubsection{Examples of Walks}
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-.5,.86603){A};
+                        \node[vertex] (B) at (.5,.86603){B};
+                        \node[vertex] (C) at (1,0){C};
+                        \node[vertex] (D) at (.5,-.86603){D};
+                        \node[vertex] (E) at (-.5,-.86603){E};
+                        \node[vertex] (F) at (-1,0){F};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (E);
+                        \draw[edge] (A) -- (F);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (C) -- (F);
+                        \draw[edge] (D) -- (E);
+                        \draw[edge] (D) -- (F);
+                    \end{tikzpicture}
+                \caption{A more complicated \gls{graph}}
+                \label{fig:demo_graph}
+            \end{figure}
+
+            An example of a \gls{walk} on \gls{graph} \ref{fig:demo_graph} is A-B-A-F-C.
+
+            An example of a \gls{path} on \gls{graph} \ref{fig:demo_graph} is A-B-C-F.
+
+            An example of a \gls{trail} on \gls{graph} \ref{fig:demo_graph} is A-F-C-B.
+
+            An example of a \gls{cycle} on \gls{graph} \ref{fig:demo_graph} is A-B-C-F-A.
+
+            An example of a \gls{hamiltonian_cycle} on \gls{graph} \ref{fig:demo_graph} is E-A-F-C-B-D-E.
+
+    \subsection{Subgraphs}
+        A \gls{subgraph} of $G=(V,E)$ is a \gls{graph} $g=(v,e)$ where $v\subseteq V$ and $e\subseteq v^2\subseteq E$.
+        Since, for all sets $S$, $\emptyset\subseteq S$, the \gls{graph} $(\emptyset,\emptyset)$ is a \gls{subgraph} of all \glspl{graph}.
+        The \gls{graph} $(\emptyset,\emptyset)$ is the set with no \gls{vertex} and thus no \glspl{edge}.
+        The statement `$g$ is a \gls{subgraph} of $G$' is sometimes written as `$g\subseteq G$', or as `$g\sqsubseteq G$'.
+
+        Visually, a \gls{subgraph} of a \gls{graph} is the \gls{graph} excluding any number of its \glspl{vertex} and \glspl{edge}, as long as the resulting \gls{graph} is still a valid \gls{graph}.
+
+        This is an example of a \gls{subgraph} of \gls{graph} \ref{fig:demo_graph}:
+        \begin{figure}
+            \centering
+                \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                    \node[vertex] (A) at (-.5,.86603){A};
+                    \node[vertex] (B) at (.5,.86603){B};
+                    \node[vertex] (D) at (.5,-.86603){D};
+                    \node[vertex] (F) at (-1,0){F};
+
+                    \draw[edge] (A) -- (B);
+                    \draw[edge] (B) -- (D);
+                    \draw[edge] (D) -- (F);
+                \end{tikzpicture}
+            \caption{A \gls{subgraph} of \gls{graph} \ref{fig:demo_graph}}
+        \end{figure}
+
+        Notice that, even though the \gls{edge} A-F exists on \gls{graph} \ref{fig:demo_graph}, the \gls{edge} does not have to exist in its \gls{subgraph}.
+
+        To show more clearly that it is a \gls{subgraph} of \gls{graph} \ref{fig:demo_graph}, this is it overlaid on top of \gls{graph} \ref{fig:demo_graph}:
+
+        \begin{figure}
+            \centering
+                \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                    \node[vertex] (A) at (-.5,.86603){A};
+                    \node[vertex] (B) at (.5,.86603){B};
+                    \node[gray, vertex] (C) at (1,0){C};
+                    \node[vertex] (D) at (.5,-.86603){D};
+                    \node[gray, vertex] (E) at (-.5,-.86603){E};
+                    \node[vertex] (F) at (-1,0){F};
+
+                    \draw[edge] (A) -- (B);
+                    \draw[gray, dashed, edge] (A) -- (E);
+                    \draw[gray, dashed, edge] (A) -- (F);
+                    \draw[gray, dashed, edge] (B) -- (C);
+                    \draw[edge] (B) -- (D);
+                    \draw[gray, dashed, edge] (B) -- (E);
+                    \draw[gray, dashed, edge] (C) -- (F);
+                    \draw[gray, dashed, edge] (D) -- (E);
+                    \draw[edge] (D) -- (F);
+                \end{tikzpicture}
+            \caption{The \gls{subgraph} (black) overlaid onto the original \gls{graph} (grey)}
+        \end{figure}
+
+    \subsection{Weighted Graphs}
+        A \gls{weighted_graph} is a \gls{graph} with \glspl{weighted_edge}, i.e. an \gls{edge} with a weight on.
+        This weight could represent time taken to travel between two points, represented by \glspl{vertex}, for example.
+
+        This is an example of a \gls{weighted_graph}:
+
+        \begin{figure}
+            \centering
+                \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                    \node[vertex] (A) at (-.5,.86603){A};
+                    \node[vertex] (B) at (.5,.86603){B};
+                    \node[vertex] (C) at (1,0){C};
+                    \node[vertex] (D) at (.5,-.86603){D};
+                    \node[vertex] (E) at (-.5,-.86603){E};
+                    \node[vertex] (F) at (-1,0){F};
+
+                    \draw[edge] (A) -- (B) node[above, midway]{1};
+                    \draw[edge] (A) -- (E) node[left, midway]{5};
+                    \draw[edge] (A) -- (F) node[above left, midway]{3};
+                    \draw[edge] (A) -- (D) node[above right, midway]{10};
+                    \draw[edge] (B) -- (D) node[right, midway]{5};
+                    \draw[edge] (D) -- (C) node[below right, midway]{9};
+                \end{tikzpicture}
+            \caption{A weighted graph}
+            \label{fig:weighted_graph}
+        \end{figure}
+
+        Expressing a \gls{weighted_graph} as a set of \glspl{vertex} and \glspl{edge} ($G=(V,E)$) requires turning each of the \glspl{edge} into an ordered triple, $(v_1,v_2,w)$, where $v_1,v_2\in V$, and $w$ is the weight.
+        $w$ is usually a real number, but does not have to be.
+
+    \subsection{Directed Graphs}
+        A \gls{directed_graph} (AKA digraph) is a \gls{graph} with \glspl{directed_edge}.
+        A \gls{directed_edge} is an \gls{edge} that cannot be traversed in both directions.
+        A one-way \gls{edge} is drawn as an arrow in the direction that the \gls{edge} can be traversed.
+
+        This is an example of a \gls{directed_graph}:
+
+        \begin{figure}
+            \centering
+                \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                    \node[vertex] (A) at (-1,1){A};
+                    \node[vertex] (B) at (-1,0){B};
+                    \node[vertex] (C) at (0,0){C};
+                    \node[vertex] (D) at (0,-1){D};
+                    \node[vertex] (E) at (1,-.5){E};
+
+                    \draw[directed_edge] (A) -- (C);
+                    \draw[directed_edge] (D) -- (A);
+                    \draw[directed_edge] (B) -- (C);
+                    \draw[directed_edge] (E) -- (C);
+                    \draw[directed_edge] (D) -- (E);
+                \end{tikzpicture}
+            \caption{A \gls{directed_graph}}
+            \label{fig:directed_graph}
+        \end{figure}
+
+        In the example above, B is connected to C, however C is not connected to B, since there is not a vertex $\text{C}\to\text{B}$.
+
     \newpage
 
 \section{Algorithms on Graphs} \label{algorithms_on_graphs}
@@ -414,7 +703,7 @@ END FUNC
 
     \newpage
 
-\section{Linear Programming} \label{linea_programming}
+\section{Linear Programming} \label{linear_programming}
 
     \newpage
 

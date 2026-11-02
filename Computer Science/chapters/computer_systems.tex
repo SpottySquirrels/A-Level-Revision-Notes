@@ -1,5 +1,108 @@
 \section{Hardware and Software} \label{hardware_and_software}
+
     \newpage
     
 \section{Operating Systems} \label{operating_systems}
+
+    \newpage
+
+\section{Programming Language Classification} \label{programming_language_classification}
+    \subsection{Machine Code}
+        Machine code is the binary 1s and 0s that enter a computer's CPU and control what it does.
+        Machine code is rarely written by humans, since it is very difficult to read and write, however the first programs, written as holes on punch cards were written directly in machine code.
+
+    \subsection{Assembly}
+        Assembly was created as a more readable form of machine code.
+        Assembly uses opcodes and operands to make instructions.
+        
+        An opcode is a 3-letter mnemonic, short for a command, such as `store' (\verb|STR|).
+        The opcode is then given operands, which are pieces of data that the command uses, for example, \verb|STR| takes a register \verb|Rn| and a memory reference, where it will store the contents of the \verb|n|th register.
+        To store the value in register 2 into memory location 300, assembly would use the line:
+        \begin{verbatim}
+STR R2 300
+        \end{verbatim}
+
+        The full instruction set for AQA assembly language can be found \href{https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Past-Papers/AQA/AS-Paper-2/Assembly\%20Language\%20Instruction\%20-\%20Paper\%202\%20AQA\%20Computer\%20Science\%20AS-level.pdf}{here}.
+        This is an example of a program in assembly: % TODO: Check that this code actually works
+        \begin{verbatim}
+// Compute the 10th Fibonacci number
+LDR R0 #0   // R0 will be the counter to check how many
+            // iterations have happened
+LDR R3 #0   // R1 is the first number to add; it will be
+            // shifted into R3
+LDR R1 #1   // R2 is the second number to add
+
+fibonacci:          // A label to start the loop
+    CMP R0 #9       // Check whether more than 9 iterations
+                    // have happened yet
+    BGT exit        // If yes, exit
+    LDR R2 R1       // Shift R1 into R2
+    LDR R1 R3       // Shift R3 (previous sum) into R1
+    ADD R3 R1 R2    // Adds the two previous numbers
+    ADD R0 R0 #1    // Increments the counter
+    B fibonacci     // Loops back to the fibonacci label
+
+exit:               // Exit label for when the program
+                    // finishes
+    STR R3 100      // Stores the result to memory location
+                    // 100
+    HALT            // Stop the program
+        \end{verbatim}
+
+        Assembly has a one-to-one correspondance with machine code.
+        This means that it can be converted, one instruction mapping to one machine code instruction.
+        For example, the command \verb|ADD R3 R1 R2| could be assembled into the machine code 0011 0011 0001 0010; the opcode (\verb|ADD|) assembling to 0011, and the registers assembling to 0011 (\verb|R3|), 0001 (\verb|R1|), and 0010 (\verb|R2|).
+        This makes it very easy to convert into machine code, hence many early programs were written in it, but it makes it hard to read, even if it is easier than pure machine code.
+        However, machine code gives the programmer complete control over the memory, down to each bit.
+        This means that programs can be optimised perfectly for the CPU, and leave no wasted memory, whereas running code through higher-level languages can cause unnecessary machine code being added.
+
+        Each processor has its own assembly instruction set, which will be converted to machine code that that processor understands.
+        This means that assembly can only work on one type of processor, whereas high-level languages will work for any processor that has a suitable interpreter/compiler for it.
+
+        Overall, these qualities make assembly good for highly specific programs that run on one chip, but have to run very quickly.
+        For example, an integrated system might use programs written in assembly, since they will waste little to no memory, will only have to run on that one chip, and have to run efficiently.
+
+    \subsection{High-Level Languages}
+        A high-level language is a language that looks more like English than machine code or assembly.
+        The first high-level languages were languages such as Fortran, created by John Backus to look more like English.
+        The program above to compute the 10th Fibonacci number looks like this in Fortran:
+        \begin{verbatim}
+! Compute the 10th Fibonacci number
+program fibonnaci
+    integer :: n, i, a, b, sum  ! Declare all variables
+
+    n = 10      ! Initisalise max iteration to 10
+    a = 0       ! Set the first number to 0
+    b = 1       ! Set the second number to 1
+
+    do i = 2, n         ! Iterate from i = 2 to i = n
+        sum = a + b     ! Add a to b
+        a = b           ! Shift b to a
+        b = sum         ! Shift sum to b
+    end do
+
+    print *, sum        ! Output the final sum
+end program fibonnaci
+        \end{verbatim}
+        This shows how much easier to read high-level languages are over low-level languages such as assembly.
+        Variables mean that values can have meaningful names rather than just numbers, and structures such as iteration (\verb|do i = 2, n|) allow programs to be much shorter by handling multiple assembly commands in one line.
+
+        High-level languages mean that programs are easier to code, decreasing production time and making the code more maintainable for future programmers.
+
+    \subsection{Interpreted Languages}
+        Some high-level languages are interpreted, meaning that they are read by an interpreter program line by line, and executed line by line as they are read.
+        This means that programs have to be reread every time they are executed, which will slow them down.
+        An example of an interpreted language is Python.
+
+        Interpreted languages require reinterpreting every time they are run, meaning that they can only be run if the person running it has an the interpreter and the source code, which means that the code can be easily copied by anyone with access to it.
+        This makes it not ideal for large programs that are being sold.
+
+    \subsection{Compiled Languages}
+        Compiled languages are read in their entirety by a compiler, which compiles the source code (the code written by the developer) into a file of obeject code (machine code) called an executable.
+        This can be directly run by a CPU, meaning that it is quick to run.
+        However, any small edit to the code requires a full recompile, meaning that development can be slow for large projects that need a lot of recompiles.
+        Some examples of compiled languages are VB.Net, C++, Java and Fortran.
+
+        Compiled code can be shared easily as an executable, meaning that the source code doesn't have to be shared as well as the program, making it ideal for a lot of application software.
+
     \newpage

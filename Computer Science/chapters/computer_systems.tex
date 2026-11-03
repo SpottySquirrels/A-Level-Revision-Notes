@@ -1,4 +1,60 @@
 \section{Hardware and Software} \label{hardware_and_software}
+    Hardware is the electronic and electromechanical components of a computer, for example the CPU, the RAM or a monitor
+    Software is code that runs on the hardware, for example apps or the operating system.
+    Software does not have a phyisical presence.
+
+    \subsection{Application Software}
+
+    \subsection{System Software}
+        System software is software that runs to support application software.
+
+        \subsubsection{Operating Systems}
+            An operating system is a middle-man between the user/software and the hardware.
+            Its tasks include:
+
+            \paragraph{Processor Scheduling}
+            Processor scheduling is how the computer decides what processes should be done and in what order.
+            It does this by assigning priorities to each of the processes, and then uses an algorithm to decide which to do first.
+
+            The first-come first-serve algorithm (FIFO) immediately executes the first process that arrives, and all other processes join a first-in first-out queue structure to be executed in order.
+            This can mean that high-priority processes or processes with short deadlines can be ignored for a long time if there are a lot of other processes already in the queue.
+
+            The earliest deadline first algorithm (EDF) works by finding the processes with the soonest to expire deadlines and executes them first.
+
+            The round robin algorithm allocates a unit of time to each process, and then cycles to the next one whether or not the first has finished, and then it will be cycled back to later.
+            These units of time are called time slices.
+            A time slice, AKA a quantum, is a short unit of time where processes can execute, allowing for multitasking.
+
+            Fixed-priority preemptive scheduling is the algorithm used by Windows 11, and involves ranking each process based on priority.
+            Factors such as deadlines can affect the priority of a process.
+            The processes are then executed in order of priority, with any new high-priority processes jumping in front of the other, lower-priority ones.
+
+            \paragraph{Memory Management}
+            Memory management is a set of techniques used to keep a computer's memory organised and working as quickly as possible.
+            This involves keeping track of what memory is in use and what memory is free.
+
+            Paging uses a lookup table called a page table to map logical addresses (the number assigned to the memory location) to the physical location (the physical place the data is stored), meaning that it can be stored anywhere, and is not stored in continguous pieces.
+            
+            Segmentation stores data in continguous blocks based on their relations to each other, meaning that a program would be stored as one block of data in memory.
+            A segment could store a program module, for example.
+
+            Virtual memory is where parts of the secondary storage is used as RAM.
+            This memory will be slower, since secondary storage is not as fast as RAM, however computers generally have more secondary storage than RAM, since it is much cheaper.
+            As RAM prices go up, virtual memory is becoming more useful for cheaper computers that have less RAM.
+
+            Disk thrashing is a performance drop caused by the computer swapping lots of data between secondary storage and RAM, which causes the CPU to slow down.
+            This is in turn caused by bad memory management, which should aim to minimise disk thrashing by copying larger chunks of data from secondary storage to RAM, with the hope that the nearby data will also be useful.
+            This can also be caused by not having enough RAM, which means that not enough data can be stored at once.
+
+            Memory management means that the computer cannot overwrite memory that is in-use, which would cause programs to have to fetch data back from secondary storage.
+            It also allows multiple programs to occupy the same memory, which can be allocated properly to avoid data being overwritten.
+            It also means that programmers don't have to worry about where their programs and data are stored, since it is all handled by the OS.
+
+            \paragraph{Backing Store Management}
+                a
+
+            \paragraph{IO Management}
+                a
 
     \newpage
     
@@ -17,6 +73,7 @@
         
         An opcode is a 3-letter mnemonic, short for a command, such as `store' (\verb|STR|).
         The opcode is then given operands, which are pieces of data that the command uses, for example, \verb|STR| takes a register \verb|Rn| and a memory reference, where it will store the contents of the \verb|n|th register.
+        Operands are either a memory address (written as a decimal number), a register (written with a capital R before a decimal number), or a value (written with a hash before a decimal number).
         To store the value in register 2 into memory location 300, assembly would use the line:
         \begin{verbatim}
 STR R2 300

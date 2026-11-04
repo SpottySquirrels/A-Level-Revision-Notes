@@ -400,13 +400,14 @@ END FUNC
                 \draw[edge] (B) -- (C);
                 \draw[edge] (C) -- (A);
                 \draw[edge] (D) -- (A);
-
             \end{tikzpicture}
         \caption{A \gls{graph} that is the same as \gls{graph} \ref{fig:simple_graph}, but redrawn differently}
+        \label{fig:redrawn_graph}
     \end{figure}
 
     Two graphs that share the same structure, even if the vertices are different (as long as there exists a bijection between the two sets of \glspl{vertex}).
-    This means that \gls{graph} \ref{} and the following \gls{graph} are isomorphic, even though the \glspl{vertex} are technically different\footnote{A bijection between the \glspl{vertex} of the \glspl{graph} could map $\text{A}\mapsto\alpha$, $\text{B}\mapsto\beta$, $\text{C}\mapsto\gamma$ and $\text{D}\mapsto\delta$, which preseves the structure of the \glspl{edge}.}:
+    This means that \ref{fig:simple_graph} is isomorphic to \ref{fig:redrawn_graph}.
+    This also means that \gls{graph} \ref{fig:redrawn_graph} and the following \gls{graph} are isomorphic, even though the \glspl{vertex} are technically different\footnote{A bijection between the \glspl{vertex} of the \glspl{graph} could map $\text{A}\mapsto\alpha$, $\text{B}\mapsto\beta$, $\text{C}\mapsto\gamma$ and $\text{D}\mapsto\delta$, which preseves the structure of the \glspl{edge}.}:
 
     \begin{figure}
         \centering
@@ -421,7 +422,7 @@ END FUNC
                 \draw[edge] (C) -- (A);
                 \draw[edge] (D) -- (A);
             \end{tikzpicture}
-        \caption{A \gls{graph} that is the same as \gls{graph} \ref{fig:simple_graph}, but redrawn differently}
+        \caption{Another isomorphism of \ref{fig:simple_graph}}
     \end{figure}
 
     \Glspl{vertex} have a property called `\gls{vertex_degree}', which means how many \glspl{edge} connect to that \gls{vertex}.
@@ -524,9 +525,184 @@ END FUNC
                     \end{tikzpicture}
                 \caption{A \gls{simple_graph}}
             \end{figure}
+        
+        \subsubsection{Trees}
+            A \gls{tree} is a \gls{connected_graph} with no \glspl{cycle}.
+            This is an example of a \gls{tree}:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,0){A};
+                        \node[vertex] (B) at (-1,1){B};
+                        \node[vertex] (C) at (1,1){C};
+                        \node[vertex] (D) at (-1.5,2){D};
+                        \node[vertex] (E) at (-1,2){E};
+                        \node[vertex] (F) at (-.5,2){F};
+                        \node[vertex] (G) at (0.5,2){G};
+                        \node[vertex] (H) at (1.5,2){H};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (G);
+                        \draw[edge] (C) -- (H);
+                    \end{tikzpicture}
+                \caption{A \gls{tree}}
+                \label{fig:tree}
+            \end{figure}
+            This condition implies that you can rearrange the \gls{graph} into a \gls{graph} with a root and branches connected to it.
+            This means that this is not a \gls{tree} (it is not connected):
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,0){A};
+                        \node[vertex] (B) at (-1,1){B};
+                        \node[vertex] (C) at (1,1){C};
+                        \node[vertex] (D) at (-1.5,2){D};
+                        \node[vertex] (E) at (-1,2){E};
+                        \node[vertex] (F) at (-.5,2){F};
+                        \node[vertex] (G) at (0.5,2){G};
+                        \node[vertex] (H) at (1.5,2){H};
+
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (G);
+                        \draw[edge] (C) -- (H);
+                    \end{tikzpicture}
+                \caption{Not a \gls{tree}, since there is no connection between A and B, D, E and F}
+            \end{figure}
+            This is also not a \gls{tree} (it has a \gls{cycle}, A-B-C-A):
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,0){A};
+                        \node[vertex] (B) at (-1,1){B};
+                        \node[vertex] (C) at (1,1){C};
+                        \node[vertex] (D) at (-1.5,2){D};
+                        \node[vertex] (E) at (-1,2){E};
+                        \node[vertex] (F) at (-.5,2){F};
+                        \node[vertex] (G) at (0.5,2){G};
+                        \node[vertex] (H) at (1.5,2){H};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (G);
+                        \draw[edge] (C) -- (H);
+                    \end{tikzpicture}
+                \caption{Not a \gls{tree}, since there is a cycle, A-B-C-A}
+            \end{figure}
+
+        \subsubsection{Complete Graphs}
+            A \gls{complete_graph} is a \gls{graph} with an \gls{edge} between every pair of \glspl{vertex}.
+            This means that, for any set of \glspl{vertex}, the \gls{complete_graph} using that set of \glspl{vertex} will create a \gls{graph} isomorphic to all other \glspl{complete_graph} with that many \glspl{vertex}.
+            The \gls{complete_graph}\footnote{A representative member of the equality class $\left[K_n\right]_\cong$} with $n$ \glspl{vertex} is written as $K_n$.
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (1,0){A};
+                        \node[vertex] (B) at (-.5,.86603){B};
+                        \node[vertex] (C) at (-.5,-.86603){C};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (C) -- (A);
+                    \end{tikzpicture}
+                \caption{$K_3$}
+            \end{figure}
+
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (1,0){A};
+                        \node[vertex] (B) at (0,1){B};
+                        \node[vertex] (C) at (-1,0){C};
+                        \node[vertex] (D) at (0,-1){D};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (C) -- (D);
+                        \draw[edge] (D) -- (A);
+
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                    \end{tikzpicture}
+                \caption{$K_4$}
+            \end{figure}
+
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (1,0){A};
+                        \node[vertex] (B) at (.30902,.95106){B};
+                        \node[vertex] (C) at (-.80902,.58779){C};
+                        \node[vertex] (D) at (-.80902,-.58779){D};
+                        \node[vertex] (E) at (.30902,-.95106){E};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (C) -- (D);
+                        \draw[edge] (D) -- (E);
+                        \draw[edge] (E) -- (A);
+
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (A) -- (D);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (C) -- (E);
+                    \end{tikzpicture}
+                \caption{$K_5$}
+            \end{figure}
+
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (1,0){A};
+                        \node[vertex] (B) at (.5,.86603){B};
+                        \node[vertex] (C) at (-.5,.86603){C};
+                        \node[vertex] (D) at (-1,0){D};
+                        \node[vertex] (E) at (-.5,-.86603){E};
+                        \node[vertex] (F) at (.5,-.86603){F};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (C) -- (D);
+                        \draw[edge] (D) -- (E);
+                        \draw[edge] (E) -- (F);
+                        \draw[edge] (F) -- (A);
+
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (A) -- (D);
+                        \draw[edge] (A) -- (E);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (E);
+                        \draw[edge] (C) -- (F);
+                        \draw[edge] (D) -- (F);
+                    \end{tikzpicture}
+                \caption{$K_6$}
+            \end{figure}
+
+            \begin{theorem}
+                The \gls{complete_graph} $K_n$ has $\half\left(n^2-n\right)$ \glspl{edge}.
+            \end{theorem}
+            \begin{proof}
+                Each \gls{vertex} in $K_n$ is connected to every other \gls{vertex} in $K_n$, therefore there must be $n^2$ combinations of \glspl{vertex}, $(v_i,v_j)$.
+                However, $K_n$ doesn't have any \glspl{loop}, so $(v_i,v_i)$ is not counted.
+                For $n$ \glspl{vertex}, the pairs $(v_i,v_i)$ make up $n$ \glspl{edge}, so there are $n^2-n$ combination $(v_i,v_j)$.
+                However, $K_n$ only has one \gls{edge} between each pair of \glspl{vertex}, so $(v_i,v_j)$ and $(v_j,v_i)$ wouldn't both count, so the final number of \gls{vertex} is $\half\left(n^2-n\right)$.
+            \end{proof}
 
     \subsection{Euler's Handshaking Lemma}
-        \begin{theorem}
+        \begin{theorem}[Euler's Handshaking Lemma]
             The sum of \glspl{vertex_degree} in a \gls{graph} is equal to 2 times the number of \glspl{edge}.
         \end{theorem}
         \begin{proof}
@@ -689,6 +865,57 @@ END FUNC
 
         In the example above, B is connected to C, however C is not connected to B, since there is not a vertex $\text{C}\to\text{B}$.
 
+        \subsection{Graphs as Matrices}
+            \subsubsection{Adjacency Matrices}
+                A \gls{graph} can be represented as a matrix representing each \gls{edge}.
+                This is an example of a \gls{graph} and its adjacency matrix:
+                \begin{figure}
+                    \centering
+                        \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                            \node[vertex] (A) at (-1,-1){A};
+                            \node[vertex] (B) at (0,0){B};
+                            \node[vertex] (C) at (1,-1){C};
+                            \node[vertex] (D) at (-2.5,-1){D};
+
+                            \draw[edge] (A) -- (B);
+                            \draw[edge] (B) -- (C);
+                            \draw[edge] (C) -- (A);
+                            \draw[edge] (D) -- (A);
+
+                            \draw[edge] (A) to [out=-60, in=-120, looseness=15] (A);
+                        \end{tikzpicture}
+                    \caption{An example \gls{graph}}
+                \end{figure}
+                
+                \begin{center}
+                    \begin{tabular}{c|c c c c}
+                          & A & B & C & D \\
+                        \hline
+                        A & 2 & 1 & 1 & 1  \\
+                        B & 1 & 0 & 1 & 0  \\
+                        C & 1 & 1 & 0 & 0  \\
+                        D & 1 & 0 & 0 & 0
+                    \end{tabular}
+                \end{center}
+                The adjacency matrix shows the number of \glspl{edge} between each apri of \glspl{vertex}.
+                Because the \gls{graph} is not \glslink{directed_graph}{directed}, each \gls{edge} X-Y also exists as Y-X, so the matrix is symmetric along its diagonal.
+                The \gls{loop} A-A is shown as 2 \glspl{edge}, because it is considered in both directions; the clockwise \gls{loop} and anticlockwise \gls{loop} count separately.
+                
+                The A row/column has no 0s in it, meaning that there exists an \gls{edge} between A and every other \gls{vertex}.
+                This also applies if there is only a 0 on the diagonal in that row/column.
+
+                The \gls{complete_graph} $K_n$ has an adjacency matrix of only 1s, except for the diagonal, which is all 0s:
+                \begin{center}
+                    \begin{tabular}{c|c c c c}
+                        $K_n$  & $v_1$ & $v_2$ & $\cdots$ & $v_n$ \\
+                        \hline
+                        $v_1$ & 0 & 1 & $\cdots$ & 1  \\
+                        $v_2$ & 1 & 0 & $\cdots$ & 1  \\
+                        $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$  \\
+                        $v_n$ & 1 & 1 & $\cdots$ & 0
+                    \end{tabular}
+                \end{center}
+                
     \newpage
 
 \section{Algorithms on Graphs} \label{algorithms_on_graphs}

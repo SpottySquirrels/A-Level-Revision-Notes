@@ -56,6 +56,52 @@
             \paragraph{IO Management}
                 a
 
+        \subsection{Translators}
+            Translators are programs the convert source code (written by the developer) from high-level languages into object code (the executable file containing machine code, which is executed to run the program).
+            Translators generally fall into three categories:
+            \begin{itemize}
+                \item \textbf{Compilers} - a compiler translates all of the source code into an object code file before the program is run.
+                This means that the object code can be distributed alone, stopping people from stealing the source code.
+                Compiled code can be used across multiple different processors as long as there is a compiler for that processor family.
+                This means that one source code file can be run on many different computers.
+                Each time the code is changed, it requires recompiling, which can be a slow process for large programs, however this means that running it does not take any longer than just executing machine code, because the object code file already exists.
+
+                A compiler goes through multiple phases: lexical analysis, syntactic analysis and semantic analysis of the code.
+                This involves creating intermediate code, which is then optimised, before generating the machine code.
+                If there are any errors in the syntax, it will not complete the compilation, and no machine code will be generated.
+                The compiler will detect any syntax errors, which can be reported back to the developer.
+
+                A compiler creates relocatable code, which means that the memory used in the program can be moved elsewhere in the computer.
+                This also means that it can be run on different computers, using different memory addresses.
+                This is different to assembly, which specifies specific addresses which can't be moved.
+                It uses an offset (the point where the code starts) to determine where each other line of code is, no matter where the code is located.
+
+                \item \textbf{Interpreters} - an interpreter goes through each line of the code as the code runs.
+                Interpreters do not generate any machine code; they instead use their own subroutines to run the processes as they are read.
+                The first part of the interpreting process is scanning for syntax errors, meaning that it will not waste time trying to run incorrect code.
+                This means that the developer can see where errors are.
+                Interpreters are useful because they can be used to test small pieces of code without having to compile a larger program.
+                They are also good for teaching, using interactive mode.
+                Interactive mode runs the code in a separate window, allowing you to see what it is doing at each step.
+                
+                \item \textbf{Assemblers} - assemblers convert each line of assembly into a set of obeject code bits.
+                Assembly has a one-to-one correspondance with machine code, but each processor has its own set of instructions, meaning that code cannot be easily moved from one machine to another.
+                This means different code will have to be written for each processor.
+
+                Using assembly means that the code can't be moved in memory, since each memory location is hardcoded, meaning that if the code is moved, the goto statements will reference the wrong memory addresses.
+            \end{itemize}
+            Both compilers and interpreters are available for most high-level languages.
+
+        \subsubsection{Bytecode}
+            Bytecode is an intermediate form of source code.
+            Bytecode is most famously used by Java/the JVM (Java Viryual Machine), where Java compiles to bytecode, which is then compiled into machine code by the JVM.
+            Bytecode can be run on any computer, as long as they are running a JVM.
+            This allows sharing code without sharing the full source code.
+            
+            This is referred to as JIT compilation (Just-In-Time Compilation), because the full compilation is only done when the code is needed, as the code runs, but still stored as an object code file.
+            The object code is then stored, meaning that it does not need to be recompiled on later uses.
+            Because it is JIT, only parts of the code that are used in that specific compilation are used (subroutines, etc.), meaning that they will need compiling in the future if they are used.
+
     \newpage
     
 \section{Operating Systems} \label{operating_systems}
@@ -115,6 +161,13 @@ exit:               // Exit label for when the program
 
         Each processor has its own assembly instruction set, which will be converted to machine code that that processor understands.
         This means that assembly can only work on one type of processor, whereas high-level languages will work for any processor that has a suitable interpreter/compiler for it.
+
+        Assembly code is often used in real-time systems.
+        Real-time systems are systems that constantly monitor data from a set of sensors.
+
+        Device drivers are also generally written in assembly, because they must be fast to interpret inputs instantaneously.
+
+        Interrupt handlers are also written in assembly, because they run on a specific processor and are quite simple, low-level programs.
 
         Overall, these qualities make assembly good for highly specific programs that run on one chip, but have to run very quickly.
         For example, an integrated system might use programs written in assembly, since they will waste little to no memory, will only have to run on that one chip, and have to run efficiently.

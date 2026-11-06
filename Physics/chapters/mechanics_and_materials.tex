@@ -171,7 +171,25 @@
             To find the Young's modulus from this graph, we can use the fact that we have a gradient representing $\frac{\Delta\ell}{m}$, which can be converted to $\frac{\Delta\ell}{F}$ by dividing by $g$.
             Then, using the formula for Young's modulus in terms of $\frac{\Delta\ell}{F}$, we can find the Young's modulus to be:
             \begin{equation}
-                E=\frac{\ell}{A}\times\left(\frac{\Delta\ell}{F}\right)^{-1}
+                E=\frac{\ell}{A}\times\left(\frac{\Delta\ell}{F}\right)^{-1}=\frac{\ell F}{A\Delta\ell}
             \end{equation}
+                            
+            \subsubsection{Stress-Strain Graphs}
+                A stress-strain graph plots stress (horizontal axis; $\sigma$) against the strain (vertical axis; $\varepsilon$).
+                This means that the gradient ($\frac{d\sigma}{d\varepsilon}$) of the linear section is the Young's modulus.
+                At the top of the linear section is the elasticity limit:
+                            \begin{figure}
+                \begin{center}
+                    \begin{tikzpicture}[>=stealth]
+                        \draw[->] (0,0) -- (5.5,0) node[right] {$\sigma$};
+                        \draw[->] (0,0) -- (0,5.5) node[above] {$\varepsilon$};
+                        \draw (0,0) node[below left]{0};
+
+                        \draw (-1,2.5) node{\rotatebox{90}{Stress/Pa}};
+                        \draw (2.5,-1) node{Strain};
+                    \end{tikzpicture}
+                \end{center}
+                \caption{A graph of the results with a line of best fit}
+            \end{figure}
             
     \newpage

@@ -195,8 +195,9 @@
 
 % Further Mechanics
 \newglossaryentry{mass}{
-    name={momentum},
-    description={},
+    name={mass},
+    description={The amount of matter in an object.
+    Its \gls{si_unit} is the \gls{kilogram} (kg)},
     plural={masses},
     symbol={$m$}
 }
@@ -210,7 +211,7 @@
 \newglossaryentry{momentum}{
     name={momentum},
     description={The product of an object's \gls{mass} and \gls{velocity}.
-    It the \glspl{si_unit} \gls{kilogram} \glspl{metre} per \gls{second} (kgms$^{-1}$), or \gls{newton} \glspl{second} (Ns).
+    It the \glspl{si_unit} \gls{kilogram} \glspl{metre} per \gls{second} (kg\,m\,s$^{-1}$), or \gls{newton} \glspl{second} (N\,s).
     See equations \ref{eq:momentum_m_v}, \ref{eq:momentum_f_t}},
     plural={momenta},
     symbol={\textbf{p}}
@@ -288,7 +289,7 @@
 \newglossaryentry{newton}{
     name={newton},
     description={The \gls{si_unit} of force.
-    The newton is not a base unit, but instead is equivalent to a \gls{kilogram} \gls{metre} per \gls{second} squared (kgms$^{-2}$)},
+    The newton is not a base unit, but instead is equivalent to a \gls{kilogram} \gls{metre} per \gls{second} squared (kg\,m\,s$^{-2}$)},
     plural={newtons},
     symbol={N}
 }
@@ -321,26 +322,25 @@
 \newglossaryentry{bubble_sort}{
     name={bubble sort},
     description={A \gls{sorting_algorithm} that looks through each pair of items and swaps them if they are in the wrong order.
-    It has an order of $\bigO{n^2}$.
-    See section \ref{bubble_sort}},
+    It has an \gls{order} of $\bigO{n^2}$},
     plural={bubble sorts}
 }
 \newglossaryentry{graph}{
     name={graph},
-    description={A set of \glspl{vertex}, connected by \glspl{edge}, also called a network.
+    description={A set of \glspl{vertex} connected by \glspl{edge}, also called a network.
     See section \ref{graphs_and_networks}},
     plural={graphs}
 }
 \newglossaryentry{vertex}{
     name={vertex},
-    description={A point of a graph, also called a node},
+    description={A point of a \gls{graph}, also called a node},
     plural={vertices}
 }
 \newglossaryentry{edge}{
     name={edge},
     description={A line connecting two \glspl{vertex}, also called an arc.
-    Edges can have weights (weighted edges) and directions (directed edges).
-    These are used to make weighted graphs and directed graphs respectively},
+    Edges can have weights (\glspl{weighted_edge}) and directions (\glspl{directed_edge}).
+    These are used to make \glspl{weighted_graph} and \glspl{directed_graph} respectively},
     plural={edges}
 }
 \newglossaryentry{weighted_edge}{
@@ -412,19 +412,41 @@
 }
 \newglossaryentry{simple_graph}{
     name={simple graph},
-    description={A \gls{graph} with no more than one \gls{edge} between any two \glspl{vertex} and no \glspl{loop}}
+    description={A \gls{graph} with no more than one \gls{edge} between any two \glspl{vertex} and no \glspl{loop}},
     plural={simple graphs}
 }
 \newglossaryentry{tree}{
     name={tree},
-    description={A \gls{connected_graph} with no \glspl{cycle}}
+    description={A \gls{connected_graph} with no \glspl{cycle}},
     plural={trees}
 }
 \newglossaryentry{complete_graph}{
     name={complete graph},
     description={A \gls{graph} with an \gls{edge} connecting every pair of \glspl{vertex}.
-    A complete graph with $n$ \glspl{vertex} is written $K_n$}
+    A complete graph with $n$ \glspl{vertex} is written $K_n$},
     plural={complete graphs}
+}
+\newglossaryentry{spanning_tree}{
+    name={spanning tree},
+    description={A spanning tree of a \gls{graph} $G$ is a \gls{tree} that is a \gls{subgraph} of $G$ that contains all of the \glspl{vertex} in $G$},
+    plural={spanning tree}
+}
+\newglossaryentry{minimum_spanning_tree}{
+    name={minimum spanning tree},
+    description={A \gls{spanning_tree} $S_1$ of a weighted graph $G$ such that there does not exist another \gls{spanning_tree} $S_2$ of $G$ where the sum of weights of $S_2$ is less than the sum of weights of $S_1$ and $S_1\ncong S_2$},
+    plural={complete graphs}
+}
+\newglossaryentry{kruskals_algorithm}{
+    name={Kruskal's algorithm},
+    description={An \gls{algorithm} that finds a \gls{minimum_spanning_tree} of a given \gls{weighted_graph}.
+    It has an \gls{order} of $\bigO{f(x)}$} % TODO: come back when I have proved the order
+}
+\newglossaryentry{order}{
+    name={order},
+    description={The rate at which the time taken to complete an \gls{algorithm} increases based on the size of its input.
+    It is written as $\bigO{f(n)}$, where $f$ is some function, generally $f:\N\to\R$, and $n$ is the size of the input.
+    The order of an \gls{algorithm} ignores anything excpet the greatest term of $f$, and discards constnat coefficients},
+    plural={orders}
 }
 
 

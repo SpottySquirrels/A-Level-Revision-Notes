@@ -526,80 +526,6 @@ END FUNC
                 \caption{A \gls{simple_graph}}
             \end{figure}
         
-        \subsubsection{Trees}
-            A \gls{tree} is a \gls{connected_graph} with no \glspl{cycle}.
-            This is an example of a \gls{tree}:
-            \begin{figure}
-                \centering
-                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
-                        \node[vertex] (A) at (0,0){A};
-                        \node[vertex] (B) at (-1,1){B};
-                        \node[vertex] (C) at (1,1){C};
-                        \node[vertex] (D) at (-1.5,2){D};
-                        \node[vertex] (E) at (-1,2){E};
-                        \node[vertex] (F) at (-.5,2){F};
-                        \node[vertex] (G) at (0.5,2){G};
-                        \node[vertex] (H) at (1.5,2){H};
-
-                        \draw[edge] (A) -- (B);
-                        \draw[edge] (A) -- (C);
-                        \draw[edge] (B) -- (D);
-                        \draw[edge] (B) -- (E);
-                        \draw[edge] (B) -- (F);
-                        \draw[edge] (C) -- (G);
-                        \draw[edge] (C) -- (H);
-                    \end{tikzpicture}
-                \caption{A \gls{tree}}
-                \label{fig:tree}
-            \end{figure}
-            This condition implies that you can rearrange the \gls{graph} into a \gls{graph} with a root and branches connected to it.
-            This means that this is not a \gls{tree} (it is not connected):
-            \begin{figure}
-                \centering
-                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
-                        \node[vertex] (A) at (0,0){A};
-                        \node[vertex] (B) at (-1,1){B};
-                        \node[vertex] (C) at (1,1){C};
-                        \node[vertex] (D) at (-1.5,2){D};
-                        \node[vertex] (E) at (-1,2){E};
-                        \node[vertex] (F) at (-.5,2){F};
-                        \node[vertex] (G) at (0.5,2){G};
-                        \node[vertex] (H) at (1.5,2){H};
-
-                        \draw[edge] (A) -- (C);
-                        \draw[edge] (B) -- (D);
-                        \draw[edge] (B) -- (E);
-                        \draw[edge] (B) -- (F);
-                        \draw[edge] (C) -- (G);
-                        \draw[edge] (C) -- (H);
-                    \end{tikzpicture}
-                \caption{Not a \gls{tree}, since there is no connection between A and B, D, E and F}
-            \end{figure}
-            This is also not a \gls{tree} (it has a \gls{cycle}, A-B-C-A):
-            \begin{figure}
-                \centering
-                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
-                        \node[vertex] (A) at (0,0){A};
-                        \node[vertex] (B) at (-1,1){B};
-                        \node[vertex] (C) at (1,1){C};
-                        \node[vertex] (D) at (-1.5,2){D};
-                        \node[vertex] (E) at (-1,2){E};
-                        \node[vertex] (F) at (-.5,2){F};
-                        \node[vertex] (G) at (0.5,2){G};
-                        \node[vertex] (H) at (1.5,2){H};
-
-                        \draw[edge] (A) -- (B);
-                        \draw[edge] (A) -- (C);
-                        \draw[edge] (B) -- (D);
-                        \draw[edge] (B) -- (C);
-                        \draw[edge] (B) -- (E);
-                        \draw[edge] (B) -- (F);
-                        \draw[edge] (C) -- (G);
-                        \draw[edge] (C) -- (H);
-                    \end{tikzpicture}
-                \caption{Not a \gls{tree}, since there is a cycle, A-B-C-A}
-            \end{figure}
-
         \subsubsection{Complete Graphs}
             A \gls{complete_graph} is a \gls{graph} with an \gls{edge} between every pair of \glspl{vertex}.
             This means that, for any set of \glspl{vertex}, the \gls{complete_graph} using that set of \glspl{vertex} will create a \gls{graph} isomorphic to all other \glspl{complete_graph} with that many \glspl{vertex}.
@@ -904,7 +830,7 @@ END FUNC
                 The A row/column has no 0s in it, meaning that there exists an \gls{edge} between A and every other \gls{vertex}.
                 This also applies if there is only a 0 on the diagonal in that row/column.
 
-                The \gls{complete_graph} $K_n$ has an adjacency matrix of only 1s, except for the diagonal, which is all 0s:
+                The \gls{complete_graph} $K_n$ has an adjacency matrix of only 1s, except for the diagonal, which is all 0s, meaning that every \gls{vertex} is connected to every other, with no \glspl{loop}, which is the definition of a \gls{complete_graph}:
                 \begin{center}
                     \begin{tabular}{c|c c c c}
                         $K_n$  & $v_1$ & $v_2$ & $\cdots$ & $v_n$ \\
@@ -916,9 +842,298 @@ END FUNC
                     \end{tabular}
                 \end{center}
                 
+        \subsection{Trees}
+            A \gls{tree} is a \gls{connected_graph} with no \glspl{cycle}.
+            This is an example of a \gls{tree}:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,0){A};
+                        \node[vertex] (B) at (-1,1){B};
+                        \node[vertex] (C) at (1,1){C};
+                        \node[vertex] (D) at (-1.5,2){D};
+                        \node[vertex] (E) at (-1,2){E};
+                        \node[vertex] (F) at (-.5,2){F};
+                        \node[vertex] (G) at (0.5,2){G};
+                        \node[vertex] (H) at (1.5,2){H};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (G);
+                        \draw[edge] (C) -- (H);
+                    \end{tikzpicture}
+                \caption{A \gls{tree}}
+                \label{fig:tree}
+            \end{figure}
+            This condition implies that you can rearrange the \gls{graph} into a \gls{graph} with a root and branches connected to it.
+            This means that this is not a \gls{tree} (it is not connected):
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,0){A};
+                        \node[vertex] (B) at (-1,1){B};
+                        \node[vertex] (C) at (1,1){C};
+                        \node[vertex] (D) at (-1.5,2){D};
+                        \node[vertex] (E) at (-1,2){E};
+                        \node[vertex] (F) at (-.5,2){F};
+                        \node[vertex] (G) at (0.5,2){G};
+                        \node[vertex] (H) at (1.5,2){H};
+
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (G);
+                        \draw[edge] (C) -- (H);
+                    \end{tikzpicture}
+                \caption{Not a \gls{tree}, since there is no connection between A and B, D, E and F}
+            \end{figure}
+            This is also not a \gls{tree} (it has a \gls{cycle}, A-B-C-A):
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (0,0){A};
+                        \node[vertex] (B) at (-1,1){B};
+                        \node[vertex] (C) at (1,1){C};
+                        \node[vertex] (D) at (-1.5,2){D};
+                        \node[vertex] (E) at (-1,2){E};
+                        \node[vertex] (F) at (-.5,2){F};
+                        \node[vertex] (G) at (0.5,2){G};
+                        \node[vertex] (H) at (1.5,2){H};
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (B) -- (E);
+                        \draw[edge] (B) -- (F);
+                        \draw[edge] (C) -- (G);
+                        \draw[edge] (C) -- (H);
+                    \end{tikzpicture}
+                \caption{Not a \gls{tree}, since there is a cycle, A-B-C-A}
+            \end{figure}
+
+            A spanning tree of a \gls{graph} is a \gls{tree} such that every \gls{vertex} of the original \gls{graph} is in the \gls{tree}.
+            For example, an example spanning tree of \gls{graph} \ref{fig:demo_graph} (with the original \gls{graph} in dashed grey) is:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-.5,.86603){A};
+                        \node[vertex] (B) at (.5,.86603){B};
+                        \node[vertex] (C) at (1,0){C};
+                        \node[vertex] (D) at (.5,-.86603){D};
+                        \node[vertex] (E) at (-.5,-.86603){E};
+                        \node[vertex] (F) at (-1,0){F};
+
+                        \draw[edge,dashed,gray] (C) -- (F);
+                        \draw[edge,dashed,gray] (D) -- (E);
+                        \draw[edge,dashed,gray] (D) -- (F);
+                        \draw[edge,dashed,gray] (A) -- (E);
+
+                        \draw[edge] (A) -- (B);
+                        \draw[edge] (A) -- (F);
+                        \draw[edge] (B) -- (C);
+                        \draw[edge] (B) -- (D);
+                        \draw[edge] (B) -- (E);
+                    \end{tikzpicture}
+                \caption{A spanning tree of \gls{graph} \ref{fig:demo_graph}}
+                \label{fig:spanning_graph}
+            \end{figure}
+            In a \gls{weighted_graph}, a \gls{minimum_spanning_tree} (MST) is a \gls{spanning_tree} of a \gls{subgraph} where the sum of all weights is the smallest possible value for a \gls{spanning_tree} of the \gls{graph}.
+
     \newpage
 
 \section{Algorithms on Graphs} \label{algorithms_on_graphs}
+    \subsection{Kruskal's Algorithm}
+        \subsubsection{Description}
+            \Gls{kruskals_algorithm} is an \gls{algorithm} for finding a \gls{minimum_spanning_tree} of a \gls{weighted_graph}.
+            The steps of the \gls{algorithm} are:
+            \begin{enumerate}
+                \item Sort all of the \glspl{vertex} in ascending order of weight.
+                \item Add the first \gls{edge} to the \gls{spanning_tree}.
+                \item Look at the next \gls{edge} is the list, and add it to the \gls{spanning_tree} if and only if it does not create a \gls{cycle} in the \gls{graph}.
+                \item Repeat step 3. until all \glspl{edge} have either been added to the new \gls{spanning_tree} or rejected.
+            \end{enumerate}
+
+            This is an example of \gls{kruskals_algorithm} on this \gls{graph}:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,1){A};
+                        \node[vertex] (B) at (1,1.5){B};
+                        \node[vertex] (C) at (2,0){C};
+                        \node[vertex] (D) at (1,-1){D};
+                        \node[vertex] (E) at (-1,-1){E};
+                        \node[vertex] (F) at (-2,0){F};
+                        \node[vertex] (G) at (-2,-1){G};
+                        \node[vertex] (H) at (-.5,-2){H};
+                        \node[vertex] (I) at (3,0){I};
+                        \node[vertex] (J) at (3,1){J};
+
+                        \draw[edge] (A) -- (B) node[above, midway]{1};
+                        \draw[edge] (F) -- (G) node[left, midway]{2};
+                        \draw[edge] (I) -- (J) node[right, midway]{2};
+                        \draw[edge] (A) -- (F) node[above left, midway]{3};
+                        \draw[edge] (E) -- (G) node[above, midway]{4};
+                        \draw[edge] (A) -- (E) node[left, midway]{5};
+                        \draw[edge] (B) -- (D) node[right, midway]{5};
+                        \draw[edge] (C) -- (I) node[below, midway]{8};
+                        \draw[edge] (C) -- (D) node[below right, midway]{9};
+                        \draw[edge] (A) -- (D) node[below left, midway]{10};
+                        \draw[edge] (B) -- (J) node[above, midway]{11};
+                        \draw[edge] (G) -- (H) node[below left, midway]{12};
+                    \end{tikzpicture}
+                \caption{A weighted graph}
+                \label{fig:kruskal_demo_graph}
+            \end{figure}
+            The first step is to list all of the \glspl{edge} in ascending order of the weights:
+            \begin{itemize}
+                \item A-B (1)
+                \item F-G (2)
+                \item I-J (2)
+                \item A-F (3)
+                \item E-G (4)
+                \item A-E (5)
+                \item B-D (5)
+                \item C-I (8)
+                \item C-D (9)
+                \item A-D (10)
+                \item B-J (11)
+                \item G-H (12)
+            \end{itemize}
+            Then, we will add the first \gls{edge} into a \gls{spanning_tree}:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,1){A};
+                        \node[vertex] (B) at (1,1.5){B};
+
+                        \draw[edge] (A) -- (B) node[above, midway]{1};
+                    \end{tikzpicture}
+            \end{figure}
+            Then, we will check to see if the second \gls{edge} will create a \gls{cycle}.
+            The \gls{edge} F-G will not create a \gls{cycle}, so it can be added:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,1){A};
+                        \node[vertex] (B) at (1,1.5){B};
+                        \node[vertex] (F) at (-2,0){F};
+                        \node[vertex] (G) at (-2,-1){G};
+
+                        \draw[edge] (A) -- (B) node[above, midway]{1};
+                        \draw[edge] (F) -- (G) node[left, midway]{2};
+                    \end{tikzpicture}
+            \end{figure}
+
+            Continuing to \gls{edge} A-E, we now have this \gls{spanning_tree}:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,1){A};
+                        \node[vertex] (B) at (1,1.5){B};
+                        \node[vertex] (E) at (-1,-1){E};
+                        \node[vertex] (F) at (-2,0){F};
+                        \node[vertex] (G) at (-2,-1){G};
+                        \node[vertex] (I) at (3,0){I};
+                        \node[vertex] (J) at (3,1){J};
+
+                        \draw[edge] (A) -- (B) node[above, midway]{1};
+                        \draw[edge] (F) -- (G) node[left, midway]{2};
+                        \draw[edge] (I) -- (J) node[right, midway]{2};
+                        \draw[edge] (A) -- (F) node[above left, midway]{3};
+                        \draw[edge] (E) -- (G) node[above, midway]{4};
+                    \end{tikzpicture}
+            \end{figure}
+            However, trying to add the \gls{edge} A-E would create the \gls{cycle} A-E-G-F-A, meaning A-E cannot be added while keeping the \gls{graph} as a \gls{tree}.
+            This means that A-E will be skipped, and we will continue to the next \gls{edge}, B-D.
+            Continuing the process, we eventually get the \gls{spanning_tree}:
+            \begin{figure}
+                \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, shorten >=1pt]
+                        \node[vertex] (A) at (-1,1){A};
+                        \node[vertex] (B) at (1,1.5){B};
+                        \node[vertex] (C) at (2,0){C};
+                        \node[vertex] (D) at (1,-1){D};
+                        \node[vertex] (E) at (-1,-1){E};
+                        \node[vertex] (F) at (-2,0){F};
+                        \node[vertex] (G) at (-2,-1){G};
+                        \node[vertex] (H) at (-.5,-2){H};
+                        \node[vertex] (I) at (3,0){I};
+                        \node[vertex] (J) at (3,1){J};
+
+                        \draw[edge] (A) -- (B) node[above, midway]{1};
+                        \draw[edge] (F) -- (G) node[left, midway]{2};
+                        \draw[edge] (I) -- (J) node[right, midway]{2};
+                        \draw[edge] (A) -- (F) node[above left, midway]{3};
+                        \draw[edge] (E) -- (G) node[above, midway]{4};
+                        \draw[edge] (B) -- (D) node[right, midway]{5};
+                        \draw[edge] (C) -- (I) node[below, midway]{8};
+                        \draw[edge] (C) -- (D) node[below right, midway]{9};
+                        \draw[edge] (G) -- (H) node[below left, midway]{12};
+                    \end{tikzpicture}
+            \end{figure}
+            In this \gls{graph}, there are no \glspl{cycle}, it is fully \glslink{connected_graph}{connected}, and contains every \gls{vertex} of the original \gls{graph}, meaning that it is a \gls{spanning_tree} of the original \gls{graph}.
+            \begin{theorem} \label{thm:kruskal_creates_spanning_tree}
+                Applying \gls{kruskals_algorithm} to a \glslink{weighted_graph}{weighted} \gls{connected_graph} will create a \gls{spanning_tree}.
+            \end{theorem}
+            \begin{proof}
+                By the definition of a \gls{tree}, a \gls{tree} must be a \gls{connected_graph} and must not have any \glspl{cycle}.
+
+                By the definition of a \gls{spanning_tree}, the \gls{tree} must contain every \gls{vertex} of the original \gls{graph}.
+
+                Thus, to prove the initial statement, we will prove each of the parts separately:
+                \begin{itemize}
+                    \item \textbf{The \gls{graph} is \glslink{connected_graph}{connected}} - \gls{kruskals_algorithm} will only reject an \gls{edge} if that \gls{edge} forms a \gls{cycle}.
+                    If the \gls{edge} would form a \gls{cycle}, that means that there is already a \gls{path}\footnote{Here, we count \glspl{directed_edge} as working both ways. If the \glspl{directed_edge} do not permit an actual \gls{path}, then the \gls{graph} is \glslink{connected_graph}{weakly connected}. This only applies to \glspl{directed_graph}.} around where the \gls{edge} would have connected.
+                    This is because, for an \gls{edge} $V_1$-$V_2$, if $V_1$-$V_2$ joins up a \gls{cycle}, then there exists a \gls{path} $V_1$-$\,\cdots\,$-$V_2$; the opposite way around the circle formed by the \gls{cycle}.
+                    For a \gls{directed_graph}, the proof still applies, but it may be \glslink{connected_graph}{weakly connected}.
+                    \item \textbf{The \gls{graph} does not contain any \glspl{cycle}} - step 2. of \gls{kruskals_algorithm} (see above) states that each \gls{edge} should be added \textit{"if and only if it does not create a \gls{cycle} in the \gls{graph}"}, thus no \gls{edge} can create a \gls{cycle}.
+                    \item \textbf{The \gls{graph} contains every \gls{vertex} of the original \gls{graph}} - the original \gls{graph} is stated in the initial statement to be a \gls{connected_graph}, so every \gls{edge} connects two \glspl{vertex} in the \gls{graph}.
+                    The only \glspl{edge} not added are those that create a \gls{cycle}, thus, using the same logic as in the proof of the \gls{graph} not containing any \glspl{cycle}, there must exist another \gls{path} around the \gls{cycle}, meaning that it must be \glslink{connected_graph}{connected}.
+                \end{itemize}
+                Thus, since all of the conditions for the resulting \gls{graph} being a \gls{spanning_tree} hold, the initial statement is true.
+            \end{proof}
+            It can also be proved that this \gls{spanning_tree} is a \gls{minimum_spanning_tree}, but we will not prove that here.
+
+        \subsubsection{Implementation}
+            \begin{verbatim}
+// Takes a graph and uses Kruskal's algorithm to find a
+// minimum spanning tree of the graph.
+// Example:
+//     Input:  GRAPH([A, B, C, D],
+//                   [(A, B, 2),
+//                    (B, C, 3),
+//                    (C, D, 1),
+//                    (A, D, 2),
+//                    (A, C, 4)])
+//     Output: GRAPH([A, B, C, D]
+//                   [(A, B, 2),
+//                    (B, C, 3),
+//                    (C, D, 1)])
+FUNC kruskals_algorithm(graph):
+    sortedEdges = sort(graph.edges)
+
+    newGraph = NEW GRAPH([], [])
+    
+    FOR EACH edge IN graph.edges:
+        checkGraph = graph
+        checkGraph.edges.PUSH(edge)
+
+        IF (NOT checkGraph.HAS_CYCLE):  // Use DFS to find cycles
+            newGraph.edges.PUSH(edge)
+        END IF
+    END FOR
+
+    RETURN newGraph
+END FUNC
+            \end{verbatim}
+            
+    \subsection{Primm's Algorithm}
+        
 
     \newpage
 

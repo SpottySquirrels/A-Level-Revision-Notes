@@ -177,19 +177,112 @@
             \subsubsection{Stress-Strain Graphs}
                 A stress-strain graph plots stress (horizontal axis; $\sigma$) against the strain (vertical axis; $\varepsilon$).
                 This means that the gradient ($\frac{d\sigma}{d\varepsilon}$) of the linear section is the Young's modulus.
-                At the top of the linear section is the elasticity limit:
-                            \begin{figure}
-                \begin{center}
-                    \begin{tikzpicture}[>=stealth]
-                        \draw[->] (0,0) -- (5.5,0) node[right] {$\sigma$};
-                        \draw[->] (0,0) -- (0,5.5) node[above] {$\varepsilon$};
-                        \draw (0,0) node[below left]{0};
+                This is an example of a stress-strain graph:
+                \begin{figure}
+                    \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                        \begin{axis}[
+                            xlabel={Strain ($\varepsilon$)},
+                            ylabel={Stress ($\sigma$)/GPa},
+                            xmin=0, xmax=0.30,
+                            ymin=0, ymax=0.55,
+                            legend pos=north west,
+                        ]
+                            \addplot[
+                                domain=0.0000001:0.001375,
+                                samples=100,
+                                color=red,
+                                thick
+                            ] {200 * x};
+                            \addplot[
+                                domain=0.001375:0.02,
+                                samples=100,
+                                color=red,
+                                thick
+                            ] {0.275 + (0.245 - 0.275) * ((x - 0.001375) / (0.02 - 0.001375)) ^ 1.15};
 
-                        \draw (-1,2.5) node{\rotatebox{90}{Stress/Pa}};
-                        \draw (2.5,-1) node{Strain};
+                            %addplot[between e_plateau to e_p: sigma_e] % (Constant function)
+
+                            \addplot[
+                                domain=0.02:0.15,
+                                samples=100,
+                                color=red,
+                                thick
+                            ] {0.245 + 0.30187 * (x - 0.02) ^ 0.24};
+                            % TODO: Fix this, it should be exponential-ish I think
+                            %] {0.245 + 1.93258 * (x - 0.02) ^ 0.24}; % In theory, this should be the right value of K_p, but it doesn't work for some reason, so I'm leaving the other value there
+                            \addplot[
+                                domain=0.15:0.28,
+                                samples=100,
+                                color=red,
+                                thick
+                            ] {0.430 - (0.430 - 0.330) * ((x - 0.15) / (0.28 - 0.15)) ^ 2.10};
+
+                            \pic[red] at (0.00001375,0.275) {cross};
+                            \pic[red] at (0.02,0.245) {cross};
+                            \pic[red] at (0.15,0.43) {cross};
+                            \pic[red] at (0.28,0.33) {cross};
+
+                            \draw (0.001375,0.275) node[above right, red]{A};
+                            \draw (0.02,0.245) node[below, red]{B};
+                            \draw (0.15,0.43) node[below, red]{C};
+                            \draw (0.28,0.33) node[below, red]{D};
+
+                            \addlegendentry{Stress-Strain Line}
+                        \end{axis}
                     \end{tikzpicture}
-                \end{center}
-                \caption{A graph of the results with a line of best fit}
-            \end{figure}
+                    \caption{A stress-strain graph of mild steel}
+                \end{figure}
+                The three points A, B, C and D on the graph show four different points:
+                \begin{itemize}
+                    \item \textbf{A} - the proportionality limit; up to this point is where Hooke's Law ($\sigma=E\varepsilon$) still applies, meaning that the stress-strain graph is straight, and $\frac{d\sigma}{d\varepsilon}=E$.
+                    \item \textbf{B} - the elasticity limit; up to this point, the elastic material will return to its original shape/size.
+                    After it passes its elasticity limit, it will not return to its original size.
+                    \item \textbf{C} - ultimate stress point; this is the point where the material reaches the maximum stress before necking reduces its stress.
+                    \item \textbf{D} - fracture point; this is the point at which the material is broken.
+                \end{itemize}
+
+                The area under the stress-strain graph is the work done per unit volume to stretch the material to that level of stress:
+                \begin{equation}
+                    \frac{W}{V}=\int\sigma\,d\varepsilon
+                \end{equation}
+                This means that, for $\varepsilon\le\varepsilon_p$ (where the strain is less than the limit of proportionality), the work done to stretch the material to a given length is given by:
+                \begin{align}
+                    \frac{W}{V}&=\half\sigma\varepsilon=\half E\varepsilon^2 \\
+                    W&=\half EV\varepsilon^2
+                \end{align}
             
+                For brittle materials, the fracture strain is low; this means that the material can't stretch very far before fracturing.
+                As an example, this is the stress-strain graph of glass ($E=70\,\text{GPa}$), which never hits the limit of proportionality:
+                \begin{figure}
+                    \centering
+                    \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                        \begin{axis}[
+                            xlabel={Strain ($\varepsilon$)},
+                            ylabel={Stress ($\sigma$)/GPa},
+                            xmin=0, xmax=0.0017,
+                            ymin=0, ymax=0.12,
+                            legend pos=north west,
+                        ]
+                            \addplot[
+                                domain=0.0000001:0.0015,
+                                samples=100,
+                                color=red,
+                                thick
+                            ] {70 * x};
+
+                            \addlegendentry{Stress-Strain Line}
+                        \end{axis}
+                    \end{tikzpicture}
+                    \caption{A stress-strain graph of glass}
+                \end{figure}
+
+            \subsubsection{Force-Extension Graphs}
+                A force-extension graph plots the amount of force required for a given extension.
+                For a material that obeys Hooke's Law, $F=k\Delta\ell$, force and extension should be proportional.
+
+                % TODO: Put graph here
+
+                However, after the limit of proportionality, the line flattens, thus $\frac{dF}{d\Delta\ell}$ lowers.
+
     \newpage

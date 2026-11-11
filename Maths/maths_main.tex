@@ -9,6 +9,7 @@
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{fillbetween}
 \usepackage{amsfonts}
+\usepackage{float}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -46,8 +47,8 @@
 
 \makeatletter % Temporarily makes '@' a letter
 % Makes figures and tables place `here', instead of defaulting to the top of the page
-\renewcommand{\fps@figure}{htbp}
-\renewcommand{\fps@table}{htbp}
+\renewcommand{\fps@figure}{H}%{htbp}
+\renewcommand{\fps@table}{H}%{htbp}
 \makeatother
 
 \title{\Huge Maths Revision Notes}

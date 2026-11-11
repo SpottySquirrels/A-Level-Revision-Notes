@@ -216,3 +216,266 @@ end program fibonnaci
         Compiled code can be shared easily as an executable, meaning that the source code doesn't have to be shared as well as the program, making it ideal for a lot of application software.
 
     \newpage
+
+    \section{Boolean Algebra}
+        \subsection{Truth Tables}
+            A Boolean expression will take a set of inputs (usually written $A$, $B$, $C$,...), and return an output (usually written $Q$), all of which are Boolean values (true or false).
+            This means that the set of possible values of the expression can be written as a table with columns $A$, $B$, $C$, etc. and $Q$, showing the outputs, like this:
+            \begin{center}
+                \begin{tabular}{c c c c|c}
+                    \textbf{A} & \textbf{B} & \textbf{C} & $\cdots$ & \textbf{Q} \\
+                    \hline
+                    0 & 0 & 0 & $\cdots$ & 0 \\
+                    0 & 0 & 1 & $\cdots$ & 1 \\
+                    0 & 1 & 0 & $\cdots$ & 1 \\
+                    0 & 1 & 1 & $\cdots$ & 0 \\
+                    \vdots & \vdots & \vdots & \vdots & \vdots
+                \end{tabular}
+            \end{center}
+            When listing the inputs, they are listed as if they are multi-digit binary numbers from 0 to $2^n$, so a 2-input truth table would list the inputs as 00, 01, 10, 11, in that order.
+            If two truth tables are the same, then the Boolean expressions that made them are equivalent.
+            For Boolean expressions $\phi$ and $\psi$, this is written as $\phi\iff\psi$, meaning that $\phi$ is true if and only if $\psi$ is true.
+
+        \subsection{Logic Gates}
+            \subsubsection{NOT Gates}
+                A NOT gate, also known as an inverter, flips a true to a false and vice versa.
+                NOT $A$ is written as:
+                \begin{equation}
+                    \text{NOT}\;A=\overline{A}
+                \end{equation}
+                The truth table is:
+                \begin{center}
+                    \begin{tabular}{c|c}
+                        \textbf{A} & \textbf{Q} \\
+                        \hline
+                        0 & 1 \\
+                        1 & 0
+                    \end{tabular}
+                \end{center}
+            \subsubsection{OR Gates}
+                An OR gate outputs true if either output or both are true.
+                $A$ OR $B$ is written as:
+                \begin{equation}
+                    A\;\text{OR}\;B=A+B
+                \end{equation}
+                The truth table is:
+                \begin{center}
+                    \begin{tabular}{c c|c}
+                        \textbf{A} & \textbf{B} & \textbf{Q} \\
+                        \hline
+                        0 & 0 & 0 \\
+                        0 & 1 & 1 \\
+                        1 & 0 & 1 \\
+                        1 & 1 & 1
+                    \end{tabular}
+                \end{center}
+            \subsubsection{AND Gates}
+                An AND gate outputs true if both inputs are true.
+                $A$ AND $B$ is written as:
+                \begin{equation}
+                    A\;\text{AND}\;B=A\cdot B
+                \end{equation}
+                The truth table is:
+                \begin{center}
+                    \begin{tabular}{c c|c}
+                        \textbf{A} & \textbf{B} & \textbf{Q} \\
+                        0 & 0 & 0 \\
+                        0 & 1 & 0 \\
+                        1 & 0 & 0 \\
+                        1 & 1 & 1
+                    \end{tabular}
+                \end{center}
+
+            \subsubsection{XOR Gates}
+                An XOR gate (exclusive OR gate) is true if one input is true, but not both.
+                This can also be thought of as being true if and only if both inputs are not equal.
+                $A$ XOR $B$ is written as:
+                \begin{equation}
+                    A\;\text{XOR}\;B=A\oplus B
+                \end{equation}
+
+            \subsubsection{NAND Gates}
+                A NAND gate is an AND gate followed by a NOT gate, meaning that $A$ NAND $B$ can be written as:
+                \begin{equation}
+                    A\;\text{NAND}\;B=\text{NOT}\;(A\;\text{AND}\;B)=\overline{A\cdot B}
+                \end{equation}
+                The truth table is:
+                \begin{center}
+                    \begin{tabular}{c c|c}
+                        \textbf{A} & \textbf{B} & \textbf{Q} \\
+                        \hline
+                        0 & 0 & 1 \\
+                        0 & 1 & 1 \\
+                        1 & 0 & 1 \\
+                        1 & 1 & 0
+                    \end{tabular}
+                \end{center}
+
+                NAND is referred to as the universal gate, because it can be used to make any other logic gate.
+                These can be built as:
+                \begin{equation}
+                    \begin{aligned}
+                        \text{NOT}\;A\;\text{NAND}\;A
+                    \end{aligned}
+                \end{equation}
+
+                NOR gates can also be used to make any other logic gate.
+
+                NAND gates are used to build other gates, because this lowers cost of manufacturing, since only one gate has to be made.
+                Using as few gates as possible speeds up processing.
+
+            \subsubsection{NOR Gates}
+                A NOR gate is an OR gate followed by a NOT gate, meaning that A NOR B can be written as:
+                \begin{equation}
+                    A\;\text{NOR}\;B=\text{NOT}\;(A\;\text{OR}\;B)=\overline{A+B}
+                \end{equation}
+                The truth table is:
+                \begin{center}
+                    \begin{tabular}{c c|c}
+                        \textbf{A} & \textbf{B} & \textbf{Q} \\
+                        \hline
+                        0 & 0 & 1 \\
+                        0 & 1 & 0 \\
+                        1 & 0 & 0 \\
+                        1 & 1 & 0
+                    \end{tabular}
+                \end{center}
+
+            \subsubsection{Logic Gate Diagrams}
+                Each logic gate has a symbol that can be used to draw diagrams that represent Boolean expressions.
+                The symbols are:
+                \begin{figure}
+                    \begin{center}
+                        \begin{circuitikz}
+                            \draw
+                                (0,2) node[and port] (and1) {}
+                                (0,0) node[or port] (or1) {}
+                                (3,1) node[xor port] (xor1) {}
+                                (and1.out) -- ++(0.5,0) |- (xor1.in 1)
+                                (or1.out)  -- ++(0.5,0) |- (xor1.in 2)
+                                (and1.in 1) node[left] {A}
+                                (and1.in 2) node[left] {B}
+                                (or1.in 1)  node[left] {C}
+                                (or1.in 2)  node[left] {D}
+                                (xor1.out)  node[right] {Q};
+                        \end{circuitikz}
+                    \end{center}
+                    \caption{A logic diagram}
+                    \label{}
+                \end{figure}
+
+        \subsection{De Morgan's Laws}
+            \begin{theorem}[De Morgan's First Law]
+                \begin{equation}
+                    \overline{A}\cdot\overline{B}=\overline{A+B}
+                \end{equation}
+            \end{theorem}
+            \begin{proof}
+                De Morgan's first law can be proved with a truth table:
+
+                \begin{center}
+                    \begin{tabular}{c c|c c|c c c}
+                        \textbf{A} & \textbf{B} & \textbf{A\,+\,B} & \textbf{$\overline{A+B}$} & \textbf{$\overline{A}\cdot\overline{B}$} & \textbf{$\overline{B}$} & \textbf{$\overline{A}$} \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+                        1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+                        1 & 1 & 1 & 0 & 0 & 0 & 0
+                    \end{tabular}
+                \end{center}
+            \end{proof}
+            
+            De Morgan's second law:
+            \begin{theorem}[De Morgan's Second Law]
+                \begin{equation}
+                    \overline{A\cdot B}=\overline{A}+\overline{B}
+                \end{equation}
+            \end{theorem}
+            \begin{proof}
+                De Morgan's second law can be proved with a truth table.
+                On the left, there are the values of $A$ and $B$, which are then used to find $A\cdot B$ and then $\overline{A\cdot B}$.
+                On the right, there are the values of $\overline{A}$ and $\overline{B}$, which are then used to find $\overline{A}+\overline{B}$.
+                \begin{center}
+                    \begin{tabular}{c c|c c|c c c}
+                        \textbf{A} & \textbf{B} & \textbf{$A\cdot B$} & \textbf{$\overline{A\cdot B}$} & \textbf{$\overline{A}+\overline{B}$} & \textbf{$\overline{B}$} & \textbf{$\overline{A}$} \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 0 & 1 & 1 & 1 & 0 \\
+                        1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        1 & 1 & 1 & 0 & 0 & 0 & 0
+                    \end{tabular}
+                \end{center}
+                Since the columns for $\overline{A\cdot B}$ and $\overline{A}+\overline{B}$, the two expressions must be equal.
+            \end{proof}
+
+            De Morgan's laws can be applied to an entire expression, or to smaller part of it.
+
+        \subsection{Other Laws of Boolean Algebra}
+            For any boolean variables $A,B,C,D\in\Bool=\set{0,1}$, the following identities apply:
+            \begin{align}
+                A\cdot 0&=0 \\
+                A\cdot 1&=A \\
+                A\cdot A&=A \\
+                A\cdot \overline{A}&=0
+            \end{align}
+            \begin{align}
+                A+0&=A \\
+                A+1&=1 \\
+                A+A&=A \\
+                A+\overline{A}&=1
+            \end{align}
+            \begin{align}
+                A\cdot B&=B\cdot A \\
+                A+B&=B+A
+            \end{align}
+            \begin{align}
+                A\cdot(B\cdot C)&=(A\cdot B)\cdot C \\
+                A+(B+C)&=(A+B)+C
+            \end{align}
+            \begin{align}
+                A\cdot(B+C)&=A\cdot B+A\cdot C \\
+                (A+B)\cdot(C+D)&=A\cdot C+A\cdot D+B\cdot C+B\cdot D
+            \end{align}
+            \begin{align}
+                A\cdot(A+B)&=A \\
+                A+(A\cdot B)&=A
+            \end{align}
+
+            Expressions using AND can be written with no symbols, e.g.:
+            \begin{equation}
+                A\cdot(B)=A(B)
+            \end{equation}
+
+            This is an example of simplifying a Boolean expression:
+            \begin{center}
+                \begin{tabular}{lr}
+                    $(A+B)\cdot C\cdot\overline{C}+(A+\overline{A})\cdot B$ & $C\cdot\overline{C}=0$ \\
+                    $(A+B)\cdot 0+(A+\overline{A})\cdot B$ & $(A+B)\cdot0=0$ \\
+                    $0+(A+\overline{A})\cdot B$ & $A+\overline{A}=1$ \\
+                    $0+1\cdot B$ & $1+B=B$ \\
+                    $0+B$ & $0+B=B$ \\
+                    $B$ & \\
+                \end{tabular}
+            \end{center}
+
+            The operations are treated like $+$ and $\cdot$ in elementary algebra, where $+$ is addition, and $\cdot$ is multiplication.
+            This means that $\cdot$ comes before $+$ in the order of operations.
+            NOT groups a subexpression into a piece, which can be treated as a bracket, meaning that the contents of a NOT group is evaluated before anything else, along with brackets.
+            XOR comes after NOT/brackets, and before AND, but is unlikely to appear in questions.
+
+            The Boolean algebra thus has commutativity for $\cdot$ and $+$, associativity for $\cdot$ and $+$.
+            It also has an identity for $\cdot$ and $+$ ($I_\cdot=1$; $I_+=0$), just like the identities for $\cdot$ and $+$ in elementary algebra.
+
+            \subsection{Order of Operations}
+                \begin{center}
+                    \begin{tabular}{r l}
+                        \textbf{B} & Brackets/NOT \\
+                        N/A & XOR \\
+                        \textbf{I} & N/A \\
+                        \textbf{D/M} & AND \\
+                        \textbf{A/S} & OR
+                    \end{tabular}
+                \end{center}
+                Boolean algebra uses BIDMAS just like elementary algebra; AND is multiplication (hence it uses the $\cdot$ symbol); OR is addition (hence it uses the $+$ symbol); and NOT groups terms into subexpressions like brackets.
+
+    \newpage

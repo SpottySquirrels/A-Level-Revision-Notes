@@ -1,5 +1,6 @@
 \section{Algebraic Expressions} \label{algebraic_expessions}
-\newpage
+
+    \newpage
 
 \section{Quadratics} \label{quadratics}
     A quadratic is an expression in the form $ax^2+bx+c$, for some real constants $a$, $b$ and $c$.
@@ -208,7 +209,114 @@
 \newpage
 
 \section{Trigonometric Ratios} \label{trigonometric_ratios}
-\newpage
+    \subsection{The Sine Rule}
+        \begin{theorem}[Sine Rule] \label{thm:sine_rule}
+            The sine rule states that, for a triangle with sides $a$, $b$, $c$, and angles $A$, $B$, $C$ opposite to the corresponding side ($A$ opposite to $a$, etc.), the following holds:
+            \begin{equation}
+                \frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+                We will begin by drawing the triangle described in theorem \ref{thm:sine_rule}, with a line with length $h$ from $C$ to $AB$, meeting $AB$ at a right-angle:
+            \begin{figure}
+                \begin{center}
+                    \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                        \draw (-3,2) -- (2,3) -- (1,0) -- (-3,2);
+                        \draw[dashed] (1,0) -- (0.46154,2.69231);
+                        \draw (.5,2.5) -- (0.69231,2.53846) -- (0.65385,2.73077);
+
+                        \node[black, left] at (-3,2) {$A$};
+                        \node[black, above right] at (2,3) {$B$};
+                        \node[black, below] at (1,0) {$C$};
+
+                        \node[black, above left] at (-.5,2.5) {$c$};
+                        \node[black, below left] at (-1,1) {$b$};
+                        \node[black, below right] at (1.5,1.5) {$a$};
+                        \node[black, left] at (0.73077,1.346155) {$h$};
+                    \end{tikzpicture}
+                    \caption{A triangle with sides $a$, $b$, $c$, and angles $A$, $B$ and $C$}
+                \end{center}
+            \end{figure}
+            From this, we can see that $\sin A=\frac{h}{b}$, using the rules of right-angled \\ trigonometry ($\sin\theta=\frac{O}{H}$).
+            Thus, $b\sin A=h$.
+            Using the same logic for the other right-angled triangle, we can also derive $a\sin B=h$.
+            We can now set the two expressions equal to each other to find:
+            \begin{equation*}
+                \begin{aligned}
+                    b\sin A&=a\sin B \\
+                    \frac{a}{\sin A}&=\frac{b}{\sin B}
+                \end{aligned}
+            \end{equation*}
+            We can now use another line from $B$ to $AC$ to do the same process with angles $A$ and $C$ to prove that $\frac{a}{\sin A}=\frac{c}{\sin C}$, and thus:
+            \begin{equation}
+                \frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}
+            \end{equation}
+        \end{proof}
+
+        The sine rule can be used to find missing sides by rearranging for $a$, $b$ or $c$, or all of the fractions can be flipped to put the sine rule in the form:
+        \begin{equation}
+            \frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}
+        \end{equation}
+        Which can then be further rearranged to find a angle, e.g.:
+        \begin{equation}
+            A=\arcsin\left(\frac{a\sin B}{b}\right)
+        \end{equation}
+
+    \subsection{The Cosine Rule}
+        \begin{theorem}[Cosine Rule] \label{thm:cosine_rule}
+            The cosine rule states the, for a triangle with sides $a$, $b$, $c$, and angles $A$, $B$, $C$ opposite to the corresponding side ($A$ oppsite to $a$, etc.), the following holds:
+            \begin{equation}
+                a^2=b^2+c^2-2bc\cos A
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            We will begin by drawing the triangle described in \ref{thm:cosine_rule}, with a line with length $h$ from $C$ to $AB$, meeting $AB$ at a right-angle, and splitting it into length $x$ and $c-x$:
+            \begin{figure}
+                \begin{center}
+                    \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                        \draw (-3,2) -- (2,3) -- (1,0) -- (-3,2);
+                        \draw[dashed] (1,0) -- (0.46154,2.69231);
+                        \draw (.5,2.5) -- (0.69231,2.53846) -- (0.65385,2.73077);
+
+                        \node[black, left] at (-3,2) {$A$};
+                        \node[black, above right] at (2,3) {$B$};
+                        \node[black, below] at (1,0) {$C$};
+
+                        \node[black, above left] at (-1.26923,2.34616) {$x$};
+                        \node[black, above left] at (1.23077,2.84616) {$c-x$};
+                        \node[black, below left] at (-1,1) {$b$};
+                        \node[black, below right] at (1.5,1.5) {$a$};
+                        \node[black, left] at (0.73077,1.346155) {$h$};
+                    \end{tikzpicture}
+                    \caption{A triangle with sides $a$, $b$, $c$, and angles $A$, $B$ and $C$}
+                \end{center}
+            \end{figure}
+            From here, we can use the Pythagorean theorem to see that $b^2-x^2=h^2$ and that $a^2-(c-x)^2=h^2$.
+            Setting them equal to each other and rearranging, we get:
+            \begin{equation*}
+                \begin{aligned}
+                    b^2-x^2&=a^2-(c-x)^2 \\
+                    b^2-x^2&=a^2-c^2+2cx-x^2 \\
+                    b^2&=a^2-c^2+2cx
+                \end{aligned}
+            \end{equation*}
+            Using the rules of right-angled trigonometry ($\cos\theta=\frac{A}{H}$), we can see that $\cos A=\frac{x}{b}$ thus $x=b\cos A$, which we can substitute into $b^2=a^2-c^2+2cx$ to get:
+            \begin{equation}
+                b^2=a^2-c^2+bc\cos A
+            \end{equation}
+            Which can be rearranged into:
+            \begin{equation}
+                a^2=b^2+c^2-2bc\cos A
+            \end{equation}
+        \end{proof}
+
+    \subsection{The Area of a Triangle}
+
+    \subsection{Trigonometric Graphs}
+
+    \subsection{Trigonometric Graph Transformations}
+
+    \newpage
 
 \section{Trigonometric Equations and Identities} \label{trigonometric_equations_and_inequalities}
 \newpage

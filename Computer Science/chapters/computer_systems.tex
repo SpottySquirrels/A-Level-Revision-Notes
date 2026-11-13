@@ -1,54 +1,54 @@
 \section{Hardware and Software} \label{hardware_and_software}
-    Hardware is the electronic and electromechanical components of a computer, for example the CPU, the RAM or a monitor
-    Software is code that runs on the hardware, for example apps or the operating system.
-    Software does not have a phyisical presence.
+    \Gls{hardware} is the electronic and electromechanical components of a computer, for example the \acroCPU, the \acroRAM or a monitor
+    \gls{software} is code that runs on the \gls{hardware}, for example apps or the \gls{operating_system}.
+    \gls{software} does not have a physical presence.
 
     \subsection{Application Software}
 
     \subsection{System Software}
-        System software is software that runs to support application software.
+        \Gls{system_software} is \gls{software} that runs to support \gls{application_software}.
 
         \subsubsection{Operating Systems}
-            An operating system is a middle-man between the user/software and the hardware.
+            An \gls{operating_system} is a middle-man between the user/\gls{software} and the \gls{hardware}.
             Its tasks include:
 
             \paragraph{Processor Scheduling}
-            Processor scheduling is how the computer decides what processes should be done and in what order.
-            It does this by assigning priorities to each of the processes, and then uses an algorithm to decide which to do first.
+            \gls{processor_scheduling} is how the computer decides what processes should be done and in what order.
+            It does this by assigning priorities to each of the processes, and then uses an \gls{algorithm} to decide which to do first.
 
-            The first-come first-serve algorithm (FIFO) immediately executes the first process that arrives, and all other processes join a first-in first-out queue structure to be executed in order.
-            This can mean that high-priority processes or processes with short deadlines can be ignored for a long time if there are a lot of other processes already in the queue.
+            The \gls{first_come_first_served} \gls{algorithm} (\acroFIFO) immediately executes the first process that arrives, and all other processes join a \gls{first_in_first_out} \gls{queue} structure to be executed in order.
+            This can mean that high-priority processes or processes with short deadlines can be ignored for a long time if there are a lot of other processes already in the \gls{queue}.
 
-            The earliest deadline first algorithm (EDF) works by finding the processes with the soonest to expire deadlines and executes them first.
+            The \gls{earliest_deadline_first} \gls{algorithm} (\acroEDF) works by finding the processes with the soonest to expire deadlines and executes them first.
 
-            The round robin algorithm allocates a unit of time to each process, and then cycles to the next one whether or not the first has finished, and then it will be cycled back to later.
-            These units of time are called time slices.
-            A time slice, AKA a quantum, is a short unit of time where processes can execute, allowing for multitasking.
+            The \gls{round_robin} \gls{algorithm} allocates a unit of time to each process, and then cycles to the next one whether or not the first has finished, and then it will be cycled back to later.
+            These units of time are called \glspl{time_slice}.
+            A \gls{time_slice}, AKA a quantum, is a short unit of time where processes can execute, allowing for multitasking.
 
-            Fixed-priority preemptive scheduling is the algorithm used by Windows 11, and involves ranking each process based on priority.
+            \Gls{fixed_priority_preemptive_scheduling} is the \gls{algorithm} used by Windows 11, and involves ranking each process based on priority.
             Factors such as deadlines can affect the priority of a process.
             The processes are then executed in order of priority, with any new high-priority processes jumping in front of the other, lower-priority ones.
 
             \paragraph{Memory Management}
-            Memory management is a set of techniques used to keep a computer's memory organised and working as quickly as possible.
-            This involves keeping track of what memory is in use and what memory is free.
+            \Gls{memory_management} is a set of techniques used to keep a computer's \gls{memory} organised and working as quickly as possible.
+            This involves keeping track of what \gls{memory} is in use and what \gls{memory} is free.
 
-            Paging uses a lookup table called a page table to map logical addresses (the number assigned to the memory location) to the physical location (the physical place the data is stored), meaning that it can be stored anywhere, and is not stored in continguous pieces.
+            \Gls{paging} uses a lookup table called a page table to map logical addresses (the number assigned to the \gls{memory_address}) to the physical location (the physical place the \glspl{datum} is stored), meaning that it can be stored anywhere, and is not stored in continguous pieces.
             
-            Segmentation stores data in continguous blocks based on their relations to each other, meaning that a program would be stored as one block of data in memory.
-            A segment could store a program module, for example.
+            \Gls{segmentation} stores \glspl{datum} in continguous blocks based on their relations to each other, meaning that a program would be stored as one block of \glspl{datum} in \gls{memory}.
+            A segment could store a program \gls{module}, for example.
 
-            Virtual memory is where parts of the secondary storage is used as RAM.
-            This memory will be slower, since secondary storage is not as fast as RAM, however computers generally have more secondary storage than RAM, since it is much cheaper.
-            As RAM prices go up, virtual memory is becoming more useful for cheaper computers that have less RAM.
+            \Gls{virtual_memory} is where parts of the \gls{secondary_storage} is used as \acroRAM.
+            This \gls{memory} will be slower, since \gls{secondary_storage} is not as fast as \acroRAM, however computers generally have more \gls{secondary_storage} than \acroRAM, since it is much cheaper.
+            As \acroRAM prices go up, \gls{virtual_memory} is becoming more useful for cheaper computers that have less \acroRAM.
 
-            Disk thrashing is a performance drop caused by the computer swapping lots of data between secondary storage and RAM, which causes the CPU to slow down.
-            This is in turn caused by bad memory management, which should aim to minimise disk thrashing by copying larger chunks of data from secondary storage to RAM, with the hope that the nearby data will also be useful.
-            This can also be caused by not having enough RAM, which means that not enough data can be stored at once.
+            \Gls{disk_thrashing} is a performance drop caused by the computer swapping lots of data between \gls{secondary_storage} and \acroRAM, which causes the \acroCPU to slow down.
+            This is in turn caused by bad \gls{memory_management}, which should aim to minimise \gls{disk_thrashing} by copying larger chunks of \glspl{datum} from \gls{secondary_storage} to \acroRAM, with the hope that the nearby \glspl{datum} will also be useful.
+            This can also be caused by not having enough \acroRAM, which means that not enough \glspl{datum} can be stored at once.
 
-            Memory management means that the computer cannot overwrite memory that is in-use, which would cause programs to have to fetch data back from secondary storage.
-            It also allows multiple programs to occupy the same memory, which can be allocated properly to avoid data being overwritten.
-            It also means that programmers don't have to worry about where their programs and data are stored, since it is all handled by the OS.
+            \Gls{memory_management} means that the computer cannot overwrite \gls{memory} that is in-use, which would cause programs to have to fetch \glspl{datum} back from \gls{secondary_storage}.
+            It also allows multiple programs to occupy the same \gls{memory}, which can be allocated properly to avoid \glspl{datum} being overwritten.
+            It also means that programmers don't have to worry about where their programs and \glspl{datum} are stored, since it is all handled by the \acroOS.
 
             \paragraph{Backing Store Management}
                 a
@@ -57,38 +57,38 @@
                 a
 
         \subsection{Translators}
-            Translators are programs the convert source code (written by the developer) from high-level languages into object code (the executable file containing machine code, which is executed to run the program).
-            Translators generally fall into three categories:
+            \Glspl{translator} are programs the convert \gls{source_code} (written by the developer) from \glspl{high_level_language} into \gls{object_code} (the executable file containing \gls{machine_code}, which is executed to run the program).
+            \Glspl{translator} generally fall into three categories:
             \begin{itemize}
-                \item \textbf{Compilers} - a compiler translates all of the source code into an object code file before the program is run.
-                This means that the object code can be distributed alone, stopping people from stealing the source code.
-                Compiled code can be used across multiple different processors as long as there is a compiler for that processor family.
-                This means that one source code file can be run on many different computers.
-                Each time the code is changed, it requires recompiling, which can be a slow process for large programs, however this means that running it does not take any longer than just executing machine code, because the object code file already exists.
+                \item \textbf{Compilers} - a \gls{compiler} translates all of the \gls{source_code} into an \gls{object_code} file before the program is run.
+                This means that the \gls{object_code} can be distributed alone, stopping people from stealing the \gls{source_code}.
+                Compiled \gls{code} can be used across multiple different processors as long as there is a \gls{compiler} for that \gls{processor} family.
+                This means that one \gls{source_code} file can be run on many different computers.
+                Each time the \gls{code} is changed, it requires recompiling, which can be a slow process for large programs, however this means that running it does not take any longer than just executing \gls{machine_code}, because the \gls{object_code} file already exists.
 
-                A compiler goes through multiple phases: lexical analysis, syntactic analysis and semantic analysis of the code.
-                This involves creating intermediate code, which is then optimised, before generating the machine code.
-                If there are any errors in the syntax, it will not complete the compilation, and no machine code will be generated.
-                The compiler will detect any syntax errors, which can be reported back to the developer.
+                A \gls{compiler} goes through multiple phases: \gls{lexical_analysis}, \gls{syntactic_analysis} and \gls{semantic_analysis} of the \gls{code}.
+                This involves creating intermediate \gls{code}, which is then optimised, before generating the \gls{machine_code}.
+                If there are any \glspl{error} in the \gls{syntax}, it will not complete the compilation, and no \gls{machine_code} will be generated.
+                The \gls{compiler} will detect any \glspl{syntax_error}, which can be reported back to the developer.
 
-                A compiler creates relocatable code, which means that the memory used in the program can be moved elsewhere in the computer.
-                This also means that it can be run on different computers, using different memory addresses.
-                This is different to assembly, which specifies specific addresses which can't be moved.
-                It uses an offset (the point where the code starts) to determine where each other line of code is, no matter where the code is located.
+                A \gls{compiler} creates relocatable \gls{code}, which means that the \gls{memory} used in the program can be moved elsewhere in the computer.
+                This also means that it can be run on different computers, using different \glspl{memory_address}.
+                This is different to \gls{assembly}, which specifies specific addresses which can't be moved.
+                It uses an offset (the point where the \gls{code} starts) to determine where each other line of \gls{code} is, no matter where the \gls{code} is located.
 
-                \item \textbf{Interpreters} - an interpreter goes through each line of the code as the code runs.
-                Interpreters do not generate any machine code; they instead use their own subroutines to run the processes as they are read.
-                The first part of the interpreting process is scanning for syntax errors, meaning that it will not waste time trying to run incorrect code.
-                This means that the developer can see where errors are.
-                Interpreters are useful because they can be used to test small pieces of code without having to compile a larger program.
+                \item \textbf{Interpreters} - an \gls{interpreter} goes through each line of the \gls{code} as the it runs.
+                \Glspl{interpreter} do not generate any \gls{machine_code}; they instead use their own \glspl{subroutine} to run the processes as they are read.
+                The first part of the \glslink{interpreter}{interpreting} process is scanning for \glspl{syntax_error}, meaning that it will not waste time trying to run incorrect \gls{code}.
+                This means that the developer can see where \glspl{error} are.
+                \Glspl{interpreter} are useful because they can be used to test small pieces of code without having to \glslink{compiler}{compile} a larger program.
                 They are also good for teaching, using interactive mode.
-                Interactive mode runs the code in a separate window, allowing you to see what it is doing at each step.
+                Interactive mode runs the \gls{code} in a separate window, allowing you to see what it is doing at each step.
                 
-                \item \textbf{Assemblers} - assemblers convert each line of assembly into a set of obeject code bits.
-                Assembly has a one-to-one correspondance with machine code, but each processor has its own set of instructions, meaning that code cannot be easily moved from one machine to another.
+                \item \textbf{Assemblers} - \glspl{assembler} convert each line of \gls{assembly} into a set of \gls{object_code} bits.
+                \Gls{assembly} has a \gls{one_to_one} correspondance with \gls{machine_code}, but each \gls{processor} has its own \gls{instruction_set}, meaning that \gls{code} cannot be easily moved from one machine to another.
                 This means different code will have to be written for each processor.
 
-                Using assembly means that the code can't be moved in memory, since each memory location is hardcoded, meaning that if the code is moved, the goto statements will reference the wrong memory addresses.
+                Using \gls{assembly} means that the \gls{code} can't be moved in \gls{memory}, since each \gls{memory_address} is \glslink{hardcoding}{hardcoded}, meaning that if the code is moved, the goto statements will reference the wrong \glspl{memory_address}.
             \end{itemize}
             Both compilers and interpreters are available for most high-level languages.
 

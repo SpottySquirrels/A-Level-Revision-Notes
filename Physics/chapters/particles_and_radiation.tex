@@ -18,6 +18,62 @@
     \end{equation}
 
     \subsection{The Nucleus and Strong Nuclear Force}
+        \subsubsection{The Strong Nuclear Force}
+            The \gls{strong_nuclear_force} is one of the four fundamental forces.
+            It is mediated by \glspl{gluon} and \glspl{meson}, depending on the range at which it is acting at.
+            Within the \gls{nucleus}, the \gls{strong_nuclear_force} is mediated by \glspl{gluon}; outside of the \gls{nucleus}, it is mediated by \glspl{meson}.
+            At ranges of $<0.5\,\text{fm}$, the \gls{strong_nuclear_force} is repulsive; at ranges of $>0.5\,\text{fm}$, it is attractive ($1\,\text{fm}=1\times10^{-15}\text{m}$).
+            It will reach its maximum attractive strength at $\approx1\,\text{fm}$, and then begin weakening to around $3\,\text{fm}$, where its strength is negligable.
+            These distances mean that the \gls{strong_nuclear_force} is attractive 
+            This is the graph of potential energy of the \gls{strong_nuclear_force} against the distance from the other particle:
+
+            \begin{figure}
+                \centering
+                \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                    \begin{axis}[
+                        xlabel={Distance/fm},
+                        ylabel={Potential Energy/MeV},
+                        xmin=0, xmax=6,
+                        ymin=-70, ymax=70,
+                        legend pos=north west,
+                    ]
+                        \addplot[
+                            domain=0:6,
+                            samples=100,
+                            color=red,
+                            thick
+                        ] {(1458.05 * (2.71828 ^ (-1 * 3.11 * x)) / x) - (578.09 * (2.71828 ^ (-1 * 1.55 * x)) / x)};
+
+                        \draw (.6,25)   node[right, red]       {Repulsive};
+                        \draw (1.3,-35) node[below right, red] {Attractive};
+                        \draw (4,-10)   node[red]              {Negligable};
+
+                        \addlegendentry{Potential Energy}
+                    \end{axis}
+                \end{tikzpicture}
+                \caption{The potential energy of the \gls{strong_nuclear_force}}
+            \end{figure}
+
+            The high potential energy means that the particles under the \gls{strong_nuclear_force}'s influence will be pushed away to be in states of lower energy, which is around $1\,$fm.
+
+        \subsubsection{Specific Charge}
+            The specific charge of a particle is the amount of charge it has per unit mass.
+            This gives the formula for specific charge:
+            \begin{equation}
+                \text{specific charge}=\frac{Q}{m}
+            \end{equation}
+            This also means that the unit for specific charge are:
+            \begin{equation}
+                [\text{specific charge}]=\frac{[Q]}{[m]}=\frac{\text{C}}{\text{kg}}=\text{C\,kg}^{-1}
+            \end{equation}
+
+            To find the \gls{specific_charge} of a charged particle, take the total charge and divide by the mass.
+            For example, to find the \gls{specific_charge} of a $_6$Li \gls{nucleus}, we would find the charge, which is the number of \glspl{proton} (3) times the charge of a \gls{proton} ($e\approx\stdform{1.60}{-19}\,\text{kg}$).
+            Then, we would find the mass of the $_6$Li \gls{nucleus}, which is the number of \glspl{proton} (3) times the mass of a \gls{proton} ($m_p\approx\stdform{1.673}{-27}\,\text{kg}$) plus the number of \glspl{neutron} ($6-3=3$) times the mass of a \gls{neutron} ($m_n\approx\stdform{1.675}{-27}\,\text{kg}$).
+            This means that the specific charge is calculated as:
+            \begin{equation}
+                \frac{3\times\stdform{1.60}{-19}}{3\times\stdform{1.673}{-27}+3\times\stdform{1.675}{-27}}\approx47.8\,\text{MC\,kg}^{-1}
+            \end{equation}
 
     \newpage
 

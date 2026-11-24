@@ -217,7 +217,7 @@
             \end{equation}
         \end{theorem}
         \begin{proof}
-                We will begin by drawing the triangle described in theorem \ref{thm:sine_rule}, with a line with length $h$ from $C$ to $AB$, meeting $AB$ at a right-angle:
+                We will begin by drawing the triangle described in theorem \ref{thm:sine_rule}, with a line with length $h$ from $C$ to $AB$, meeting $AB$ at a right angle:
             \begin{figure}
                 \begin{center}
                     \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
@@ -237,9 +237,9 @@
                     \caption{A triangle with sides $a$, $b$, $c$, and angles $A$, $B$ and $C$}
                 \end{center}
             \end{figure}
-            From this, we can see that $\sin A=\frac{h}{b}$, using the rules of right-angled \\ trigonometry ($\sin\theta=\frac{O}{H}$).
+            From this, we can see that $\sin A=\frac{h}{b}$, using the rules of right angled \\ trigonometry ($\sin\theta=\frac{O}{H}$).
             Thus, $b\sin A=h$.
-            Using the same logic for the other right-angled triangle, we can also derive $a\sin B=h$.
+            Using the same logic for the other right angled triangle, we can also derive $a\sin B=h$.
             We can now set the two expressions equal to each other to find:
             \begin{equation*}
                 \begin{aligned}
@@ -270,7 +270,7 @@
             \end{equation}
         \end{theorem}
         \begin{proof}
-            We will begin by drawing the triangle described in \ref{thm:cosine_rule}, with a line with length $h$ from $C$ to $AB$, meeting $AB$ at a right-angle, and splitting it into length $x$ and $c-x$:
+            We will begin by drawing the triangle described in \ref{thm:cosine_rule}, with a line with length $h$ from $C$ to $AB$, meeting $AB$ at a right angle, and splitting it into length $x$ and $c-x$:
             \begin{figure}
                 \begin{center}
                     \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
@@ -300,7 +300,7 @@
                     b^2&=a^2-c^2+2cx
                 \end{aligned}
             \end{equation*}
-            Using the rules of right-angled trigonometry ($\cos\theta=\frac{A}{H}$), we can see that $\cos A=\frac{x}{b}$ thus $x=b\cos A$, which we can substitute into $b^2=a^2-c^2+2cx$ to get:
+            Using the rules of right angled trigonometry ($\cos\theta=\frac{A}{H}$), we can see that $\cos A=\frac{x}{b}$ thus $x=b\cos A$, which we can substitute into $b^2=a^2-c^2+2cx$ to get:
             \begin{equation}
                 b^2=a^2-c^2+bc\cos A
             \end{equation}
@@ -311,24 +311,320 @@
         \end{proof}
 
     \subsection{The Area of a Triangle}
+        \begin{theorem} \label{thm:area_of_triangle}
+            For a triangle with two sides $a$ and $b$, with an angle $C$ in between them, the area of the triangle is given as:
+            \begin{equation}
+                A_r=\half ab\sin C
+            \end{equation}
+        \end{theorem}
+        \begin{proof}
+            We will begin by drawing the triangle described in \ref{thm:area_of_triangle}, with a line with length $h$ from the side $a$ to the opposite vertex, connected to $a$ at a right angle; we will call the side length opposite $C$, $c$:
+            \begin{figure}
+                \begin{center}
+                    \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                        \draw (-3,2) -- (2,3) -- (1,0) -- (-3,2);
+                        \draw[dashed] (1,0) -- (0.46154,2.69231);
+                        \draw (.5,2.5) -- (0.69231,2.53846) -- (0.65385,2.73077);
+
+                        \node[black, left] at (-3,2) {$C$};
+                        \node[black, above right] at (2,3) {$B$};
+                        %\node[black, below] at (1,0) {$A$};
+
+                        \node[black, above left] at (-.5,2.5) {$a$};
+                        \node[black, below left] at (-1,1) {$b$};
+                        \node[black, below right] at (1.5,1.5) {$c$};
+                        \node[black, left] at (0.73077,1.346155) {$h$};
+                    \end{tikzpicture}
+                    \caption{A triangle with sides $a$, $b$, and an angle $C$ between them}
+                \end{center}
+            \end{figure}
+            From here, we can use right angled trigonometry to find that:
+            \begin{equation}
+                \sin C=\frac{h}{b}
+            \end{equation}
+            And thus:
+            \begin{equation}
+                b\sin C=h
+            \end{equation}
+            Now, we can use the more common formula for the area of a triangle:
+            \begin{equation}
+                \text{area}=\half\text{base}\times\text{perpendicular height}
+            \end{equation}
+            We will use $h=b\sin C$ as the height, and $a$ as the base, to get:
+            \begin{equation}
+                A_r=\half(b\sin C)\times a=\half ab\sin C
+            \end{equation}
+        \end{proof}
 
     \subsection{Trigonometric Graphs}
+        These are the graphs of the three basic trigonometric functions (sine, cosine and tangent):
+        \begin{figure}
+            \centering
+            \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                \begin{axis}[
+                    xlabel={$x/^\circ$},
+                    ylabel={$y$},
+                    xmin=-360, xmax=360,
+                    ymin=-5, ymax=5,
+                    legend pos=north west,
+                    xtick distance=180,
+                ]
+                    \addplot[
+                        domain=-360:360,
+                        samples=100,
+                        color=red,
+                        thick
+                    ] {sin(x)};
 
-    \subsection{Trigonometric Graph Transformations}
+                    \addplot[
+                        domain=-360:360,
+                        samples=100,
+                        color=green,
+                        thick
+                    ] {cos(x)};
+
+                    \addplot[
+                        domain=-360:-271,
+                        samples=100,
+                        color=blue,
+                        thick
+                    ] {tan(x)};
+                    \addplot[
+                        domain=-269:-91,
+                        samples=100,
+                        color=blue,
+                        thick
+                    ] {tan(x)};
+                    \addplot[
+                        domain=-89:89,
+                        samples=100,
+                        color=blue,
+                        thick
+                    ] {tan(x)};
+                    \addplot[
+                        domain=91:269,
+                        samples=100,
+                        color=blue,
+                        thick
+                    ] {tan(x)};
+                    \addplot[
+                        domain=271:360,
+                        samples=100,
+                        color=blue,
+                        thick
+                    ] {tan(x)};
+
+                    \addplot[
+                        color=blue,
+                        dashed,
+                        mark=none,
+                    ] coordinates {(-270,-5) (-270,5)};
+                    \addplot[
+                        color=blue,
+                        dashed,
+                        mark=none,
+                    ] coordinates {(-90,-5) (-90,5)};
+                    \addplot[
+                        color=blue,
+                        dashed,
+                        mark=none,
+                    ] coordinates {(90,-5) (90,5)};
+                    \addplot[
+                        color=blue,
+                        dashed,
+                        mark=none,
+                    ] coordinates {(270,-5) (270,5)};
+                    
+                    \addlegendentry{$y=\sin x$}
+                    \addlegendentry{$y=\cos x$}
+                    \addlegendentry{$y=\tan x$}
+                \end{axis}
+            \end{tikzpicture}
+            \caption{The graphs of sine, cosine and tangent}
+        \end{figure}
+        The dashed blue lines represent the symptotes of the tangent function; lines $x=a$ that the tangent function approaches but never reaches.
+        This means that the value of $\tan a$ will be undefined if there is an asymptote $x=a$.
+        The asymptotes of $\tan x$ are at $(180+90n)^\circ$, where $n\in\Z$.
+
+        Each of the trigonometric functions are notably periodic, meaning that they have a wavelength $\lambda$ such that $f(x)=f(x+n\lambda)$, where $n\in\Z$.
+        This means that the graph repeats itself, with a distance of $\lambda$ between each repeat.
+        For sine and cosine, the wavelength is $360^\circ$, and for tangent, the wavelength is $180^\circ$.
+
+        Sine and cosine will each only return values between -1 and 1 inclusive for real inputs ($\sin:\R\to[-1,1]$ and $\cos:\R\to[-1,1]$), whereas tangent can return any real number when given any real input except $(180n)^\circ,\;n\in\Z$ \\ ($\tan:\R\setminus\set{(180n+90)^\circ:n\in\Z}\to\R$).
+
+        \subsubsection{Trigonometric Graph Transformations}
+            Each of the graphs can be transformed using regular graph transformations.
+
+            In the $y$-axis, for a trigonometric function $f(x)$ and a scalar $k$, these are:
+            \begin{align}
+                F(x)&=f(x)+k \\
+                F(x)&=kf(x) \\
+                F(x)&=-f(x)
+            \end{align}
+            In the context of $\sin x$ and $\cos x$, stretching the function in the $y$-axis ($F(x)=kf(x)$) means increasing its amplitude (for $|k|>1$; it decreases the amplitude for $0<|k|<1$).
+            Because the amplitude of $\sin x$ and $\cos x$ are 1, this means that $|k|$ will be the amplitude in this context, sometimes written $A$.
+            Mirroring the function ($F(x)=-f(x)$) does not change the amplitude, since $|F(x)|=|f(x)|$, but it will shift the phase of the wave.
+            Shifting the function in the $y$-axis would move the equilibrium position of the wave (the height at the average of the peaks and troughs).
+            
+            In the $x$-axis, for a trigonometric function $f(x)$ and a scalar $k$, the transformations are:
+            \begin{align}
+                F(x)&=f(x-k) \\
+                F(x)&=f\left(\frac{x}{k}\right) \\
+                F(x)&=f(-x)
+            \end{align}
+            In the context of $\sin x$ and $\cos x$, stretching the function in the $x$-axis ($F(x)=f\left(\frac{x}{k}\right)$) means increasing its wavelength (for for $|k|>1$; it decreases the wavelength for $0<|k|<1$).
+            Because the wavelength of $\sin x$ and $\cos x$ is $360^\circ$, this means that, in this context, $360^\circ k$ would be the wavelength, sometimes written $\lambda$.
+            Mirroring the function ($F(x)=f(-x)$) will not change $\sin x$, and negate $\cos x$.
+            Shifting the function in the $x$-axis ($F(x)=f(x-k)$) will shift the phase of the wave, meaning that the starting point of the wave ($f(0)$) will be moved.
+            In this context, $k$ would be called the phase shift, sometimes written $\Delta\phi$.
+
+            Putting all of these transformations together, we can make a generalised function for a wave:
+            \begin{equation}
+                F(x)=A\sin(360^\circ \lambda x-\Delta\phi)+e_q
+            \end{equation}
+            For an amplitude $A>0$, wavelength $\lambda>0$, equilibrium point $e_q$, and phase shift $\Delta\phi$.
+            The function would also work using $\cos$ instead of $\sin$; this would shift the phase by $90^\circ$ because $\sin(x)=\cos(x-90^\circ)$.
+
+            This looks like this for $A=1.5$, $\lambda=1/360$, $\Delta\phi=45^\circ$, $e_q=-0.5$:
+        \begin{figure}
+            \centering
+            \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                \begin{axis}[
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xmin=-720, xmax=720,
+                    ymin=-3, ymax=2,
+                    legend pos=north west,
+                    xtick distance=360,
+                    clip=false,
+                ]
+                    \addplot[
+                        domain=-720:720,
+                        samples=100,
+                        color=red,
+                        thick
+                    ] {1.5 * sin(x * 360 * (1 / 360) - 45) - .5};
+
+                    \addplot[
+                        domain=-720:720,
+                        samples=100,
+                        color=red,
+                        dashed
+                    ]{-0.5};
+                    
+                    \addplot[
+                        domain=-720:720,
+                        samples=100,
+                        color=red,
+                        dashed,
+                        stealth-stealth
+                    ] coordinates {(-585,-.5) (-585,1)};
+                    
+                    \addplot[
+                        domain=-225:135,
+                        samples=100,
+                        color=red,
+                        dashed,
+                        stealth-stealth
+                    ]{1};
+                    
+                    \addplot[
+                        domain=-720:-675,
+                        samples=100,
+                        color=red,
+                        dashed,
+                        stealth-stealth
+                    ]{-1.5};
+                    
+                    \node[right,red] at        (axis cs:-540,.25) {$A$};
+                    \node[below,red] at        (axis cs:-45,.95) {$\lambda$};
+                    \node[below right, red] at (axis cs:-697.5,-1.5) {$\Delta\phi$};
+                    \node[left, red] at        (axis cs:-720,-.5) {$e_q$};
+                    
+                    \addlegendentry{$F(x)=A\sin(360^\circ \lambda x-\Delta\phi)+e_q$}
+                \end{axis}
+            \end{tikzpicture}
+            \caption{A wave with a given amplitude, wavelength, phase shift and equilibrium}
+        \end{figure}
 
     \newpage
 
 \section{Trigonometric Equations and Identities} \label{trigonometric_equations_and_inequalities}
-\newpage
+    \begin{theorem}
+        For all angles $\theta$:
+        \begin{equation}
+            \sin^2\theta+\cos^2\theta=1
+        \end{equation}
+    \end{theorem}
+    \begin{proof}
+        We will start by constructing a right angled triangle with a hypotenuse with length 1:
+        \begin{figure}
+            \begin{center}
+                \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                    \draw (-.5,-1) -- (-.5,1) -- (.5,-1) -- (-.5,-1);
+                    \draw (-.35,-1) -- (-.35,-.85) -- (-.5,-.85);
+
+                    \node[black, above right] at (0,0) {1};
+                    %\node[black, below] at (0,-1) {$\cos\theta$};
+                    %\node[black, above, rotate=90] at (-.5,0) {$\sin\theta$};
+                \end{tikzpicture}
+                \caption{A triangle with a hypotenuse with length 1}
+            \end{center}
+        \end{figure}
+        Adding an angle $\theta$, we can give the side lengths as $\sin\theta$ and $\cos\theta$:
+        \begin{figure}
+            \begin{center}
+                \begin{tikzpicture}[x=15mm, y=15mm, >=stealth]
+                    \draw (-.5,-1) -- (-.5,1) -- (.5,-1) -- (-.5,-1);
+                    \draw (-.35,-1) -- (-.35,-.85) -- (-.5,-.85);
+
+                    \node[black, above right] at (0,0) {1};
+                    \node[black, below] at (0,-1) {$\cos\theta$};
+                    \node[black, above, rotate=90] at (-.5,0) {$\sin\theta$};
+
+                    \draw[black] (.41056,-.82111) arc[start angle=150, end angle=180, radius=.35];
+                    \node[black] at (.24480,-.84229) {$\theta$};
+                \end{tikzpicture}
+                \caption{A triangle with a hypotenuse with length 1 and angle $\theta$}
+            \end{center}
+        \end{figure}
+        Then, using Pythagoras' theorem, we can see that $\sin^2\theta+\cos^2\theta=1$.
+    \end{proof}
+    Rearranging this identity, we can also use the forms:
+    \begin{align*}
+        \sin^2\theta&=1-\cos^2\theta \\
+        \cos^2\theta&=1-\sin^2\theta \\
+        \sin\theta&=\sqrt{1-\cos^2\theta} \\
+        \cos\theta&=\sqrt{1-\sin^2\theta}
+    \end{align*}
+
+    \begin{theorem}
+        The tangent function can be written as a ratio of sine and cosine:
+        \begin{equation}
+            \tan\theta=\frac{\sin\theta}{\cos\theta}
+        \end{equation}
+    \end{theorem}
+    \begin{proof}
+        Using SOH-CAH-TOA, we know that $\sin\theta=\frac{O}{H}$, $\cos\theta=\frac{A}{H}$ and $\tan\theta=\frac{O}{A}$.
+        From these, we can find that:
+        \begin{align*}
+            H\sin\theta&=O \\
+            H\cos\theta&=A \\
+            \tan\theta&=\frac{H\sin\theta}{H\cos\theta} \\
+            &=\frac{\sin\theta}{\cos\theta}
+        \end{align*}
+    \end{proof}
+
+    \newpage
 
 \section{Vectors I} \label{vectors_i}
-\newpage
+    \newpage
 
 \section{Differentiation I} \label{differentiation_i}
-\newpage
+    \newpage
 
 \section{Integration I} \label{integration_i}
-\newpage
+    \newpage
 
 \section{Exponentials and Logarithms} \label{exponentials_and_logarithms}
-\newpage
+    \newpage

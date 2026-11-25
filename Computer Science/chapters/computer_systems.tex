@@ -1,12 +1,25 @@
 \section{Hardware and Software} \label{hardware_and_software}
-    \Gls{hardware} is the electronic and electromechanical components of a computer, for example the \acroCPU, the \acroRAM or a monitor
-    \gls{software} is code that runs on the \gls{hardware}, for example apps or the \gls{operating_system}.
-    \gls{software} does not have a physical presence.
+    \Gls{hardware} is the electronic and electromechanical components of a computer, for example the \acroCPU, the \acroRAM or a monitor.
+    \Gls{software} is code that runs on the \gls{hardware}, for example apps or the \gls{operating_system}.
+    \Gls{software} does not have a physical presence.
 
     \subsection{Application Software}
+        \Gls{application_software} is the \gls{software} that the user is supposed to see and interact with.
+        This means that \gls{application_software} has to have a \gls{human_computer_interface} (\acroHCI) so that the user can interact with it.
+        \acroplHCI are also sometimes called HMIs (human-machine interfaces), or \acroplUI (user interfaces).
+        \acroplHCI can come in multiple varieties:
+        \begin{itemize}
+            \item \Gls{command_line_interface} (\acroCLI) - a type of \acroUI that only uses a taxt-based terminal window for users to type commands.
+            This means that users have to know many commands, but requires little memory to store/run, and is often quicker than using other \acroplUI if the user is experienced.
+            \item \Gls{graphical_user_interface} (\acroGUI) - a type of \acroUI that uses graphical elements such as buttons or draggable objects.
+            \acroplGUI will require move memory than \acroplCLI so that they can store and render graphics, and they can be slower to use than \acroplCLI, however they are easier to use for less-experienced users.
+            \item \Gls{menu_interface} - a type of \acroUI that uses menus to allow the user navigate to what they want to do.
+            They can be hard to use if things are put in unexpected places in the menus, but can be user-friendly if the options are intuitive to use and there are not many of them.
+        \end{itemize}
 
     \subsection{System Software}
         \Gls{system_software} is \gls{software} that runs to support \gls{application_software}.
+        The user will often not interact at all with \gls{system_software}, instead leaving it to run in the background.
 
         \subsubsection{Operating Systems}
             An \gls{operating_system} is a middle-man between the user/\gls{software} and the \gls{hardware}.
@@ -90,21 +103,24 @@
 
                 Using \gls{assembly} means that the \gls{code} can't be moved in \gls{memory}, since each \gls{memory_address} is \glslink{hardcoding}{hardcoded}, meaning that if the code is moved, the goto statements will reference the wrong \glspl{memory_address}.
             \end{itemize}
-            Both compilers and interpreters are available for most high-level languages.
+            Both \glspl{compiler} and \glspl{interpreter} are available for many high-level languages.
 
         \subsubsection{Bytecode}
-            Bytecode is an intermediate form of source code.
-            Bytecode is most famously used by Java/the JVM (Java Viryual Machine), where Java compiles to bytecode, which is then compiled into machine code by the JVM.
-            Bytecode can be run on any computer, as long as they are running a JVM.
-            This allows sharing code without sharing the full source code.
+            \Gls{bytecode} is an intermediate form of \gls{source_code}.
+            \Gls{bytecode} is most famously used by \gls{java}/the \acroJVM (\gls{java_virtual_machine}), where \gls{java} \glslink{compilation}{compiles} to \gls{bytecode}, which is then \glslink{compilation}{compiled} into \gls{machine_code} by the \acroJVM.
+            \Gls{bytecode} can be run on any computer, as long as they are running a \acroJVM.
+            This allows sharing \gls{code} without sharing the full \gls{source_code}.
             
-            This is referred to as JIT compilation (Just-In-Time Compilation), because the full compilation is only done when the code is needed, as the code runs, but still stored as an object code file.
-            The object code is then stored, meaning that it does not need to be recompiled on later uses.
-            Because it is JIT, only parts of the code that are used in that specific compilation are used (subroutines, etc.), meaning that they will need compiling in the future if they are used.
+            This is referred to as \acroJIT \gls{compilation} (\gls{just_in_time_compilation}), because the full \gls{compilation} is only done when the \gls{code} is needed, as the \gls{code} runs, but still stored as an \gls{object_code} file.
+            The \gls{object_code} is then stored, meaning that it does not need to be recompiled on later uses.
+            Because it is \acroJIT, only parts of the \gls{code} that are used in that specific \gls{compilation} are used (\glspl{subroutine}, etc.), meaning that they will need \glslink{compilation}{compiling} in the future if they are used.
 
     \newpage
     
 \section{Operating Systems} \label{operating_systems}
+    \subsection{Boot Functions}
+        While booting, the computer will show the \gls{basic_input_output_system} \\ (\acroBIOS), which allows the user to choose which \acroOS they boot into.
+        The \acroBIOS also controls certain very low-level settings, which are stored in \gls{non_volatile_random_access_memory} (\acroNVRAM).
 
     \newpage
 
@@ -477,5 +493,64 @@ end program fibonnaci
                     \end{tabular}
                 \end{center}
                 Boolean algebra uses BIDMAS just like elementary algebra; AND is multiplication (hence it uses the $\cdot$ symbol); OR is addition (hence it uses the $+$ symbol); and NOT groups terms into subexpressions like brackets.
+
+        \subsection{Adders}
+            \subsubsection{Half Adders}
+                A half adder is a logic circuit that adds two bits together.
+                The logic for a half adder can be worked out by seeing that the sum of two bits is 1 if $A\oplus B$, since if $A\cdot B$, it will overflow.
+                The carry bit is 1 if $A\cdot B$, which is the only overflow case.
+                Therefore, a half adder is the circuit described by:
+                \begin{equation}
+                    \begin{aligned}
+                        S&=A\oplus B \\
+                        C&=A\cdot B
+                    \end{aligned}
+                \end{equation}
+                The limitation of a half adder is that there are only two inputs--there is no option to carry into the sum.
+                
+            \subsection{Full Adders}
+                A full adder adds two inputs and a carry input, returning a sum and a carry output.
+                The logic for a full adder is:
+                \begin{equation}
+                    \begin{aligned}
+                        S&=(A\oplus B)\oplus C_\text{in} \\
+                        C_\text{out}&=C\cdot(A\oplus B)+(A\cdot B)
+                    \end{aligned}
+                \end{equation}
+                To add more bits together, multiple adders can be chained together, with the carry out of one full adder being put as an input into the next full adder's carry in input.
+
+        \subsection{D-Type Flip-Flop}
+            A flip-flop is an elemental sequential logic circuit, meaning that it can store a single bit that can be flipped between 0 and 1.
+            It has two inputs; the data going in, and the clock.
+            It also has two outputs; the data being stored ($Q$) and the inverse ($\overline{Q}$).
+            A \gls{d_type_flip_flop} only changes on the clock's rising edge, and will update the data being stored whenever the clock rises (goes from 0 to 1).
+            The clock can be thought of as a square wave going between 0 and 1, meaning that it has a period and frequency.
+
+            \Glspl{d_type_flip_flop} are used for creating \gls{cache} and counters, since they can hold values.
+            \Glspl{d_type_flip_flop} are faster than dynamic \acroRAM (\acroDRAM), but more expensive, so they are used for cache, but \acroDRAM is used for main \gls{memory}.
+            
+        \subsection{\texorpdfstring{The Boolean Algebra as an Abstract Algebraic \\ Structure}{The Boolean Algebra as an Abstract Algebraic Structure}}
+            The \gls{boolean_algebra} is formed from the Boolean domain $\set{0,1}$, which we write as $\Bool$, as well as the operators AND ($x\cdot y$), OR ($x+y$), and NOT ($\overline{x}$), with valencies of 2, 2 and 1 respectively.
+            The \gls{boolean_algebra} is sometimes called $\boolalgebra$.
+
+            \begin{theorem}
+                Ignoring the NOT operator, the two-element algebra \\ $\langle\set{0,1},\cdot,+\rangle$ is a complemented distributive lattice.
+                We will call this algebra $\boolring$.
+            \end{theorem}
+            \begin{proof}
+                We can then use the ring axioms to show that $\boolring$ is a ring:
+                \begin{itemize}
+                    \item $+$ is associative - $(\forall\,x,y,z\in\Bool)(x+(y+z)=(x+y)+z)$
+                    \item $+$ is commutative - $(\forall\,x,y\in\Bool)(x+y=y+x)$
+                    \item $+$ has an identity in $\Bool$ - $(\exists\,I_+\in\Bool)(\forall\,x\in\Bool)(I_++x=x+I_+=x)$
+                    \item $+$ has an inverse in $\Bool$ - $(\forall\,x\in\Bool)(\exists\,-x\in\Bool)(x+-x=-x+x=I_+)$
+                    \item $\cdot$ is associative - $x\cdot(y\cdot z)=(x\cdot y)\cdot z$
+                    \item $\cdot$ has an identity in $\Bool$ - $(\exists\,I_\cdot\in\Bool)(\forall\,x\in\Bool)(I_\cdot\cdot x=x\cdot I_\cdot=x)$
+                    \item $\cdot$ is left-distributive with respect to $+$ - $(\forall\,x,y,z,\in\Bool) \\ (x\cdot(y+z)=(x\cdot y)+(x\cdot z))$
+                    \item $\cdot$ is right-distributive with respect to $+$ - $(\forall\,x,y,z,\in\Bool) \\ ((x+y)\cdot z=(x\cdot z)+(y\cdot z))$
+                \end{itemize}
+                By the definition of a ring, $\boolring$ is a ring iff it satisfies all of the above axioms.
+
+            \end{proof}
 
     \newpage

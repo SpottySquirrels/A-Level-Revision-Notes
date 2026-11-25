@@ -615,6 +615,50 @@
         \end{align*}
     \end{proof}
 
+    \subsection{CAST Diagrams}
+        A CAST diagram is used to determine whether sine, cosine and tangent are positive or negative in each quadrant.
+        Looking at the graphs, we can see that:
+        \begin{itemize}
+            \item in quadrant 1 ($\theta\in(0^\circ,90^\circ)$), all three functions are positive.
+            \item in quadrant 2 ($\theta\in(90^\circ,180^\circ)$), only $\sin\theta$ is positive.
+            \item in quadrant 3 ($\theta\in(180^\circ,270^\circ)$), only $\cos\theta$ is positive.
+            \item in quadrant 4 ($\theta\in(270^\circ,360^\circ)$), only $\tan\theta$ is positive.
+        \end{itemize}
+        This can be represented as a graph with four quadrants like this:
+        \begin{center}
+            \begin{tikzpicture}[scale=1.5, >=stealth]
+                \draw (-2, 0) -- (2, 0) node[right] {};
+                \draw (0, -2) -- (0, 2) node[above] {};
+                
+                \draw (0,2)[above] node {$90^\circ$};
+                \draw (2,0)[right] node {$0^\circ\equiv360^\circ$};
+                \draw (0,-2)[below] node {$270^\circ$};
+                \draw (-2,0)[left] node {$180^\circ$};
+                
+                \draw (1,1.6) node {Quadrant 1};
+                \draw (-1,1.6) node {Quadrant 2};
+                \draw (-1,-.4) node {Quadrant 3};
+                \draw (1,-.4) node {Quadrant 4};
+
+                \draw (1,1.2) node {$\sin\theta>0\quad(+)$};
+                \draw (-1,1.2) node {$\sin\theta>0\quad(+)$};
+                \draw (-1,-.8) node {$\sin\theta<0\quad(-)$};
+                \draw (1,-.8) node {$\sin\theta<0\quad(-)$};
+                
+                \draw (1,.8) node {$\cos\theta>0\quad(+)$};
+                \draw (-1,.8) node {$\cos\theta<0\quad(-)$};
+                \draw (-1,-1.2) node {$\cos\theta<0\quad(-)$};
+                \draw (1,-1.2) node {$\cos\theta>0\quad(+)$};
+                
+                \draw (1,.4) node {$\tan\theta>0\quad(+)$};
+                \draw (-1,.4) node {$\tan\theta<0\quad(-)$};
+                \draw (-1,-1.6) node {$\tan\theta>0\quad(+)$};
+                \draw (1,-1.6) node {$\tan\theta<0\quad(-)$};
+                
+            \end{tikzpicture}
+        \end{center}
+        
+
     \newpage
 
 \section{Vectors I} \label{vectors_i}
